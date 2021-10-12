@@ -1,0 +1,494 @@
+.mainView {
+    background: url('./../../../project/image/layouts/content/jpg/backGround.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    &__title {
+        font-family: 'Caveat', cursive;
+        font-size: 39px;
+        color: #22262F;
+        text-align: center;
+    }
+}
+
+.pizzaType {
+    font-weight: bold;
+    font-size: 32px;
+    color: #404040;
+    margin-left: 40px;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+.pizza {
+    display: flex;
+    min-width: 80%;
+    flex-wrap: wrap;
+    &__sizeBlock {
+        display: flex;
+        background: #E3E4EA;
+        border-radius: 7px;
+        height: 40px;
+        width: 58%;
+        margin-left: 2%;
+        align-items: center;
+        color: white;
+        &__active {
+            height: 40px;
+            background: #00B612;
+            border-radius: 7px;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-align: center;
+            color: white;
+        }
+        &__size {
+            width: 50%;
+            font-size: 12px;
+            cursor: pointer;
+            color: #808080;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &__card {
+        width: 25%;
+    }
+     &__cardTwo {
+         width: 20%;  
+     }
+    &__block {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #ECECEC;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        margin: 20px 10px;
+        height: fit-content;
+        &__images {
+            position: relative;
+        }
+        &__icon {
+            position: absolute;
+            top: 3%;
+            right: 2%;
+        }
+        &__status {
+            padding-right: 10px;
+        }
+        &__name {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-weight: 600;
+            font-size: 30px; 
+            margin-right: 2%;
+            color: #404040;
+            height: 40px;
+        }
+        &__item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        &__items {
+            margin-right: 2%;
+        }
+        &__price {
+            font-weight: 600;
+            font-size: 29px;         
+            text-align: right;
+            color: #E45100;
+        }
+        &__grn {
+            color: #E45100; 
+            font-size: 29px;
+            padding-left: 10px
+        }
+        &__weight {
+            font-size: 19px;
+            text-align: right;
+            color: #787878;
+        }
+    }
+}
+.ttt {
+    padding: 5px 10px;
+}
+
+.buyBtn {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 48px;
+    background: #E45100;
+    border-radius: 7px;
+    width: 96%;
+    max-width: 96%;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    border: none;
+    justify-content: center;
+    margin: 10px 2%;
+    &:hover {
+        box-shadow: rgba(0, 3, 5, 0.932) 0px 2px 4px 0px, rgba(0, 0, 0, 0.993) 0px 2px 16px 0px;
+    }
+    &__add {
+            font-weight: 500;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    }
+    &__cart {
+        position: absolute;
+        right: 5%;
+       
+    }
+}
+.discount {
+    height: 10px;
+    &__value {
+        font-size: 15px;
+        text-align: right;
+        text-decoration-line: line-through;
+        color: #A4A4A4;
+    }
+}
+.vis {
+    opacity: 1;
+}
+.unvis {
+    opacity: 0;
+    pointer-events: none;
+}
+.upArrow {
+    position: fixed;
+    right: 2%;
+    top: 90%;
+    z-index: 120;
+    cursor: pointer;
+}
+.popapBlock {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 80%;
+    right: 0;
+    &__point {
+            background: #006F9E;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            margin: 2px 0;
+        }
+    }
+
+.popap {
+    width: 80%;
+    padding: 5px 5px;
+    background: rgba(246, 247, 249, 0.85);
+    opacity: 1;
+    color: #006F9E;
+    font-size: 10px;
+    position: absolute;
+    top: 80%;
+    z-index: 555;
+
+}
+.popapdisable {
+    width: 90%;
+    opacity: 0;
+    position: absolute;
+    top: 70%;
+    
+    
+}
+
+@media screen and (max-width: 1700px) {
+    .pizza {
+        &__sizeBlock {
+            height: 34px;
+            &__active {
+                height: 34px;
+            }
+            &__size {
+                font-size: 11px;
+            }
+        }
+        &__block {
+            height: fit-content;
+            margin: 18px 8px;
+            &__icon {
+                top: 0;
+                right: 0;
+                width: 23%;
+                height: 23%;
+            }
+            &__status {
+                padding-right: 6px;
+                width: 35px;
+                height: 35px;
+            }
+            &__name {
+                font-size: 26px; 
+            }
+            &__price {
+                font-size: 23px;         
+            }
+            &__grn {
+                font-size: 23px;
+                padding-left: 4px
+            }
+            &__weight {
+                font-size: 15px;
+            }
+        }
+    }
+    .buyBtn {
+        height: 42px;
+        &__add {
+            font-size: 14px;
+        }
+    }
+    .buyBtnCart {
+        width: 70%;
+        height: 70%;
+    }
+    .pizzaImage {
+        width: 90%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 1366px) {
+    .pizza {
+        &__sizeBlock {
+            height: 30px;
+            &__active {
+                height: 30px;
+                font-size: 12px;
+            }
+            &__size {
+                font-size: 11px;
+            }
+        }
+        &__block {
+            margin: 17px 7px;
+            height: fit-content;
+            &__icon {
+                top: 0;
+                right: 0;
+                width: 25%;
+                height: 25%;
+            }
+            &__status {
+                padding-right: 3px;
+                width: 30px;
+                height: 30px;
+            }
+            &__name {
+                font-size: 20px; 
+            }
+            &__price {
+                font-size: 17px;         
+            }
+            &__grn {
+                font-size: 17px;
+                padding-left: 2px
+            }
+            &__weight {
+                font-size: 12px;
+            }
+        }
+    }
+    .buyBtn {
+        height: 40px;
+        &__add {
+            font-size: 12px;
+            padding-right: 30px;
+        }
+    }
+    .discount {
+        &__value {
+            font-size: 12px;
+        }
+    }
+    .buyBtnCart {
+        width: 70%;
+        height: 70%;
+    }
+    .pizzaImage {
+        width: 80%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .mainView {
+        &__title {
+            font-size: 29px;
+        }
+    }
+    .pizzaType {
+        font-size: 25px;
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+    .pizza {
+        &__sizeBlock {
+            height: 20px;
+            width: 65%;
+            margin-left: 1%;
+            &__active {
+                height: 20px;
+                border-radius: 4px;
+                font-size: 8px;
+                font-weight: 500;
+            }
+            &__size {
+                font-size: 8px;
+            }
+        }
+        &__card {
+            width: 25%;
+        }
+         &__cardTwo {
+             width: 20%;  
+         }
+        &__block {
+            border-radius: 5px;
+            margin: 10px 4px;
+            &__icon {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            &__status {
+                padding-right: 5px;
+                width: 20px;
+            }
+            &__name {
+                font-size: 16px; 
+                margin-right: 1%;
+                color: #404040;
+                height: 20px;
+            }
+            &__item {
+                margin-top: 10px;
+            }
+            &__price {
+                font-size: 15px;         
+            }
+            &__items {
+                margin-right: 1%;
+            }
+            &__grn {
+                font-size: 12px;
+                padding-left: 1px
+            }
+            &__weight {
+                font-size: 10px;
+            }
+        }
+    }
+    .ttt {
+        padding: 3px 5px;
+    }
+    
+    .buyBtn {
+        height: 34px;
+        border-radius: 7px;
+        width: 98%;
+        max-width: 98%;
+        margin: 10px 1%;
+        &__add {
+                font-weight: 500;
+                font-size: 9px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+        &__cart {
+            position: absolute;
+            right: 0;
+        }
+    }
+    .discount {
+        height: 8px;
+        &__value {
+            font-size: 10px;
+        }
+    }
+    .vis {
+        opacity: 1;
+    }
+    .unvis {
+        opacity: 0;
+        pointer-events: none;
+    }
+    .upArrow {
+        position: fixed;
+        right: 2%;
+        top: 90%;
+        z-index: 120;
+        cursor: pointer;
+    }
+}
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 576px) {
+  
+    .mainView {
+        &__title {
+            font-size: 30px;
+        }
+    }
+    .pizza {
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
+        &__block {
+            width: 100%;
+            height: 530px;
+            margin: 1px 1px;
+            &__item {
+                display: flex;
+            }
+        }
+        &__card {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+         &__cardTwo {
+             width: 100%;  
+             margin-bottom: 10px;
+        }
+        &__sizeBlock {
+            width: 70%;
+            &__active {
+                width: 50%;
+            }
+            &__size {
+                width: 50%;;
+            }
+        }
+    }   
+    .buyBtn {
+     margin-bottom: 5px;
+    }
+    .upArrowSvg {
+        width: 17%;
+        height: 17%;
+        position: fixed;
+        right: 0%;
+       bottom: 0;
+        
+    }
+}

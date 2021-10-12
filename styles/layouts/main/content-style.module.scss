@@ -1,0 +1,25 @@
+.contentBlock {
+    min-width: 80%;
+    transition: all 0.4s ;
+}
+.contentOnly {
+    min-width: 100%;
+    transition: all 0.4s ;
+}
+
+
+@media screen and (max-width: 1700px) {
+    
+}
+@media screen and (max-width: 1366px) {
+      
+}
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 576px) {
+    .contentBlock {
+        min-width: 100%;
+    }
+}

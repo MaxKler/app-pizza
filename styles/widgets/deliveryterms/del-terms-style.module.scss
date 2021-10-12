@@ -1,0 +1,15 @@
+.DeliveryTerms {
+    &__title {
+        font-weight: bold;
+        font-size: 32px;
+        color: #404040;
+        margin-left: 30px;
+    }
+    &__png {
+        background: url('./../../../project/image/widgets/delTerms/deliv.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 500px;
+        
+    }
+}

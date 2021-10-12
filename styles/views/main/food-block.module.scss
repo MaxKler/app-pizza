@@ -1,0 +1,300 @@
+.menuBtn {
+    position: fixed;
+    right: 2%;
+    top: 2%;
+}
+
+.hideMenu {
+    position: absolute;
+    right: 3%;
+    top: 2%;
+    cursor: pointer;
+}
+.menu {
+    z-index: 50;
+    position: fixed;
+    width: 20%;
+    height: fit-content;
+    top: 30%;
+    right: 0;
+    transform: translateX(130%);
+    transition: all 0.3s;
+    &__logo {
+        text-align: center;
+    }
+    &__logobar {
+        background: #292929;
+    }
+}
+.menuActive {
+    transform: translateX(0);
+}
+
+.menu__content {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+    background: white;
+}
+.menuItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    text-align: center;
+}
+.menuItem {
+    height: 30px;
+    font-weight: 500;
+    font-size: 22px;
+    color: #404040;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100px;
+    &:hover {
+        border-bottom: 1px solid #E45100;
+    }
+}
+.orderTitle {
+    font-size: 18px;
+    color: #666666;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.contactsMobile {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__number {
+        font-weight: 500;
+        font-size: 18px;
+        color: #404040;
+    }
+}
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__logoI {
+        width: 30px;
+        height: 30px;
+    }
+    &__logoF {
+        width: 40px;
+        height: 40px;
+    }
+}
+.workTime {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 5px;
+    text-align: center;
+    margin-top: 60px;
+    
+    // transform: translateX(-50%);
+}
+.mobileMenuBtn {
+    position: fixed;
+    bottom: 0;
+    background: #E45100;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.menuCart {
+    position: fixed;
+    right: 5%;
+    bottom: 6%;
+    &__item {
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+        position: absolute;
+        top: 60%;
+        right: 20%;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .menu {
+        height: 550px;
+        top: 22%;
+    }
+    .menuItems {
+        font-size: 21px;
+        margin: 30px 0;
+    }
+    .menuItem {
+        margin-top: 10px;
+    }
+    .orderTitle {
+        font-size: 16px;
+        padding:  0 5%;
+        margin-bottom: 20px;
+    }
+    .contactsMobile {
+        margin-bottom: 15px;
+        &__number {
+            font-size: 16px;
+        }
+    }
+    .workTime {
+        font-size: 15px;
+        padding:  0 5%;
+        margin-top: 50px;
+    }
+    .menuCart {
+        
+        right: 5%;
+        bottom: 12%; 
+        &__item {
+            font-size: 16px;
+            position: absolute;
+            top: 50%;
+            right: 52%;
+        }
+    }
+    .hideMenuCart {
+        width: 60%;
+        height: 60%;
+    }
+}
+@media screen and (max-width: 1366px) {
+    .menu {
+        height: fit-content;
+        top: 20%;
+        &__logoImg {
+            width: 50%;
+            height: 50%;
+        }
+    }
+    .menuItems {
+        font-size: 20px;
+        margin: 30px 0;
+    }
+    .menuItem {
+        margin-top: 10px;
+    }
+    .orderTitle {
+        font-size: 15px;
+        padding:  0 5%;
+        margin-bottom: 20px;
+    }
+    .contactsMobile {
+        margin-bottom: 15px;
+        &__number {
+            font-size: 15px;
+        }
+    }
+    .workTime {
+        font-size: 14px;
+        padding:  0 5%;
+        margin-top: 30px;
+    }
+    .menuCart {
+        width: 80px;
+        height: 80px;
+        right: -3%;
+        bottom: 0; 
+        &__item {
+            font-size: 14px;
+            position: absolute;
+            top: 35%;
+            right: 50%;
+        }
+    }
+    .hideMenuCart {
+        width: 65%;
+        height: 65%;
+    }
+}
+@media screen and (max-width: 1024px) {
+   
+    
+    .hideMenu {
+        position: absolute;
+        right: 3%;
+        top: 2%;
+        cursor: pointer;
+    }
+    .menu {
+        height: fit-content;
+        top: 20%;
+    }
+
+    .menuItems {
+        margin: 10px 0;
+    }
+    .menuItem {
+        height: 20px;
+        font-size: 14px;;
+        margin-top: 5px;
+        width: 70px;
+    }
+    .orderTitle {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    .contactsMobile {
+        margin-bottom: 10px;
+        &__img {
+            width: 20px;
+        }
+        &__number {
+            font-size: 12px;
+        }
+    }
+    .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__logoI {
+            width: 20px;
+            height: 20px;
+        }
+        &__logoF {
+            width: 30px;
+            height: 28px;
+        }
+    }
+    .workTime {
+        font-size: 12px;
+        margin-top: 60px;
+        padding-bottom: 10px;
+    }
+  
+    .hideMenuCart {
+        width: 40px;
+    }
+    
+    .menuCart {
+        position: fixed;
+        right: 1%;
+        bottom: 6%;
+        &__item {
+            color: rgb(255, 255, 255);
+            font-size: 8px;
+            position: absolute;
+            top: 39%;
+            right: 60%;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 576px) {
+    .menu {
+       display: none;
+    }
+    .menuActive {
+        display: none;
+    }
+}

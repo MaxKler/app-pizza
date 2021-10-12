@@ -1,0 +1,437 @@
+.navbar {
+    background: linear-gradient(270.06deg, #1E2331 0.04%, #292929 99.96%);
+    height: 120px;
+    position: relative;
+    &__logo {
+        color: white;
+        margin-left: 100px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__positions {
+            display: flex;
+            align-items: center;
+            margin-left: 100px;
+        }
+    }
+    &__services {
+        display: flex;
+        height: 30px;
+        margin-top: 5px;
+        &__item {
+            color: white;
+            margin-right: 55px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 22px;
+            &:hover {
+                border-bottom: 1px solid #F05542;
+            }
+        }
+    }
+    &__mobile {
+         display: none;
+    }
+  }
+.lang {
+    display: flex;
+    cursor: pointer;
+    margin-right: 40px;
+    height: 30px;
+    margin-top: 5px;
+    &__item {
+        margin-right: 5px;
+        color: gray;
+        font-weight: 500;
+        font-size: 22px;
+        &:hover {
+            border-bottom: 1px solid #F05542;
+        }
+    }
+}
+.cart {
+    &:hover {
+        box-shadow: rgba(238, 240, 241, 0.712) 0px 2px 4px 0px, rgba(242, 244, 245, 0.801) 0px 2px 16px 0px;
+    }
+    margin-right: 100px;
+    background: #E45100;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    &__items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 10px;
+    }
+    &__title {
+        font-size: 18px;
+     }
+    &__count {
+        font-size: 17px;
+        padding-right: 10px;
+    }
+    &__total {
+        font-size: 17px;
+        padding-left: 10px;
+    }
+}
+.phone {
+    height: 40px;
+    margin-left: 50px;
+    &__number {
+        font-weight: 500;
+        font-size: 20px;
+        cursor: pointer;
+        &:hover {
+            border-bottom: 1px solid #F05542;
+        }
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 14px;
+        color: #C4C4C4;
+    }
+}
+.contacts {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    margin-top: 5px;
+}
+.social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    &__icons {
+        margin-right: 60px;
+    }
+    &__icon {
+        font-size: 40px;
+        margin: 0 10px;
+        cursor: pointer;
+        &:hover {
+            color: #E45100;
+        }
+    } 
+} 
+.mobileMenuBtn {
+   display: none;
+}
+
+@media screen and (max-width: 1700px) {
+    .navbar {
+        &__logo {
+            margin-left: 30px;
+        }
+        &__services {
+            height: 25px;
+           
+        }
+      
+    }
+    .cart {
+        margin-right: 30px;
+        &__title {
+            font-size: 17px;
+         }
+        &__count {
+            font-size: 16px;
+            padding-right: 10px;
+        }
+        &__total {
+            font-size: 16px;
+            padding-left: 10px;
+        }
+    }
+    .lang {
+        height: 25px;
+        &__item {
+            &:hover {
+                border-bottom: 1px solid #F05542;
+            }
+        }
+    }
+    .social {
+        margin-top: 20px;
+        &__icons {
+            margin-right: 10px;
+        } 
+    } 
+}
+
+@media screen and (max-width: 1366px) {
+    .navbar {
+        height: 110px;
+        &__logo {
+            margin-left: 30px;
+        }
+        &__items {
+            &__positions {
+                margin-left: 30px;
+            }
+        }
+        &__services {
+            height: 20px;
+            &__item {
+                margin-right: 25px;
+                font-size: 18px;
+            }
+        }
+    }
+    .lang {
+        height: 20px;
+        margin-right: 20px;
+        &__item {
+            margin-right: 4px;
+            font-size: 18px;
+        }
+    }
+    .phone {
+        &__number {
+            font-size: 18px;
+        }
+        &__title {
+            font-size: 12px;
+        }
+    }
+    .cart {
+        margin-right: 30px;
+        padding: 7px 10px;
+        &__items {
+            margin-left: 10px;
+        }
+        &__title {
+           font-size: 16px;
+        }
+        &__count {
+            font-size: 15px;
+            padding-right: 10px;
+        }
+        &__total {
+            font-size: 15px;
+            padding-left: 10px;
+        }
+    }
+    .social {
+        margin-top: 20px;
+        &__icons {
+            margin-right: 0;
+        } 
+    } 
+}
+@media screen and (max-width: 1024px) {
+    .navbar {
+        height: 90px;
+        &__logo {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+        &__logoImg {
+            width: 100px;
+        }
+        &__items {
+            &__positions {
+                margin-left: 25px;
+            }
+        }
+        &__services {
+            height: 18px;
+            margin-top: 5px;
+            &__item {
+                font-size: 14px;
+            }
+        }
+      }
+    .lang {
+        margin-right: 20px;
+        height: 18px;
+        &__item {
+            font-size: 14px;
+        }
+    }
+    .cart {
+        margin-right: 20px;
+        padding: 5px 8px;
+        &__title {
+            font-size: 12px;
+         }
+        &__count {
+            font-size: 10px;
+            padding-right: 6px;
+        }
+        &__total {
+            font-size: 10px;
+            padding-left: 5px;
+        }
+        &__razdel {
+            font-size: 10px;
+        }
+    }
+    .phone {
+        height: 18px;
+        margin-left: 10px;
+        &__number {
+            font-size: 14px;
+        }
+        &__title {
+            font-size: 10px;
+        }
+    }
+    .contacts {
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+        margin-top: 5px;
+    }
+    .social {
+        &__icons {
+            margin-right: 10px;
+        }
+        &__icon {
+            font-size: 30px;
+        } 
+    } 
+}
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 576px) {
+    .navbar {
+        height: 10vh;
+        &__mobile {
+            display: flex;
+        }
+        &__itemsMobile {
+            display: flex;
+            align-items: center; 
+        }
+        &__logo {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        &__logoImg {
+            width: 60%;
+        }
+        &__items {
+            display: none;
+        }
+    }
+    .iconBox {
+        position: absolute;
+        right: 18%;
+        display: flex;
+        align-items: center;
+    }
+    .menuBtn {
+        position: fixed;
+        right: 2%;
+        top: 2%;
+       
+    }
+   
+    .hideMenu {
+        position: absolute;
+        right: 3%;
+        top: 2%;
+    }
+    .menu {
+        z-index: 50;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        transform: translateX(130%);
+        transition: all 0.3s;
+        &__logo {
+            text-align: center;
+        }
+        &__logobar {
+            height: 14vh;
+            background: #292929;
+        }
+    }
+    .menuActive {
+        transform: translateX(0);
+    }
+
+    .menu__content {
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s;
+        background: white;
+    }
+    .menuItems {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+        text-align: center;
+    }
+    .menuItem {
+        height: 30px;
+        font-weight: 500;
+        font-size: 22px;
+        color: #404040;
+        margin-top: 10px;
+        cursor: pointer;
+        width: 100px;
+        &:hover {
+            border-bottom: 1px solid #E45100;
+        }
+    }
+    .orderTitle {
+        font-size: 18px;
+        color: #666666;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .contactsMobile {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__number {
+            font-weight: 500;
+            font-size: 18px;
+            color: #404040;
+        }
+    }
+    .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .workTime {
+        font-size: 16px;
+        color: #666666;
+        text-align: center;
+        position: absolute;
+        bottom: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .mobileMenuBtn {
+        position: fixed;
+        bottom: 0;
+        background: #E45100;
+        width: 100%;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        z-index: 100;
+    }
+}
+
+
+

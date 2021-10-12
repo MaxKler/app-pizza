@@ -1,0 +1,413 @@
+.cart {
+    display: block;
+    background:white;
+    width: 80%;
+    position: fixed;
+    top: 10%;
+    right: 0;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    height: 50vh;
+    &__content {
+        width: 90%;
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 28px; 
+        color: #404040;
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+    }
+    &__items {
+        display: flex;
+    }
+}
+
+.cartNone {
+   display: none;
+}
+
+.hr {
+    height: 1px;
+    width: 100%;
+    background: #F05542;
+}
+.order {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    margin-right: 15px;
+    &__size {
+        width: 25%;
+        text-align: center;
+    }
+    &__size1 {
+        width: 20%;
+        text-align: center;
+    }
+    &__size2 {
+        width: 10%;
+        text-align: center;
+    }
+    &__check {
+        width: 30%;
+    }
+    &__block {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__name {
+        font-weight: 500;
+        font-size: 27px;
+        color: #000000;
+    }
+    &__type {
+        text-align: center;
+        font-weight: 500;
+        font-size: 24px;
+        color: #666666;
+    }
+    &__count {
+        display: flex;
+        align-items: center;
+        &__count {
+            width: 100%;
+            font-weight: 500;
+            font-size: 29px;
+            color: black;
+        }
+        &__addRem {
+            width: 100%;
+           font-weight: 500;
+           font-size: 29px; 
+           color: #710000;
+           padding: 0 5px;
+           cursor: pointer;
+        } 
+    }
+    &__price {
+        font-weight: 500;
+        font-size: 25px;
+        color: #000000;
+    }
+    &__btn { 
+        background: #E45100;
+        border-radius: 5px;
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        height: 47px;
+        width: 100%;
+        outline: none;
+        border: none;
+    }
+}
+.trash {
+    cursor: pointer;
+
+}
+
+.check {
+    background: #F7F7F7;
+    border: 1px dashed #CCCCCC;
+    &__block {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        padding-left: 20px;
+        &__title {
+            padding-top: 30px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 27px;
+            text-align: center;
+            text-decoration-line: underline;
+            color: #22252F;
+            padding-bottom: 10px;
+        }
+    }
+}
+.items {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    justify-content: space-between;
+    &__title {
+        font-weight: 500;
+        font-size: 24px;
+        color: #000000;
+        text-align: center;
+    }
+    &__count {
+        font-weight: 600;
+        font-size: 26px;
+        color: #000000;
+    }
+}
+.total {
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    &__title {
+        font-weight: 600;
+        font-size: 27px;
+        color: #000000;
+    }
+    &__count {
+        color: #000000;
+        font-weight: 600;
+        font-size: 29px;
+    }
+}
+.hrCenter {
+    height: 1px;
+    background: grey;
+    width: 100%;
+    margin-right: 15px;
+    padding-right: 15px;
+}
+
+.orderBtn {
+    height: 47px;
+    background: #E45100;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px 0;
+    margin-bottom: 20px;
+    &:hover {
+        box-shadow: rgba(0, 3, 5, 0.932) 0px 2px 4px 0px, rgba(0, 0, 0, 0.993) 0px 2px 16px 0px;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 25px;
+    }
+    &__icon {
+        font-size: 60px;
+        padding-left: 20px;
+    }
+}
+.closeCart {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    cursor: pointer;
+}
+.orderData {
+    margin: 5px 0;
+    &__IdBtn {
+        height: 47px;
+        background: #B2B2B2;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__orderBtn {
+        height: 47px;
+        background: #E45100;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 20px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.deliveryFree {
+    font-size: 23px;
+    color: #000000;
+    padding: 10px;
+}
+@media screen and (max-width: 1700px) {
+  
+    .order {
+        &__name {
+            font-size: 24px;
+        }
+        &__type {
+            font-size: 22px;
+        }
+        &__count {
+            &__count {
+                font-size: 22px;
+            }
+            &__addRem {
+               font-size: 22px; 
+            } 
+        }
+        &__price {
+            font-size: 22px;
+        }
+    }
+    .check {
+        &__block {
+            &__title {
+                padding-top: 28px;
+                margin-bottom: 25px;
+                font-size: 24px;
+                padding-bottom: 8px;
+            }
+        }
+    }
+    .items {
+        padding: 7px 0;
+        &__title {
+            font-size: 22px;
+        }
+        &__count {
+            font-size: 22px;
+        }
+    }
+    .total {
+        padding-top: 26px;
+        padding-bottom: 26px;
+        &__title {
+            font-size: 25px;
+        }
+        &__count {
+            font-size: 26px;
+        }
+    }
+    .orderBtn {
+        height: 44px;
+        margin-bottom: 20px;
+        &__title {
+            font-size: 22px;
+        }
+        &__icon {
+            font-size: 55px;
+            padding-left: 18px;
+        }
+    }
+    .trash {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+    }
+}
+@media screen and (max-width: 1366px) {
+    .order {
+        &__name {
+            font-size: 17px;
+        }
+        &__type {
+            font-size: 16px;
+        }
+        &__count {
+            &__count {
+                font-size: 16px;
+            }
+            &__addRem {
+               font-size: 16px; 
+            } 
+        }
+        &__price {
+            font-size: 16px;
+        }
+    }   
+    .check {
+        &__block {
+            &__title {
+                padding-top: 25px;
+                margin-bottom: 20px;
+                font-size: 20px;
+                padding-bottom: 6px;
+            }
+        }
+    }
+    .items {
+        padding: 5px 0;
+        &__title {
+            font-size: 17px;
+        }
+        &__count {
+            font-size: 16px;
+        }
+    }
+    .total {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        &__title {
+            font-size: 20px;
+        }
+        &__count {
+            font-size: 20px;
+        }
+    }
+    .orderBtn {
+        height: 40px;
+        margin-bottom: 20px;
+        &__title {
+            font-size: 17px;
+        }
+        &__icon {
+            font-size: 50px;
+            padding-left: 16px;
+        }
+    }
+    .trash {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .cart {
+        height: 70vh;
+    }
+}
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 576px) {
+   .cart {
+       width: 100%;
+       overflow: auto;
+       height: 80vh;
+       &__content {
+        width: 100%;
+    }
+       &__items {
+          display: flex;
+          flex-direction: column;
+        }
+   }
+    .order {
+        width: 100%;
+        &__size {
+            width: 30%;
+            text-align: center;
+        }
+        &__size1 {
+            width: 18%;
+            text-align: center;
+        }
+        &__size2 {
+            width: 10%;
+            text-align: center;
+        }
+        &__check {
+            width: 100%;
+        }
+    }
+    
+}
+
+
+

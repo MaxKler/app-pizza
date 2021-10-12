@@ -1,0 +1,47 @@
+.burger {
+    position: fixed;
+    right: 1%;
+    top: 3%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1700px) {
+    .svg {
+        width: 80%;
+        height: 80%;
+    }
+    .burger {
+        position: fixed;
+        right: 0;
+    }
+}
+@media screen and (max-width: 1366px) {
+    .svg {
+        width: 70%;
+        height: 70%;
+    }
+    .burger {
+        position: fixed;
+        right: 0;  
+    }
+}
+@media screen and (max-width: 1024px) {
+    .svg {
+        width: 60%;
+        height: 60%;
+    }
+    .burger {
+        position: fixed;
+        right: 0;  
+    }
+}
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 576px) {
+    .burger {
+        display: none;
+    }
+    
+}
