@@ -76,14 +76,10 @@ const [showModal, setShowModal] =  useState(false)
               cart={cart}
               setCart={setCart}
               countProduct={countProduct}
+              showModal={showModal}
               setShowModal={setShowModal}
            />
         </Main>
-        <Succes
-           showModal={showModal}
-           setShowModal={setShowModal}
-           setShowCart={setShowCart}
-        />
         <MapView />
         <Footer 
           watchCart={watchCart}

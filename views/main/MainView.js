@@ -16,6 +16,7 @@ const MainView = ({
     cart, 
     setCart,
     countProduct, 
+    showModal,
     setShowModal
 }) => {
     
@@ -37,6 +38,7 @@ const MainView = ({
                     setCart={setCart}
                     onAdd={onAdd}
                     countProduct={countProduct}
+                    showModal={showModal}
                     setShowModal={setShowModal}
                 />
             ))}

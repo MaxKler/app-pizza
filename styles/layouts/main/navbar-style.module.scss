@@ -4,7 +4,7 @@
     position: relative;
     &__logo {
         color: white;
-        margin-left: 100px;
+        margin-left: 5%;
         margin-top: 10px;
         cursor: pointer;
     }
@@ -15,7 +15,7 @@
         &__positions {
             display: flex;
             align-items: center;
-            margin-left: 100px;
+            margin-left: 2%;
         }
     }
     &__services {
@@ -57,7 +57,7 @@
     &:hover {
         box-shadow: rgba(238, 240, 241, 0.712) 0px 2px 4px 0px, rgba(242, 244, 245, 0.801) 0px 2px 16px 0px;
     }
-    margin-right: 100px;
+    margin-right: 5%;
     background: #E45100;
     border-radius: 10px;
     padding: 10px 15px;
@@ -128,17 +128,18 @@
 
 @media screen and (max-width: 1700px) {
     .navbar {
-        &__logo {
-            margin-left: 30px;
-        }
         &__services {
             height: 25px;
-           
+            &__item {
+                margin-right: 40px;
+            }
         }
-      
+        &__logo {
+            margin-left: 3%;
+        }
     }
     .cart {
-        margin-right: 30px;
+        margin-right: 3%;
         &__title {
             font-size: 17px;
          }
@@ -166,13 +167,78 @@
         } 
     } 
 }
+@media screen and (max-width: 1500px) {
+    .navbar {
+        height: 100px;
+        &__logo {
+            margin-left: 4%;
+        }
+        &__items {
+            &__positions {
+                margin-left: 2%;
+            }
+        }
+        &__services {
+            margin-top: 5px;
+            &__item {
+                margin-right: 45px;
+                font-size: 20px;
+            }
+        }
+      }
+    .lang {
+        &__item {
+            font-size: 18px;
+        }
+    }
+    .cart {
+        margin-right: 4%;
+        padding: 5px 8px;
+        &__items {
+            margin-left: 5px;
+        }
+        &__title {
+            font-size: 15px;
+         }
+        &__count {
+            font-size: 13px;
+            padding-right: 5px;
+        }
+        &__total {
+            font-size: 12px;
+            padding-left: 5px;
+        }
+    }
+    .phone {
+        height: 30px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        &__number {
+            font-size: 18px;
+        }
+        &__title {
+            font-size: 12px;
+        }
+    }
+    .contacts {
+
+        margin-right: 20px;
+
+    }
+    .social {
+        &__icons {
+            margin-right: 30px;
+        }
+        &__icon {
+            font-size: 30px;
+        } 
+    } 
+}
+
 
 @media screen and (max-width: 1366px) {
     .navbar {
         height: 110px;
-        &__logo {
-            margin-left: 30px;
-        }
         &__items {
             &__positions {
                 margin-left: 30px;
@@ -188,7 +254,6 @@
     }
     .lang {
         height: 20px;
-        margin-right: 20px;
         &__item {
             margin-right: 4px;
             font-size: 18px;
@@ -203,7 +268,6 @@
         }
     }
     .cart {
-        margin-right: 30px;
         padding: 7px 10px;
         &__items {
             margin-left: 10px;
@@ -227,11 +291,142 @@
         } 
     } 
 }
+@media screen and (max-width: 1250px) {
+    .navbar {
+        &__logo {
+            margin-left: 2%;
+        }
+        height: 100px;
+        &__items {
+            &__positions {
+                margin-left: 4%;
+            }
+        }
+        &__services {
+            height: 20px;
+            &__item {
+                margin-right: 35px;
+                font-size: 20px;
+            }
+        }
+    }
+    .lang {
+        height: 20px;
+        margin-right: 10px;
+        &__item {
+            margin-right: 4px;
+            font-size: 18px;
+        }
+    }
+    .phone {
+        margin-right: 5px;
+        &__number {
+            font-size: 16px;
+        }
+        &__title {
+            font-size: 14px;
+        }
+    }
+    .cart {
+        margin-right: 1%;
+        padding: 3px 5px;
+        &__items {
+            margin-left: 5px;
+        }
+        &__title {
+           font-size: 12px;
+        }
+        &__count {
+            font-size: 12px;
+            padding-right: 4px;
+        }
+        &__total {
+            font-size: 10px;
+            padding-left: 4px;
+        }
+    }
+    .social {
+        margin-top: 20px;
+        margin-right: 5px;
+        &__icons {
+            margin-right: 10px; 
+        } 
+        &__icon {
+            font-size: 25px;
+            margin: 0 4px;
+        } 
+    } 
+}
+@media screen and (max-width: 1150px) {
+    .navbar {
+        &__logo {
+            margin-left: 2%;
+        }
+        height: 100px;
+        &__items {
+            &__positions {
+                margin-left: 3%;
+            }
+        }
+        &__services {
+            height: 20px;
+            &__item {
+                margin-right: 30px;
+                font-size: 18px;
+            }
+        }
+    }
+    .lang {
+        height: 20px;
+        margin-right: 5px;
+        &__item {
+            margin-right: 4px;
+            font-size: 16px;
+        }
+    }
+    .phone {
+        margin-right: 5px;
+        &__number {
+            font-size: 14px;
+        }
+        &__title {
+            font-size: 12px;
+        }
+    }
+    .cart {
+        margin-right: 1%;
+        padding: 3px 5px;
+        &__items {
+            margin-left: 5px;
+        }
+        &__title {
+           font-size: 12px;
+        }
+        &__count {
+            font-size: 12px;
+            padding-right: 4px;
+        }
+        &__total {
+            font-size: 10px;
+            padding-left: 4px;
+        }
+    }
+    .social {
+        margin-top: 20px;
+        margin-right: 5px;
+        &__icons {
+            margin-right: 10px; 
+        } 
+        &__icon {
+            font-size: 24px;
+            margin: 0 4px;
+        } 
+    } 
+}
 @media screen and (max-width: 1024px) {
     .navbar {
         height: 90px;
         &__logo {
-            margin-left: 20px;
             margin-top: 15px;
         }
         &__logoImg {
@@ -251,14 +446,14 @@
         }
       }
     .lang {
-        margin-right: 20px;
+        margin-right: 10px;
         height: 18px;
         &__item {
             font-size: 14px;
         }
     }
     .cart {
-        margin-right: 20px;
+        margin-right: 3%;
         padding: 5px 8px;
         &__title {
             font-size: 12px;

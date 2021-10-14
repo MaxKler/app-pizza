@@ -3,8 +3,13 @@ import classes from './../../../styles/widgets/succes/succes-style.module.scss'
 import succesSvg from './../../../project/image/widgets/succes/succes.svg'
 import Link from 'next/link'
 
-const Succes = ({showModal, setShowModal,setShowCart}) => {
-
+const Succes = ({
+    showModal, 
+    setShowModal,
+    setShowCart, 
+    succesData
+}) => {
+  console.log(succesData)
     const closeModal = () => {
         setShowCart(false)
         document.querySelector('html').style.overflow = 'visible'
@@ -19,7 +24,7 @@ const Succes = ({showModal, setShowModal,setShowCart}) => {
                     <img src={succesSvg} alt="" />
                 </div>
                 <div className={classes.succes__text}>Дякуємо за ваш вибір!</div>
-                <div className={classes.succes__text}>Замовлення прийнято в обробку</div>
+                <div className={classes.succes__text}>Замовлення <strong>№ {succesData}</strong> прийнято в обробку</div>
                 <div className={classes.succes__text}>Найближчим часом з Вами зв’яжеться менеджер для уточнення Вашого замовлення</div>
                 <div onClick={closeModal} className={classes.succes__textSecond}>Замовити ще одну доставку</div>
             </div>

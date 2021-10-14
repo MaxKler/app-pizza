@@ -6,12 +6,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import closeCartSvg from './../../project/image/layouts/navbar/svg/closeMenu.svg'
 import OrderInputBlock from "../orderInputBlock/OrderInputBlock";
+import {NET} from './../../network'
+import Succes from "../modal/succes/Succes";
 
-const Cart = ({showCart, setShowCart, cart, onAdd, onRemove, delItem,countProduct, setShowModal}) => {
+const Cart = ({
+    showCart, 
+    setShowCart, 
+    cart, 
+    onAdd, 
+    onRemove, 
+    delItem,
+    countProduct, 
+    showModal,
+    setShowModal
+}) => {
     const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
     const deliveryPrice = productPrice * 0.1
     const totalPrice = productPrice + deliveryPrice
-
+    const [orderData, setOrderData] = useState({
+        delivery_status: 'people',
+        time_status: 'speed',
+        pay_status: 'money'
+    })
     const free = 1000
     let freeD = free - productPrice
      if (freeD <= 0) {
@@ -27,10 +43,30 @@ const Cart = ({showCart, setShowCart, cart, onAdd, onRemove, delItem,countProduc
     const showOrder = () => {
         setOrderMenu(true)
     }
-     
-    const openModal = () => {
-        setShowModal(true)
+    const [errorData, setErrorData] = useState({})
+    const [succesData, setSuccesData] = useState()
+    const makeOrder = async () => {
+        const res = await fetch(`${NET.APP_URL}/order`, {
+            method: 'POST',
+            body: JSON.stringify({
+                ...orderData,
+                cart: localStorage.getItem('cart')
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        const data = await res.json()
+        if (res.status === 401) {
+            setErrorData(data.error)
+        } else if (res.status === 201) {
+            setShowModal(true)
+            setSuccesData(data.data.id)
+        }
+        console.log(data)
     } 
+
+   
 
 
     
@@ -54,7 +90,7 @@ const Cart = ({showCart, setShowCart, cart, onAdd, onRemove, delItem,countProduc
                                 </div>
                                 <div className={classes.order__size}>
                                     <div className={classes.order__name}>{item.name}
-                                        {item.sizeType.map((size) => {
+                                        {item.sizeType && item.sizeType.map((size) => {
                                             return (
                                                 <div className={classes.order__type}>{size.size} см</div>   
                                             )
@@ -126,11 +162,20 @@ const Cart = ({showCart, setShowCart, cart, onAdd, onRemove, delItem,countProduc
                            </div>
                        </div> :
                        <div className={classes.orderData}>
-                            <div className={classes.orderData__IdBtn}>ID замовлення</div>
-                            <OrderInputBlock />
-                            <div onClick={openModal} className={classes.orderData__orderBtn}>замовити</div>
+                            <OrderInputBlock 
+                                orderData={orderData}
+                                setOrderData={setOrderData}
+                                errorData={errorData}
+                            />
+                            <div onClick={makeOrder} className={classes.orderData__orderBtn}>замовити</div>
                        </div>
                         }
+                         <Succes
+                            showModal={showModal}
+                            setShowModal={setShowModal}
+                            setShowCart={setShowCart}
+                            succesData={succesData}
+                         />
                     </div>
                 </div>
             </div>

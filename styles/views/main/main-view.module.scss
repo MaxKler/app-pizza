@@ -69,6 +69,9 @@
         height: fit-content;
         &__images {
             position: relative;
+            min-height: 370px;
+            display: flex;
+            align-items: center;
         }
         &__icon {
             position: absolute;
@@ -199,15 +202,12 @@
     position: absolute;
     top: 80%;
     z-index: 555;
-
 }
 .popapdisable {
     width: 90%;
     opacity: 0;
     position: absolute;
-    top: 70%;
-    
-    
+    top: 70%;  
 }
 
 @media screen and (max-width: 1700px) {
@@ -221,6 +221,12 @@
                 font-size: 11px;
             }
         }
+        &__card {
+            width: 33.3%;
+        }
+         &__cardTwo {
+             width: 25%;  
+         }
         &__block {
             height: fit-content;
             margin: 18px 8px;
@@ -277,9 +283,15 @@
                 font-size: 11px;
             }
         }
+       
         &__block {
             margin: 17px 7px;
             height: fit-content;
+            &__images {
+                min-height: 300px;
+                display: flex;
+                align-items: center;
+            }
             &__icon {
                 top: 0;
                 right: 0;
@@ -325,6 +337,20 @@
     .pizzaImage {
         width: 80%;
         height: 100%;
+    }
+    .popapBlock {
+        top: 70%;  
+    }
+    .popap {
+        width: 90%;
+        padding: 5px 5px;
+        background: rgba(246, 247, 249, 0.85);
+        opacity: 1;
+        color: #006F9E;
+        font-size: 10px;
+        position: absolute;
+        top: 70%;
+        z-index: 555;
     }
 }
 
@@ -438,6 +464,13 @@
         z-index: 120;
         cursor: pointer;
     }
+    .popapBlock {
+        top: 68%;  
+    }
+    .popap {
+        font-size: 8px;
+        top: 68%;
+    }
 }
 @media screen and (max-width: 768px) {
     
@@ -461,6 +494,9 @@
             &__item {
                 display: flex;
             }
+            &__images {
+                min-height: 400px;
+            }
         }
         &__card {
             width: 100%;
@@ -481,14 +517,23 @@
         }
     }   
     .buyBtn {
-     margin-bottom: 5px;
+        margin-bottom: 5px;
+        height: 40px;
+        &__add {
+             font-size: 14px;
+        }
     }
     .upArrowSvg {
         width: 17%;
         height: 17%;
         position: fixed;
         right: 0%;
-       bottom: 0;
-        
+        bottom: 0; 
+    }
+    .popap {
+        font-size: 13px;
+    }
+    .popapdisable {
+        top: 80%;  
     }
 }

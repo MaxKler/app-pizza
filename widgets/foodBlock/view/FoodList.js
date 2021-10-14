@@ -72,7 +72,7 @@ const FoodList = ({food, classes, index, onAdd, cart}) => {
                    :
                    <></>
                 }
-                {food.name}</div>
+                {food.title}</div>
                 
                 <div className={classes.pizza__block__item}>
                     <div key={food.id} className={classes.pizza__sizeBlock}>

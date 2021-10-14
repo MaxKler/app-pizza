@@ -19,6 +19,14 @@ a {
 * {
   box-sizing: border-box;
 }
+input {
+  font-family: 'Montserrat', sans-serif;
+}
+
+::placeholder {
+  opacity: 0.6;
+  font-size: 17px;
+}
 
 
 

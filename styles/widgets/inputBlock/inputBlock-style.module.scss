@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
     &__pole {
+        width: 100%;
         background: #FFFFFF;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
         height: 41px;
         text-align: center;
         font-size: 18px;
-        color: #B3B3B3;
+        color: #3a3a3a;
         margin: 5px 0;
         outline: none;
         cursor: pointer;
@@ -33,6 +34,9 @@
             border-right: 1px solid #CCCCCC;
             width: 50%;
             cursor: pointer;
+            &__input {
+              cursor: pointer;
+            }
         }
         &__block1 {
             display: flex;
@@ -48,6 +52,7 @@
     &__title {
         font-size: 18px;
         color: #525252;
+        cursor: pointer;
         &__time {
             font-size: 15px;
             color: #525252;
@@ -66,6 +71,14 @@
 }
 
 .adress {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    &__none {
+        display: none;
+    }
+}
+.time {
     display: flex;
     flex-direction: column;
     margin: 20px 0;

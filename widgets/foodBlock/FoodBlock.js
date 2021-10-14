@@ -7,8 +7,19 @@ import BurgerMenu from "./ui/burgerMenu/BurgerMenu";
 import CartBox from "./ui/cartBox/CartBox";
 import upArrowSvg from './ui/upArrow/upArrow.svg'
 
-const FoodBlock = ({foodBlock, classes, screen, setScreen, showCart, setShowCart, watchCart, cart, setCart,countProduct,setShowModal}) => {
-     console.log(foodBlock)
+const FoodBlock = ({
+    foodBlock,
+    classes, 
+    screen,
+    setScreen,
+    showCart, 
+    setShowCart, 
+    watchCart, 
+    cart, 
+    setCart,
+    countProduct,
+    showModal,
+    setShowModal}) => {
        
 const onAdd = (food, activeSize) => {
     const exist = cart.find(x => x.id === food.id)
@@ -17,7 +28,7 @@ const onAdd = (food, activeSize) => {
       setCart(cart.map(x => x.id === food.id ? {...exist, qty: exist.qty +1} : x))
       
     } else {
-      setCart([...cart,  {...food, qty: 1, sizeType: food.sizeType.filter(el => el.id === activeSize)}])
+      setCart([...cart,  {...food, qty: 1, sizeType: food.sizeType ? food.sizeType.filter(el => el.id === activeSize) : null}])
       
     }
 }
@@ -63,10 +74,8 @@ const scrolUp = () => {
     return (
         <>
             <div >
-                <div  >
-                    
-                            <div className={classes.pizzaType}>{foodBlock.category.title}</div>
-                    
+                <div >  
+                    <div className={classes.pizzaType}>{foodBlock.category.title}</div>
                 </div>
                 <div className={classes.pizza}>
                   {foodBlock.products.map((food,index) => {
@@ -116,6 +125,7 @@ const scrolUp = () => {
                     onRemove={onRemove}
                     delItem={delItem}
                     countProduct={countProduct}
+                    showModal={showModal}
                     setShowModal={setShowModal}
                 />
                 </div>
