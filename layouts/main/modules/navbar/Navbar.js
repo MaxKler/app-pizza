@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from './../../../../styles/layouts/main/navbar-style.module.scss'
 
-import NavbarDesk from "./components/navbarDesk";
+import NavbarDesk from "./components/NavbarDesk";
 import NavbarMobile from "./components/NavbarMobile";
 
 const Navbar = ({openMenu, closeMenu, watchCart, cart, totalPrice,countProduct}) => {
