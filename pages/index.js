@@ -4,8 +4,7 @@ import Footer from '../views/footer/Footer'
 import MainView from '../views/main/MainView'
 import MapView from '../views/map/MapView'
 import { NET } from '../network'
-import Succes from '../widgets/modal/succes/Succes'
-import DeliveryTerms from '../widgets/deliveryterms/DeliveryTerms'
+
 
 const Home = ({
   data
@@ -63,8 +62,7 @@ const [showModal, setShowModal] =  useState(false)
              watchCart={watchCart}
              totalPrice={totalPrice}
              cart={cart}
-             countProduct={countProduct}
-             
+             countProduct={countProduct}     
        >
            <MainView
               mainData={mainData}

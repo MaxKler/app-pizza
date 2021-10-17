@@ -86,10 +86,10 @@ const Cart = ({
                             <>
                             <div className={classes.order__block}>
                                 <div className={classes.order__size}>
-                                    <img src={pizzaSvg} alt="" />
+                                    <img className={classes.order__size__img} src={`${NET.WEB_URL}/${item.image}`} alt="" />
                                 </div>
                                 <div className={classes.order__size}>
-                                    <div className={classes.order__name}>{item.name}
+                                    <div className={classes.order__name}>{item.title}
                                         {item.sizeType && item.sizeType.map((size) => {
                                             return (
                                                 <div className={classes.order__type}>{size.size} см</div>   
@@ -118,7 +118,7 @@ const Cart = ({
                         {freeD === 0 ? <div className={classes.deliveryFree}>
                             Вітаємо! У вас безкоштовна доставка
                         </div>
-                        : <div className={classes.deliveryFree}>До безкоштовної доставки залишилось замовити {freeD} грн</div>
+                        : <div className={classes.deliveryFree}>До безкоштовної доставки залишилось замовити <strong>{freeD}</strong> грн.</div>
                         }
                         <div className={classes.deliveryFree}>Відправляючи цю форму, Ви погоджуєтеся з політикою щодо обробки персональних даних.</div>
                     </div>

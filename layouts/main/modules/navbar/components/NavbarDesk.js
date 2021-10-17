@@ -46,7 +46,7 @@ const NavbarDesk = ({classes, openMenu, langvich,
         </div>
         </div>
         <div  onClick={watchCart}  className={classes.cart}>
-            <img src={cartSvg} alt="cart" />
+            <img className={classes.cartSvg} src={cartSvg} alt="cart" />
             <div className={classes.cart__items}>
                 <div className={classes.cart__title}>Ваше замовлення</div>
                 <div style={{display: 'flex'}}>

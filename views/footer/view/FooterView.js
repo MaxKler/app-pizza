@@ -91,6 +91,10 @@ const FooterView = ({watchCart, totalPrice, countProduct}) => {
                         </div>
                      </div>
                 </div>
+                <div className={classes.by}>  
+                    <div className={classes.contacts__name1}>(c) CH Aroma Pizza Bar</div>
+                    <div className={classes.pay__poweredBy1}>Powered by: MOTICH IT PRO & PR-PRO</div>
+                </div>
             </div>
         </div> 
         </>

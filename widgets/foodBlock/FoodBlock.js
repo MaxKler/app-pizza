@@ -85,6 +85,7 @@ const scrolUp = () => {
                         <div className={classes.pizza__block}>
                     <FoodList 
                         cart={cart}
+                        setCart={setCart}
                         key={food.id}
                         classes={classes} 
                         food={food}

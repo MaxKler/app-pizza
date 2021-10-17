@@ -4,13 +4,26 @@ import Menu from "./modules/Menu";
 import classes from './../../styles/layouts/main/main-layuot.module.scss'
 import Navbar from "./modules/navbar/Navbar";
 
-const Main = ( {children, screen, setScreen, watchCart, cart, totalPrice,countProduct}) => {
+const Main = ({
+    children, 
+    screen, 
+    setScreen, 
+    watchCart, 
+    cart, 
+    totalPrice,
+    countProduct,
+}) => {
+
+    const [visibleMenuBtn, setVisibleMenuBtn] = useState(true)
+    
 
     const closeMenu = () => {
       setScreen(false)
+      setVisibleMenuBtn(true)
     }
     const openMenu = () => {
       setScreen(true)
+      setVisibleMenuBtn(false)
     }
 
 
@@ -23,6 +36,8 @@ const Main = ( {children, screen, setScreen, watchCart, cart, totalPrice,countPr
             totalPrice={totalPrice}
             cart={cart}
             countProduct={countProduct}
+            visibleMenuBtn={visibleMenuBtn}
+            setVisibleMenuBtn={setVisibleMenuBtn}
         />
         <div className={classes.content}>
             <Menu  

@@ -8,16 +8,24 @@ import burgerSvg from './../../../../../project/image/layouts/navbar/svg/burger.
 import closeSvg from './../../../../../project/image/layouts/navbar/svg/close.svg'
 import Link from 'next/link'
 
-const NavbarMobile = ({classes,watchCart, openMenu, closeMenu}) => {
+const NavbarMobile = ({
+    classes,
+    watchCart, 
+    openMenu, 
+    closeMenu, 
+    setVisibleMenuBtn
+}) => {
 
     const [visibleMenu, setVisibleMenu] = useState(false)
 
     const showMenu = () => {
         setVisibleMenu(true)
         closeMenu()
+        setVisibleMenuBtn(false)
     }
     const hideMenu = () => {
         setVisibleMenu(false)
+        setVisibleMenuBtn(true)
     }
     const HideAndShow = () => {
         setVisibleMenu(false)
