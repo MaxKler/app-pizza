@@ -391,7 +391,6 @@
     }
 }
 @media screen and (max-width: 768px) {
-
     .check {
         &__block {
          width: 100%;
@@ -499,6 +498,37 @@
     }
     .check {
         margin-top: 10px;
+        &__block {
+            padding: 0 15px;
+            &__title {
+                font-size: 22px;
+            }
+        }
+    }
+    .items {
+        padding: 10px 0;
+        justify-content: space-between;
+        &__title {
+            font-size: 20px;
+        }
+        &__count {
+            font-size: 20px;
+        }
+    }
+    .total {
+   
+        &__title {
+            font-size: 20px;
+        }
+        &__count {
+            font-size: 21px;
+        }
+    }
+
+    .orderData {
+        &__orderBtn {
+            font-size: 19px;
+        }
     }
 }
 
