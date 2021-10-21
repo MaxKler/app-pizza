@@ -10,7 +10,7 @@ import cartSvg from './../../../project/image/layouts/navbar/svg/cart.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-const FooterView = ({watchCart, totalPrice, countProduct}) => {
+const FooterView = ({watchCart, totalPrice, countProduct, mainData}) => {
     return (
         <>
         <div className={classes.footer}>
@@ -58,16 +58,16 @@ const FooterView = ({watchCart, totalPrice, countProduct}) => {
                     <div className={classes.menu__title}>Меню</div>
                     <div className={classes.menu__list}>
                         <div className={classes.menu__items}>
-                            {DATA.slice(0, 8).map((el) => {
+                            {mainData.slice(0, 8).map((el) => {
                                 return (
-                                    <div className={classes.menu__items__item}>{el.title}</div>
+                                    <div className={classes.menu__items__item}>{el.category.title}</div>
                                 )
                             })}
                         </div>
                         <div className={classes.menu__items}>
-                            {DATA.slice(8, 16).map((el) => {
+                            {mainData.slice(8, 16).map((el) => {
                                 return (
-                                    <div className={classes.menu__items__item}>{el.title}</div>
+                                    <div className={classes.menu__items__item}>{el.category.title}</div>
                                )
                             })}
                         </div>

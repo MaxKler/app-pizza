@@ -20,7 +20,7 @@ const FoodBlock = ({
     countProduct,
     showModal,
     setShowModal}) => {
-       
+
 const onAdd = (food, activeSize) => {
     const exist = cart.find(x => x.id === food.id)
     console.log(exist)
@@ -29,8 +29,7 @@ const onAdd = (food, activeSize) => {
       
     } else {
       setCart([...cart,  {...food, qty: 1, sizeType: food.sizeType ? food.sizeType.filter(el => el.id === activeSize) : null}])
-      
-    }
+    } 
 }
 const onRemove = (food) => {
     const exist = cart.find(x => x.id === food.id)
@@ -79,22 +78,22 @@ const scrolUp = () => {
                 </div>
                 <div className={classes.pizza}>
                   {foodBlock.products.map((food,index) => {
-                      console.log(food)
-                    return (
-                    <div className={ screen ? classes.pizza__card : classes.pizza__cardTwo}>
-                        <div className={classes.pizza__block}>
-                    <FoodList 
-                        cart={cart}
-                        setCart={setCart}
-                        key={food.id}
-                        classes={classes} 
-                        food={food}
-                        index={index}
-                        onAdd={onAdd}
-                        products={foodBlock.pizzas}
-                    />
+                      let qty = cart.filter(el => el.id === food.id)
+                      return (
+                        <div className={ screen ? classes.pizza__card : classes.pizza__cardTwo}>
+                            <div className={classes.pizza__block}>
+                                <FoodList 
+                                    cart={cart}
+                                    key={food.id}
+                                    classes={classes} 
+                                    food={food}
+                                    index={index}
+                                    onAdd={onAdd}
+                                    onRemove={onRemove}
+                                    qty={qty.length ? qty[0].qty : 0}
+                                />
+                            </div>
                         </div>
-                    </div>
                     )
                 })}
                 <MenuHide 

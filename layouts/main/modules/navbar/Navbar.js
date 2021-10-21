@@ -12,7 +12,8 @@ const Navbar = ({
     totalPrice,
     countProduct,
     visibleMenuBtn,
-    setVisibleMenuBtn
+    setVisibleMenuBtn,
+    setShowCart
 }) => {
     const [activeLang, setActiveLang] = useState(0)
     const actLang = {
@@ -55,6 +56,7 @@ const Navbar = ({
                 closeMenu={closeMenu}
                 watchCart={watchCart}
                 setVisibleMenuBtn={setVisibleMenuBtn}
+                setShowCart={setShowCart}
             />
             <div onClick={openMenu} className={visibleMenuBtn ? classes.mobileMenuBtn : classes.mobileMenuBtn__none}>menu</div>
         </div>

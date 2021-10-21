@@ -15,7 +15,7 @@ const MenuHide = ({ visibleMenu, setVisibleMenu, watchCart, screen, setScreen, c
     }
 
     const openMenu = () => {
-        setScreen(!screen)
+        setScreen(true)
         window.scrollTo(0,0)
     }
     

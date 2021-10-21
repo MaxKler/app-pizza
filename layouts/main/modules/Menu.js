@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import {DATA} from './../../../data'
 import classes from './../../../styles/layouts/main/menu-style.module.scss'
 import searchSvg from './../../../project/image/layouts/menu/search.svg'
 import closeMenuSvg from './../../../project/image/layouts/navbar/svg/closeMenu.svg'
 import phoneSvg from './../../../project/image/layouts/navbar/svg/phone.svg'
 
-const Menu = ({closeMenu, screen, visible}) => {
+const Menu = ({closeMenu, screen, mainData}) => {
    
-   
+
 
     return (
         <div className={screen ? classes.menu : [classes.menu, classes.menuClose].join(' ')}>
@@ -21,9 +20,9 @@ const Menu = ({closeMenu, screen, visible}) => {
                     <input  className={classes.menuInput} placeholder="    пошук" />
                 </div>
                 <div>
-                    {DATA.map((elem, index) => {
+                    {mainData.map((elem) => {
                         return (
-                            <div key={elem.title} className={classes.menuItem}>{elem.title}</div>
+                            <div key={elem.title} className={classes.menuItem}>{elem.category.title}</div>
                         )
                     })}
                 </div>

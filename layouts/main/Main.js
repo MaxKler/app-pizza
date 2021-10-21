@@ -12,6 +12,8 @@ const Main = ({
     cart, 
     totalPrice,
     countProduct,
+    setShowCart,
+    mainData
 }) => {
 
     const [visibleMenuBtn, setVisibleMenuBtn] = useState(true)
@@ -38,11 +40,13 @@ const Main = ({
             countProduct={countProduct}
             visibleMenuBtn={visibleMenuBtn}
             setVisibleMenuBtn={setVisibleMenuBtn}
+            setShowCart={setShowCart}
         />
         <div className={classes.content}>
             <Menu  
                 closeMenu={closeMenu}
                 screen={screen}
+                mainData={mainData}
               
             />
             <Content 

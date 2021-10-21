@@ -1,0 +1,23 @@
+.blog {
+    &__title {
+        font-weight: bold;
+        font-size: 32px;
+        color: #404040;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .title {
+        font-weight: bold;
+        font-size: 32px;
+        color: #404040;
+        text-transform: uppercase;
+    }
+    .blog {
+        &__title {
+            font-weight: bold;
+            font-size: 22px;
+            color: #404040;
+        }
+    }
+}

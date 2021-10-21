@@ -321,9 +321,45 @@
     .buyBtn {
         height: 40px;
         &__add {
-            font-size: 12px;
+            font-size: 16px;
             padding-right: 30px;
         }
+        &__block {
+            display: flex;
+            align-items: center;
+            background: white;
+            height: 36px;
+            border-radius: 7px;
+            margin-right: 23%;
+            width: 75%;
+            &__inCart {
+                color: black;
+                font-size: 18px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            &__add {
+                color: black;
+                font-size: 22px;
+             
+            }
+            &__rem {
+                color: black;
+                font-size: 22px;
+                padding-left: 10px;
+                padding-right: 15px;
+            }
+            &__qty {
+                color: black;
+                font-size: 18px;
+                 width: 25px;
+            }
+            &__addRem {
+                display: flex;
+                align-items: center;
+            }
+        }
+        
     }
     .discount {
         &__value {

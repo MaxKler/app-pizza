@@ -13,7 +13,8 @@ const NavbarMobile = ({
     watchCart, 
     openMenu, 
     closeMenu, 
-    setVisibleMenuBtn
+    setVisibleMenuBtn,
+    setShowCart
 }) => {
 
     const [visibleMenu, setVisibleMenu] = useState(false)
@@ -22,6 +23,8 @@ const NavbarMobile = ({
         setVisibleMenu(true)
         closeMenu()
         setVisibleMenuBtn(false)
+        setShowCart(false)
+        document.querySelector('html').style.overflow = 'visible'
     }
     const hideMenu = () => {
         setVisibleMenu(false)

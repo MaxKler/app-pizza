@@ -6,23 +6,34 @@ import heart from './../../../project/image/views/main/svg/heart.svg'
 import discount from './../../../project/image/views/main/svg/discount.svg'
 import newItem from './../../../project/image/views/main/svg/newItem.svg'
 import { NET } from "../../../network";
+import AddCart from "./components/AddCart";
 
 
 
-const FoodList = ({food, classes, index, onAdd, cart}) => {
+const FoodList = ({
+    food, 
+    classes, 
+    index, 
+    cart, 
+    setCart, 
+    onAdd, 
+    onRemove, 
+    qty
+}) => {
 
+    
    const [activeSize, setActiveSize] = useState(0)
-
+  
    const onSelectSize = (index) => {
        setActiveSize(index)
    }
     let im = ''
 
-    if (food.status === 'perchik') {
+    if (food.status_eat === 'chill') {
        im = perchick
-    } else if (food.status === 'brokkoli') {
+    } else if (food.status_eat === 'vegan') {
         im = brokkoli
-    } else if (food.status === 'heart') {
+    } else if (food.status_eat === 'favorite') {
         im = heart
     } else {
         im = ''
@@ -30,9 +41,9 @@ const FoodList = ({food, classes, index, onAdd, cart}) => {
 
     let icon = ''
 
-    if (food.status_eat === 'discount') {
+    if (food.status === 'sale') {
         icon = discount
-     } else if (food.status_eat === 'newItem') {
+     } else if (food.status === 'new') {
          icon = newItem
      } else {
          icon = ''
@@ -46,8 +57,7 @@ const FoodList = ({food, classes, index, onAdd, cart}) => {
       function changeBackground1(e) {
         setVisiblePopap(false)
       }
-    
-    
+
     return (
         <div className={classes.ttt} key={index} >
             <div className={classes.pizza__block__images}>
@@ -73,7 +83,6 @@ const FoodList = ({food, classes, index, onAdd, cart}) => {
                    <></>
                 }
                 {food.title}</div>
-                
                 <div className={classes.pizza__block__item}>
                     <div key={food.id} className={classes.pizza__sizeBlock}>
                         {/* {food.sizeType.map((size, index) => {
@@ -87,7 +96,9 @@ const FoodList = ({food, classes, index, onAdd, cart}) => {
                     </div>
                     <div className={classes.pizza__block__items}>
                         <div className={classes.discount}>
-                            <div className={classes.discount__value}>{food.discount}</div>
+                            {food.status === 'sale' ?  
+                            <div className={classes.discount__value}>{food.price * 0.2} грн</div> 
+                            : <></>}
                         </div>
                         <div className={classes.pizza__block__price}>{food.price}
                             <span className={classes.pizza__block__grn}>грн</span>
@@ -95,18 +106,38 @@ const FoodList = ({food, classes, index, onAdd, cart}) => {
                         <div className={classes.pizza__block__weight}>{food.weight} гр</div>
                     </div>
                 </div> 
-                <div onClick={() => onAdd(food, activeSize)} className={classes.buyBtn}>
-                    <div>{cart.length !== 0 ?
-                        <div className={classes.buyBtn__atCart}>У кошику </div> :
-                        <div className={classes.buyBtn__add}>Додати до кошика + 1</div>
-                    }
-                    </div>
-                    <div className={classes.buyBtn__cart}>
-                        <img className={classes.buyBtnCart} src={cartSvg} alt="cart" />
-                    </div>
+                <div >
+                    <AddCart 
+                        classes={classes}
+                        onAdd={onAdd}
+                        onRemove={onRemove}
+                        qty={qty}
+                        food={food}
+                    />
+                )} 
                 </div>  
         </div>    
     )           
 }
 
 export default FoodList
+// onClick={() => onAdd(food, activeSize)}
+
+// {cart.map((item) => {
+//     return (
+//         <div onClick={changeBtn} className={classes.buyBtn}>
+//     {cartBtn ? 
+//     <div style={{display:'flex'}}>
+//         <span onClick={() => onRemove(item)} >-</span>
+//         <div >{item.qty}</div>
+//         <span onClick={() => onAdd(item)} >+</span>
+//     </div> :
+//     <div className={classes.buyBtn__add}>Додати до кошика + 1</div>
+//     }
+//     <div className={classes.buyBtn__cart}>
+//         <img className={classes.buyBtnCart} src={cartSvg} alt="cart" />
+//     </div>
+// </div>  
+//     )
+// }
+// )}

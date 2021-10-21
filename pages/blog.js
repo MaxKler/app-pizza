@@ -2,10 +2,14 @@ import React, {useState, useEffect} from 'react'
 import Main from '../layouts/main/Main'
 import BlogView from '../views/blog/BlogView'
 import Footer from '../views/footer/Footer'
+import { NET } from '../network'
 
 
-export default function Home() {
+ const Home = ({  data}) => {
   
+ console.log(data)
+  const [mainData, setMainData] = useState(data.data)
+  console.log(mainData)
   const [cart, setCart] = useState([])
     
   useEffect(() => {
@@ -55,14 +59,46 @@ const watchCart = () => {
              totalPrice={totalPrice}
              cart={cart}
              countProduct={countProduct}
-       >
-         <BlogView />
+             mainData={mainData}
+       > 
+        <BlogView 
+            mainData={mainData}
+        />
         </Main>
         <Footer 
           watchCart={watchCart}
           totalPrice={totalPrice}
           countProduct={countProduct}
+          mainData={mainData}
         />
        </>
   )
 }
+
+export async function getServerSideProps({req, params}) {
+
+  const headers = {
+      headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+          'Content-Type': 'application/json;charset=UTF-8',
+          // Authorization: `Bearer ${userToken}`
+      },
+      method: 'GET'
+  };
+
+  const res = await fetch(
+      `${NET.APP_URL}/data`,
+      headers,
+  );
+  const data = await res.json()
+
+  
+
+  return {
+    props: {
+      data
+    } // will be passed to the page component as props
+  }
+}
+
+export default Home
