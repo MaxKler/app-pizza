@@ -1,6 +1,7 @@
 import React from "react";
 import classes from './../../styles/views/blog/blog-style.module.scss'
 import imPng from './../../project/image/views/blog/im.png'
+import Link from 'next/link'
 
 const BlogView = ({blogData}) => {
     
@@ -19,13 +20,15 @@ const BlogView = ({blogData}) => {
                             <div className={classes.blog__main__card__img}></div>
                         </div>
                         <div className={classes.blog__main__title}>{elem.title}</div>
-                        <div className={classes.blog__main__description}>{elem.description}</div>
+                        <Link href={`/post/${elem.id}`}>
+                            <div className={classes.blog__main__description}>{elem.description}</div>
+                        </Link>
                         <div className={classes.blog__news}>
                             <div className={classes.blog__news__block}>
                                 <div className={classes.blog__news__block__title}>Інші новини</div>
                                 <div className={classes.news}>
                                 {
-                                    blogData.slice(1, 9).map((elem) => {
+                                    blogData.slice(1).map((elem) => {
                                         return (
                                             <>
                                                 <div className={classes.news__item}>
