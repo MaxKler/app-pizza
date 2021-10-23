@@ -5,11 +5,11 @@ import Footer from '../views/footer/Footer'
 import { NET } from '../network'
 
 
- const Home = ({  data}) => {
+ const Home = ({data}) => {
   
  console.log(data)
+ const [blogData, setBlogData] = useState(data.news)
   const [mainData, setMainData] = useState(data.data)
-  console.log(mainData)
   const [cart, setCart] = useState([])
     
   useEffect(() => {
@@ -60,9 +60,10 @@ const watchCart = () => {
              cart={cart}
              countProduct={countProduct}
              mainData={mainData}
+            
        > 
         <BlogView 
-            mainData={mainData}
+            blogData={blogData}
         />
         </Main>
         <Footer 

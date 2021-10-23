@@ -17,12 +17,27 @@
             align-items: center;
             margin-left: 2%;
         }
+        &__positionsBlog {
+            margin-right: 15%;
+            display: flex;
+            align-items: center;
+        }
     }
     &__services {
         display: flex;
         height: 30px;
         margin-top: 5px;
         &__item {
+            color: white;
+            margin-right: 55px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 22px;
+            &:hover {
+                border-bottom: 1px solid #F05542;
+            }
+        }
+        &__itemBlog {
             color: white;
             margin-right: 55px;
             cursor: pointer;

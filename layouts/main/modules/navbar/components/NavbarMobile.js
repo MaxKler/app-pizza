@@ -14,7 +14,8 @@ const NavbarMobile = ({
     openMenu, 
     closeMenu, 
     setVisibleMenuBtn,
-    setShowCart
+    setShowCart,
+    showButtonCart
 }) => {
 
     const [visibleMenu, setVisibleMenu] = useState(false)
@@ -38,14 +39,17 @@ const NavbarMobile = ({
     return (
     <div className={classes.navbar__mobile}>
         <div className={classes.navbar__itemsMobile}>
-            <div className={classes.navbar__logo}>
-               <img className={classes.navbar__logoImg} src={logoSvg} alt="logo" />
-            </div>
+            <Link href="/">
+               <div className={classes.navbar__logo}>
+                  <img className={classes.navbar__logoImg} src={logoSvg} alt="logo" />
+               </div>
+            </Link>
+            {showButtonCart && 
             <div onClick={watchCart} className={classes.iconBox}>
                 <div >
                    <img src={cartSvg} alt="cart" />
                 </div>
-            </div>
+            </div>}
             <div className={classes.menuBtn} onClick={showMenu}>
                 <img src={burgerSvg} alt="burg" />
             </div>

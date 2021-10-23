@@ -513,7 +513,16 @@
 }
 
 @media screen and (max-width: 576px) {
-  
+    .pizzaType {
+        font-weight: bold;
+        font-size: 30px;
+        color: #404040;
+        margin-left: 0;
+        text-transform: uppercase;
+        margin-top: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
     .mainView {
         &__title {
             font-size: 30px;
@@ -532,6 +541,19 @@
             }
             &__images {
                 min-height: 400px;
+            }
+            &__price {
+                font-size: 25px;
+            }
+            &__grn {
+                font-size: 20px;
+                padding-left: 2px;
+            }
+            &__weight {
+                font-size: 15px;
+            }
+            &__name {
+                font-size: 30px;
             }
         }
         &__card {
@@ -559,6 +581,42 @@
         height: 60px;
         &__add {
              font-size: 18px;
+        }
+        &__block {
+            display: flex;
+            align-items: center;
+            background: white;
+            height: 50px;
+            border-radius: 7px;
+            margin-right: 20%;
+            width: 78%;
+            &__inCart {
+                color: black;
+                font-size: 20px;
+                padding-left: 10px;
+                padding-right: 30px;
+            }
+            &__add {
+                color: black;
+                font-size: 24px;
+             
+            }
+            &__rem {
+                color: black;
+                font-size: 24px;
+                padding-left: 10px;
+                padding-right: 15px;
+            }
+            &__qty {
+                color: black;
+                font-size: 20px;
+                 width: 25px;
+            }
+            &__addRem {
+                display: flex;
+                align-items: center;
+                padding-left: 20px;
+            }
         }
     }
     .upArrowSvg {

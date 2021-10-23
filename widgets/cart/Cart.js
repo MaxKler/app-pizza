@@ -107,7 +107,7 @@ const Cart = ({
                                 <div className={classes.order__size}>
                                     <img className={classes.order__size__img} src={`${NET.WEB_URL}/${item.image}`} alt="" />
                                 </div>
-                                <div className={classes.order__size}>
+                                <div className={classes.order__size3}>
                                     <div className={classes.order__name}>{item.title}
                                         {item.sizeType && item.sizeType.map((size) => {
                                             return (
