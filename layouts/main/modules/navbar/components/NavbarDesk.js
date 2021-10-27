@@ -6,19 +6,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faFacebookF,  faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 
-const NavbarDesk = ({classes, openMenu, langvich,
-     setActiveLang, actLang, activeLang, watchCart, totalPrice, countProduct}) => {
+const NavbarDesk = ({
+    classes, 
+    openMenu, 
+    langvich,
+    setActiveLang, 
+    actLang, 
+    activeLang, 
+    watchCart, 
+    totalPrice, 
+    countProduct,
+    showButtonCart
 
-    
-   
+}) => {
+
     return (
-    <div className={classes.navbar__items}>
+    <div className={classes.navbar__items }>
         <div className={classes.navbar__logo}>
         <Link href="/">
             <img className={classes.navbar__logoImg} src={logoSvg} alt="logo" />
         </Link>
         </div>
-        <div className={classes.navbar__items__positions}>
+        <div className={showButtonCart ?  classes.navbar__items__positions : classes.navbar__items__positionsBlog }>
         <div className={classes.navbar__services}>
             <div onClick={openMenu} className={classes.navbar__services__item}>Меню</div>
             <div  className={classes.navbar__services__item}>Доставка</div>
@@ -45,8 +54,9 @@ const NavbarDesk = ({classes, openMenu, langvich,
             </a>
         </div>
         </div>
+        {showButtonCart &&
         <div  onClick={watchCart}  className={classes.cart}>
-            <img src={cartSvg} alt="cart" />
+            <img className={classes.cartSvg} src={cartSvg} alt="cart" />
             <div className={classes.cart__items}>
                 <div className={classes.cart__title}>Ваше замовлення</div>
                 <div style={{display: 'flex'}}>
@@ -56,6 +66,8 @@ const NavbarDesk = ({classes, openMenu, langvich,
                 </div>
             </div>
         </div>
+        }
+       
     </div>
     )
 } 

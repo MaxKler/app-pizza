@@ -27,6 +27,7 @@ const MainView = ({
             <div className={classes.ttt}>
             {mainData && mainData.length && mainData.map((foodBlock, idx) => (
                 <FoodBlock  
+                    idx={idx}
                     showCart={showCart}
                     setShowCart={setShowCart}
                     screen={screen}

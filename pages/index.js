@@ -4,17 +4,17 @@ import Footer from '../views/footer/Footer'
 import MainView from '../views/main/MainView'
 import MapView from '../views/map/MapView'
 import { NET } from '../network'
-import Succes from '../widgets/modal/succes/Succes'
-import DeliveryTerms from '../widgets/deliveryterms/DeliveryTerms'
+import QuestionsBlock from '../widgets/questions/questionsBlock'
+
 
 const Home = ({
   data
 }) => {
-  
+  console.log(data)
   const [cart, setCart] = useState([])
   const [mainData, setMainData] = useState(data.data)
-  
- 
+  const [dataQuestions, setDataQuestions] = useState(data.questions)
+   
   useEffect(() => {
   
       const res  = localStorage.getItem('cart')
@@ -63,8 +63,10 @@ const [showModal, setShowModal] =  useState(false)
              watchCart={watchCart}
              totalPrice={totalPrice}
              cart={cart}
-             countProduct={countProduct}
-             
+             countProduct={countProduct} 
+             setShowCart={setShowCart}    
+             mainData={mainData}
+             showButtonCart={true}
        >
            <MainView
               mainData={mainData}
@@ -80,8 +82,12 @@ const [showModal, setShowModal] =  useState(false)
               setShowModal={setShowModal}
            />
         </Main>
+            <QuestionsBlock 
+            dataQuestions={dataQuestions}
+         />
         <MapView />
         <Footer 
+          mainData={mainData}
           watchCart={watchCart}
           totalPrice={totalPrice}
           countProduct={countProduct}

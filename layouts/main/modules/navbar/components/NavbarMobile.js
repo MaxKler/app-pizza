@@ -8,16 +8,29 @@ import burgerSvg from './../../../../../project/image/layouts/navbar/svg/burger.
 import closeSvg from './../../../../../project/image/layouts/navbar/svg/close.svg'
 import Link from 'next/link'
 
-const NavbarMobile = ({classes,watchCart, openMenu, closeMenu}) => {
 
+const NavbarMobile = ({
+    classes,
+    watchCart, 
+    openMenu, 
+    closeMenu, 
+    setVisibleMenuBtn,
+    setShowCart,
+    showButtonCart
+}) => {
+  
     const [visibleMenu, setVisibleMenu] = useState(false)
 
     const showMenu = () => {
         setVisibleMenu(true)
         closeMenu()
+        setVisibleMenuBtn(false)
+        setShowCart(false)
+        document.querySelector('html').style.overflow = 'visible'
     }
     const hideMenu = () => {
         setVisibleMenu(false)
+        setVisibleMenuBtn(true)
     }
     const HideAndShow = () => {
         setVisibleMenu(false)
@@ -27,14 +40,17 @@ const NavbarMobile = ({classes,watchCart, openMenu, closeMenu}) => {
     return (
     <div className={classes.navbar__mobile}>
         <div className={classes.navbar__itemsMobile}>
-            <div className={classes.navbar__logo}>
-               <img className={classes.navbar__logoImg} src={logoSvg} alt="logo" />
-            </div>
+            <Link href="/">
+               <div className={classes.navbar__logo}>
+                  <img className={classes.navbar__logoImg} src={logoSvg} alt="logo" />
+               </div>
+            </Link>
+            {showButtonCart && 
             <div onClick={watchCart} className={classes.iconBox}>
                 <div >
                    <img src={cartSvg} alt="cart" />
                 </div>
-            </div>
+            </div>}
             <div className={classes.menuBtn} onClick={showMenu}>
                 <img src={burgerSvg} alt="burg" />
             </div>

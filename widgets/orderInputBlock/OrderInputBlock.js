@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import classes from './../../styles/widgets/inputBlock/inputBlock-style.module.scss'
+import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
+import ua from 'date-fns/locale/ru';
+registerLocale('ua', ua)
+import setHours from "date-fns/setHours";
+import setMinutes from "date-fns/setMinutes";
+import "react-datepicker/dist/react-datepicker.css";
 
 const OrderInputBlock = ({
     orderData,
@@ -48,22 +54,47 @@ const OrderInputBlock = ({
         setStateTime1(true)
         timeVisible()
     }
-
+ 
     const makeDataOrderFunc = (e, attr, val) => {
-        console.log('sdsd')
         setOrderData({
             ...orderData,
             [attr]: val ? val : e.target.value,
         })
     }
 
+    const [selectedDate, setSelectedDate] = useState(() => {
+     
+      let dateNow = new Date().toLocaleTimeString().substr(0,2)
+        console.log(dateNow)
+        return setHours(setMinutes(new Date(), 0), +dateNow + 1)
+    }
+
+          
+
+    )
+    const orderDate = new Date()
+
+    orderDate.setDate(orderDate.getDate() + 7);
+ 
+
+    const filterPassedTime = (time) => {
+        const currentDate = new Date();
+        const selectedDate = new Date(time);
+        return currentDate.getTime() < selectedDate.getTime();
+      };
+    
     return (
         <div>
             <div  className={classes.input}>
-                <input value={orderData?.name} onChange={(e) => makeDataOrderFunc(e, 'name')} className={classes.input__pole} placeholder="Ваше ім'я" type="text"/>
-                {errorData?.name && <div>{errorData['name'][0]}</div>}
-                <input onChange={(e) => makeDataOrderFunc(e, 'phone')} className={classes.input__pole} placeholder="Телефон"  type="text" />
-                <input onChange={(e) => makeDataOrderFunc(e, 'countPeople')} className={classes.input__pole} placeholder="Кількість персон"  type="text" />
+                <input value={orderData?.name} onChange={(e) => makeDataOrderFunc(e, 'name')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Ваше ім'я" type="text"/>
+                {errorData?.name && <div className={classes.errorTitle}>{errorData['name'][0]}</div>}
+
+                <input onChange={(e) => makeDataOrderFunc(e, 'phone')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Телефон"  type="text" />
+                {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>}
+
+                <input onChange={(e) => makeDataOrderFunc(e, 'countPeople')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Кількість персон"  type="text" />
+                {errorData?.countPeople && <div className={classes.errorTitle}>{errorData['countPeople'][0]}</div>}
+
                 <div className={classes.input__delivery}>
                     <div onClick={selected} className={state ? classes.input__delivery__block : [classes.input__delivery__block, classes.disabled].join(' ')}>
                         <input className={classes.input__delivery__block__input} onChange={(e) => makeDataOrderFunc(e, 'delivery_status', 'people')} 
@@ -89,20 +120,26 @@ const OrderInputBlock = ({
                     </div>   
                 </div>
                 <div className={ adress ? classes.adress : classes.adress__none}>
-                    <select className={classes.input__pole} onChange={(e) => makeDataOrderFunc(e, 'delivery_district')}>
-                    <option className={classes.input__pole}>Оберіть район</option>
+                    <select className={classes.input__dropdown}onChange={(e) => makeDataOrderFunc(e, 'delivery_district')}>
+                    <option className={classes.input__dropdown}>Оберіть район</option>
                        <option  value="centr">Центральний</option>
                        <option value="leviy"  >Лівобережний</option>
                        <option  value="calmius" >Кальміуський</option>
                        <option  value="primorsk" >Приморський</option>
                     </select>
-                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_street')} className={classes.input__pole} placeholder="Вулиця"  type="text" />
-                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_house')} className={classes.input__pole} placeholder="Номер дому, квартири" type="text"/>
-                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_pidzd')} className={classes.input__pole} placeholder="Номер під'їзду"  type="text" />
+                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_street')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Вулиця"  type="text" />
+                    {errorData?.delivery_street && <div className={classes.errorTitle}>{errorData['delivery_street'][0]}</div>}
+
+                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_house')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Номер дому, квартири" type="text"/>
+                    {errorData?.delivery_house && <div className={classes.errorTitle}>{errorData['delivery_house'][0]}</div>}
+
+                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_pidzd')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole}placeholder="Номер під'їзду"  type="text" />
+                    {errorData?.delivery_pidzd && <div className={classes.errorTitle}>{errorData['delivery_pidzd'][0]}</div>}
+
                 </div>
                 <div>
-                    <select className={classes.input__pole}>
-                       <option className={classes.input__pole}>Оберіть спосіб оплати</option>
+                    <select className={classes.input__dropdown}>
+                       <option >Оберіть спосіб оплати</option>
                        <option onChange={(e) => makeDataOrderFunc(e, 'pay_status', 'money')} >Готівка</option>
                        <option onChange={(e) => makeDataOrderFunc(e, 'pay_status ', 'terminal')} >Термінал</option>
                        <option onChange={(e) => makeDataOrderFunc(e, 'pay_status ')} >Онлайн оплата</option>
@@ -111,17 +148,52 @@ const OrderInputBlock = ({
                 <div>
                     <div className={classes.input__delivery}>
                         <div onClick={selectedTime} className={stateTime ? classes.input__delivery__block : [classes.input__delivery__block, classes.disabled].join(' ')}>
-                            <input onChange={(e) => makeDataOrderFunc(e, 'time_status', 'speed')}  checked={ stateTime ? true : false}   type="radio" placeholder="fvhfghgd" />
-                            <span  className={classes.delivery__title__time}> Найшвидше</span>
+                            <input className={classes.input__delivery__block__input} onChange={(e) => makeDataOrderFunc(e, 'time_status', 'speed')}  
+                                   checked={ stateTime ? true : false} 
+                                   type="radio" 
+                                   name="time_status" 
+                                   id="now"
+                                />
+                            <label onClick={() => makeDataOrderFunc(false, 'time_status', 'speed')} for="now">
+                                <span  className={classes.delivery__title__time}> Найшвидше</span>
+                            </label>      
                         </div>
                         <div  onClick={selectedTime1} className={stateTime1 ? classes.input__delivery__block1 : [classes.input__delivery__block1, classes.disabled].join(' ')}>
-                            <input  onChange={(e) => makeDataOrderFunc(e, 'time_status', 'real')}  checked={ stateTime1 ? true : false}  type="radio" />
-                            <span  className={classes.delivery__title__time}>Вказати час</span>
+                            <input className={classes.input__delivery__block__input} onChange={(e) => makeDataOrderFunc(e, 'time_status', 'real')}  
+                            checked={ stateTime1 ? true : false}  
+                            type="radio" 
+                            name="time_status" 
+                            id="tim"
+                            />
+                            <label onClick={() => makeDataOrderFunc(false, 'time_status', 'real')} for="tim">
+                                 <span  className={classes.delivery__title__time}>Вказати час</span>
+                            </label> 
                         </div>    
                     </div>
                     <div className={time ? classes.time : classes.time__none}>
-                        <input onChange={(e) => makeDataOrderFunc(e, 'time_date')} className={classes.input__pole} placeholder="дата" type="text"/>
-                        <input onChange={(e) => makeDataOrderFunc(e, 'time_hour')} className={classes.input__pole} placeholder="час"  type="text" />
+                    <DatePicker 
+                        selected={selectedDate}
+                        onChange={e => {
+                            const date = new Date(e)
+                            setOrderData({
+                                ...orderData, 
+                                time_hour: +date.getHours() === 1 ? '' : date.getHours() + '-' + date.getMinutes(),
+                                time_date: date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear()
+                            })
+                            return setSelectedDate(date)
+                        }}
+                        dateFormat="dd/MM/yyyy   HH':'mm"
+                        timeFormat="HH:mm"
+                        minDate={new Date()}
+                        maxDate={orderDate}
+                        locale={ua}
+                        showTimeSelect
+                        filterTime={filterPassedTime}
+                        minTime={setHours(setMinutes(new Date(), 0), 10)}
+                        maxTime={setHours(setMinutes(new Date(), 0), 23)}
+                    />
+                    {errorData?.time_hour && <div className={classes.errorTitle}>{errorData['time_hour'][0]}</div>}
+                    {errorData?.time_date && <div className={classes.errorTitle}>{errorData['time_date'][0]}</div>}
                     </div>
                     <div>
                         <textarea className={classes.textarea} placeholder="   Додати побажання"  />

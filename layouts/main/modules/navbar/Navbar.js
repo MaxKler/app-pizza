@@ -4,7 +4,18 @@ import classes from './../../../../styles/layouts/main/navbar-style.module.scss'
 import NavbarDesk from "./components/NavbarDesk";
 import NavbarMobile from "./components/NavbarMobile";
 
-const Navbar = ({openMenu, closeMenu, watchCart, cart, totalPrice,countProduct}) => {
+const Navbar = ({
+    openMenu, 
+    closeMenu, 
+    watchCart, 
+    cart, 
+    totalPrice,
+    countProduct,
+    visibleMenuBtn,
+    setVisibleMenuBtn,
+    setShowCart, 
+    showButtonCart
+}) => {
     const [activeLang, setActiveLang] = useState(0)
     const actLang = {
         color: 'white'
@@ -20,6 +31,7 @@ const Navbar = ({openMenu, closeMenu, watchCart, cart, totalPrice,countProduct})
         }
     ]
     
+
     return (
         <div className={classes.navbar}>
             <NavbarDesk 
@@ -33,6 +45,7 @@ const Navbar = ({openMenu, closeMenu, watchCart, cart, totalPrice,countProduct})
                 watchCart={watchCart}
                 totalPrice={totalPrice}
                 countProduct={countProduct}
+                showButtonCart={showButtonCart}
                 
             />
             <NavbarMobile
@@ -44,8 +57,11 @@ const Navbar = ({openMenu, closeMenu, watchCart, cart, totalPrice,countProduct})
                 openMenu={openMenu} 
                 closeMenu={closeMenu}
                 watchCart={watchCart}
+                setVisibleMenuBtn={setVisibleMenuBtn}
+                setShowCart={setShowCart}
+                showButtonCart={showButtonCart}
             />
-            <div onClick={openMenu} className={classes.mobileMenuBtn} >menu</div>
+            <div onClick={openMenu} className={visibleMenuBtn ? classes.mobileMenuBtn : classes.mobileMenuBtn__none}>menu</div>
         </div>
     )
 }

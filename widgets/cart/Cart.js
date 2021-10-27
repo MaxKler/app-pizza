@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from './../../styles/widgets/cart/cart-style.module.scss'
-import pizzaSvg from './../../project/image/cart/pizza.svg'
 import trashSvg from './../../project/image/cart/trash.svg'
+import cartSvg from './../../project/image/cart/cart.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import closeCartSvg from './../../project/image/layouts/navbar/svg/closeMenu.svg'
@@ -43,6 +43,20 @@ const Cart = ({
     const showOrder = () => {
         setOrderMenu(true)
     }
+
+    // const cartItems = React.useRef()
+
+    // React.useEffect(() => {
+    //     document.body.addEventListener('click', outsideClick)
+    // }, [])
+
+    // const outsideClick = (e) => {
+    //     if (!e.path.includes(cartItems.current)) {
+    //       setShowCart(false)
+    //     }
+    // }
+  
+
     const [errorData, setErrorData] = useState({})
     const [succesData, setSuccesData] = useState()
     const makeOrder = async () => {
@@ -72,13 +86,18 @@ const Cart = ({
     
 
     return (
-        <div className={showCart ? classes.cart : classes.cartNone}>
+        <div   className={showCart ? classes.cart : classes.cartNone}>
             <div onClick={closeCart} className={classes.closeCart}>
                 <img src={closeCartSvg} alt="" />
             </div>
             <div className={classes.cart__content}>
                 <div className={classes.cart__title}>Кошик</div>
                 <hr  className={classes.hr} />
+                {cart.length === 0 ? 
+                <div className={classes.cart__empty}>
+                    <img src={cartSvg} alt="" />
+                    <div className={classes.cart__empty__title}>Ваш кошик поки порожній</div>
+                </div> :
                 <div className={classes.cart__items}>
                     <div className={classes.order}>
                         {cart.map((item) => {
@@ -86,10 +105,10 @@ const Cart = ({
                             <>
                             <div className={classes.order__block}>
                                 <div className={classes.order__size}>
-                                    <img src={pizzaSvg} alt="" />
+                                    <img className={classes.order__size__img} src={`${NET.WEB_URL}/${item.image}`} alt="" />
                                 </div>
-                                <div className={classes.order__size}>
-                                    <div className={classes.order__name}>{item.name}
+                                <div className={classes.order__size3}>
+                                    <div className={classes.order__name}>{item.title}
                                         {item.sizeType && item.sizeType.map((size) => {
                                             return (
                                                 <div className={classes.order__type}>{size.size} см</div>   
@@ -118,7 +137,7 @@ const Cart = ({
                         {freeD === 0 ? <div className={classes.deliveryFree}>
                             Вітаємо! У вас безкоштовна доставка
                         </div>
-                        : <div className={classes.deliveryFree}>До безкоштовної доставки залишилось замовити {freeD} грн</div>
+                        : <div className={classes.deliveryFree}>До безкоштовної доставки залишилось замовити <strong>{freeD}</strong> грн.</div>
                         }
                         <div className={classes.deliveryFree}>Відправляючи цю форму, Ви погоджуєтеся з політикою щодо обробки персональних даних.</div>
                     </div>
@@ -160,7 +179,8 @@ const Cart = ({
                            <div>
                                <FontAwesomeIcon className={classes.orderBtn__icon} icon={faChevronRight }></FontAwesomeIcon>
                            </div>
-                       </div> :
+                       </div>
+                        :
                        <div className={classes.orderData}>
                             <OrderInputBlock 
                                 orderData={orderData}
@@ -177,7 +197,7 @@ const Cart = ({
                             succesData={succesData}
                          />
                     </div>
-                </div>
+                </div>}
             </div>
         </div>
     )
