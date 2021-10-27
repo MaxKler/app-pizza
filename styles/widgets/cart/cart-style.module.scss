@@ -11,6 +11,17 @@
     align-items: center;
     overflow: auto;
     height: 80vh;
+    &__empty {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        &__title {
+            font-size: 30px;
+            color: black;
+        }
+    }
     &__content {
         width: 90%;
     }

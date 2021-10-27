@@ -12,9 +12,9 @@ const QuestionsBlock = ({dataQuestions}) => {
              <div className={classes.questionBlock__content}>
                     <div className={classes.questionBlock__title}>Питання та відповіді</div>
                     <div className={classes.questionAnswerBlock}>
-                        {dataQuestions.map((elem) => {
+                        {dataQuestions.map((elem, index) => {
                             return (
-                            <QuestionsBlockItem  classes={classes} elem={elem}/>
+                            <QuestionsBlockItem  classes={classes} elem={elem} index={index}/>
                             )
                         })}
                     </div>
