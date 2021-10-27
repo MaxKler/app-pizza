@@ -19,7 +19,9 @@ const FoodBlock = ({
     setCart,
     countProduct,
     showModal,
-    setShowModal}) => {
+    setShowModal,
+    idx
+}) => {
 
 const onAdd = (food, activeSize) => {
     const exist = cart.find(x => x.id === food.id)
@@ -72,7 +74,7 @@ const scrolUp = () => {
 
     return (
         <>
-            <div >
+            <div key={idx}>
                 <div >  
                     <div className={classes.pizzaType}>{foodBlock.category.title}</div>
                 </div>

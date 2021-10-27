@@ -675,6 +675,11 @@
             }
             &__name {
                 font-size: 30px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
             }
         }
         &__card {
@@ -752,5 +757,8 @@
     }
     .popapdisable {
         top: 80%;  
+    }
+    .popapBlock {
+        z-index: 1;
     }
 }

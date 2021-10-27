@@ -10,7 +10,7 @@ import QuestionsBlock from '../widgets/questions/questionsBlock'
 const Home = ({
   data
 }) => {
-
+  console.log(data)
   const [cart, setCart] = useState([])
   const [mainData, setMainData] = useState(data.data)
   const [dataQuestions, setDataQuestions] = useState(data.questions)

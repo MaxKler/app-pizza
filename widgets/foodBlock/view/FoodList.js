@@ -67,8 +67,7 @@ const FoodList = ({
                : 
                <></>
                }
-                <div className={visiblePopap ? classes.popap : classes.popapdisable}>#сир Моцарела, #сир Дорблю, 
-                  #сир Пармезан, #соус Карбонара, #вершковий соус</div>
+                <div className={visiblePopap ? classes.popap : classes.popapdisable}>{food.text}</div>
                 <div className={classes.popapBlock} onMouseEnter={changeBackground} 
                     onMouseLeave={changeBackground1}> 
                     <div className={classes.popapBlock__point}></div> 
