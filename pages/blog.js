@@ -60,6 +60,7 @@ const watchCart = () => {
              cart={cart}
              countProduct={countProduct}
              mainData={mainData}
+             setShowCart={setShowCart}
             
        > 
         <BlogView 

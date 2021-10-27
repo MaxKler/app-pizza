@@ -3,11 +3,14 @@ import classes from './../../../styles/layouts/main/menu-style.module.scss'
 import searchSvg from './../../../project/image/layouts/menu/search.svg'
 import closeMenuSvg from './../../../project/image/layouts/navbar/svg/closeMenu.svg'
 import phoneSvg from './../../../project/image/layouts/navbar/svg/phone.svg'
-
+import {useRouter} from 'next/router'
 const Menu = ({closeMenu, screen, mainData}) => {
    
 
-
+    // const router = useRouter()
+    // const goApp = () => {
+    //     router.push(`/${elem.category.title}`)
+    //   }
     return (
         <div className={screen ? classes.menu : [classes.menu, classes.menuClose].join(' ')}>
             <div className={classes.menuCloseBtn} onClick={closeMenu}>
@@ -22,7 +25,7 @@ const Menu = ({closeMenu, screen, mainData}) => {
                 <div>
                     {mainData.map((elem) => {
                         return (
-                            <div key={elem.title} className={classes.menuItem}>{elem.category.title}</div>
+                            <div  key={elem.title} className={classes.menuItem}>{elem.category.title}</div>
                         )
                     })}
                 </div>
