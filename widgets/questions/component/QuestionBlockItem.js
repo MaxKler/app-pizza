@@ -12,10 +12,10 @@ const QuestionsBlockItem = ({classes, elem, index}) => {
 
     return (
         <>
-        <div className={classes.questionBlock__block}>
+        <div onClick={showAnswer}  className={classes.questionBlock__block}>
             <div className={classes.questionBlock__block__number}>{index + 1}</div>
             <div className={visible ? [classes.questionBlock__block__question, classes.questionBlock__block__question__active].join(' ') : classes.questionBlock__block__question}>{elem.question}</div>
-            <div onClick={showAnswer} className={classes.questionBlock__block__icon}>
+            <div className={classes.questionBlock__block__icon}>
                 {visible ? 
                 <FontAwesomeIcon icon={faChevronUp}></FontAwesomeIcon> :
                 <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon>}

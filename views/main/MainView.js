@@ -21,13 +21,23 @@ const MainView = ({
     
 
     const onAdd = (food, activeSize) => {
+        const typeSize = [
+            {
+               id: 0,
+               size: food.status_opt_start
+            }, 
+            {
+                id: 1,
+                size: food.status_opt_end
+            }  
+        ]
         const exist = cart.find(x => x.id === food.id)
         console.log(exist)
         if(exist) {
           setCart(cart.map(x => x.id === food.id ? {...exist, qty: exist.qty +1} : x))
           
         } else {
-          setCart([...cart,  {...food, qty: 1, sizeType: food.sizeType ? food.sizeType.filter(el => el.id === activeSize) : null}])
+          setCart([...cart,  {...food, qty: 1, sizeType: typeSize ? typeSize.filter(el => el.id === activeSize) : null}])
         } 
     }
     const onRemove = (food) => {

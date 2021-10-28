@@ -21,7 +21,16 @@ const FoodList = ({
     qty
 }) => {
 
-    
+    const typeSize = [
+        {
+           id: 0,
+           size: food.status_opt_start
+        }, 
+        {
+            id: 1,
+            size: food.status_opt_end
+        }  
+    ]
    const [activeSize, setActiveSize] = useState(0)
   
    const onSelectSize = (index) => {
@@ -84,14 +93,14 @@ const FoodList = ({
                 {food.title}</div>
                 <div className={classes.pizza__block__item}>
                     <div key={food.id} className={classes.pizza__sizeBlock}>
-                        {/* {food.sizeType.map((size, index) => {
+                        {typeSize.map((size, index) => {
                             return (
                                 <div key={size.size} onClick={() => onSelectSize(index)}
                                     className={activeSize === index ?
                                     classes.pizza__sizeBlock__active 
                                      : classes.pizza__sizeBlock__size}>{size.size} см</div>
                                  )
-                             })} */}
+                             })}
                     </div>
                     <div className={classes.pizza__block__items}>
                         <div className={classes.discount}>

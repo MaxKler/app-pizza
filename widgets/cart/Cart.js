@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from './../../styles/widgets/cart/cart-style.module.scss'
 import trashSvg from './../../project/image/cart/trash.svg'
-import cartSvg from './../../project/image/cart/cart.svg'
+import catPng from './../../project/image/cart/cat.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import closeCartSvg from './../../project/image/layouts/navbar/svg/closeMenu.svg'
@@ -21,6 +21,7 @@ const Cart = ({
     showModal,
     setShowModal
 }) => {
+    console.log(cart)
     const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
     const deliveryPrice = productPrice * 0.1
     const totalPrice = productPrice + deliveryPrice
@@ -92,8 +93,8 @@ const Cart = ({
                 <hr  className={classes.hr} />
                 {cart.length === 0 ? 
                 <div className={classes.cart__empty}>
-                    <img src={cartSvg} alt="" />
-                    <div className={classes.cart__empty__title}>Ваш кошик поки порожній</div>
+                    <div className={classes.cart__empty__title}>Упс... Ваш кошик порожній...</div>
+                    <img className={classes.cart__empty__icon} src={catPng} alt="" />
                 </div> :
                 <div className={classes.cart__items}>
                     <div className={classes.order}>
@@ -107,8 +108,9 @@ const Cart = ({
                                 <div className={classes.order__size3}>
                                     <div className={classes.order__name}>{item.title}
                                         {item.sizeType && item.sizeType.map((size) => {
+                                            console.log(size)
                                             return (
-                                                <div className={classes.order__type}>{size.size} см</div>   
+                                                <div className={classes.order__type}>{size} см</div>   
                                             )
                                         })}
                                     </div>
@@ -157,11 +159,6 @@ const Cart = ({
                                           :
                                           <div className={classes.items__count}>40 грн</div>
                                          }
-                                         
-                                     </div>
-                                     <div className={classes.items}>
-                                         <div className={classes.items__title}>Кількість персон:</div>
-                                         <div className={classes.items__count}>2</div>
                                      </div>
                                 </div>
                                 <div className={classes.total}>

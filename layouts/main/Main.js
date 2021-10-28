@@ -25,7 +25,7 @@ const Main = ({
       setVisibleMenuBtn(true)
     }
     const openMenu = () => {
-      setScreen(true)
+      setScreen(!screen)
       setVisibleMenuBtn(false)
     }
 
@@ -48,6 +48,7 @@ const Main = ({
             <Menu  
                 closeMenu={closeMenu}
                 screen={screen}
+                setScreen={setScreen}
                 mainData={mainData}
               
             />

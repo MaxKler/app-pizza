@@ -11,11 +11,9 @@ const AddCart = ({classes, qty, onAdd, onRemove, food}) => {
     const changeBtn = () => {
         onAdd(food)
     }
-    console.log(qty)
     return (
-    <>
+    <> {qtyLocal ? 
         <div className={classes.buyBtn}>
-        {qtyLocal ? 
             <div className={classes.buyBtn__block}>
                 <div className={classes.buyBtn__block__inCart}>У кошику</div>
                 <div className={classes.buyBtn__block__addRem}>
@@ -23,13 +21,21 @@ const AddCart = ({classes, qty, onAdd, onRemove, food}) => {
                     <div className={classes.buyBtn__block__qty}>{qtyLocal}</div>
                     <span className={classes.buyBtn__block__add} onClick={() => onAdd(food)} >+</span>
                 </div>
-            </div> :
-            <div onClick={changeBtn} className={classes.buyBtn__add}>Додати до кошика + 1</div>
-        }
-            <div className={classes.buyBtn__cart}>
-                <img className={classes.buyBtnCart} src={cartSvg} alt="cart" />
             </div>
-       </div>  
+            <div className={classes.buyBtn__cart}>
+                <img className={classes.buyBtn__cart__icon} src={cartSvg} alt="cart" />
+            </div>
+        </div> :
+        <div className={classes.buyBtnE}>
+            <div onClick={changeBtn} className={classes.buyBtnE__addE}>Додати до кошика + 1</div>
+            <div className={classes.buyBtnE__cartE}>
+                <img className={classes.buyBtnE__cartE__icon} src={cartSvg} alt="cart" />
+            </div>
+        </div>
+            
+        }
+            
+        
        
     </>
     )
