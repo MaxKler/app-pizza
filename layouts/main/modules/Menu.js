@@ -7,10 +7,9 @@ import {useRouter} from 'next/router'
 const Menu = ({closeMenu, screen, mainData}) => {
    
 
-    // const router = useRouter()
-    // const goApp = () => {
-    //     router.push(`/${elem.category.title}`)
-    //   }
+    const router = useRouter()
+  
+
     return (
         <div className={screen ? classes.menu : [classes.menu, classes.menuClose].join(' ')}>
             <div className={classes.menuCloseBtn} onClick={closeMenu}>
@@ -25,7 +24,7 @@ const Menu = ({closeMenu, screen, mainData}) => {
                 <div>
                     {mainData.map((elem) => {
                         return (
-                            <div  key={elem.title} className={classes.menuItem}>{elem.category.title}</div>
+                            <div onClick={() => router.push(`/#category${elem.category.id}`)}  key={elem.title} className={classes.menuItem}>{elem.category.title}</div>
                         )
                     })}
                 </div>

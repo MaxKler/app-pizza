@@ -42,8 +42,6 @@ const Home = ({
   })
 
 
-
-
 const watchCart = () => {
   
   if (!showCart) {

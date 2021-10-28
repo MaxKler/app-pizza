@@ -13,6 +13,7 @@ const Cart = ({
     showCart, 
     setShowCart, 
     cart, 
+    setCart,
     onAdd, 
     onRemove, 
     delItem,
@@ -28,7 +29,7 @@ const Cart = ({
         time_status: 'speed',
         pay_status: 'money'
     })
-    const free = 1000
+    const free = 500
     let freeD = free - productPrice
      if (freeD <= 0) {
          freeD = 0
@@ -58,7 +59,7 @@ const Cart = ({
   
 
     const [errorData, setErrorData] = useState({})
-    const [succesData, setSuccesData] = useState()
+    const [succesData, setSuccesData] = useState(false)
     const makeOrder = async () => {
         const res = await fetch(`${NET.APP_URL}/order`, {
             method: 'POST',
@@ -73,20 +74,16 @@ const Cart = ({
         const data = await res.json()
         if (res.status === 401) {
             setErrorData(data.error)
-        } else if (res.status === 201) {
+        } else if (res.status === 201) {            
             setShowModal(true)
-            setSuccesData(data.data.id)
+            setSuccesData(data.data.id) 
+            localStorage.removeItem('cart')
         }
-        console.log(data)
     } 
 
-   
-
-
-    
-
     return (
-        <div   className={showCart ? classes.cart : classes.cartNone}>
+        <div className={showCart ? [classes.cartNone__active, classes.cartNone].join(' ') : classes.cartNone}>
+            <div className={classes.cart}>
             <div onClick={closeCart} className={classes.closeCart}>
                 <img src={closeCartSvg} alt="" />
             </div>
@@ -158,7 +155,7 @@ const Cart = ({
                                          <div className={classes.items__title}>Доставка:</div>
                                          {freeD === 0 ? <div className={classes.items__count}>Безкоштовно!</div>
                                           :
-                                          <div className={classes.items__count}>{deliveryPrice.toFixed(2)} грн</div>
+                                          <div className={classes.items__count}>40 грн</div>
                                          }
                                          
                                      </div>
@@ -195,9 +192,11 @@ const Cart = ({
                             setShowModal={setShowModal}
                             setShowCart={setShowCart}
                             succesData={succesData}
+                            setCart={setCart}
                          />
                     </div>
                 </div>}
+            </div>
             </div>
         </div>
     )
