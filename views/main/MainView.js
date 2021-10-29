@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import classes from './../../styles/views/main/main-view.module.scss'
 import FoodBlock from "../../widgets/foodBlock/FoodBlock";
 import DeliveryTerms from "../../widgets/deliveryterms/DeliveryTerms";
@@ -19,8 +19,10 @@ const MainView = ({
     setShowModal
 }) => {
     
-
+    const [activeSize, setActiveSize] = useState(0)
+    
     const onAdd = (food, activeSize) => {
+        console.log(food, activeSize)
         const typeSize = [
             {
                id: 0,
@@ -31,13 +33,14 @@ const MainView = ({
                 size: food.status_opt_end
             }  
         ]
+        console.log(activeSize)
         const exist = cart.find(x => x.id === food.id)
         console.log(exist)
         if(exist) {
           setCart(cart.map(x => x.id === food.id ? {...exist, qty: exist.qty +1} : x))
           
         } else {
-          setCart([...cart,  {...food, qty: 1, sizeType: typeSize ? typeSize.filter(el => el.id === activeSize) : null}])
+          setCart([...cart,  {...food, qty: 1, activeOption: activeSize ? activeSize : null}])
         } 
     }
     const onRemove = (food) => {

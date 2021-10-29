@@ -28,7 +28,7 @@ const Menu = ({closeMenu, screen, mainData}) => {
                 <div>
                     {mainData.map((elem) => {
                         return (
-                            <div onClick={() => menu(elem)}  key={elem.title} className={classes.menuItem}>{elem.category.title}</div>
+                            <div onClick={() => router.push(`/#category${elem.category.id}`)}  key={elem.title} className={classes.menuItem}>{elem.category.title}</div>
                         )
                     })}
                 </div>

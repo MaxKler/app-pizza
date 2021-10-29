@@ -107,12 +107,12 @@ const Cart = ({
                                 </div>
                                 <div className={classes.order__size3}>
                                     <div className={classes.order__name}>{item.title}
-                                        {item.sizeType && item.sizeType.map((size) => {
+                                        {/* {item.sizeType && item.sizeType.map((size) => {
                                             console.log(size)
                                             return (
                                                 <div className={classes.order__type}>{size} см</div>   
                                             )
-                                        })}
+                                        })} */}
                                     </div>
                                 </div>
                                 <div className={classes.order__size1}>

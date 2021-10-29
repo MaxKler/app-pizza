@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import cartSvg from './../../../../project/image/layouts/navbar/svg/cart.svg'
 
-const AddCart = ({classes, qty, onAdd, onRemove, food}) => {
+const AddCart = ({classes, qty, onAdd, onRemove, food, activeSize}) => {
 
     const [qtyLocal, setQtyLocal] = useState(0)
 
@@ -9,7 +9,7 @@ const AddCart = ({classes, qty, onAdd, onRemove, food}) => {
         setQtyLocal(qty ? qty : 0)
     }, [qty])
     const changeBtn = () => {
-        onAdd(food)
+        onAdd(food, activeSize)
     }
     return (
     <> {qtyLocal ? 

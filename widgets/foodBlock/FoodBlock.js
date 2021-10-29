@@ -54,8 +54,8 @@ const scrolUp = () => {
 
     return (
         <>
-            <div key={idx}> 
-                    <div id={foodBlock.category.title} className={classes.pizzaType}>{foodBlock.category.title}</div>
+            <div key={idx} id={`category${foodBlock.category.id}`}> 
+                    <div  className={classes.pizzaType}>{foodBlock.category.title}</div>
                 <div className={classes.pizza}>
                   {foodBlock.products.map((food,index) => {
                       let qty = cart.filter(el => el.id === food.id)
