@@ -1,77 +1,58 @@
 import React from "react";
 import classes from './../../styles/views/blog/blog-style.module.scss'
+import imgPng from './../../project/image/views/blog/img.png'
 import imPng from './../../project/image/views/blog/im.png'
 import Link from 'next/link'
 
-const BlogView = ({blogData}) => {
+const BlogNews = ({blogData}) => {
     
     return (
         <div className={classes.blogView}>
         <div className={classes.title}>блог</div>
-        {blogData.slice(0, 1).map((elem) => {
-            return (
-                <div className={classes.blog}>
-                    <div className={classes.blog__main}>
-                        <div className={classes.blog__main__info}>
-                            <div className={classes.blog__main__desc}>{elem.small_description}</div>
-                            <div className={classes.blog__main__date}>{elem.date}</div>
-                        </div>
-                        <div className={classes.blog__main__card}>
-                            <div className={classes.blog__main__card__img}></div>
-                        </div>
-                        <div className={classes.blog__main__title}>{elem.title}</div>
-                        <Link href={`/post/${elem.id}`}>
-                            <div className={classes.blog__main__description}>{elem.description}</div>
-                        </Link>
-                        <div className={classes.blog__news}>
-                            <div className={classes.blog__news__block}>
-                                <div className={classes.blog__news__block__title}>Інші новини</div>
-                                <div className={classes.news}>
-                                {
-                                    blogData.slice(1).map((elem) => {
-                                        return (
-                                            <>
-                                                <div className={classes.news__item}>
-                                                    <div className={classes.news__img}>
-                                                        <img className={classes.news__img__img} src={imPng} alt="" />
-                                                    </div>
-                                                    <div className={classes.news__title}>{elem.title}</div>
-                                                    <div className={classes.news__description}>{elem.description}</div>
-                                                    <div className={classes.news__info}>
-                                                        <div className={classes.news__info__desc}>{elem.small_description}</div>
-                                                        <div className={classes.news__info__date}>{elem.date}</div>
-                                                    </div>
-                                                </div>
-                                            </>
-                                        )
-                                    })
-                                }
+        <div className={classes.blog}>
+            <div className={classes.blog__content}>
+                <div className={classes.blog__content__mainCard}>
+                   <div style={{backgroundImage: `url(${imgPng})`}} className={classes.blog__mainNew}>
+                       {blogData.slice(0, 1).map((elem) => {
+                           return (
+                                <div className={classes.blog__mainNew__content}>
+                                   <div className={classes.blog__mainNew__content__title}>{elem.title}</div>
+                                   <div className={classes.blog__mainNew__content__info}>
+                                        <div className={classes.blog__mainNew__content__info__desc}>{elem.small_description}</div>
+                                        <div className={classes.blog__mainNew__content__info__date}>{elem.date}</div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                   </div>
+                </div>   
+                <div className={classes.blog__content__twoCards}>
+                       {blogData.slice(1, 3).map((news) => {
+                            return (
+                            <div className={classes.blog__twoNews}>
+                                <div className={classes.blog__twoNews__content}>
+                                    <div className={classes.blog__twoNews__content__imgBlock}>
+                                        <img className={classes.blog__twoNews__content__img} src={imPng} alt="" />
+                                    </div>
+                                    <div className={classes.blog__twoNews__content__block} >
+                                        <div className={classes.blog__twoNews__content__block__block}>
+                                            <div className={classes.blog__twoNews__content__title}>{news.title}</div>
+                                            <div className={classes.blog__twoNews__content__description}>{news.description}</div>
+                                        </div>
+                                        <div className={classes.blog__twoNews__content__info}>
+                                            <div className={classes.blog__twoNews__content__info__desc}>{news.small_description}</div>
+                                            <div className={classes.blog__twoNews__content__info__date}>{news.date}</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                            )
+                        })}
                 </div>
-            )
-        })}
+            </div>
         </div>
+    </div>
     )
 }
 
-export default BlogView
-
-{/* <div className={classes.blog__card}>
-                        <div className={classes.blog__card__blockBig}>
-                            <div className={classes.blockBig}>
-                                <div className={classes.blockBig__title}>{elem.title}</div>
-                                <div className={classes.blockBig__desc}>{elem.description}</div>
-                                <div className={classes.blockBig__info}>
-                                    <div className={classes.blockBig__info__desc}>{elem.small_description}</div>
-                                    <div className={classes.blockBig__info__date}>{elem.date}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div></div>
-                        <div></div>
-                    </div> */}
+export default BlogNews

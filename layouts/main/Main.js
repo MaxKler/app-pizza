@@ -12,6 +12,7 @@ const Main = ({
     cart, 
     totalPrice,
     countProduct,
+    showCart,
     setShowCart,
     mainData,
     showButtonCart = false
@@ -25,7 +26,7 @@ const Main = ({
       setVisibleMenuBtn(true)
     }
     const openMenu = () => {
-      setScreen(true)
+      setScreen(!screen)
       setVisibleMenuBtn(false)
     }
 
@@ -41,6 +42,7 @@ const Main = ({
             countProduct={countProduct}
             visibleMenuBtn={visibleMenuBtn}
             setVisibleMenuBtn={setVisibleMenuBtn}
+            showCart={showCart}
             setShowCart={setShowCart}
             showButtonCart={showButtonCart}
         />
@@ -48,6 +50,7 @@ const Main = ({
             <Menu  
                 closeMenu={closeMenu}
                 screen={screen}
+                setScreen={setScreen}
                 mainData={mainData}
               
             />

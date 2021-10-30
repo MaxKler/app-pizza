@@ -42,8 +42,6 @@ const Home = ({
   })
 
 
-
-
 const watchCart = () => {
   
   if (!showCart) {
@@ -64,6 +62,7 @@ const [showModal, setShowModal] =  useState(false)
              totalPrice={totalPrice}
              cart={cart}
              countProduct={countProduct} 
+             showCart={showCart}
              setShowCart={setShowCart}    
              mainData={mainData}
              showButtonCart={true}

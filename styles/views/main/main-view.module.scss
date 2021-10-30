@@ -28,11 +28,12 @@
         background: #E3E4EA;
         border-radius: 7px;
         height: 40px;
-        width: 58%;
+        width: 65%;
         margin-left: 2%;
         align-items: center;
         color: white;
         &__active {
+            font-size: 20px;
             height: 40px;
             background: #00B612;
             border-radius: 7px;
@@ -45,6 +46,7 @@
             color: white;
         }
         &__size {
+            font-size: 20px;
             width: 50%;
             font-size: 12px;
             cursor: pointer;
@@ -86,30 +88,36 @@
             align-items: center;
             justify-content: flex-end;
             font-weight: 600;
-            font-size: 30px; 
+            font-size: 27px; 
             margin-right: 2%;
             color: #404040;
             height: 40px;
+            text-align: right;
         }
         &__item {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-top: 20px;
+            padding-bottom: 10px;
+        }
+        &__itemTwo {
+            margin-top: 20px;
+            
         }
         &__items {
             margin-right: 2%;
         }
         &__price {
             font-weight: 600;
-            font-size: 29px;         
+            font-size: 25px;         
             text-align: right;
             color: #E45100;
         }
         &__grn {
             color: #E45100; 
-            font-size: 29px;
-            padding-left: 10px
+            font-size: 21px;
+            padding-left: 5px
         }
         &__weight {
             font-size: 19px;
@@ -124,53 +132,40 @@
 
 .buyBtn {
     display: flex;
-    position: relative;
     align-items: center;
+    justify-content: center;
     height: 48px;
-    background: #E45100;
-    border-radius: 7px;
+    border: 2px solid #E45100;
+    border-radius: 8px;
     width: 96%;
     max-width: 96%;
     outline: none;
     cursor: pointer;
     color: white;
-    border: none;
-    justify-content: center;
     margin: 10px 2%;
     &:hover {
         box-shadow: rgba(0, 3, 5, 0.932) 0px 2px 4px 0px, rgba(0, 0, 0, 0.993) 0px 2px 16px 0px;
-    }
-    &__add {
-            font-weight: 500;
-            font-size: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-right: 30px;
     }
     &__block {
         display: flex;
         align-items: center;
         background: white;
-        height: 42px;
-        border-radius: 7px;
-        margin-right: 23%;
-        width: 75%;
+        justify-content: space-between;
+        border-radius: 8px;
+        height: 96%;
+        width: 80%;
         &__inCart {
             color: black;
             font-size: 22px;
             padding-left: 20px;
-            padding-right: 10px;
         }
         &__add {
             color: black;
             font-size: 23px;
-         
         }
         &__rem {
             color: black;
             font-size: 23px;
-            padding-left: 10px;
             padding-right: 15px;
         }
         &__qty {
@@ -181,13 +176,53 @@
         &__addRem {
             display: flex;
             align-items: center;
-            padding-right: 10px;
+            padding-right: 10%;
         }
     }
     &__cart {
-        position: absolute;
-        right: 5%;
-       
+       background: #E45100;
+        height: 100%;
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 7px;
+        border: none;
+        outline: none;
+    }
+}
+.buyBtnE {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    background:  #E45100;
+    border: none;
+    border-radius: 7px;
+    width: 96%;
+    max-width: 96%;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    margin: 10px 2%;
+    &:hover {
+        box-shadow: rgba(0, 3, 5, 0.932) 0px 2px 4px 0px, rgba(0, 0, 0, 0.993) 0px 2px 16px 0px;
+    }
+    &__addE {
+        padding-left: 25px;
+        font-weight: 500;
+        font-size: 20px;  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 79%;
+    }
+    &__cartE {
+        width: 21%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     
     }
 }
 
@@ -236,10 +271,9 @@
     background: rgba(246, 247, 249, 0.85);
     opacity: 1;
     color: #006F9E;
-    font-size: 10px;
+    font-size: 16px;
     position: absolute;
     top: 80%;
-    z-index: 555;
 }
 .popapdisable {
     width: 90%;
@@ -251,12 +285,108 @@
 @media screen and (max-width: 1700px) {
     .pizza {
         &__sizeBlock {
-            height: 34px;
+            
             &__active {
-                height: 34px;
+                
+                font-size: 17px;
             }
             &__size {
-                font-size: 11px;
+                font-size: 17px;
+            }
+        }
+        &__card {
+            width: 33.3%;
+        }
+         &__cardTwo {
+             width: 25%;  
+         }
+        &__block {
+            height: fit-content;
+            margin: 18px 8px;
+            &__icon {
+                top: 0;
+                right: 0;
+                width: 23%;
+                height: 23%;
+            }
+            &__status {
+                padding-right: 6px;
+                width: 35px;
+                height: 35px;
+            }
+            &__name {
+                font-size: 26px; 
+            }
+            &__price {
+                font-size: 23px;         
+            }
+            &__grn {
+                font-size: 23px;
+                padding-left: 4px
+            }
+            &__weight {
+                font-size: 15px;
+            }
+        }
+    }
+   
+    .pizzaImage {
+        width: 90%;
+        height: 100%;
+    }
+    .popap {
+        font-size: 15px;
+    }
+    .buyBtn {
+        height: 48px;
+        &__block {
+            width: 80%;
+            &__inCart {
+                color: black;
+                font-size: 22px;
+                padding-left: 20px;
+            }
+            &__add {
+                color: black;
+                font-size: 23px;
+            }
+            &__rem {
+                color: black;
+                font-size: 23px;
+                padding-right: 15px;
+            }
+            &__qty {
+                color: black;
+                font-size: 22px;
+                width: 25px;
+            }
+        }
+    }
+    .buyBtnE {
+        height: 48px;
+        &__addE {
+            padding-left: 25px;
+            font-size: 22px;  
+            
+            width: 79%;
+        }
+        &__cartE {
+            width: 21%;
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .pizza {
+        &__sizeBlock {
+            height: 35px;
+            &__active {
+                height: 35px;
+                font-size: 15px;
+            }
+            &__size {
+                font-size: 15px;
+                height: 35px;
             }
         }
         &__card {
@@ -295,101 +425,45 @@
         }
     }
     .buyBtn {
-        height: 42px;
-        &__add {
-            font-size: 14px;
-        }
+        height: 48px;
         &__block {
-            display: flex;
-            align-items: center;
-            background: white;
-            height: 36px;
-            border-radius: 7px;
-            margin-right: 23%;
-            width: 75%;
+            width: 80%;
             &__inCart {
                 color: black;
-                font-size: 20px;
-                padding-left: 35px;
-                padding-right: 10px;
+                font-size: 22px;
+                padding-left: 20px;
             }
             &__add {
                 color: black;
-                font-size: 22px;
-             
+                font-size: 23px;
             }
             &__rem {
                 color: black;
-                font-size: 22px;
-                padding-left: 10px;
+                font-size: 23px;
                 padding-right: 15px;
             }
             &__qty {
                 color: black;
-                font-size: 18px;
-                 width: 25px;
-            }
-            &__addRem {
-                display: flex;
-                align-items: center;
-                padding-left: 10px;
+                font-size: 22px;
+                width: 25px;
             }
         }
     }
-    .buyBtnCart {
-        width: 70%;
-        height: 70%;
+    .buyBtnE {
+        height: 48px;
+        &__addE {
+            padding-left: 22px;
+            font-size: 19px;  
+            width: 79%;
+        }
+        &__cartE {
+            width: 21%;
+        }
     }
-    .pizzaImage {
-        width: 90%;
-        height: 100%;
+    .popap {
+        font-size: 14px;
     }
-}
 
-@media screen and (max-width: 1500px) {
-    .buyBtn {
-        height: 40px;
-        &__add {
-            font-size: 16px;
-            padding-right: 30px;
-        }
-        &__block {
-            display: flex;
-            align-items: center;
-            background: white;
-            height: 36px;
-            border-radius: 7px;
-            margin-right: 23%;
-            width: 75%;
-            &__inCart {
-                color: black;
-                font-size: 19px;
-                padding-left: 25px;
-                padding-right: 10px;
-            }
-            &__add {
-                color: black;
-                font-size: 22px;
-             
-            }
-            &__rem {
-                color: black;
-                font-size: 22px;
-                padding-left: 10px;
-                padding-right: 15px;
-            }
-            &__qty {
-                color: black;
-                font-size: 18px;
-                 width: 25px;
-            }
-            &__addRem {
-                display: flex;
-                align-items: center;
-            }
-        }
-        
-    }
 }
 
 @media screen and (max-width: 1366px) {
@@ -404,7 +478,6 @@
                 font-size: 11px;
             }
         }
-       
         &__block {
             margin: 17px 7px;
             height: fit-content;
@@ -428,7 +501,10 @@
                 font-size: 20px; 
             }
             &__price {
-                font-size: 17px;         
+                font-size: 22px;         
+            }
+            &__price_two {
+                font-size: 22px;         
             }
             &__grn {
                 font-size: 17px;
@@ -440,56 +516,53 @@
         }
     }
     .buyBtn {
-        height: 40px;
-        &__add {
-            font-size: 16px;
-            padding-right: 30px;
-        }
+        height: 44px;
         &__block {
-            display: flex;
-            align-items: center;
-            background: white;
-            height: 36px;
-            border-radius: 7px;
-            margin-right: 23%;
-            width: 75%;
+            width: 80%;
             &__inCart {
                 color: black;
                 font-size: 18px;
-                padding-left: 10px;
-                padding-right: 10px;
+                padding-left: 20px;
             }
             &__add {
                 color: black;
-                font-size: 22px;
-             
+                font-size: 20px;
             }
             &__rem {
                 color: black;
-                font-size: 22px;
-                padding-left: 10px;
+                font-size: 20px;
                 padding-right: 15px;
             }
             &__qty {
                 color: black;
-                font-size: 18px;
-                 width: 25px;
-            }
-            &__addRem {
-                display: flex;
-                align-items: center;
+                font-size: 20px;
+                width: 25px;
             }
         }
-        
+        &__cart {
+            &__icon {
+            width: 52%;
+            }
+        }
+    }
+    .buyBtnE {
+        height: 44px;
+        &__addE {
+                padding-left: 18px;
+                font-size: 16px;  
+                width: 79%;
+        }
+        &__cartE {
+            width: 21%;
+            &__icon {
+                width: 50%;
+            }
+        }
     }
     .discount {
         &__value {
             font-size: 12px;
         }
-    }
-    .buyBtnCart {
-        width: 70%;
-        height: 70%;
     }
     .pizzaImage {
         width: 80%;
@@ -501,17 +574,26 @@
     .popap {
         width: 90%;
         padding: 5px 5px;
-        background: rgba(246, 247, 249, 0.85);
-        opacity: 1;
-        color: #006F9E;
-        font-size: 10px;
-        position: absolute;
+        font-size: 13px;
         top: 70%;
-        z-index: 555;
     }
 }
 
 @media screen and (max-width: 1024px) {
+    .buyBtnE {
+        height: 44px;
+        &__addE {
+                padding-left: 10px;
+                font-size: 11px;  
+                width: 79%;
+        }
+        &__cartE {
+            width: 21%;
+            &__icon {
+                width: 50%;
+            }
+        }
+    }
     .mainView {
         &__title {
             font-size: 29px;
@@ -583,24 +665,6 @@
         padding: 3px 5px;
     }
     
-    .buyBtn {
-        height: 34px;
-        border-radius: 7px;
-        width: 98%;
-        max-width: 98%;
-        margin: 10px 1%;
-        &__add {
-                font-weight: 500;
-                font-size: 9px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-        }
-        &__cart {
-            position: absolute;
-            right: 0;
-        }
-    }
     .discount {
         height: 8px;
         &__value {
@@ -625,7 +689,7 @@
         top: 68%;  
     }
     .popap {
-        font-size: 8px;
+        font-size: 10px;
         top: 68%;
     }
 }
@@ -693,58 +757,28 @@
              padding: 0 5px ;
         }
         &__sizeBlock {
-            width: 70%;
+            height: 35px;
+            width: 65%;
+            margin-left: 2%;
             &__active {
+                height: 35px;
                 width: 50%;
+                font-size: 15px;
             }
             &__size {
-                width: 50%;;
+                width: 50%;
+                font-size: 15px;
             }
         }
     }   
     .buyBtn {
-        margin-bottom: 5px;
-        height: 60px;
-        &__add {
-             font-size: 18px;
-        }
-        &__block {
-            display: flex;
-            align-items: center;
-            background: white;
-            height: 50px;
-            border-radius: 7px;
-            margin-right: 20%;
-            width: 78%;
-            &__inCart {
-                color: black;
-                font-size: 20px;
-                padding-left: 10px;
-                padding-right: 30px;
-            }
-            &__add {
-                color: black;
-                font-size: 24px;
-             
-            }
-            &__rem {
-                color: black;
-                font-size: 24px;
-                padding-left: 10px;
-                padding-right: 15px;
-            }
-            &__qty {
-                color: black;
-                font-size: 20px;
-                 width: 25px;
-            }
-            &__addRem {
-                display: flex;
-                align-items: center;
-                padding-left: 20px;
+        &__cart {
+            &__icon {
+                width: 54%;
             }
         }
     }
+
     .upArrowSvg {
         width: 17%;
         height: 17%;
@@ -753,12 +787,9 @@
         bottom: 0; 
     }
     .popap {
-        font-size: 13px;
+        font-size: 15px;
     }
     .popapdisable {
         top: 80%;  
-    }
-    .popapBlock {
-        z-index: 1;
     }
 }

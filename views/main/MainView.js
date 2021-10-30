@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import classes from './../../styles/views/main/main-view.module.scss'
-// import { foodBlock } from ".?./../data";
 import FoodBlock from "../../widgets/foodBlock/FoodBlock";
 import DeliveryTerms from "../../widgets/deliveryterms/DeliveryTerms";
+import Cart from "../../widgets/cart/Cart";
 
 
 const MainView = ({
@@ -12,7 +12,6 @@ const MainView = ({
     showCart,
     setShowCart, 
     watchCart,
-    onAdd, 
     cart, 
     setCart,
     countProduct, 
@@ -20,6 +19,43 @@ const MainView = ({
     setShowModal
 }) => {
     
+    const [activeSize, setActiveSize] = useState(0)
+    
+    const onAdd = (food, activeSize) => {
+        console.log(food, activeSize)
+        const typeSize = [
+            {
+               id: 0,
+               size: food.status_opt_start
+            }, 
+            {
+                id: 1,
+                size: food.status_opt_end
+            }  
+        ]
+        console.log(activeSize)
+        const exist = cart.find(x => x.id === food.id)
+        console.log(exist)
+        if(exist) {
+          setCart(cart.map(x => x.id === food.id ? {...exist, qty: exist.qty +1} : x))
+          
+        } else {
+          setCart([...cart,  {...food, qty: 1, activeOption: activeSize ? activeSize : null}])
+        } 
+    }
+    const onRemove = (food) => {
+        const exist = cart.find(x => x.id === food.id)
+        if (exist.qty === 1) {
+           setCart(cart.filter(x => x.id !== food.id))
+        } else {
+           setCart(cart.map((x) =>
+           x.id === food.id ? {...exist, qty: exist.qty - 1} : x))
+        }
+    }
+    
+    const delItem = (id) => {
+        setCart(cart.filter((elem) => elem.id !== id))
+     }
     return (
         <div>
             <div className={classes.mainView__title}>У самому серці твого міста!</div>
@@ -38,12 +74,26 @@ const MainView = ({
                     cart={cart}
                     setCart={setCart}
                     onAdd={onAdd}
+                    onRemove={onRemove}
+                    delItem={delItem}
                     countProduct={countProduct}
                     showModal={showModal}
                     setShowModal={setShowModal}
                 />
             ))}
             <DeliveryTerms />
+            <Cart
+                    showCart={showCart}
+                    setShowCart={setShowCart}
+                    cart={cart}
+                    setCart={setCart}
+                    onAdd={onAdd}
+                    onRemove={onRemove}
+                    delItem={delItem}
+                    countProduct={countProduct}
+                    showModal={showModal}
+                    setShowModal={setShowModal}
+                />
             </div>
         </div>
     )

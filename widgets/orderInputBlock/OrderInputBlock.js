@@ -6,6 +6,7 @@ registerLocale('ua', ua)
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import "react-datepicker/dist/react-datepicker.css";
+import PhoneInput from 'react-phone-input-2'
 
 const OrderInputBlock = ({
     orderData,
@@ -85,9 +86,19 @@ const OrderInputBlock = ({
     
     return (
         <div>
-            <div  className={classes.input}>
+            <div className={classes.input}>
                 <input value={orderData?.name} onChange={(e) => makeDataOrderFunc(e, 'name')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Ваше ім'я" type="text"/>
                 {errorData?.name && <div className={classes.errorTitle}>{errorData['name'][0]}</div>}
+
+                {/* <PhoneInput 
+                    country={'ua'} 
+                    value={orderData?.phone} 
+                    onChange={(e) => makeDataOrderFunc(e, 'phone')} 
+                    
+                    placeholder="Телефон"  
+                    />
+                    {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>}
+ */}
 
                 <input onChange={(e) => makeDataOrderFunc(e, 'phone')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Телефон"  type="text" />
                 {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>}

@@ -21,7 +21,16 @@ const FoodList = ({
     qty
 }) => {
 
-    
+    const typeSize = [
+        {
+           id: 0,
+           size: food.status_opt_start
+        }, 
+        {
+            id: 1,
+            size: food.status_opt_end
+        }  
+    ]
    const [activeSize, setActiveSize] = useState(0)
   
    const onSelectSize = (index) => {
@@ -59,7 +68,8 @@ const FoodList = ({
       }
 
     return (
-        <div className={classes.ttt} key={index} >
+        <div  onMouseEnter={changeBackground} 
+              onMouseLeave={changeBackground1} className={classes.ttt} key={index} >
             <div className={classes.pizza__block__images}>
                <img className={classes.pizzaImage}  src={`${NET.WEB_URL}/${food.image}`} alt='pizza' />
                {icon ? 
@@ -82,27 +92,28 @@ const FoodList = ({
                    <></>
                 }
                 {food.title}</div>
-                <div className={classes.pizza__block__item}>
-                    <div key={food.id} className={classes.pizza__sizeBlock}>
-                        {/* {food.sizeType.map((size, index) => {
+                <div className={food.status_opt_start ? classes.pizza__block__item : classes.pizza__block__itemTwo}>
+                    {food.status_opt_start &&  <div key={food.id} className={classes.pizza__sizeBlock}>
+                        {typeSize.map((size, index) => {
                             return (
                                 <div key={size.size} onClick={() => onSelectSize(index)}
                                     className={activeSize === index ?
                                     classes.pizza__sizeBlock__active 
                                      : classes.pizza__sizeBlock__size}>{size.size} см</div>
                                  )
-                             })} */}
-                    </div>
+                             })}
+                    </div>}
                     <div className={classes.pizza__block__items}>
                         <div className={classes.discount}>
                             {food.status === 'sale' ?  
                             <div className={classes.discount__value}>{food.price * 0.2} грн</div> 
                             : <></>}
                         </div>
-                        <div className={classes.pizza__block__price}>{food.price}
+                        
+                        <div className={classes.pizza__block__price}>{ (activeSize === 0 || activeSize === null) ? food.price : food?.price_two}
                             <span className={classes.pizza__block__grn}>грн</span>
                         </div>
-                        <div className={classes.pizza__block__weight}>{food.weight} гр</div>
+                        {food.weight && <div className={classes.pizza__block__weight}>{food.weight} гр</div>}
                     </div>
                 </div> 
                 <div >
@@ -112,6 +123,7 @@ const FoodList = ({
                         onRemove={onRemove}
                         qty={qty}
                         food={food}
+                        activeSize={activeSize}
                     />
                 )} 
                 </div>  

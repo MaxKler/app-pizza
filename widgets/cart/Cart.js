@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from './../../styles/widgets/cart/cart-style.module.scss'
 import trashSvg from './../../project/image/cart/trash.svg'
-import cartSvg from './../../project/image/cart/cart.svg'
+import catPng from './../../project/image/cart/cat.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import closeCartSvg from './../../project/image/layouts/navbar/svg/closeMenu.svg'
@@ -13,6 +13,7 @@ const Cart = ({
     showCart, 
     setShowCart, 
     cart, 
+    setCart,
     onAdd, 
     onRemove, 
     delItem,
@@ -20,6 +21,7 @@ const Cart = ({
     showModal,
     setShowModal
 }) => {
+    console.log(cart)
     const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
     const deliveryPrice = productPrice * 0.1
     const totalPrice = productPrice + deliveryPrice
@@ -28,7 +30,7 @@ const Cart = ({
         time_status: 'speed',
         pay_status: 'money'
     })
-    const free = 1000
+    const free = 500
     let freeD = free - productPrice
      if (freeD <= 0) {
          freeD = 0
@@ -58,7 +60,7 @@ const Cart = ({
   
 
     const [errorData, setErrorData] = useState({})
-    const [succesData, setSuccesData] = useState()
+    const [succesData, setSuccesData] = useState(false)
     const makeOrder = async () => {
         const res = await fetch(`${NET.APP_URL}/order`, {
             method: 'POST',
@@ -73,20 +75,16 @@ const Cart = ({
         const data = await res.json()
         if (res.status === 401) {
             setErrorData(data.error)
-        } else if (res.status === 201) {
+        } else if (res.status === 201) {            
             setShowModal(true)
-            setSuccesData(data.data.id)
+            setSuccesData(data.data.id) 
+            localStorage.removeItem('cart')
         }
-        console.log(data)
     } 
 
-   
-
-
-    
-
     return (
-        <div   className={showCart ? classes.cart : classes.cartNone}>
+        <div className={showCart ? [classes.cartNone__active, classes.cartNone].join(' ') : classes.cartNone}>
+            <div className={classes.cart}>
             <div onClick={closeCart} className={classes.closeCart}>
                 <img src={closeCartSvg} alt="" />
             </div>
@@ -95,8 +93,8 @@ const Cart = ({
                 <hr  className={classes.hr} />
                 {cart.length === 0 ? 
                 <div className={classes.cart__empty}>
-                    <img src={cartSvg} alt="" />
-                    <div className={classes.cart__empty__title}>Ваш кошик поки порожній</div>
+                    <div className={classes.cart__empty__title}>Упс... Ваш кошик порожній...</div>
+                    <img className={classes.cart__empty__icon} src={catPng} alt="" />
                 </div> :
                 <div className={classes.cart__items}>
                     <div className={classes.order}>
@@ -109,11 +107,12 @@ const Cart = ({
                                 </div>
                                 <div className={classes.order__size3}>
                                     <div className={classes.order__name}>{item.title}
-                                        {item.sizeType && item.sizeType.map((size) => {
+                                        {/* {item.sizeType && item.sizeType.map((size) => {
+                                            console.log(size)
                                             return (
-                                                <div className={classes.order__type}>{size.size} см</div>   
+                                                <div className={classes.order__type}>{size} см</div>   
                                             )
-                                        })}
+                                        })} */}
                                     </div>
                                 </div>
                                 <div className={classes.order__size1}>
@@ -158,13 +157,8 @@ const Cart = ({
                                          <div className={classes.items__title}>Доставка:</div>
                                          {freeD === 0 ? <div className={classes.items__count}>Безкоштовно!</div>
                                           :
-                                          <div className={classes.items__count}>{deliveryPrice.toFixed(2)} грн</div>
+                                          <div className={classes.items__count}>40 грн</div>
                                          }
-                                         
-                                     </div>
-                                     <div className={classes.items}>
-                                         <div className={classes.items__title}>Кількість персон:</div>
-                                         <div className={classes.items__count}>2</div>
                                      </div>
                                 </div>
                                 <div className={classes.total}>
@@ -195,9 +189,11 @@ const Cart = ({
                             setShowModal={setShowModal}
                             setShowCart={setShowCart}
                             succesData={succesData}
+                            setCart={setCart}
                          />
                     </div>
                 </div>}
+            </div>
             </div>
         </div>
     )

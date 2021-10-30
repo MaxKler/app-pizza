@@ -1,15 +1,26 @@
-.menu {
+.menuDiv {
     min-width: 20%;
     transform: translateX(0);
+}
+.menuDivClose {
+    min-width: 0;
+    transform: translateX(-20%);
+}
+.menu {
+    min-width: 20%;
     background: white;
-    transition: all 0.4s;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    position: relative;
+    position: fixed;
+    top: 11%;
+    height: fit-content;
+    &__close {
+        display: none;
+    }
 }
 .menuCloseBtn {
     position: absolute;
     right: 2%;
-    top: 2%;
+    top: 3%;
     cursor: pointer;
 }
 .menuBlock {
@@ -42,28 +53,23 @@
         color:#F05542 ;
     }
 }
-.menuClose {
-    min-width: 0;
-    transform: translateX(-20%);
-    opacity: 0;
-    transition: all 0.4s ;
-}
+
 
 .menuSearchBlock {
     position: relative;
+    width: 100%;
 }
 .menuSearch {
     position: absolute;
-    top: 15%;
+    top: 12%;
     left: 2%;
 }
 .menuInput {
     padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     width: 100%;
     margin-bottom: 20px;
     outline: none;
+    height: 30px;
 }
 .contacts {
     text-align: center;
@@ -87,21 +93,27 @@
 }
 
 @media screen and (max-width: 1700px) {
+    .menu {
+        top: 13%;
+    }
     .menuItem {
         font-size: 17px;
         padding-bottom: 20px;
     }     
+}
+@media screen and (max-width: 1500px) {
+    .menu {
+        top: 13%;
+    }
+      
 }
 @media screen and (max-width: 1366px) {
     .menuItem {
         font-size: 16px;
         padding-bottom: 18px;
     }  
-    .menuCloseBtn {
-        position: absolute;
-        right: 2%;
-        top: 0.3%;
-        cursor: pointer;
+    .menu {
+        top: 14%;
     }
 }
 @media screen and (max-width: 1024px) {
@@ -154,28 +166,32 @@
 @media screen and (max-width: 576px) {
     .menu {
         width: 100%;
-        transform: translateX(0);
         position: fixed;
-        bottom: 0;
+        top: 0;
         height: 100vh;  
         z-index: 50;
     }
-    .menuClose {
-        width: 100%;
-        opacity: 1;
-        transition: all 0.8s ;
-        transform: translateX(0);
-        transform: translateY(120%)
-        
+ 
+    .menuCloseBtn {
+        position: absolute;
+        right: 2%;
+        top: 2%;
+        cursor: pointer;
     }
     .menuItem {
-        font-size: 15px;
-        padding-bottom: 9px;
+        font-size: 25px;
+        padding-bottom: 15px;
        
     }
     .menuTitle {
-        font-size: 25px;
-        padding-top: 15px;
-        padding-bottom: 5px;
+        font-size: 35px;
+        padding-top: 25px;
+        padding-bottom: 15px;
+    }
+    .menuBlock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 }

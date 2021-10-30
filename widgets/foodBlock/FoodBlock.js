@@ -20,32 +20,12 @@ const FoodBlock = ({
     countProduct,
     showModal,
     setShowModal,
-    idx
+    idx,
+    onAdd,
+    onRemove
 }) => {
 
-const onAdd = (food, activeSize) => {
-    const exist = cart.find(x => x.id === food.id)
-    console.log(exist)
-    if(exist) {
-      setCart(cart.map(x => x.id === food.id ? {...exist, qty: exist.qty +1} : x))
-      
-    } else {
-      setCart([...cart,  {...food, qty: 1, sizeType: food.sizeType ? food.sizeType.filter(el => el.id === activeSize) : null}])
-    } 
-}
-const onRemove = (food) => {
-    const exist = cart.find(x => x.id === food.id)
-    if (exist.qty === 1) {
-       setCart(cart.filter(x => x.id !== food.id))
-    } else {
-       setCart(cart.map((x) =>
-       x.id === food.id ? {...exist, qty: exist.qty - 1} : x))
-    }
-}
 
-const delItem = (id) => {
-    setCart(cart.filter((elem) => elem.id !== id))
- }
 
  const [visibleMenu, setVisibleMenu] = useState(false)
 
@@ -74,10 +54,8 @@ const scrolUp = () => {
 
     return (
         <>
-            <div key={idx}>
-                <div >  
-                    <div className={classes.pizzaType}>{foodBlock.category.title}</div>
-                </div>
+            <div key={idx} id={`category${foodBlock.category.id}`}> 
+                    <div  className={classes.pizzaType}>{foodBlock.category.title}</div>
                 <div className={classes.pizza}>
                   {foodBlock.products.map((food,index) => {
                       let qty = cart.filter(el => el.id === food.id)
@@ -119,17 +97,6 @@ const scrolUp = () => {
                 <div onClick={scrolUp} className={visibleIcon ? [classes.vis, classes.upArrow].join(' ') : classes.unvis}>
                     <img className={classes.upArrowSvg} src={upArrowSvg} alt="" />
                 </div>
-                 <Cart
-                    showCart={showCart}
-                    setShowCart={setShowCart}
-                    cart={cart}
-                    onAdd={onAdd}
-                    onRemove={onRemove}
-                    delItem={delItem}
-                    countProduct={countProduct}
-                    showModal={showModal}
-                    setShowModal={setShowModal}
-                />
                 </div>
             </div>
         </>

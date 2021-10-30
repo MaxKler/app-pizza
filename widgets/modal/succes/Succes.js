@@ -7,13 +7,16 @@ const Succes = ({
     showModal, 
     setShowModal,
     setShowCart, 
-    succesData
+    succesData,
+    setCart
 }) => {
   console.log(succesData)
     const closeModal = () => {
         setShowCart(false)
         document.querySelector('html').style.overflow = 'visible'
         setShowModal(false)
+        setCart([])
+        
     }
 
     return (

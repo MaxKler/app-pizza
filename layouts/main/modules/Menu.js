@@ -7,17 +7,20 @@ import {useRouter} from 'next/router'
 const Menu = ({closeMenu, screen, mainData}) => {
    
 
-    // const router = useRouter()
-    // const goApp = () => {
-    //     router.push(`/${elem.category.title}`)
-    //   }
+    const router = useRouter()
+  
+    const menu = (elem) => {
+        router.push(`/#category${elem.category.id}`)
+    }
     return (
-        <div className={screen ? classes.menu : [classes.menu, classes.menuClose].join(' ')}>
+        <>
+        <div className={screen ? classes.menuDiv :  classes.menuDivClose}></div>
+            <div className={screen ? classes.menu : classes.menu__close}>
             <div className={classes.menuCloseBtn} onClick={closeMenu}>
                 <img src={closeMenuSvg} alt="close" />
             </div>
             <div className={classes.menuTitle}>Меню</div>
-            <div className={screen ? classes.menuBlock : classes.menuBlockClose}>
+            <div className={ classes.menuBlock }>
                 <div className={classes.menuSearchBlock}>
                     <img className={classes.menuSearch} src={searchSvg} alt="search" />
                     <input  className={classes.menuInput} placeholder="    пошук" />
@@ -25,7 +28,7 @@ const Menu = ({closeMenu, screen, mainData}) => {
                 <div>
                     {mainData.map((elem) => {
                         return (
-                            <div  key={elem.title} className={classes.menuItem}>{elem.category.title}</div>
+                            <div onClick={() => router.push(`/#category${elem.category.id}`)}  key={elem.title} className={classes.menuItem}>{elem.category.title}</div>
                         )
                     })}
                 </div>
@@ -40,7 +43,8 @@ const Menu = ({closeMenu, screen, mainData}) => {
                 </div>
                 <div className={classes.contacts__workTime}>10:00 - 22:00 без вихідних</div>
             </div>
-        </div>
+            </div>
+            </>
     )
 }
 export default Menu
