@@ -28,11 +28,12 @@
         background: #E3E4EA;
         border-radius: 7px;
         height: 40px;
-        width: 58%;
+        width: 65%;
         margin-left: 2%;
         align-items: center;
         color: white;
         &__active {
+            font-size: 20px;
             height: 40px;
             background: #00B612;
             border-radius: 7px;
@@ -45,6 +46,7 @@
             color: white;
         }
         &__size {
+            font-size: 20px;
             width: 50%;
             font-size: 12px;
             cursor: pointer;
@@ -86,30 +88,36 @@
             align-items: center;
             justify-content: flex-end;
             font-weight: 600;
-            font-size: 30px; 
+            font-size: 27px; 
             margin-right: 2%;
             color: #404040;
             height: 40px;
+            text-align: right;
         }
         &__item {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-top: 20px;
+            padding-bottom: 10px;
+        }
+        &__itemTwo {
+            margin-top: 20px;
+            
         }
         &__items {
             margin-right: 2%;
         }
         &__price {
             font-weight: 600;
-            font-size: 29px;         
+            font-size: 25px;         
             text-align: right;
             color: #E45100;
         }
         &__grn {
             color: #E45100; 
-            font-size: 29px;
-            padding-left: 10px
+            font-size: 21px;
+            padding-left: 5px
         }
         &__weight {
             font-size: 19px;
@@ -201,12 +209,13 @@
         box-shadow: rgba(0, 3, 5, 0.932) 0px 2px 4px 0px, rgba(0, 0, 0, 0.993) 0px 2px 16px 0px;
     }
     &__addE {
-            font-weight: 500;
-            font-size: 20px;  
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 79%;
+        padding-left: 25px;
+        font-weight: 500;
+        font-size: 20px;  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 79%;
     }
     &__cartE {
         width: 21%;
@@ -276,12 +285,13 @@
 @media screen and (max-width: 1700px) {
     .pizza {
         &__sizeBlock {
-            height: 34px;
+            
             &__active {
-                height: 34px;
+                
+                font-size: 17px;
             }
             &__size {
-                font-size: 11px;
+                font-size: 17px;
             }
         }
         &__card {
@@ -355,8 +365,10 @@
     .buyBtnE {
         height: 48px;
         &__addE {
-                font-size: 22px;  
-                width: 79%;
+            padding-left: 25px;
+            font-size: 22px;  
+            
+            width: 79%;
         }
         &__cartE {
             width: 21%;
@@ -365,6 +377,53 @@
 }
 
 @media screen and (max-width: 1500px) {
+    .pizza {
+        &__sizeBlock {
+            height: 35px;
+            &__active {
+                height: 35px;
+                font-size: 15px;
+            }
+            &__size {
+                font-size: 15px;
+                height: 35px;
+            }
+        }
+        &__card {
+            width: 33.3%;
+        }
+         &__cardTwo {
+             width: 25%;  
+         }
+        &__block {
+            height: fit-content;
+            margin: 18px 8px;
+            &__icon {
+                top: 0;
+                right: 0;
+                width: 23%;
+                height: 23%;
+            }
+            &__status {
+                padding-right: 6px;
+                width: 35px;
+                height: 35px;
+            }
+            &__name {
+                font-size: 26px; 
+            }
+            &__price {
+                font-size: 23px;         
+            }
+            &__grn {
+                font-size: 23px;
+                padding-left: 4px
+            }
+            &__weight {
+                font-size: 15px;
+            }
+        }
+    }
     .buyBtn {
         height: 48px;
         &__block {
@@ -393,8 +452,9 @@
     .buyBtnE {
         height: 48px;
         &__addE {
-                font-size: 20px;  
-                width: 79%;
+            padding-left: 22px;
+            font-size: 19px;  
+            width: 79%;
         }
         &__cartE {
             width: 21%;
@@ -441,7 +501,10 @@
                 font-size: 20px; 
             }
             &__price {
-                font-size: 17px;         
+                font-size: 22px;         
+            }
+            &__price_two {
+                font-size: 22px;         
             }
             &__grn {
                 font-size: 17px;
@@ -476,11 +539,17 @@
                 width: 25px;
             }
         }
+        &__cart {
+            &__icon {
+            width: 52%;
+            }
+        }
     }
     .buyBtnE {
         height: 44px;
         &__addE {
-                font-size: 18px;  
+                padding-left: 18px;
+                font-size: 16px;  
                 width: 79%;
         }
         &__cartE {
@@ -511,6 +580,20 @@
 }
 
 @media screen and (max-width: 1024px) {
+    .buyBtnE {
+        height: 44px;
+        &__addE {
+                padding-left: 10px;
+                font-size: 11px;  
+                width: 79%;
+        }
+        &__cartE {
+            width: 21%;
+            &__icon {
+                width: 50%;
+            }
+        }
+    }
     .mainView {
         &__title {
             font-size: 29px;
@@ -674,12 +757,17 @@
              padding: 0 5px ;
         }
         &__sizeBlock {
-            width: 70%;
+            height: 35px;
+            width: 65%;
+            margin-left: 2%;
             &__active {
+                height: 35px;
                 width: 50%;
+                font-size: 15px;
             }
             &__size {
-                width: 50%;;
+                width: 50%;
+                font-size: 15px;
             }
         }
     }   
@@ -699,7 +787,7 @@
         bottom: 0; 
     }
     .popap {
-        font-size: 13px;
+        font-size: 15px;
     }
     .popapdisable {
         top: 80%;  

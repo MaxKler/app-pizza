@@ -12,6 +12,7 @@ const Main = ({
     cart, 
     totalPrice,
     countProduct,
+    showCart,
     setShowCart,
     mainData,
     showButtonCart = false
@@ -41,6 +42,7 @@ const Main = ({
             countProduct={countProduct}
             visibleMenuBtn={visibleMenuBtn}
             setVisibleMenuBtn={setVisibleMenuBtn}
+            showCart={showCart}
             setShowCart={setShowCart}
             showButtonCart={showButtonCart}
         />

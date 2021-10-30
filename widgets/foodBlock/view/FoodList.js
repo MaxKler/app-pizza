@@ -68,7 +68,8 @@ const FoodList = ({
       }
 
     return (
-        <div className={classes.ttt} key={index} >
+        <div  onMouseEnter={changeBackground} 
+              onMouseLeave={changeBackground1} className={classes.ttt} key={index} >
             <div className={classes.pizza__block__images}>
                <img className={classes.pizzaImage}  src={`${NET.WEB_URL}/${food.image}`} alt='pizza' />
                {icon ? 
@@ -91,7 +92,7 @@ const FoodList = ({
                    <></>
                 }
                 {food.title}</div>
-                <div className={classes.pizza__block__item}>
+                <div className={food.status_opt_start ? classes.pizza__block__item : classes.pizza__block__itemTwo}>
                     {food.status_opt_start &&  <div key={food.id} className={classes.pizza__sizeBlock}>
                         {typeSize.map((size, index) => {
                             return (
@@ -102,7 +103,6 @@ const FoodList = ({
                                  )
                              })}
                     </div>}
-                   
                     <div className={classes.pizza__block__items}>
                         <div className={classes.discount}>
                             {food.status === 'sale' ?  
@@ -113,7 +113,7 @@ const FoodList = ({
                         <div className={classes.pizza__block__price}>{ (activeSize === 0 || activeSize === null) ? food.price : food?.price_two}
                             <span className={classes.pizza__block__grn}>грн</span>
                         </div>
-                        <div className={classes.pizza__block__weight}>{food.weight} гр</div>
+                        {food.weight && <div className={classes.pizza__block__weight}>{food.weight} гр</div>}
                     </div>
                 </div> 
                 <div >

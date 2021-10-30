@@ -93,16 +93,28 @@
 }
 
 @media screen and (max-width: 1700px) {
+    .menu {
+        top: 13%;
+    }
     .menuItem {
         font-size: 17px;
         padding-bottom: 20px;
     }     
+}
+@media screen and (max-width: 1500px) {
+    .menu {
+        top: 13%;
+    }
+      
 }
 @media screen and (max-width: 1366px) {
     .menuItem {
         font-size: 16px;
         padding-bottom: 18px;
     }  
+    .menu {
+        top: 14%;
+    }
 }
 @media screen and (max-width: 1024px) {
     .menuBlock {

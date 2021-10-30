@@ -5,12 +5,12 @@ import masterSvg from './../../../project/image/views/footer/svg/master.svg'
 import visaSvg from './../../../project/image/views/footer/svg/visa.svg'
 import appleSvg from './../../../project/image/views/footer/svg/apple.svg'
 import googleSvg from './../../../project/image/views/footer/svg/google.svg'
-import {DATA} from './../../../data'
 import cartSvg from './../../../project/image/layouts/navbar/svg/cart.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
-
+import {useRouter} from 'next/router'
 const FooterView = ({watchCart, totalPrice, countProduct, mainData}) => {
+    const router = useRouter()
     return (
         <>
         <div className={classes.footer}>
@@ -60,7 +60,7 @@ const FooterView = ({watchCart, totalPrice, countProduct, mainData}) => {
                         <div className={classes.menu__items}>
                             {mainData.slice(0, 8).map((el) => {
                                 return (
-                                    <div className={classes.menu__items__item}>{el.category.title}</div>
+                                    <div onClick={() => router.push(`/#category${el.category.id}`)} className={classes.menu__items__item}>{el.category.title}</div>
                                 )
                             })}
                         </div>
