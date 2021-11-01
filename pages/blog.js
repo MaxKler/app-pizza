@@ -7,73 +7,30 @@ import { NET } from '../network'
 
  const Home = ({data}) => {
   
- console.log(data)
- const [blogData, setBlogData] = useState(data.news)
-  const [mainData, setMainData] = useState(data.data)
-  const [cart, setCart] = useState([])
-    
-  useEffect(() => {
-  
-      const res  = localStorage.getItem('cart')
-      if (res) {
-         setCart(JSON.parse(res))
-      }
-        
-   }, [])
-   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart))
-   })
-    
-
-   const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
-   const deliveryPrice = productPrice * 0.1
-   const totalPrice = productPrice + deliveryPrice
-
-
-  const [screen, setScreen] = useState(false)
-  const [showCart, setShowCart] = useState(false)  
-
-  let countProduct = 0
-  cart.map(el => {
-      countProduct = countProduct + el.qty
-  })
-
-
-
-
-const watchCart = () => {
-  
-  if (!showCart) {
-    document.querySelector('html').style.overflow = 'hidden'
-  } else {
-    document.querySelector('html').style.overflow = 'visible'
-  }
-  setShowCart(!showCart)
-}
+ 
+const [blogData, setBlogData] = useState(data.news)
+const [mainData, setMainData] = useState(data.data)
+const [screen, setScreen] = useState(false)
+const [showCart, setShowCart] = useState(false)    
 
   return (
     <>
-       <Main screen={screen}
-             setScreen={setScreen}
-             watchCart={watchCart}
-             totalPrice={totalPrice}
-             cart={cart}
-             countProduct={countProduct}
-             mainData={mainData}
-             setShowCart={setShowCart}
-            
-       > 
+      <Main screen={screen}
+          setScreen={setScreen}
+          showCart={showCart}
+          setShowCart={setShowCart}
+          mainData={mainData} 
+          showContent={true}
+      > 
         <BlogView 
-            blogData={blogData}
+          blogData={blogData}
         />
         </Main>
         <Footer 
-          watchCart={watchCart}
-          totalPrice={totalPrice}
-          countProduct={countProduct}
           mainData={mainData}
+          showContent={true}
         />
-       </>
+    </>
   )
 }
 

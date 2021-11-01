@@ -21,7 +21,7 @@ const Cart = ({
     showModal,
     setShowModal
 }) => {
-    console.log(cart)
+ 
     const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
     const deliveryPrice = productPrice * 0.1
     const totalPrice = productPrice + deliveryPrice

@@ -10,7 +10,7 @@ import QuestionsBlock from '../widgets/questions/questionsBlock'
 const Home = ({
   data
 }) => {
-  console.log(data)
+  
   const [cart, setCart] = useState([])
   const [mainData, setMainData] = useState(data.data)
   const [dataQuestions, setDataQuestions] = useState(data.questions)
@@ -66,6 +66,7 @@ const [showModal, setShowModal] =  useState(false)
              setShowCart={setShowCart}    
              mainData={mainData}
              showButtonCart={true}
+             showContent={true}
        >
            <MainView
               mainData={mainData}
@@ -90,6 +91,8 @@ const [showModal, setShowModal] =  useState(false)
           watchCart={watchCart}
           totalPrice={totalPrice}
           countProduct={countProduct}
+          showButtonCart={true}
+          showContent={true}
         />
        </>
   )

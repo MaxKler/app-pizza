@@ -1,19 +1,28 @@
 import React, { useState } from 'react'
-import {useRouter} from 'next/router'
+import Main from '../../layouts/main/Main'
+import BlogNew from '../../views/blog/components/BlogNews'
+import Footer from '../../views/footer/Footer'
 import { NET } from './../../network'
 
-const Post = ({data}) => {
-
-    const router = useRouter()
+const News = ({data}) => {
+  
+   const newsItem = data.data
+    
+    
     return (
-            <>
-                <h1 style={{color: 'black'}}>Post {router.query.id}</h1>
-            </>
+        <>
+          <Main > 
+              <BlogNew 
+                  newsItem={newsItem}
+             />
+         </Main>
+         <Footer />
+      </>
     )
 }
 
-export async function getServerSideProps({req, params}) {
-
+export async function getServerSideProps({params}) {
+    console.log(params)
     const headers = {
         headers: {
             'X-Requested-With': 'XMLHttpRequest',
@@ -24,7 +33,7 @@ export async function getServerSideProps({req, params}) {
     };
   
     const res = await fetch(
-        `${NET.APP_URL}/data`,
+        `${NET.APP_URL}/news/${params.id}`,
         headers,
     );
     const data = await res.json()
@@ -35,4 +44,4 @@ export async function getServerSideProps({req, params}) {
     }
   }
 
-export default Post
+export default News

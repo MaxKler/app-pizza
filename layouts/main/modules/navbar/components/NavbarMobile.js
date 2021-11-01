@@ -16,7 +16,8 @@ const NavbarMobile = ({
     closeMenu, 
     setVisibleMenuBtn,
     setShowCart,
-    showButtonCart
+    showButtonCart,
+    showContent
 }) => {
   
     const [visibleMenu, setVisibleMenu] = useState(false)
@@ -51,9 +52,10 @@ const NavbarMobile = ({
                    <img src={cartSvg} alt="cart" />
                 </div>
             </div>}
+            {showContent &&
             <div className={classes.menuBtn} onClick={showMenu}>
                 <img src={burgerSvg} alt="burg" />
-            </div>
+            </div>}
         </div>
         <div className={visibleMenu ? [classes.menuActive, classes.menu].join(' ') : classes.menu} >
             <div className={classes.menu__content} >
@@ -82,8 +84,12 @@ const NavbarMobile = ({
                     </div>     
                     <hr  style={{width: '50%', color: '#666666'}}/>
                     <div className={classes.social}>
-                        <img className={classes.social__logo} src={instaMobileSvg} alt="insta" />
-                        <img className={classes.social__logo} src={faceMobileSvg} alt="face" />
+                        <Link href="https://www.instagram.com/ch_mrpl/">
+                            <img className={classes.social__logo} src={instaMobileSvg} alt="insta" />
+                        </Link>
+                        <Link href="https://www.facebook.com/charomapizzabar/">
+                            <img className={classes.social__logo} src={faceMobileSvg} alt="face" />
+                        </Link>    
                     </div>
                 </div>
                 <div className={classes.workTime}>10:00 - 22:00 без вихідних</div>

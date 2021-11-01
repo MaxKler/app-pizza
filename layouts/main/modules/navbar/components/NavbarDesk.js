@@ -16,8 +16,8 @@ const NavbarDesk = ({
     watchCart, 
     totalPrice, 
     countProduct,
-    showButtonCart
-
+    showButtonCart,
+    showContent
 }) => {
 
     return (
@@ -27,7 +27,7 @@ const NavbarDesk = ({
             <img className={classes.navbar__logoImg} src={logoSvg} alt="logo" />
         </Link>
         </div>
-        <div className={showButtonCart ?  classes.navbar__items__positions : classes.navbar__items__positionsBlog }>
+        { showContent && <div className={showButtonCart ?  classes.navbar__items__positions : classes.navbar__items__positionsBlog }>
         <div className={classes.navbar__services}>
             <div onClick={openMenu} className={classes.navbar__services__item}>Меню</div>
             <div  className={classes.navbar__services__item}>Доставка</div>
@@ -44,8 +44,12 @@ const NavbarDesk = ({
             })}
         </div>  
         <div className={classes.social__icons}>
-            <FontAwesomeIcon className={classes.social__icon} icon={faFacebookF}></FontAwesomeIcon>
-            <FontAwesomeIcon className={classes.social__icon} icon={faInstagram}></FontAwesomeIcon>
+            <Link href="https://www.facebook.com/charomapizzabar/">
+                <FontAwesomeIcon className={classes.social__icon} icon={faFacebookF}></FontAwesomeIcon>
+            </Link>    
+            <Link href="https://www.instagram.com/ch_mrpl/">
+               <FontAwesomeIcon className={classes.social__icon} icon={faInstagram}></FontAwesomeIcon>
+            </Link>
          </div>
         <div className={classes.phone}>
             <div className={classes.phone__title}>Замовити доставку</div>
@@ -53,7 +57,7 @@ const NavbarDesk = ({
                <div className={classes.phone__number}>067-252-27-37</div>
             </a>
         </div>
-        </div>
+        </div>}
         {showButtonCart &&
         <div  onClick={watchCart}  className={classes.cart}>
             <img className={classes.cartSvg} src={cartSvg} alt="cart" />
@@ -67,7 +71,6 @@ const NavbarDesk = ({
             </div>
         </div>
         }
-       
     </div>
     )
 } 

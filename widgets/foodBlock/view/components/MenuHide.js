@@ -48,8 +48,12 @@ const MenuHide = ({ visibleMenu, setVisibleMenu, watchCart, screen, setScreen, c
                     </div>     
                     <hr  style={{width: '50%', color: '#666666'}}/>
                     <div className={classes.social}>
-                        <img className={classes.social__logoI} src={instaMobileSvg} alt="insta" />
-                        <img className={classes.social__logoF} src={faceMobileSvg} alt="face" />
+                        <Link href="https://www.instagram.com/ch_mrpl/">   
+                            <img className={classes.social__logoI} src={instaMobileSvg} alt="insta" />
+                        </Link>    
+                        <Link href="https://www.facebook.com/charomapizzabar/">
+                             <img className={classes.social__logoF} src={faceMobileSvg} alt="face" />
+                         </Link>    
                     </div>
                 </div>
                 <div onClick={watchCart} className={classes.menuCart}>

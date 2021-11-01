@@ -4,7 +4,12 @@ import searchSvg from './../../../project/image/layouts/menu/search.svg'
 import closeMenuSvg from './../../../project/image/layouts/navbar/svg/closeMenu.svg'
 import phoneSvg from './../../../project/image/layouts/navbar/svg/phone.svg'
 import {useRouter} from 'next/router'
-const Menu = ({closeMenu, screen, mainData}) => {
+const Menu = ({
+    closeMenu, 
+    screen, 
+    mainData,
+    showContent
+}) => {
    
 
     const router = useRouter()
@@ -14,7 +19,9 @@ const Menu = ({closeMenu, screen, mainData}) => {
     }
     return (
         <>
+        
         <div className={screen ? classes.menuDiv :  classes.menuDivClose}></div>
+        {showContent &&
             <div className={screen ? classes.menu : classes.menu__close}>
             <div className={classes.menuCloseBtn} onClick={closeMenu}>
                 <img src={closeMenuSvg} alt="close" />
@@ -43,7 +50,7 @@ const Menu = ({closeMenu, screen, mainData}) => {
                 </div>
                 <div className={classes.contacts__workTime}>10:00 - 22:00 без вихідних</div>
             </div>
-            </div>
+            </div>}
             </>
     )
 }
