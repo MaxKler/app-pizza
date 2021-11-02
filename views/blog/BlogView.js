@@ -17,21 +17,23 @@ const BlogNews = ({blogData}) => {
             <div className={classes.blog__content}>
                 <div className={classes.blog__content__content}>
                 <div className={classes.blog__content__mainCard}>
+               
                    <div style={{backgroundImage: `url(${imgPng})`}} className={classes.blog__mainNew}>
                        {blogData.slice(0, 1).map((elem) => {
                            return (
+                            <Link href={`/news/${elem.id}`}>
                                 <div className={classes.blog__mainNew__content}>
-                                    <Link href={`/news/${elem.id}`}>
-                                        <div  className={classes.blog__mainNew__content__title}>{elem.title}</div>
-                                    </Link>    
+                                    <div  className={classes.blog__mainNew__content__title}>{elem.title}</div>
                                    <div className={classes.blog__mainNew__content__info}>
                                         <div className={classes.blog__mainNew__content__info__desc}>{elem.small_description}</div>
                                         <div className={classes.blog__mainNew__content__info__date}>{elem.date}</div>
                                     </div>
                                 </div>
+                            </Link>  
                             )
                         })}
                    </div>
+                   
                 </div>   
                 <div className={classes.blog__content__twoCards}>
                        {blogData.slice(1, 3).map((news) => {

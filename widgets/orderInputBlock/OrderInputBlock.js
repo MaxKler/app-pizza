@@ -207,7 +207,7 @@ const OrderInputBlock = ({
                     {errorData?.time_date && <div className={classes.errorTitle}>{errorData['time_date'][0]}</div>}
                     </div>
                     <div>
-                        <textarea className={classes.textarea} placeholder="   Додати побажання"  />
+                        <textarea className={classes.textarea} placeholder="  Додати побажання"  />
                     </div>
                 </div>
             </div>

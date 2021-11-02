@@ -33,7 +33,7 @@ const Home = ({
    const totalPrice = productPrice + deliveryPrice
 
 
-  const [screen, setScreen] = useState(false)
+  const [screen, setScreen] = useState(true)
   const [showCart, setShowCart] = useState(false)  
 
   let countProduct = 0

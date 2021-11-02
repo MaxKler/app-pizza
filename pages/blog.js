@@ -10,7 +10,7 @@ import { NET } from '../network'
  
 const [blogData, setBlogData] = useState(data.news)
 const [mainData, setMainData] = useState(data.data)
-const [screen, setScreen] = useState(false)
+const [screen, setScreen] = useState(true)
 const [showCart, setShowCart] = useState(false)    
 
   return (
