@@ -10,12 +10,12 @@ const BlogNew = ({newsItem}) => {
     return (
         <div className={classes.new}>
             <div className={classes.new__content}>
-                <div className={classes.titleBlock}>
-                    <Link href={`/blog`}>
+                <Link href={`/blog`}>
+                    <div className={classes.titleBlock}>
                         <FontAwesomeIcon className={classes.titleBlock__icon} icon={faChevronLeft}></FontAwesomeIcon>
-                    </Link>
-                    <div className={classes.titleBlock__title}>блог</div>
-                </div>
+                        <div className={classes.titleBlock__title}>блог</div>
+                    </div>
+                </Link>
                 <div className={classes.newInfo}>
                     <div className={classes.newInfo__info}>
                         <div className={classes.newInfo__info__desc}>{newsItem.small_description}</div>

@@ -81,7 +81,7 @@ const MainView = ({
                     setShowModal={setShowModal}
                 />
             ))}
-            <DeliveryTerms />
+            <DeliveryTerms screen={screen} />
             <Cart
                     showCart={showCart}
                     setShowCart={setShowCart}
