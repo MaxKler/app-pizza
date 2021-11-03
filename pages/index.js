@@ -5,7 +5,7 @@ import MainView from '../views/main/MainView'
 import MapView from '../views/map/MapView'
 import { NET } from '../network'
 import QuestionsBlock from '../widgets/questions/questionsBlock'
-
+import {useWindowSize} from './../mobile util/utils'
 
 const Home = ({
   data
@@ -14,6 +14,12 @@ const Home = ({
   const [cart, setCart] = useState([])
   const [mainData, setMainData] = useState(data.data)
   const [dataQuestions, setDataQuestions] = useState(data.questions)
+  const size = useWindowSize()
+  useEffect(() => {
+    if (size.width > 768) {
+      setScreen(true)
+    }
+  })
    
   useEffect(() => {
   
@@ -33,7 +39,7 @@ const Home = ({
    const totalPrice = productPrice + deliveryPrice
 
 
-  const [screen, setScreen] = useState(true)
+  const [screen, setScreen] = useState(false)
   const [showCart, setShowCart] = useState(false)  
 
   let countProduct = 0

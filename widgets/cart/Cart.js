@@ -81,7 +81,7 @@ const Cart = ({
             localStorage.removeItem('cart')
         }
     } 
-
+    console.log(cart)
     return (
         <div className={showCart ? [classes.cartNone__active, classes.cartNone].join(' ') : classes.cartNone}>
             <div className={classes.cart}>
@@ -123,7 +123,13 @@ const Cart = ({
                                     </div>
                                 </div>
                                 <div className={classes.order__size1}>
-                                    <div className={classes.order__price}>{item.price * item.qty}</div>
+                                    {item.activeOption === 1 ? 
+                                      <div className={classes.order__price}>{+item.price_two * item.qty}</div> :
+                                      <div className={classes.order__price}>{item.price * item.qty}</div>
+
+                                }
+                                    
+
                                 </div>
                                 <div className={classes.order__size2}>
                                     <img onClick={() => delItem(item.id)} className={classes.trash} src={trashSvg} alt="" />

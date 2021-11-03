@@ -61,6 +61,7 @@ const MainView = ({
             <div className={classes.mainView__title}>У самому серці твого міста!</div>
             <div className={classes.mainView}></div>
             <div className={classes.ttt}>
+            <DeliveryTerms screen={screen} />
             {mainData && mainData.length && mainData.map((foodBlock, idx) => (
                 <FoodBlock  
                     idx={idx}
@@ -81,7 +82,6 @@ const MainView = ({
                     setShowModal={setShowModal}
                 />
             ))}
-            <DeliveryTerms screen={screen} />
             <Cart
                     showCart={showCart}
                     setShowCart={setShowCart}

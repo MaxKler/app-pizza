@@ -42,7 +42,7 @@ const FooterView = ({
                 </div>
                <div className={classes.pay}>
                     <div className={classes.pay__title}>Оплата та доставка</div>
-                    <div className={classes.pay__uslovia}>Умови доставки</div>
+                    <div  onClick={() => router.push(`/#delivery`)}  className={classes.pay__uslovia}>Умови доставки</div>
                     <a>
                        <div className={classes.pay__politic}>Політика конфіденційності</div>
                     </a>

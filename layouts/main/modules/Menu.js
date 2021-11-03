@@ -4,6 +4,8 @@ import searchSvg from './../../../project/image/layouts/menu/search.svg'
 import closeMenuSvg from './../../../project/image/layouts/navbar/svg/closeMenu.svg'
 import phoneSvg from './../../../project/image/layouts/navbar/svg/phone.svg'
 import {useRouter} from 'next/router'
+import {useWindowSize} from './../../../mobile util/utils'
+
 const Menu = ({
     closeMenu, 
     screen, 
@@ -13,9 +15,14 @@ const Menu = ({
    
 
     const router = useRouter()
-  
+    const size = useWindowSize()
+
     const menu = (elem) => {
         router.push(`/#category${elem.category.id}`)
+        if (size.width < 768) {
+            closeMenu()
+          }
+        
     }
     return (
         <>
@@ -35,7 +42,7 @@ const Menu = ({
                 <div>
                     {mainData.map((elem) => {
                         return (
-                            <div onClick={() => router.push(`/#category${elem.category.id}`)}  key={elem.title} className={classes.menuItem}>{elem.category.title}</div>
+                            <div onClick={() => menu(elem)}  key={elem.title} className={classes.menuItem}>{elem.category.title}</div>
                         )
                     })}
                 </div>

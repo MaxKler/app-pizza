@@ -8,7 +8,7 @@ import del3Png from './../../project/image/widgets/delTerms/deliv3.png'
 
 const DeliveryTerms = ({screen}) => {
     return (
-        <div className={classes.delivery}>
+        <div id={`delivery`} className={classes.delivery}>
             <div className={classes.delivery__firstBlock}>
                 <img className={classes.delivery__firstBlock__img} src={chPng} alt="" />
                 <div className={classes.delivery__firstBlock__text}>Ми 

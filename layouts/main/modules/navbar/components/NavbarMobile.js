@@ -7,6 +7,7 @@ import cartSvg from './../../../../../project/image/layouts/navbar/svg/cart.svg'
 import burgerSvg from './../../../../../project/image/layouts/navbar/svg/burger.svg'
 import closeSvg from './../../../../../project/image/layouts/navbar/svg/close.svg'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 
 
 const NavbarMobile = ({
@@ -17,9 +18,11 @@ const NavbarMobile = ({
     setVisibleMenuBtn,
     setShowCart,
     showButtonCart,
-    showContent
+    showContent,
+   
 }) => {
-  
+
+    const router = useRouter()
     const [visibleMenu, setVisibleMenu] = useState(false)
 
     const showMenu = () => {
@@ -36,6 +39,12 @@ const NavbarMobile = ({
     const HideAndShow = () => {
         setVisibleMenu(false)
         openMenu()
+    }
+
+    const delivery = () => {
+        setVisibleMenu(false)
+        router.push(`/#delivery`)
+        
     }
   
     return (
@@ -69,7 +78,7 @@ const NavbarMobile = ({
                 </div>
                 <div className={classes.menuItems}>
                     <div  onClick={HideAndShow} className={classes.menuItem} >Меню</div>
-                    <div  className={classes.menuItem} >Доставка</div>
+                    <div onClick={delivery} className={classes.menuItem} >Доставка</div>
                     <Link href="/blog">
                         <div  className={classes.menuItem} >Блог</div>
                     </Link>

@@ -6,7 +6,7 @@
         margin-top: 40px;
         margin-left: 40px;
         &__img {
-            width: 100%;
+            width: 40%;
         }
         &__text {
             font-weight: bold;
@@ -19,7 +19,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 30px 30px;
+        margin: 40px 30px;
         &__card {
             width: 20%;
         }
@@ -46,15 +46,12 @@
 @media screen and (max-width: 1800px) {
 .delivery {
     &__firstBlock {
-        margin-top: 38px;
-        margin-left: 38px;
         &__text {
             font-size: 30px;
             padding: 0 20px;
         }
     }
     &__groups {
-        margin: 29px 29px;
         &__block {
             padding: 0 15px;
         }
@@ -63,7 +60,8 @@
         }
         &__img {
             margin-bottom: 10px;
-            height: 290px;
+            width: 90%;
+            height: 100%;;
         }
     }
 }
@@ -71,15 +69,12 @@
 @media screen and (max-width: 1700px) {
     .delivery {
         &__firstBlock {
-            margin-top: 36px;
-            margin-left: 36px;
             &__text {
                 font-size: 27px;
                 padding: 0 18px;
             }
         }
         &__groups {
-            margin: 27px 27px;
             &__block {
                 padding: 0 14px;
             }
@@ -88,7 +83,8 @@
             }
             &__img {
                 margin-bottom: 10px;
-                height: 280px;
+                width: 90%;
+                height: 100%;
             }
         }
     }
@@ -96,15 +92,12 @@
 @media screen and (max-width: 1600px) {
     .delivery {
         &__firstBlock {
-            margin-top: 35px;
-            margin-left: 35px;
             &__text {
                 font-size: 26px;
                 padding: 0 17px;
             }
         }
         &__groups {
-            margin: 26px 26px;
             &__block {
                 padding: 0 14px;
             }
@@ -113,7 +106,8 @@
             }
             &__img {
                 margin-bottom: 10px;
-                height: 270px;
+                width: 90%;
+                height: 100%;
             }
         }
     }
@@ -121,15 +115,12 @@
 @media screen and (max-width: 1500px) {
     .delivery {
         &__firstBlock {
-            margin-top: 34px;
-            margin-left: 34px;
             &__text {
                 font-size: 24px;
                 padding: 0 16px;
             }
         }
         &__groups {
-            margin: 25px 25px;
             &__block {
                 padding: 0 13px;
             }
@@ -138,7 +129,8 @@
             }
             &__img {
                 margin-bottom: 10px;
-                height: 260px;
+                width: 90%;
+                height: 100%;
             }
         }
     }
@@ -146,7 +138,7 @@
 @media screen and (max-width: 1400px) {
     .delivery {
         &__firstBlock {
-            margin-top: 33px;
+            margin-top: 40px;
             margin-left: 33px;
             &__text {
                 font-size: 23px;
@@ -163,7 +155,8 @@
             }
             &__img {
                 margin-bottom: 10px;
-                height: 250px;
+                width: 90%;
+                height: 100%;
             }
         }
     }
@@ -171,15 +164,15 @@
 @media screen and (max-width: 1300px) {
     .delivery {
         &__firstBlock {
-            margin-top: 32px;
+            margin-top: 40px;
             margin-left: 32px;
             &__text {
-                font-size: 22px;
+                font-size: 21px;
                 padding: 0 14px;
             }
         }
         &__groups {
-            margin: 23px 23px;
+            margin: 30px 23px;
             &__block {
                 padding: 0 13px;
             }
@@ -188,7 +181,8 @@
             }
             &__img {
                 margin-bottom: 10px;
-                height: 240px;
+                width: 90%;
+                height: 100%;
             }
         }
     }
@@ -196,7 +190,7 @@
 @media screen and (max-width: 1200px) {
     .delivery {
         &__firstBlock {
-            margin-top: 31px;
+            margin-top: 40px;
             margin-left: 31px;
             &__text {
                 font-size: 21px;
@@ -223,9 +217,6 @@
         &__firstBlock {
             margin-top: 30px;
             margin-left: 30px;
-            &__img {
-                width: 30%;
-            }
             &__text {
                 font-size: 10px;
                 padding: 0 13px;
@@ -252,9 +243,6 @@
         &__firstBlock {
             margin-top: 30px;
             margin-left: 30px;
-            &__img {
-                width: 40%;
-            }
             &__text {
                 font-size: 10px;
                 padding: 0 13px;

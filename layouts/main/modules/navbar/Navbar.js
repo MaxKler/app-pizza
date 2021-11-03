@@ -16,7 +16,8 @@ const Navbar = ({
     setShowCart, 
     showButtonCart,
     showCart, 
-    showContent
+    showContent,
+    
 }) => {
     const [activeLang, setActiveLang] = useState(0)
     const actLang = {
@@ -64,6 +65,7 @@ const Navbar = ({
                 setShowCart={setShowCart}
                 showButtonCart={showButtonCart}
                 showContent={showContent}
+               
             />
             {showContent &&
             <div>

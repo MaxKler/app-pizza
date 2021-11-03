@@ -4,7 +4,7 @@ import cartSvg from './../../../../../project/image/layouts/navbar/svg/cart.svg'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faFacebookF,  faInstagram } from "@fortawesome/free-brands-svg-icons";
-
+import {useRouter} from 'next/router'
 
 const NavbarDesk = ({
     classes, 
@@ -20,6 +20,8 @@ const NavbarDesk = ({
     showContent
 }) => {
 
+    const router = useRouter()
+
     return (
     <div className={classes.navbar__items }>
         <div className={classes.navbar__logo}>
@@ -30,7 +32,7 @@ const NavbarDesk = ({
         { showContent && <div className={showButtonCart ?  classes.navbar__items__positions : classes.navbar__items__positionsBlog }>
         <div className={classes.navbar__services}>
             <div onClick={openMenu} className={classes.navbar__services__item}>Меню</div>
-            <div  className={classes.navbar__services__item}>Доставка</div>
+            <div onClick={() => router.push(`/#delivery`)}  className={classes.navbar__services__item}>Доставка</div>
             <Link href="/blog">
                 <div className={classes.navbar__services__item}>Блог</div>
             </Link>

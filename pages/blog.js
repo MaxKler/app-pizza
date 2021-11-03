@@ -3,15 +3,21 @@ import Main from '../layouts/main/Main'
 import BlogView from '../views/blog/BlogView'
 import Footer from '../views/footer/Footer'
 import { NET } from '../network'
-
+import {useWindowSize} from './../mobile util/utils'
 
  const Home = ({data}) => {
   
  
 const [blogData, setBlogData] = useState(data.news)
 const [mainData, setMainData] = useState(data.data)
-const [screen, setScreen] = useState(true)
+const [screen, setScreen] = useState(false)
 const [showCart, setShowCart] = useState(false)    
+const size = useWindowSize()
+  useEffect(() => {
+    if (size.width > 768) {
+      setScreen(true)
+    }
+  })
 
   return (
     <>
