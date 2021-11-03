@@ -8,6 +8,24 @@ import closeCartSvg from './../../project/image/layouts/navbar/svg/closeMenu.svg
 import OrderInputBlock from "../orderInputBlock/OrderInputBlock";
 import {NET} from './../../network'
 import Succes from "../modal/succes/Succes";
+import delPng from './../../project/image/widgets/delTerms/deliv.png'
+import del1Png from './../../project/image/widgets/delTerms/deliv1.png'
+import del2Png from './../../project/image/widgets/delTerms/deliv2.png'
+import del3Png from './../../project/image/widgets/delTerms/deliv3.png'
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import Slider from "react-slick";
+
+let settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1
+  };
+
 
 const Cart = ({
     showCart, 
@@ -46,18 +64,7 @@ const Cart = ({
         setOrderMenu(true)
     }
 
-    // const cartItems = React.useRef()
-
-    // React.useEffect(() => {
-    //     document.body.addEventListener('click', outsideClick)
-    // }, [])
-
-    // const outsideClick = (e) => {
-    //     if (!e.path.includes(cartItems.current)) {
-    //       setShowCart(false)
-    //     }
-    // }
-  
+   
 
     const [errorData, setErrorData] = useState({})
     const [succesData, setSuccesData] = useState(false)
@@ -81,7 +88,6 @@ const Cart = ({
             localStorage.removeItem('cart')
         }
     } 
-    console.log(cart)
     return (
         <div className={showCart ? [classes.cartNone__active, classes.cartNone].join(' ') : classes.cartNone}>
             <div className={classes.cart}>
@@ -126,10 +132,7 @@ const Cart = ({
                                     {item.activeOption === 1 ? 
                                       <div className={classes.order__price}>{+item.price_two * item.qty}</div> :
                                       <div className={classes.order__price}>{item.price * item.qty}</div>
-
                                 }
-                                    
-
                                 </div>
                                 <div className={classes.order__size2}>
                                     <img onClick={() => delItem(item.id)} className={classes.trash} src={trashSvg} alt="" />
@@ -145,6 +148,20 @@ const Cart = ({
                         : <div className={classes.deliveryFree}>До безкоштовної доставки залишилось замовити <strong>{freeD}</strong> грн.</div>
                         }
                         <div className={classes.deliveryFree}>Відправляючи цю форму, Ви погоджуєтеся з політикою щодо обробки персональних даних.</div>
+                        <Slider {...settings}>
+                            <div>
+                                <img src={delPng} alt="" />
+                            </div>
+                            <div>
+                                <img src={del1Png} alt="" />
+                            </div>
+                            <div>
+                                <img src={del2Png} alt="" />
+                            </div>
+                            <div>
+                                <img src={del3Png} alt="" />
+                            </div>
+                        </Slider>
                     </div>
                     <div className={classes.order__check}>
                         <div className={classes.check}>

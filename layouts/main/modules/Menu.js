@@ -35,10 +35,10 @@ const Menu = ({
             </div>
             <div className={classes.menuTitle}>Меню</div>
             <div className={ classes.menuBlock }>
-                <div className={classes.menuSearchBlock}>
+                {/* <div className={classes.menuSearchBlock}>
                     <img className={classes.menuSearch} src={searchSvg} alt="search" />
                     <input  className={classes.menuInput} placeholder="    пошук" />
-                </div>
+                </div> */}
                 <div>
                     {mainData.map((elem) => {
                         return (

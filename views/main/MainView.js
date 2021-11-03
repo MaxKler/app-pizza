@@ -3,6 +3,7 @@ import classes from './../../styles/views/main/main-view.module.scss'
 import FoodBlock from "../../widgets/foodBlock/FoodBlock";
 import DeliveryTerms from "../../widgets/deliveryterms/DeliveryTerms";
 import Cart from "../../widgets/cart/Cart";
+import NewProducts from "../../widgets/foodBlock/view/NewProducts";
 
 
 const MainView = ({
@@ -16,7 +17,8 @@ const MainView = ({
     setCart,
     countProduct, 
     showModal,
-    setShowModal
+    setShowModal,
+    newProducts
 }) => {
     
     const [activeSize, setActiveSize] = useState(0)
@@ -61,6 +63,24 @@ const MainView = ({
             <div className={classes.mainView__title}>У самому серці твого міста!</div>
             <div className={classes.mainView}></div>
             <div className={classes.ttt}>
+                <div className={classes.pizzaType}>Новинки</div>
+                     <NewProducts 
+                     showCart={showCart}
+                     setShowCart={setShowCart}
+                     screen={screen}
+                     setScreen={setScreen}
+                     newProducts={newProducts}
+                     classes={classes} 
+                     watchCart={watchCart}
+                     cart={cart}
+                     setCart={setCart}
+                     onAdd={onAdd}
+                     onRemove={onRemove}
+                     delItem={delItem}
+                     countProduct={countProduct}
+                     showModal={showModal}
+                     setShowModal={setShowModal}
+                     />
             <DeliveryTerms screen={screen} />
             {mainData && mainData.length && mainData.map((foodBlock, idx) => (
                 <FoodBlock  

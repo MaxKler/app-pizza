@@ -125,7 +125,6 @@ const FoodList = ({
                         food={food}
                         activeSize={activeSize}
                     />
-                )} 
                 </div>  
         </div>    
     )           

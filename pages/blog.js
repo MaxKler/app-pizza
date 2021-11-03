@@ -17,7 +17,7 @@ const size = useWindowSize()
     if (size.width > 768) {
       setScreen(true)
     }
-  })
+  }, [])
 
   return (
     <>

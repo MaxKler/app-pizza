@@ -1,5 +1,4 @@
 .delivery {
-    max-width: 100%;
     &__firstBlock {
         display: flex;
         align-items: center;
@@ -19,7 +18,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 40px 30px;
+        padding-top: 50px;
         &__card {
             width: 20%;
         }
@@ -33,13 +32,13 @@
             padding: 10px 20px;
         }
         &__text {
+            padding-top: 20px;
             font-size: 26px;
             text-align: center;
             color: #404040;
         }
         &__img {
             margin-bottom: 10px;
-            height: 300px;
         }
     }
 }

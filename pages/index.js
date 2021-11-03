@@ -10,16 +10,12 @@ import {useWindowSize} from './../mobile util/utils'
 const Home = ({
   data
 }) => {
-  
+  console.log(data)
   const [cart, setCart] = useState([])
   const [mainData, setMainData] = useState(data.data)
   const [dataQuestions, setDataQuestions] = useState(data.questions)
-  const size = useWindowSize()
-  useEffect(() => {
-    if (size.width > 768) {
-      setScreen(true)
-    }
-  })
+  const [newProducts, setNewProducts] = useState(data.productsNew)
+
    
   useEffect(() => {
   
@@ -41,6 +37,13 @@ const Home = ({
 
   const [screen, setScreen] = useState(false)
   const [showCart, setShowCart] = useState(false)  
+  const size = useWindowSize()
+
+  useEffect(() => {
+    if (size.width > 768) {
+      setScreen(true)
+    }
+  }, [])
 
   let countProduct = 0
   cart.map(el => {
@@ -86,6 +89,7 @@ const [showModal, setShowModal] =  useState(false)
               countProduct={countProduct}
               showModal={showModal}
               setShowModal={setShowModal}
+              newProducts={newProducts}
            />
         </Main>
             <QuestionsBlock 
