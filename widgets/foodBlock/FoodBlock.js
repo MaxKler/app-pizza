@@ -60,6 +60,7 @@ const scrolUp = () => {
                   {foodBlock.products.map((food,index) => {
                       let qty = cart.filter(el => el.id === food.id)
                       return (
+                          <>{food.type === "main" &&
                         <div className={ screen ? classes.pizza__card : classes.pizza__cardTwo}>
                             <div className={classes.pizza__block}>
                                 <FoodList 
@@ -74,6 +75,7 @@ const scrolUp = () => {
                                 />
                             </div>
                         </div>
+                  }</>
                     )
                 })}
                 <MenuHide 

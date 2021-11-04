@@ -15,7 +15,7 @@ const Home = ({
   const [mainData, setMainData] = useState(data.data)
   const [dataQuestions, setDataQuestions] = useState(data.questions)
   const [newProducts, setNewProducts] = useState(data.productsNew)
-
+  const [addToOrder, setAddToOrder] = useState(data.productsAnother)
    
   useEffect(() => {
   
@@ -90,6 +90,7 @@ const [showModal, setShowModal] =  useState(false)
               showModal={showModal}
               setShowModal={setShowModal}
               newProducts={newProducts}
+              addToOrder={addToOrder}
            />
         </Main>
             <QuestionsBlock 

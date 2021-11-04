@@ -19,10 +19,10 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 let settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 4,
     slidesToScroll: 1
   };
 
@@ -37,7 +37,8 @@ const Cart = ({
     delItem,
     countProduct, 
     showModal,
-    setShowModal
+    setShowModal,
+    addToOrder
 }) => {
  
     const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
@@ -148,19 +149,23 @@ const Cart = ({
                         : <div className={classes.deliveryFree}>До безкоштовної доставки залишилось замовити <strong>{freeD}</strong> грн.</div>
                         }
                         <div className={classes.deliveryFree}>Відправляючи цю форму, Ви погоджуєтеся з політикою щодо обробки персональних даних.</div>
+                        <div className={classes.addToOrder}>Рекомендуємо додати до замовлення</div>
                         <Slider {...settings}>
-                            <div>
-                                <img src={delPng} alt="" />
-                            </div>
-                            <div>
-                                <img src={del1Png} alt="" />
-                            </div>
-                            <div>
-                                <img src={del2Png} alt="" />
-                            </div>
-                            <div>
-                                <img src={del3Png} alt="" />
-                            </div>
+                                {addToOrder.map((elem) => {
+                                    console.log(elem)
+                                    return (
+                                        <div style={{textAlign:'center'}}>
+                                            <div style={{color:"black", textAlign:'center'}}>{elem.title}</div>
+                                            <div style={{color:"black", textAlign:'center'}}>{elem.text}</div>
+                                            <div style={{color:"black", textAlign:'center'}}>{elem.price}</div>
+                                            <div className={classes.order__count}>
+                                                <span onClick={() => onRemove(elem)} className={classes.order__count__addRem}>-</span>
+                                                <div className={classes.order__count__count}>{elem.qty}</div>
+                                                <span onClick={() => onAdd(elem)} className={classes.order__count__addRem}>+</span>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
                         </Slider>
                     </div>
                     <div className={classes.order__check}>

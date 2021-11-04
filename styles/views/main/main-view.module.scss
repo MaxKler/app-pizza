@@ -10,6 +10,24 @@
         text-align: center;
     }
 }
+.mainView1 {
+    background: url('./../../../project/image/layouts/content/jpg/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+.mainView2 {
+    background: url('./../../../project/image/layouts/content/jpg/bg2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+.mainView3 {
+    background: url('./../../../project/image/layouts/content/jpg/bg3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
 
 .pizzaType {
     font-weight: bold;
