@@ -6,13 +6,15 @@ import { NET } from './../../network'
 
 const News = ({data}) => {
   
-   const newsItem = data.data
-    
-    
+  const newsItem = data.data
+  const otherNews = data.anotherNews
+
+    console.log(data)
     return (
         <>
           <Main > 
               <BlogNew 
+                  otherNews={otherNews}
                   newsItem={newsItem}
              />
          </Main>

@@ -4,8 +4,9 @@ import imgPng from './../../project/image/views/blog/img.png'
 import imPng from './../../project/image/views/blog/im.png'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
+import { NET } from "../../network";
 
-const BlogNews = ({blogData}) => {
+const BlogView = ({blogData}) => {
     
     const router = useRouter()
 
@@ -20,7 +21,7 @@ const BlogNews = ({blogData}) => {
                    {blogData.slice(0, 1).map((elem) => {
                         return (
                             <Link href={`/news/${elem.id}`}>
-                            <div style={{backgroundImage: `url(${imgPng})`}} className={classes.blog__mainNew}>
+                            <div style={{backgroundImage: `url(${NET.WEB_URL}/${elem.image})`}} className={classes.blog__mainNew}>
                                 <div className={classes.blog__mainNew__content}>
                                     <div  className={classes.blog__mainNew__content__title}>{elem.title}</div>
                                    <div className={classes.blog__mainNew__content__info}>
@@ -40,7 +41,7 @@ const BlogNews = ({blogData}) => {
                                 <Link href={`/news/${news.id}`}>
                                 <div className={classes.blog__twoNews__content}>
                                     <div className={classes.blog__twoNews__content__imgBlock}>
-                                        <img className={classes.blog__twoNews__content__img} src={imPng} alt="" />
+                                        <img className={classes.blog__twoNews__content__img} src={`${NET.WEB_URL}/${news.image}`} alt="" />
                                     </div>
                                     <div className={classes.blog__twoNews__content__block} >
                                         <div className={classes.blog__twoNews__content__block__block}>
@@ -66,7 +67,7 @@ const BlogNews = ({blogData}) => {
                             <div className={classes.otherNews__new}>
                                 <div className={classes.otherNews__content}>
                                     <div className={classes.blog__twoNews__content__imgBlock}>
-                                        <img className={classes.blog__twoNews__content__img} src={imPng} alt="" />
+                                        <img className={classes.blog__twoNews__content__img} src={`${NET.WEB_URL}/${news.image}`} alt="" />
                                     </div>
                                     <div className={classes.blog__twoNews__content__block} >
                                         <div className={classes.blog__twoNews__content__block__block}>
@@ -90,4 +91,4 @@ const BlogNews = ({blogData}) => {
     )
 }
 
-export default BlogNews
+export default BlogView

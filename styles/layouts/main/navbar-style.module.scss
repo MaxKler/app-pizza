@@ -594,7 +594,7 @@
 }
 @media screen and (max-width: 576px) {
     .navbar {
-        height: 10vh;
+        height: 80px;
         &__mobile {
             display: flex;
         }
@@ -617,13 +617,13 @@
     .iconBox {
         position: absolute;
         right: 18%;
-        top: 22%;
+        top: 20px;
         
     }
     .menuBtn {
         position: fixed;
         right: 2%;
-        top: 2%;
+        top: 20px;
         z-index: 33;
     }
    

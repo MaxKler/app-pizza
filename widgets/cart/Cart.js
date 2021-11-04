@@ -17,13 +17,30 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
+import AddToOrder from "./components/AddToOrder";
 
 let settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+            slidesToShow: 1,
+            arrows:false
+            }
+          },
+        {
+          breakpoint: 568,
+          settings: {
+          slidesToShow: 1,
+          arrows:false
+          }
+        },
+    ]
   };
 
 
@@ -149,24 +166,25 @@ const Cart = ({
                         : <div className={classes.deliveryFree}>До безкоштовної доставки залишилось замовити <strong>{freeD}</strong> грн.</div>
                         }
                         <div className={classes.deliveryFree}>Відправляючи цю форму, Ви погоджуєтеся з політикою щодо обробки персональних даних.</div>
-                        <div className={classes.addToOrder}>Рекомендуємо додати до замовлення</div>
-                        <Slider {...settings}>
+                        <div style={{display:'flex', justifyContent:'center'}}>
+                            <div style={{width:'90%'}}>
+                               <div className={classes.addToOrder}>Рекомендуємо додати до замовлення</div>
+                               <Slider {...settings}>
                                 {addToOrder.map((elem) => {
-                                    console.log(elem)
+                                       let qty = cart.filter(el => el.id === elem.id)
                                     return (
-                                        <div style={{textAlign:'center'}}>
-                                            <div style={{color:"black", textAlign:'center'}}>{elem.title}</div>
-                                            <div style={{color:"black", textAlign:'center'}}>{elem.text}</div>
-                                            <div style={{color:"black", textAlign:'center'}}>{elem.price}</div>
-                                            <div className={classes.order__count}>
-                                                <span onClick={() => onRemove(elem)} className={classes.order__count__addRem}>-</span>
-                                                <div className={classes.order__count__count}>{elem.qty}</div>
-                                                <span onClick={() => onAdd(elem)} className={classes.order__count__addRem}>+</span>
-                                            </div>
-                                        </div>
+                                      <AddToOrder 
+                                          elem={elem}
+                                          onAdd={onAdd}
+                                          onRemove={onRemove}
+                                          classes={classes}
+                                          qty={qty.length ? qty[0].qty : 0}
+                                      />
                                     )
                                 })}
-                        </Slider>
+                                </Slider>
+                            </div>
+                        </div>
                     </div>
                     <div className={classes.order__check}>
                         <div className={classes.check}>
