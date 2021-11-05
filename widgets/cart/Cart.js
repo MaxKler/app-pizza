@@ -59,8 +59,9 @@ const Cart = ({
 }) => {
  
     const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
-    const deliveryPrice = productPrice * 0.1
+    const deliveryPrice = 40
     const totalPrice = productPrice + deliveryPrice
+    
     const [orderData, setOrderData] = useState({
         delivery_status: 'people',
         time_status: 'speed',
@@ -71,6 +72,7 @@ const Cart = ({
      if (freeD <= 0) {
          freeD = 0
      }
+     
     const closeCart = () => {
         setShowCart(false)
         document.querySelector('html').style.overflow = 'visible'
@@ -201,15 +203,16 @@ const Cart = ({
                                      </div>
                                      <div className={classes.items}>
                                          <div className={classes.items__title}>Доставка:</div>
-                                         {freeD === 0 ? <div className={classes.items__count}>Безкоштовно!</div>
+                                         {freeD === 0 ? <div className={classes.items__count}>   Безкоштовно!</div>
                                           :
-                                          <div className={classes.items__count}>40 грн</div>
+                                          <div className={classes.items__count}>{deliveryPrice}</div>
                                          }
                                      </div>
                                 </div>
                                 <div className={classes.total}>
                                      <div className={classes.total__title}>Разом:</div>
-                                     <div className={classes.total__count}>{totalPrice.toFixed(2)} грн</div>
+                                     {freeD === 0 ? <div className={classes.total__count}>{productPrice} грн</div> : 
+                                     <div className={classes.total__count}>{totalPrice.toFixed(2)} грн</div> }
                                 </div>
                             </div>
                         </div>

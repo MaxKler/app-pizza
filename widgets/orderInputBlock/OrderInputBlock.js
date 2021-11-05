@@ -60,6 +60,7 @@ const OrderInputBlock = ({
         setOrderData({
             ...orderData,
             [attr]: val ? val : e.target.value,
+            
         })
     }
 
@@ -94,11 +95,10 @@ const OrderInputBlock = ({
                     country={'ua'} 
                     value={orderData?.phone} 
                     onChange={(e) => makeDataOrderFunc(e, 'phone')} 
-                    
                     placeholder="Телефон"  
                     />
-                    {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>}
- */}
+                    {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>} */}
+
 
                 <input onChange={(e) => makeDataOrderFunc(e, 'phone')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Телефон"  type="text" />
                 {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>}
