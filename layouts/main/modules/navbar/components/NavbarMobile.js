@@ -7,6 +7,7 @@ import cartSvg from './../../../../../project/image/layouts/navbar/svg/cart.svg'
 import burgerSvg from './../../../../../project/image/layouts/navbar/svg/burger.svg'
 import closeSvg from './../../../../../project/image/layouts/navbar/svg/close.svg'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 
 
 const NavbarMobile = ({
@@ -16,9 +17,12 @@ const NavbarMobile = ({
     closeMenu, 
     setVisibleMenuBtn,
     setShowCart,
-    showButtonCart
+    showButtonCart,
+    showContent,
+   
 }) => {
-  
+
+    const router = useRouter()
     const [visibleMenu, setVisibleMenu] = useState(false)
 
     const showMenu = () => {
@@ -36,6 +40,12 @@ const NavbarMobile = ({
         setVisibleMenu(false)
         openMenu()
     }
+
+    const delivery = () => {
+        setVisibleMenu(false)
+        router.push(`/#delivery`)
+        
+    }
   
     return (
     <div className={classes.navbar__mobile}>
@@ -51,9 +61,10 @@ const NavbarMobile = ({
                    <img src={cartSvg} alt="cart" />
                 </div>
             </div>}
+            {showContent &&
             <div className={classes.menuBtn} onClick={showMenu}>
                 <img src={burgerSvg} alt="burg" />
-            </div>
+            </div>}
         </div>
         <div className={visibleMenu ? [classes.menuActive, classes.menu].join(' ') : classes.menu} >
             <div className={classes.menu__content} >
@@ -67,7 +78,7 @@ const NavbarMobile = ({
                 </div>
                 <div className={classes.menuItems}>
                     <div  onClick={HideAndShow} className={classes.menuItem} >Меню</div>
-                    <div  className={classes.menuItem} >Доставка</div>
+                    <div onClick={delivery} className={classes.menuItem} >Доставка</div>
                     <Link href="/blog">
                         <div  className={classes.menuItem} >Блог</div>
                     </Link>
@@ -82,8 +93,12 @@ const NavbarMobile = ({
                     </div>     
                     <hr  style={{width: '50%', color: '#666666'}}/>
                     <div className={classes.social}>
-                        <img className={classes.social__logo} src={instaMobileSvg} alt="insta" />
-                        <img className={classes.social__logo} src={faceMobileSvg} alt="face" />
+                        <Link href="https://www.instagram.com/ch_mrpl/">
+                            <img className={classes.social__logo} src={instaMobileSvg} alt="insta" />
+                        </Link>
+                        <Link href="https://www.facebook.com/charomapizzabar/">
+                            <img className={classes.social__logo} src={faceMobileSvg} alt="face" />
+                        </Link>    
                     </div>
                 </div>
                 <div className={classes.workTime}>10:00 - 22:00 без вихідних</div>

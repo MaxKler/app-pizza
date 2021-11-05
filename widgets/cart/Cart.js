@@ -8,6 +8,41 @@ import closeCartSvg from './../../project/image/layouts/navbar/svg/closeMenu.svg
 import OrderInputBlock from "../orderInputBlock/OrderInputBlock";
 import {NET} from './../../network'
 import Succes from "../modal/succes/Succes";
+import delPng from './../../project/image/widgets/delTerms/deliv.png'
+import del1Png from './../../project/image/widgets/delTerms/deliv1.png'
+import del2Png from './../../project/image/widgets/delTerms/deliv2.png'
+import del3Png from './../../project/image/widgets/delTerms/deliv3.png'
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import Slider from "react-slick";
+import AddToOrder from "./components/AddToOrder";
+
+let settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+            slidesToShow: 1,
+            arrows:false
+            }
+          },
+        {
+          breakpoint: 568,
+          settings: {
+          slidesToShow: 1,
+          arrows:false
+          }
+        },
+    ]
+  };
+
 
 const Cart = ({
     showCart, 
@@ -19,9 +54,10 @@ const Cart = ({
     delItem,
     countProduct, 
     showModal,
-    setShowModal
+    setShowModal,
+    addToOrder
 }) => {
-    console.log(cart)
+ 
     const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
     const deliveryPrice = productPrice * 0.1
     const totalPrice = productPrice + deliveryPrice
@@ -46,18 +82,7 @@ const Cart = ({
         setOrderMenu(true)
     }
 
-    // const cartItems = React.useRef()
-
-    // React.useEffect(() => {
-    //     document.body.addEventListener('click', outsideClick)
-    // }, [])
-
-    // const outsideClick = (e) => {
-    //     if (!e.path.includes(cartItems.current)) {
-    //       setShowCart(false)
-    //     }
-    // }
-  
+   
 
     const [errorData, setErrorData] = useState({})
     const [succesData, setSuccesData] = useState(false)
@@ -81,7 +106,6 @@ const Cart = ({
             localStorage.removeItem('cart')
         }
     } 
-
     return (
         <div className={showCart ? [classes.cartNone__active, classes.cartNone].join(' ') : classes.cartNone}>
             <div className={classes.cart}>
@@ -123,7 +147,10 @@ const Cart = ({
                                     </div>
                                 </div>
                                 <div className={classes.order__size1}>
-                                    <div className={classes.order__price}>{item.price * item.qty}</div>
+                                    {item.activeOption === 1 ? 
+                                      <div className={classes.order__price}>{+item.price_two * item.qty}</div> :
+                                      <div className={classes.order__price}>{item.price * item.qty}</div>
+                                }
                                 </div>
                                 <div className={classes.order__size2}>
                                     <img onClick={() => delItem(item.id)} className={classes.trash} src={trashSvg} alt="" />
@@ -139,6 +166,25 @@ const Cart = ({
                         : <div className={classes.deliveryFree}>До безкоштовної доставки залишилось замовити <strong>{freeD}</strong> грн.</div>
                         }
                         <div className={classes.deliveryFree}>Відправляючи цю форму, Ви погоджуєтеся з політикою щодо обробки персональних даних.</div>
+                        <div style={{display:'flex', justifyContent:'center'}}>
+                            <div style={{width:'90%'}}>
+                               <div className={classes.addToOrder}>Рекомендуємо додати до замовлення</div>
+                               <Slider {...settings}>
+                                {addToOrder.map((elem) => {
+                                       let qty = cart.filter(el => el.id === elem.id)
+                                    return (
+                                      <AddToOrder 
+                                          elem={elem}
+                                          onAdd={onAdd}
+                                          onRemove={onRemove}
+                                          classes={classes}
+                                          qty={qty.length ? qty[0].qty : 0}
+                                      />
+                                    )
+                                })}
+                                </Slider>
+                            </div>
+                        </div>
                     </div>
                     <div className={classes.order__check}>
                         <div className={classes.check}>

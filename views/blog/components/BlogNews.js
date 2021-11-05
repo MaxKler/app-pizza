@@ -1,77 +1,65 @@
 import React from "react";
-import classes from './../../styles/views/blog/blog-style.module.scss'
-import imPng from './../../project/image/views/blog/im.png'
+import classes from './../../../styles/views/blog/news-style.module.scss'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
-const BlogView = ({blogData}) => {
-    
+import { NET } from "../../../network";
+ 
+const BlogNew = ({newsItem, otherNews}) => {
+  
     return (
-        <div className={classes.blogView}>
-        <div className={classes.title}>блог</div>
-        {blogData.slice(0, 1).map((elem) => {
-            return (
-                <div className={classes.blog}>
-                    <div className={classes.blog__main}>
-                        <div className={classes.blog__main__info}>
-                            <div className={classes.blog__main__desc}>{elem.small_description}</div>
-                            <div className={classes.blog__main__date}>{elem.date}</div>
+        <div className={classes.new}>
+            <div className={classes.new__content}>
+                <Link href={`/blog`}>
+                    <div className={classes.titleBlock}>
+                        <FontAwesomeIcon className={classes.titleBlock__icon} icon={faChevronLeft}></FontAwesomeIcon>
+                        <div className={classes.titleBlock__title}>блог</div>
+                    </div>
+                </Link>
+                <div className={classes.newInfo}>
+                    <div className={classes.newInfo__info}>
+                        <div className={classes.newInfo__info__desc}>{newsItem.small_description}</div>
+                        <div className={classes.newInfo__info__date}>{newsItem.date}</div>
+                    </div>
+                    <div>
+                        <img className={classes.newInfo__img} src={`${NET.WEB_URL}/${newsItem.image}`} alt=""/>
+                    </div>
+                    <div className={classes.newInfo__title}>{newsItem.title}</div>
+                    <div className={classes.newInfo__description}>{newsItem.description}</div>
+                </div>
+                <div className={classes.otherNews}>
+                    <div className={classes.otherNews__content}>
+                        <div className={classes.otherNews__content__title}>
+                           Другие новости
                         </div>
-                        <div className={classes.blog__main__card}>
-                            <div className={classes.blog__main__card__img}></div>
-                        </div>
-                        <div className={classes.blog__main__title}>{elem.title}</div>
-                        <Link href={`/post/${elem.id}`}>
-                            <div className={classes.blog__main__description}>{elem.description}</div>
-                        </Link>
-                        <div className={classes.blog__news}>
-                            <div className={classes.blog__news__block}>
-                                <div className={classes.blog__news__block__title}>Інші новини</div>
-                                <div className={classes.news}>
-                                {
-                                    blogData.slice(1).map((elem) => {
-                                        return (
-                                            <>
-                                                <div className={classes.news__item}>
-                                                    <div className={classes.news__img}>
-                                                        <img className={classes.news__img__img} src={imPng} alt="" />
-                                                    </div>
-                                                    <div className={classes.news__title}>{elem.title}</div>
-                                                    <div className={classes.news__description}>{elem.description}</div>
-                                                    <div className={classes.news__info}>
-                                                        <div className={classes.news__info__desc}>{elem.small_description}</div>
-                                                        <div className={classes.news__info__date}>{elem.date}</div>
-                                                    </div>
+                        <div className={classes.otherNews__blocks}>
+                            {otherNews.map((elem) => {
+                                return (
+                                    <div className={classes.otherNews__blocks__card}>
+                                         <Link href={`/news/${elem.id}`}>
+                                        <div className={classes.otherNews__blocks__new}>
+                                            <img className={classes.otherNews__blocks__new__img} src={`${NET.WEB_URL}/${elem.image}`} alt="" />
+                                            <div className={classes.otherNews__blocks__new__block}>
+                                                <div className={classes.otherNews__blocks__new__title}>{elem.title}</div>
+                                                <div className={classes.otherNews__blocks__new__desc}>{elem.description}</div>
+                                                <div className={classes.otherNews__blocks__new__info}>
+                                                    <div className={classes.otherNews__blocks__new__info__desc}>{elem.small_description}</div>
+                                                    <div className={classes.otherNews__blocks__new__info__date}>{elem.date}</div>
                                                 </div>
-                                            </>
-                                        )
-                                    })
-                                }
-                                </div>
-                            </div>
+                                            </div>
+                                        </div>
+                                        </Link>
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 </div>
-            )
-        })}
+            </div>
         </div>
     )
 }
 
-export default BlogView
+export default BlogNew
 
-{/* <div className={classes.blog__card}>
-                        <div className={classes.blog__card__blockBig}>
-                            <div className={classes.blockBig}>
-                                <div className={classes.blockBig__title}>{elem.title}</div>
-                                <div className={classes.blockBig__desc}>{elem.description}</div>
-                                <div className={classes.blockBig__info}>
-                                    <div className={classes.blockBig__info__desc}>{elem.small_description}</div>
-                                    <div className={classes.blockBig__info__date}>{elem.date}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div></div>
-                        <div></div>
-                    </div> */}

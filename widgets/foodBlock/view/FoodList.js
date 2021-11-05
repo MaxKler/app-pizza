@@ -68,6 +68,7 @@ const FoodList = ({
       }
 
     return (
+        
         <div  onMouseEnter={changeBackground} 
               onMouseLeave={changeBackground1} className={classes.ttt} key={index} >
             <div className={classes.pizza__block__images}>
@@ -125,9 +126,8 @@ const FoodList = ({
                         food={food}
                         activeSize={activeSize}
                     />
-                )} 
                 </div>  
-        </div>    
+        </div>   
     )           
 }
 

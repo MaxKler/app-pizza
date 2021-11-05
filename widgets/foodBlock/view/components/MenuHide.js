@@ -6,10 +6,11 @@ import faceMobileSvg from './../../../../project/image/layouts/navbar/svg/faceMo
 import phoneSvg from './../../../../project/image/layouts/navbar/svg/phone.svg'
 import closeSvg from './../../../../project/image/layouts/navbar/svg/close.svg'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 
 const MenuHide = ({ visibleMenu, setVisibleMenu, watchCart, screen, setScreen, countProduct, CartBoxSvg}) => {
 
-
+    const router = useRouter()
     const hideMenu = () => {
         setVisibleMenu(false)
     }
@@ -33,7 +34,7 @@ const MenuHide = ({ visibleMenu, setVisibleMenu, watchCart, screen, setScreen, c
                 </div>
                 <div className={classes.menuItems}>
                     <div  onClick={openMenu} className={classes.menuItem} >Меню</div>
-                    <div  className={classes.menuItem} >Доставка</div>
+                    <div  onClick={() => router.push(`/#delivery`)}  className={classes.menuItem} >Доставка</div>
                     <Link href="/blog">
                         <div  className={classes.menuItem} >Блог</div>
                     </Link>
@@ -48,8 +49,12 @@ const MenuHide = ({ visibleMenu, setVisibleMenu, watchCart, screen, setScreen, c
                     </div>     
                     <hr  style={{width: '50%', color: '#666666'}}/>
                     <div className={classes.social}>
-                        <img className={classes.social__logoI} src={instaMobileSvg} alt="insta" />
-                        <img className={classes.social__logoF} src={faceMobileSvg} alt="face" />
+                        <Link href="https://www.instagram.com/ch_mrpl/">   
+                            <img className={classes.social__logoI} src={instaMobileSvg} alt="insta" />
+                        </Link>    
+                        <Link href="https://www.facebook.com/charomapizzabar/">
+                             <img className={classes.social__logoF} src={faceMobileSvg} alt="face" />
+                         </Link>    
                     </div>
                 </div>
                 <div onClick={watchCart} className={classes.menuCart}>

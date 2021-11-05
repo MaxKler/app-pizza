@@ -46,6 +46,100 @@ input {
   font-size: 20px;
   margin-bottom: 5px;
 }
+.slick-dots {
+  position: absolute;
+  bottom: 23px !important;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  width: 11px !important;
+  height: 11px !important;
+  padding: 0;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+  
+}
+.slick-dots li.slick-active button:before {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+.slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 5px !important;
+  position: absolute;
+  line-height: 10px !important;
+  top: 0;
+  left: 0;
+  content: '•';
+  text-align: center;
+  color: white !important;
+  opacity: 0.3 !important;
+  width: 9.5px !important;
+  height: 11px !important;
+}
+
+.slick-prev {
+  left: -35px !important;
+}
+.slick-next {
+  right: -25px;
+}
+.slick-prev, .slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 72%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 30px !important;
+  line-height: 0 !important;
+  opacity: 1 !important;
+  width: 42px;
+  height: 39px;
+  background: #FDFDFD;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  color: black !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 @media screen and (max-width: 768px) {
   ::placeholder {
@@ -61,5 +155,18 @@ input {
   }
   .react-datepicker__input-container input {
     font-size: 18px;
+  }
+  .slick-dots {
+    display: none !important;
+  }
+  .slick-dots li {
+    display: none !important;
+  }
+  .slick-dots li.slick-active button:before {
+    display: none !important;
+  }
+  
+  .slick-dots li button:before {
+   display: none !important;
   }
 }

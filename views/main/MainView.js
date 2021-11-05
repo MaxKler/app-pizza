@@ -3,6 +3,13 @@ import classes from './../../styles/views/main/main-view.module.scss'
 import FoodBlock from "../../widgets/foodBlock/FoodBlock";
 import DeliveryTerms from "../../widgets/deliveryterms/DeliveryTerms";
 import Cart from "../../widgets/cart/Cart";
+import NewProducts from "../../widgets/foodBlock/view/NewProducts";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import Slider from "react-slick";
+
 
 
 const MainView = ({
@@ -16,8 +23,19 @@ const MainView = ({
     setCart,
     countProduct, 
     showModal,
-    setShowModal
+    setShowModal,
+    newProducts, 
+    addToOrder
 }) => {
+
+    let settings = {
+        arrows: false,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
     
     const [activeSize, setActiveSize] = useState(0)
     
@@ -59,8 +77,32 @@ const MainView = ({
     return (
         <div>
             <div className={classes.mainView__title}>У самому серці твого міста!</div>
-            <div className={classes.mainView}></div>
+            <Slider {...settings}>
+                <div className={classes.mainView}></div>
+                <div className={classes.mainView1}></div> 
+                <div className={classes.mainView2}></div> 
+                <div className={classes.mainView3}></div>  
+            </Slider>
             <div className={classes.ttt}>
+                <div className={classes.pizzaType}>Новинки</div>
+                     <NewProducts 
+                     showCart={showCart}
+                     setShowCart={setShowCart}
+                     screen={screen}
+                     setScreen={setScreen}
+                     newProducts={newProducts}
+                     classes={classes} 
+                     watchCart={watchCart}
+                     cart={cart}
+                     setCart={setCart}
+                     onAdd={onAdd}
+                     onRemove={onRemove}
+                     delItem={delItem}
+                     countProduct={countProduct}
+                     showModal={showModal}
+                     setShowModal={setShowModal}
+                     />
+            <DeliveryTerms screen={screen} />
             {mainData && mainData.length && mainData.map((foodBlock, idx) => (
                 <FoodBlock  
                     idx={idx}
@@ -81,7 +123,6 @@ const MainView = ({
                     setShowModal={setShowModal}
                 />
             ))}
-            <DeliveryTerms />
             <Cart
                     showCart={showCart}
                     setShowCart={setShowCart}
@@ -93,6 +134,7 @@ const MainView = ({
                     countProduct={countProduct}
                     showModal={showModal}
                     setShowModal={setShowModal}
+                    addToOrder={addToOrder}
                 />
             </div>
         </div>

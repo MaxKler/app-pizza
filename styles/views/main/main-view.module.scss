@@ -10,6 +10,24 @@
         text-align: center;
     }
 }
+.mainView1 {
+    background: url('./../../../project/image/layouts/content/jpg/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+.mainView2 {
+    background: url('./../../../project/image/layouts/content/jpg/bg2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+.mainView3 {
+    background: url('./../../../project/image/layouts/content/jpg/bg3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
 
 .pizzaType {
     font-weight: bold;
@@ -29,7 +47,7 @@
         border-radius: 7px;
         height: 40px;
         width: 65%;
-        margin-left: 2%;
+        margin-left: 3%;
         align-items: center;
         color: white;
         &__active {
@@ -100,19 +118,21 @@
             justify-content: space-between;
             margin-top: 20px;
             padding-bottom: 10px;
+            
         }
         &__itemTwo {
             margin-top: 20px;
-            
         }
         &__items {
             margin-right: 2%;
+            height: 60px;
         }
         &__price {
             font-weight: 600;
             font-size: 25px;         
             text-align: right;
             color: #E45100;
+            padding-top: 5px;
         }
         &__grn {
             color: #E45100; 
@@ -176,7 +196,7 @@
         &__addRem {
             display: flex;
             align-items: center;
-            padding-right: 10%;
+            padding-right: 7%;
         }
     }
     &__cart {
@@ -225,10 +245,14 @@
      
     }
 }
-
+.pizzaImage {
+    width: 80%;
+    height: 100%;
+}
 .discount {
     height: 10px;
     &__value {
+        padding-bottom: 20px;
         font-size: 15px;
         text-align: right;
         text-decoration-line: line-through;
@@ -281,13 +305,10 @@
     position: absolute;
     top: 70%;  
 }
-
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 1885px) {
     .pizza {
         &__sizeBlock {
-            
             &__active {
-                
                 font-size: 17px;
             }
             &__size {
@@ -295,10 +316,10 @@
             }
         }
         &__card {
-            width: 33.3%;
+            width: 25%;
         }
          &__cardTwo {
-             width: 25%;  
+             width: 20%;  
          }
         &__block {
             height: fit-content;
@@ -315,13 +336,13 @@
                 height: 35px;
             }
             &__name {
-                font-size: 26px; 
+                font-size: 25px; 
             }
             &__price {
-                font-size: 23px;         
+                font-size: 22px;         
             }
             &__grn {
-                font-size: 23px;
+                font-size: 22px;
                 padding-left: 4px
             }
             &__weight {
@@ -330,12 +351,8 @@
         }
     }
    
-    .pizzaImage {
-        width: 90%;
-        height: 100%;
-    }
     .popap {
-        font-size: 15px;
+        font-size: 14px;
     }
     .buyBtn {
         height: 48px;
@@ -343,109 +360,27 @@
             width: 80%;
             &__inCart {
                 color: black;
-                font-size: 22px;
-                padding-left: 20px;
+                font-size: 21px;
+                padding-left: 18px;
             }
             &__add {
                 color: black;
-                font-size: 23px;
+                font-size: 22px;
             }
             &__rem {
                 color: black;
-                font-size: 23px;
-                padding-right: 15px;
+                font-size: 22px;
+                padding-right: 14px;
             }
             &__qty {
                 color: black;
-                font-size: 22px;
-                width: 25px;
+                font-size: 21px;
+                width: 24px;
             }
         }
-    }
-    .buyBtnE {
-        height: 48px;
-        &__addE {
-            padding-left: 25px;
-            font-size: 22px;  
-            
-            width: 79%;
-        }
-        &__cartE {
-            width: 21%;
-        }
-    }
-}
-
-@media screen and (max-width: 1500px) {
-    .pizza {
-        &__sizeBlock {
-            height: 35px;
-            &__active {
-                height: 35px;
-                font-size: 15px;
-            }
-            &__size {
-                font-size: 15px;
-                height: 35px;
-            }
-        }
-        &__card {
-            width: 33.3%;
-        }
-         &__cardTwo {
-             width: 25%;  
-         }
-        &__block {
-            height: fit-content;
-            margin: 18px 8px;
+        &__cart {
             &__icon {
-                top: 0;
-                right: 0;
-                width: 23%;
-                height: 23%;
-            }
-            &__status {
-                padding-right: 6px;
-                width: 35px;
-                height: 35px;
-            }
-            &__name {
-                font-size: 26px; 
-            }
-            &__price {
-                font-size: 23px;         
-            }
-            &__grn {
-                font-size: 23px;
-                padding-left: 4px
-            }
-            &__weight {
-                font-size: 15px;
-            }
-        }
-    }
-    .buyBtn {
-        height: 48px;
-        &__block {
-            width: 80%;
-            &__inCart {
-                color: black;
-                font-size: 22px;
-                padding-left: 20px;
-            }
-            &__add {
-                color: black;
-                font-size: 23px;
-            }
-            &__rem {
-                color: black;
-                font-size: 23px;
-                padding-right: 15px;
-            }
-            &__qty {
-                color: black;
-                font-size: 22px;
-                width: 25px;
+                width: 65%;
             }
         }
     }
@@ -458,23 +393,347 @@
         }
         &__cartE {
             width: 21%;
+            &__icon {
+                width: 60%;
+            }
         }
     }
+}
+@media screen and (max-width: 1775px) {
+    .pizza {
+        &__sizeBlock {
+            height: 38px;
+            &__active {
+                height: 38px;
+                font-size: 16px;
+                height: 38px;
+            }
+            &__size {
+                font-size: 16px;
+            }
+        }
+        &__block {
+            &__status {
+                padding-right: 6px;
+                width: 35px;
+                height: 35px;
+            }
+            &__name {
+                font-size: 24px; 
+            }
+            &__price {
+                font-size: 21px;         
+            }
+            &__grn {
+                font-size: 21px;
+                padding-left: 4px
+            }
+            &__weight {
+                font-size: 14px;
+            }
+        }
+    }
+   
     .popap {
         font-size: 14px;
     }
-
+    .buyBtn {
+        height: 46px;
+        &__block {
+            width: 80%;
+            &__inCart {
+                color: black;
+                font-size: 20px;
+                padding-left: 18px;
+            }
+            &__add {
+                color: black;
+                font-size: 21px;
+            }
+            &__rem {
+                color: black;
+                font-size: 21px;
+                padding-right: 14px;
+            }
+            &__qty {
+                color: black;
+                font-size: 20px;
+                width: 24px;
+            }
+        }
+        &__cart {
+            &__icon {
+                width: 65%;
+            }
+        }
+    }
+    .buyBtnE {
+        height: 46px;
+        &__addE {
+            padding-left: 22px;
+            font-size: 18px;  
+            width: 79%;
+        }
+        &__cartE {
+            width: 21%;
+            &__icon {
+                width: 60%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1700px) {
+    .pizza {
+        &__sizeBlock {
+            height: 36px;
+            &__active {
+                height: 36px;
+                font-size: 17px;
+            }
+            &__size {
+                height: 36px;
+                font-size: 17px;
+            }
+        }
+        &__block {
+            &__status {
+                padding-right: 6px;
+                width: 35px;
+                height: 35px;
+            }
+            &__name {
+                font-size: 24px; 
+            }
+            &__price {
+                font-size: 20px;         
+            }
+            &__grn {
+                font-size: 19px;
+                padding-left: 4px
+            }
+            &__weight {
+                font-size: 14px;
+            }
+        }
+    }
+   
+    .pizzaImage {
+        width: 90%;
+        height: 100%;
+    }
+    .popap {
+        font-size: 15px;
+    }
+    .buyBtn {
+        height: 44px;
+        &__block {
+            width: 80%;
+            &__inCart {
+                color: black;
+                font-size: 22px;
+                padding-left: 20px;
+            }
+            &__add {
+                color: black;
+                font-size: 23px;
+            }
+            &__rem {
+                color: black;
+                font-size: 23px;
+                padding-right: 15px;
+            }
+            &__qty {
+                color: black;
+                font-size: 22px;
+                width: 25px;
+            }
+        }
+    }
+    .buyBtnE {
+        height: 44px;
+        &__addE {
+            padding-left: 20px;
+            font-size: 16px;  
+            
+            width: 79%;
+        }
+        &__cartE {
+            width: 21%;
+        }
+    }
+}
+@media screen and (max-width: 1600px) {
+    .pizza {
+        &__sizeBlock {
+            height: 36px;
+            &__active {
+                height: 36px;
+                font-size: 17px;
+            }
+            &__size {
+                height: 36px;
+                font-size: 17px;
+            }
+        }
+        &__block {
+            &__status {
+                padding-right: 6px;
+                width: 35px;
+                height: 35px;
+            }
+            &__name {
+                font-size: 24px; 
+            }
+            &__price {
+                font-size: 20px;         
+            }
+            &__grn {
+                font-size: 19px;
+                padding-left: 4px
+            }
+            &__weight {
+                font-size: 14px;
+            }
+        }
+    }
+   
+    .pizzaImage {
+        width: 90%;
+        height: 100%;
+    }
+    .popap {
+        font-size: 13px;
+    }
+    .buyBtn {
+        height: 44px;
+        &__block {
+            width: 80%;
+            &__inCart {
+                color: black;
+                font-size: 21px;
+                padding-left: 15px;
+            }
+            &__add {
+                color: black;
+                font-size: 18px;
+            }
+            &__rem {
+                color: black;
+                font-size: 18px;
+                padding-right: 14px;
+            }
+            &__qty {
+                color: black;
+                font-size: 18px;
+              
+            }
+        }
+    }
+    .buyBtnE {
+        height: 44px;
+        &__addE {
+            padding-left: 20px;
+            font-size: 15px;  
+            
+            width: 79%;
+        }
+        &__cartE {
+            width: 21%;
+        }
+    }
+}
+@media screen and (max-width: 1500px) {
+    .pizza {
+        &__sizeBlock {
+            width: 60%;
+            height: 34px;
+            &__active {
+                height: 34px;
+                font-size: 16px;
+            }
+            &__size {
+                height: 34px;
+                font-size: 16px;
+            }
+        }
+        &__block {
+            &__status {
+                padding-right: 6px;
+                width: 35px;
+                height: 35px;
+            }
+            &__name {
+                font-size: 23px; 
+            }
+            &__price {
+                font-size: 19px;         
+            }
+            &__grn {
+                font-size: 17px;
+                padding-left: 4px
+            }
+            &__weight {
+                font-size: 14px;
+            }
+        }
+    }
+   
+    .pizzaImage {
+        width: 90%;
+        height: 100%;
+    }
+    .popap {
+        font-size: 12px;
+    }
+    .buyBtn {
+        height: 42px;
+        &__block {
+            width: 80%;
+            &__inCart {
+                color: black;
+                font-size: 19px;
+                padding-left: 10px;
+            }
+            &__add {
+                color: black;
+                font-size: 16px;
+            }
+            &__rem {
+                color: black;
+                font-size: 16px;
+                padding-right: 14px;
+            }
+            &__qty {
+                color: black;
+                font-size: 16px;
+                
+            }
+        }
+    }
+    .buyBtnE {
+        height: 42px;
+        &__addE {
+            padding-left: 20px;
+            font-size: 13px;  
+            
+            width: 79%;
+        }
+        &__cartE {
+            width: 21%;
+        }
+    }
 }
 
 @media screen and (max-width: 1366px) {
     .pizza {
         &__sizeBlock {
-            height: 30px;
+            height: 28px;
             &__active {
-                height: 30px;
+                height: 28px;
                 font-size: 12px;
             }
             &__size {
+                height: 28px;
                 font-size: 11px;
             }
         }
@@ -501,13 +760,13 @@
                 font-size: 20px; 
             }
             &__price {
-                font-size: 22px;         
+                font-size: 18px;         
             }
             &__price_two {
                 font-size: 22px;         
             }
             &__grn {
-                font-size: 17px;
+                font-size: 12px;
                 padding-left: 2px
             }
             &__weight {
@@ -516,47 +775,40 @@
         }
     }
     .buyBtn {
-        height: 44px;
+        height: 40px;
         &__block {
             width: 80%;
             &__inCart {
                 color: black;
-                font-size: 18px;
-                padding-left: 20px;
+                font-size: 14px;
+                padding-left: 12px;
             }
             &__add {
                 color: black;
-                font-size: 20px;
+                font-size: 14px;
             }
             &__rem {
                 color: black;
-                font-size: 20px;
-                padding-right: 15px;
+                font-size: 14px;
+                padding-right: 14px;
             }
             &__qty {
                 color: black;
-                font-size: 20px;
-                width: 25px;
+                font-size: 14px;
+                
             }
         }
-        &__cart {
-            &__icon {
-            width: 52%;
-            }
-        }
+       
     }
     .buyBtnE {
-        height: 44px;
+        height: 40px;
         &__addE {
                 padding-left: 18px;
-                font-size: 16px;  
+                font-size: 12px;  
                 width: 79%;
         }
         &__cartE {
             width: 21%;
-            &__icon {
-                width: 50%;
-            }
         }
     }
     .discount {
@@ -574,7 +826,7 @@
     .popap {
         width: 90%;
         padding: 5px 5px;
-        font-size: 13px;
+        font-size: 11px;
         top: 70%;
     }
 }
@@ -589,9 +841,7 @@
         }
         &__cartE {
             width: 21%;
-            &__icon {
-                width: 50%;
-            }
+           
         }
     }
     .mainView {
@@ -759,7 +1009,7 @@
         &__sizeBlock {
             height: 35px;
             width: 65%;
-            margin-left: 2%;
+            margin-left: 3%;
             &__active {
                 height: 35px;
                 width: 50%;
@@ -772,9 +1022,47 @@
         }
     }   
     .buyBtn {
+        height: 48px;
+        &__block {
+            width: 80%;
+            &__inCart {
+                color: black;
+                font-size: 21px;
+                padding-left: 12px;
+            }
+            &__add {
+                color: black;
+                font-size: 20px;
+            }
+            &__rem {
+                color: black;
+                font-size: 20px;
+                padding-right: 14px;
+            }
+            &__qty {
+                color: black;
+                font-size: 20px;
+                
+            }
+        }
         &__cart {
             &__icon {
-                width: 54%;
+                width: 63%;
+            }
+        }
+       
+    }
+    .buyBtnE {
+        height: 48px;
+        &__addE {
+                padding-left: 18px;
+                font-size: 18px;  
+                width: 79%;
+        }
+        &__cartE {
+            width: 21%;
+            &__icon {
+                width: 60%;
             }
         }
     }
