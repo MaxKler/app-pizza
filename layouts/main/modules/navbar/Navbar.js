@@ -69,7 +69,7 @@ const Navbar = ({
             />
             {showContent &&
             <div>
-           {!showCart && <div onClick={openMenu} className={visibleMenuBtn ? classes.mobileMenuBtn : classes.mobileMenuBtn__none}>menu</div>} 
+           {!showCart && <div onClick={openMenu} className={visibleMenuBtn ? classes.mobileMenuBtn : classes.mobileMenuBtn__none}>МЕНЮ</div>} 
             </div>
             }
         </div>

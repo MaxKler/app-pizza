@@ -55,6 +55,7 @@ const Main = ({
                 setScreen={setScreen}
                 mainData={mainData}
                 showContent={showContent}
+                setScreen={setScreen}
               
             />
             <Content 

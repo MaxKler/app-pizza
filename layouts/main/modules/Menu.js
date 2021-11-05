@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import classes from './../../../styles/layouts/main/menu-style.module.scss'
 import searchSvg from './../../../project/image/layouts/menu/search.svg'
 import closeMenuSvg from './../../../project/image/layouts/navbar/svg/closeMenu.svg'
@@ -10,7 +10,8 @@ const Menu = ({
     closeMenu, 
     screen, 
     mainData,
-    showContent
+    showContent,
+    setScreen
 }) => {
    
 
@@ -24,6 +25,11 @@ const Menu = ({
           }
         
     }
+    useEffect(() => {
+        if (size.width > 768) {
+            setScreen(true)
+        }
+    }, [size])
     return (
         <>
         

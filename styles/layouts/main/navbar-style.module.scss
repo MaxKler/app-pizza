@@ -2,6 +2,9 @@
     background: linear-gradient(270.06deg, #1E2331 0.04%, #292929 99.96%);
     height: 120px;
     position: relative;
+    &__logoImg {
+        width: 200px;
+    }
     &__logo {
         color: white;
         margin-left: 5%;
@@ -608,7 +611,7 @@
             margin-top: 10px;
         }
         &__logoImg {
-            width: 60%;
+            width: 100px;
         }
         &__items {
             display: none;
@@ -641,7 +644,13 @@
         transform: translateX(130%);
         transition: all 0.3s;
         &__logo {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            & img {
+                height: 90%;
+            }
         }
         &__logobar {
             height: 14vh;

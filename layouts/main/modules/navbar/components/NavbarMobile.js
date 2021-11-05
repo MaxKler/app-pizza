@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import logoSvg from './../../../../../project/image/layouts/navbar/svg/logo.svg'
+import logoSvg from './../../../../../project/image/layouts/navbar/logo.png'
 import instaMobileSvg from './../../../../../project/image/layouts/navbar/svg/instaMobile.svg'
 import faceMobileSvg from './../../../../../project/image/layouts/navbar/svg/faceMobile.svg'
 import phoneSvg from './../../../../../project/image/layouts/navbar/svg/phone.svg'

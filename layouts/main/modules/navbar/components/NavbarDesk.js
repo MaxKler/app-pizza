@@ -1,5 +1,5 @@
 import React from "react";
-import logoSvg from './../../../../../project/image/layouts/navbar/svg/logo.svg'
+import logoSvg from './../../../../../project/image/layouts/navbar/logo.png'
 import cartSvg from './../../../../../project/image/layouts/navbar/svg/cart.svg'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
