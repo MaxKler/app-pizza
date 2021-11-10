@@ -6,7 +6,7 @@ import Link from 'next/link'
 import {useRouter} from 'next/router'
 import { NET } from "../../network";
 
-const BlogView = ({blogData}) => {
+const BlogView = ({blogData, screen}) => {
     
     const router = useRouter()
 
@@ -46,7 +46,7 @@ const BlogView = ({blogData}) => {
                                     <div className={classes.blog__twoNews__content__block} >
                                         <div className={classes.blog__twoNews__content__block__block}>
                                             <div className={classes.blog__twoNews__content__title}>{news.title}</div>
-                                            <div className={classes.blog__twoNews__content__description}>{news.description}</div>
+                                            <div className={ screen ? classes.blog__twoNews__content__description2 : classes.blog__twoNews__content__description}>{news.description}</div>
                                         </div>
                                         <div className={classes.blog__twoNews__content__info}>
                                             <div className={classes.blog__twoNews__content__info__desc}>{news.small_description}</div>

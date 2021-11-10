@@ -1,21 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Main from '../../layouts/main/Main'
 import BlogNew from '../../views/blog/components/BlogNews'
 import Footer from '../../views/footer/Footer'
 import { NET } from './../../network'
-
+import {useWindowSize} from './../../mobile util/utils'
 const News = ({data}) => {
   
   const newsItem = data.data
   const otherNews = data.anotherNews
 
+  const [screen, setScreen] = useState(false)
+
+
+const size = useWindowSize()
+  useEffect(() => {
+    if (size.width > 768) {
+      setScreen(true)
+    }
+  }, [size])
+
     console.log(data)
     return (
         <>
-          <Main > 
+          <Main   setScreen={setScreen}> 
               <BlogNew 
                   otherNews={otherNews}
                   newsItem={newsItem}
+                  setScreen={setScreen}
              />
          </Main>
          <Footer />

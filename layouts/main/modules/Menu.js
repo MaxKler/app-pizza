@@ -31,9 +31,9 @@ const Menu = ({
             setScreen(true)
         }
     }, [size])
+
     return (
         <>
-        
         <div className={screen ? classes.menuDiv :  classes.menuDivClose}></div>
         {showContent &&
             <div className={screen ? classes.menu : classes.menu__close}>

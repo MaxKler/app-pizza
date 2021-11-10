@@ -55,21 +55,31 @@ const OrderInputBlock = ({
         setStateTime1(true)
         timeVisible()
     }
+
     const [phone, setPhone] = useState()
-    const makeDataOrderFunc = (e, attr, val,) => {
-      
-        setOrderData({
-            ...orderData,
-            [attr]: val ? val : e.target.value,
-            
-        })
+
+    const makeDataOrderFunc = (e, attr, val) => {
+        if (attr === 'phone') {
+            setOrderData({
+                ...orderData,
+                [attr]: val ? val : e,
+                
+            })
+        } else {
+            setOrderData({
+                ...orderData,
+                [attr]: val ? val : e.target.value,
+                
+            })
+        }
+        
     }
     
 
     const [selectedDate, setSelectedDate] = useState(() => {
      
       let dateNow = new Date().toLocaleTimeString().substr(0,2)
-        console.log(dateNow)
+
         return setHours(setMinutes(new Date(), 0), +dateNow + 1)
     })
 
@@ -98,10 +108,6 @@ const OrderInputBlock = ({
                     placeholder="Телефон"  
                     />
                     {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>}
-
-
-                {/* <input onChange={(e) => makeDataOrderFunc(e, 'phone')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Телефон"  type="text" />
-                {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>} */}
 
                 <input onChange={(e) => makeDataOrderFunc(e, 'countPeople')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Кількість персон"  type="text" />
                 {errorData?.countPeople && <div className={classes.errorTitle}>{errorData['countPeople'][0]}</div>}

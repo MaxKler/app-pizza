@@ -92,10 +92,11 @@ const [showModal, setShowModal] =  useState(false)
               newProducts={newProducts}
               addToOrder={addToOrder}
            />
-        </Main>
-            <QuestionsBlock 
-            dataQuestions={dataQuestions}
+              <QuestionsBlock 
+               dataQuestions={dataQuestions}
          />
+        </Main>
+         
         <MapView />
         <Footer 
           mainData={mainData}

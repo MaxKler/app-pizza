@@ -6,7 +6,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 import { NET } from "../../../network";
  
-const BlogNew = ({newsItem, otherNews}) => {
+const BlogNew = ({newsItem, otherNews,}) => {
   
     return (
         <div className={classes.new}>

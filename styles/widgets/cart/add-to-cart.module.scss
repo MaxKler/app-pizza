@@ -5,7 +5,7 @@
     position: fixed;
     top: 11%;
     right: 9%;
-    border-radius: 5px;
+    border-radius: 10px;
     opacity: 1;
     &__block {
         display: flex;
@@ -13,7 +13,7 @@
         align-items: center;
         padding: 5px 10px;
         &__item {
-            font-weight: bold;
+            font-weight: 600;
         }
         &__title {
 

@@ -28,6 +28,10 @@ const FoodList = ({
         }, 
         {
             id: 1,
+            size: food.status_opt_medium
+         }, 
+        {
+            id: 2,
             size: food.status_opt_end
         }  
     ]
@@ -93,7 +97,7 @@ const FoodList = ({
                    <></>
                 }
                 {food.title}</div>
-                <div className={food.status_opt_start ? classes.pizza__block__item : classes.pizza__block__itemTwo}>
+                <div className={classes.pizza__block__itemTwo}>
                     {food.status_opt_start &&  <div key={food.id} className={classes.pizza__sizeBlock}>
                         {typeSize.map((size, index) => {
                             return (

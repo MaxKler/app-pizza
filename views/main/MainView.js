@@ -46,7 +46,7 @@ const MainView = ({
         setShowAddToCartModal(true)
         setTimeout(() => {
             setShowAddToCartModal(false)
-        }, 1000)
+        }, 2500)
     }
     
     const onAdd = (food, activeSize) => {
@@ -56,6 +56,10 @@ const MainView = ({
                id: 0,
                size: food.status_opt_start
             }, 
+            {
+                id: 0,
+                size: food.status_opt_medium
+             }, 
             {
                 id: 1,
                 size: food.status_opt_end

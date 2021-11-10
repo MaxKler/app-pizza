@@ -11,7 +11,7 @@ const AddToCartModal = ({addToCartItem, showAddToCartModal}) => {
     return (
         <div className={ showAddToCartModal ? classes.addToCart : classes.addToCartNone}>
             <div className={classes.addToCart__block}>
-                <div className={classes.addToCart__block__items}>
+                <div className={classes.addToCart__block__item}>
                     {addToCartItem}
                 </div>
                 <div className={classes.addToCart__block__title}>

@@ -12,12 +12,13 @@ const [blogData, setBlogData] = useState(data.news)
 const [mainData, setMainData] = useState(data.data)
 const [screen, setScreen] = useState(false)
 const [showCart, setShowCart] = useState(false)    
+
 const size = useWindowSize()
   useEffect(() => {
     if (size.width > 768) {
       setScreen(true)
     }
-  }, [])
+  }, [size])
 
   return (
     <>
@@ -30,6 +31,7 @@ const size = useWindowSize()
       > 
         <BlogView 
           blogData={blogData}
+          screen={screen}
         />
         </Main>
         <Footer 

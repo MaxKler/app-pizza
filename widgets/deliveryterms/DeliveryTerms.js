@@ -23,25 +23,25 @@ const DeliveryTerms = ({screen}) => {
                 <div className={screen ? classes.delivery__groups__card : classes.delivery__groups__cardTwo}>
                     <div className={classes.delivery__groups__block}>
                         <img className={classes.delivery__groups__img} src={delPng} alt="" />
-                        <div className={classes.delivery__groups__text}>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</div>
+                        <div className={classes.delivery__groups__text}>Знайдіть страву яку бажаєте замовити</div>
                     </div>
                 </div>
                 <div className={screen ? classes.delivery__groups__card : classes.delivery__groups__cardTwo}>
                     <div className={classes.delivery__groups__block}>
                         <img className={classes.delivery__groups__img} src={del1Png} alt="" />
-                        <div className={classes.delivery__groups__text}>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</div>
+                        <div className={classes.delivery__groups__text}>Додайте до кошику усе що бажаєте</div>
                     </div>
                 </div>
                 <div className={screen ? classes.delivery__groups__card : classes.delivery__groups__cardTwo}>
                     <div className={classes.delivery__groups__block}>
                         <img className={classes.delivery__groups__img} src={del2Png} alt="" />
-                        <div className={classes.delivery__groups__text}>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</div>
+                        <div className={classes.delivery__groups__text}>Оберіть спосіб оплати замовлення: онлайн чи оплата на місці</div>
                     </div>
                 </div>
                 <div className={screen ? classes.delivery__groups__card : classes.delivery__groups__cardTwo}>
                     <div className={classes.delivery__groups__block}>
                         <img className={classes.delivery__groups__img} src={del3Png} alt="" />
-                        <div className={classes.delivery__groups__text}>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне</div>
+                        <div className={classes.delivery__groups__text}>Чекайте на своє замовлення або зробіть самовивіз</div>
                     </div>
                 </div>
             </div>
