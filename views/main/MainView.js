@@ -36,12 +36,21 @@ const MainView = ({
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1
-      };
-      const [addToCartItem, setAddToCartItem] = useState(false)
-      const [activeSize, setActiveSize] = useState(0)
+    }
+
+    const [addToCartItem, setAddToCartItem] = useState(false)
+
+    const [showAddToCartModal, setShowAddToCartModal] = useState(false)
+   
+    const clickShowAddToCartModal = () => {
+        setShowAddToCartModal(true)
+        setTimeout(() => {
+            setShowAddToCartModal(false)
+        }, 1000)
+    }
     
     const onAdd = (food, activeSize) => {
-        console.log(food, activeSize)
+
         const typeSize = [
             {
                id: 0,
@@ -54,13 +63,14 @@ const MainView = ({
         ]
         const exist = cart.find(x => x.id === food.id)
         setAddToCartItem(food?.title)
+        clickShowAddToCartModal()
         if(exist) {
           setCart(cart.map(x => x.id === food.id ? {...exist, qty: exist.qty +1} : x))
         } else {
           setCart([...cart,  {...food, qty: 1, activeOption: activeSize ? activeSize : null}])
         } 
     }
-    console.log(addToCartItem)
+   
     const onRemove = (food) => {
         const exist = cart.find(x => x.id === food.id)
         if (exist.qty === 1) {
@@ -71,7 +81,6 @@ const MainView = ({
         }
     }
     
-
     const delItem = (id) => {
         setCart(cart.filter((elem) => elem.id !== id))
     }
@@ -126,6 +135,10 @@ const MainView = ({
                     setShowModal={setShowModal}
                 />
             ))}
+             <AddToCartModal 
+                    addToCartItem={addToCartItem} 
+                    showAddToCartModal={showAddToCartModal}
+                />
             <Cart
                     showCart={showCart}
                     setShowCart={setShowCart}
@@ -139,7 +152,6 @@ const MainView = ({
                     setShowModal={setShowModal}
                     addToOrder={addToOrder}
                 />
-                <AddToCartModal addToCartItem={addToCartItem} />
             </div>
         </div>
     )

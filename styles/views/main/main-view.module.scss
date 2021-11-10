@@ -944,7 +944,162 @@
     }
 }
 @media screen and (max-width: 768px) {
+    .buyBtn {
+        height: 30px;
+        margin: 10px 2%;
+        &__block {
+            &__inCart {
+                font-size: 12px;
+                padding-left: 2px;
+            }
+            &__add {
+                color: black;
+                font-size: 12px;
+            }
+            &__rem {
+                color: black;
+                font-size: 12px;
+                padding-right: 5px;
+            }
+            &__qty {
+                color: black;
+                font-size: 12px;
+                width: 10px;
+            }
+            &__addRem {
+                padding-right: 3%;
+            }
+        }
+        &__cart {
+           background: #E45100;
+            height: 100%;
+            width: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 7px;
+            border: none;
+            outline: none;
+        }
+    }
+    .buyBtnE {
+        height: 30px;
+        &__addE {
+                padding-left: 7px;
+                font-size: 8px;  
+                width: 79%;
+        }
+        &__cartE {
+            width: 21%;
+           
+        }
+    }
+    .mainView {
+        &__title {
+            font-size: 29px;
+        }
+    }
+    .pizzaType {
+        font-size: 25px;
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+    .pizza {
+        &__sizeBlock {
+            height: 20px;
+            width: 65%;
+            margin-left: 1%;
+            &__active {
+                height: 20px;
+                border-radius: 4px;
+                font-size: 8px;
+                font-weight: 500;
+            }
+            &__size {
+                font-size: 8px;
+            }
+        }
+        &__card {
+            width: 25%;
+        }
+         &__cardTwo {
+             width: 20%;  
+         }
+        &__block {
+            border-radius: 5px;
+            margin: 10px 4px;
+            &__icon {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            &__status {
+                padding-right: 5px;
+                width: 20px;
+            }
+            &__name {
+                font-size: 12px; 
+                margin-right: 1%;
+                color: #404040;
+                height: 20px;
+            }
+            &__item {
+                margin-top: 10px;
+                
+                display: flex;
+                align-items: center;
+            }
+            &__price {
+                font-size: 11px;   
+                padding-top: 10px;      
+            }
+            &__items {
+                margin-right: 1%;
+            }
+            &__grn {
+                font-size: 9px;
+                padding-left: 1px
+            }
+            &__weight {
+                font-size: 10px;
+            }
+            &__images {
+                min-height: 150px;
+            }
+        }
+    }
+    .ttt {
+        padding: 3px 5px;
+    }
     
+    .discount {
+        padding-top: 14px;
+        height: 8px;
+        &__value {
+            font-size: 10px;
+        }
+    }
+    .vis {
+        opacity: 1;
+    }
+    .unvis {
+        opacity: 0;
+        pointer-events: none;
+    }
+    .upArrow {
+        position: fixed;
+        right: 2%;
+        top: 90%;
+        z-index: 120;
+        cursor: pointer;
+    }
+    .popapBlock {
+        top: 68%;  
+    }
+    .popap {
+        font-size: 8px;
+        top: 68%;
+    }
 }
 
 @media screen and (max-width: 576px) {

@@ -36,7 +36,14 @@
     }
 }
 @media screen and (max-width: 768px) {
-    
+    .svg {
+        width: 55%;
+        height: 55%;
+    }
+    .burger {
+        position: fixed;
+        right: -4%;  
+    }
 }
 
 @media screen and (max-width: 576px) {
