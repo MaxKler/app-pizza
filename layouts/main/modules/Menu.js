@@ -5,6 +5,7 @@ import closeMenuSvg from './../../../project/image/layouts/navbar/svg/closeMenu.
 import phoneSvg from './../../../project/image/layouts/navbar/svg/phone.svg'
 import {useRouter} from 'next/router'
 import {useWindowSize} from './../../../mobile util/utils'
+import chPng from './../../../project/image/widgets/delTerms/ch.png'
 
 const Menu = ({
     closeMenu, 
@@ -38,6 +39,9 @@ const Menu = ({
             <div className={screen ? classes.menu : classes.menu__close}>
             <div className={classes.menuCloseBtn} onClick={closeMenu}>
                 <img src={closeMenuSvg} alt="close" />
+            </div>
+            <div className={classes.menuLogo}>
+                <img className={classes.menuLogo__img} src={chPng} alt="" />
             </div>
             <div className={classes.menuTitle}>Меню</div>
             <div className={ classes.menuBlock }>

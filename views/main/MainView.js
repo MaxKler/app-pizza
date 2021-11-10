@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
+import AddToCartModal from "../../widgets/cart/components/AddToCartModal";
 
 
 
@@ -36,8 +37,8 @@ const MainView = ({
         slidesToShow: 1,
         slidesToScroll: 1
       };
-    
-    const [activeSize, setActiveSize] = useState(0)
+      const [addToCartItem, setAddToCartItem] = useState(false)
+      const [activeSize, setActiveSize] = useState(0)
     
     const onAdd = (food, activeSize) => {
         console.log(food, activeSize)
@@ -51,16 +52,15 @@ const MainView = ({
                 size: food.status_opt_end
             }  
         ]
-        console.log(activeSize)
         const exist = cart.find(x => x.id === food.id)
-        console.log(exist)
+        setAddToCartItem(food?.title)
         if(exist) {
           setCart(cart.map(x => x.id === food.id ? {...exist, qty: exist.qty +1} : x))
-          
         } else {
           setCart([...cart,  {...food, qty: 1, activeOption: activeSize ? activeSize : null}])
         } 
     }
+    console.log(addToCartItem)
     const onRemove = (food) => {
         const exist = cart.find(x => x.id === food.id)
         if (exist.qty === 1) {
@@ -71,12 +71,15 @@ const MainView = ({
         }
     }
     
+
     const delItem = (id) => {
         setCart(cart.filter((elem) => elem.id !== id))
-     }
+    }
+
+  
     return (
         <div>
-            <div className={classes.mainView__title}>У самому серці твого міста!</div>
+            <div className={classes.mainView__title}>У самому серці твого Маріуполя!</div>
             <Slider {...settings}>
                 <div className={classes.mainView}></div>
                 <div className={classes.mainView1}></div> 
@@ -84,7 +87,7 @@ const MainView = ({
                 <div className={classes.mainView3}></div>  
             </Slider>
             <div className={classes.ttt}>
-                <div className={classes.pizzaType}>Новинки</div>
+                <div className={classes.pizzaType}>Хіт продажів</div>
                      <NewProducts 
                      showCart={showCart}
                      setShowCart={setShowCart}
@@ -136,6 +139,7 @@ const MainView = ({
                     setShowModal={setShowModal}
                     addToOrder={addToOrder}
                 />
+                <AddToCartModal addToCartItem={addToCartItem} />
             </div>
         </div>
     )

@@ -37,8 +37,12 @@
         &__question {
             font-size: 20px;
             color: #404040;
+            cursor: pointer;
+            padding: 0 25px;
             &__active {
+                cursor: pointer;
                 font-weight: 600;
+                padding: 0 25px;
             }
         }
         &__answer {

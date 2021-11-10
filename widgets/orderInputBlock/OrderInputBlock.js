@@ -55,53 +55,53 @@ const OrderInputBlock = ({
         setStateTime1(true)
         timeVisible()
     }
- 
-    const makeDataOrderFunc = (e, attr, val) => {
+    const [phone, setPhone] = useState()
+    const makeDataOrderFunc = (e, attr, val,) => {
+      
         setOrderData({
             ...orderData,
             [attr]: val ? val : e.target.value,
             
         })
     }
+    
 
     const [selectedDate, setSelectedDate] = useState(() => {
      
       let dateNow = new Date().toLocaleTimeString().substr(0,2)
         console.log(dateNow)
         return setHours(setMinutes(new Date(), 0), +dateNow + 1)
-    }
+    })
 
-          
-
-    )
     const orderDate = new Date()
 
     orderDate.setDate(orderDate.getDate() + 7);
  
-
     const filterPassedTime = (time) => {
         const currentDate = new Date();
         const selectedDate = new Date(time);
         return currentDate.getTime() < selectedDate.getTime();
       };
     
+   
+
     return (
         <div>
             <div className={classes.input}>
                 <input value={orderData?.name} onChange={(e) => makeDataOrderFunc(e, 'name')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Ваше ім'я" type="text"/>
                 {errorData?.name && <div className={classes.errorTitle}>{errorData['name'][0]}</div>}
 
-                {/* <PhoneInput 
+                <PhoneInput 
                     country={'ua'} 
-                    value={orderData?.phone} 
-                    onChange={(e) => makeDataOrderFunc(e, 'phone')} 
+                    value={phone}
+                    onChange={(e)=> makeDataOrderFunc(e, 'phone')} 
                     placeholder="Телефон"  
                     />
-                    {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>} */}
+                    {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>}
 
 
-                <input onChange={(e) => makeDataOrderFunc(e, 'phone')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Телефон"  type="text" />
-                {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>}
+                {/* <input onChange={(e) => makeDataOrderFunc(e, 'phone')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Телефон"  type="text" />
+                {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>} */}
 
                 <input onChange={(e) => makeDataOrderFunc(e, 'countPeople')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Кількість персон"  type="text" />
                 {errorData?.countPeople && <div className={classes.errorTitle}>{errorData['countPeople'][0]}</div>}
