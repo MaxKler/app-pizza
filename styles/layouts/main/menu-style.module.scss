@@ -20,7 +20,7 @@
 .menuLogo {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
     &__img {
         width: 200px;
         height: 100%;
@@ -103,7 +103,7 @@
 @media screen and (max-width: 1800px) {
     .menuLogo {
        &__img {
-           width: 190px;
+           width: 180px;
        }
     }
 }
@@ -111,7 +111,7 @@
 @media screen and (max-width: 1700px) {
     .menuLogo {
         &__img {
-            width: 180px;
+            width: 175px;
         }
     }
     .menu {
@@ -135,8 +135,9 @@
         top:0;
     }
     .menuLogo {
+        
         &__img {
-           width:  160px;
+           width:  150px;
         }
      }
       
@@ -150,9 +151,9 @@
         top:0;
     }
     .menuLogo {
-        margin-top: 60px;
+       
       &__img {
-          width: 200px;
+          width: 140px;
       }
     }
 }

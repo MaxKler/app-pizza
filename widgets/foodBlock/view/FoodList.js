@@ -70,7 +70,14 @@ const FoodList = ({
       function changeBackground1(e) {
         setVisiblePopap(false)
       }
-
+      let priceValue = 0
+      if (activeSize === 0 || activeSize === null) {
+          priceValue = food?.price
+      } else if (activeSize === 1) {
+          priceValue = food?.price_two
+      } else if (activeSize === 2) {
+          priceValue = food?.price_three
+      } 
     return (
         
         <div  onMouseEnter={changeBackground} 
@@ -96,18 +103,20 @@ const FoodList = ({
                    :
                    <></>
                 }
-                {food.title}</div>
+                {food.title}
+            </div>
                 <div className={classes.pizza__block__itemTwo}>
-                    {food.status_opt_start &&  <div key={food.id} className={classes.pizza__sizeBlock}>
+                    {food.status_opt_start && <div key={food.id} className={classes.pizza__sizeBlock}>
                         {typeSize.map((size, index) => {
                             return (
                                 <div key={size.size} onClick={() => onSelectSize(index)}
                                     className={activeSize === index ?
                                     classes.pizza__sizeBlock__active 
-                                     : classes.pizza__sizeBlock__size}>{size.size} см</div>
+                                     : classes.pizza__sizeBlock__size}>{size.size} </div>
                                  )
                              })}
                     </div>}
+                </div> 
                     <div className={classes.pizza__block__items}>
                         <div className={classes.discount}>
                             {food.status === 'sale' ?  
@@ -115,12 +124,11 @@ const FoodList = ({
                             : <></>}
                         </div>
                         
-                        <div className={classes.pizza__block__price}>{ (activeSize === 0 || activeSize === null) ? food.price : food?.price_two}
+                        <div className={classes.pizza__block__price}>{priceValue}
                             <span className={classes.pizza__block__grn}>грн</span>
                         </div>
                         {food.weight && <div className={classes.pizza__block__weight}>{food.weight} гр</div>}
                     </div>
-                </div> 
                 <div >
                     <AddCart 
                         classes={classes}
@@ -136,23 +144,3 @@ const FoodList = ({
 }
 
 export default FoodList
-// onClick={() => onAdd(food, activeSize)}
-
-// {cart.map((item) => {
-//     return (
-//         <div onClick={changeBtn} className={classes.buyBtn}>
-//     {cartBtn ? 
-//     <div style={{display:'flex'}}>
-//         <span onClick={() => onRemove(item)} >-</span>
-//         <div >{item.qty}</div>
-//         <span onClick={() => onAdd(item)} >+</span>
-//     </div> :
-//     <div className={classes.buyBtn__add}>Додати до кошика + 1</div>
-//     }
-//     <div className={classes.buyBtn__cart}>
-//         <img className={classes.buyBtnCart} src={cartSvg} alt="cart" />
-//     </div>
-// </div>  
-//     )
-// }
-// )}

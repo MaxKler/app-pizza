@@ -15,7 +15,7 @@ const NewProducts = ({
     
 }) => {
     return (
-        <>
+        <><div className={classes.pizza}>
         {newProducts.map((food,index) => {
             let qty = cart.filter(el => el.id === food.id)
             return (
@@ -35,6 +35,7 @@ const NewProducts = ({
               </div>
           )
       })}
+      </div>
       </>
     )
 }

@@ -18,6 +18,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
 import AddToOrder from "./components/AddToOrder";
+import OrderName from "./components/OrderName";
 
 let settings = {
     dots: false,
@@ -125,22 +126,16 @@ const Cart = ({
                 <div className={classes.cart__items}>
                     <div className={classes.order}>
                         {cart.map((item) => {
+                            console.log(item)
                             return (
                             <>
                             <div className={classes.order__block}>
                                 <div className={classes.order__size}>
                                     <img className={classes.order__size__img} src={`${NET.WEB_URL}/${item.image}`} alt="" />
                                 </div>
-                                <div className={classes.order__size3}>
-                                    <div className={classes.order__name}>{item.title}
-                                        {/* {item.sizeType && item.sizeType.map((size) => {
-                                            console.log(size)
-                                            return (
-                                                <div className={classes.order__type}>{size} см</div>   
-                                            )
-                                        })} */}
-                                    </div>
-                                </div>
+                                <OrderName classes={classes}
+                                           item={item}
+                                           />
                                 <div className={classes.order__size1}>
                                     <div className={classes.order__count}>
                                         <span onClick={() => onRemove(item)} className={classes.order__count__addRem}>-</span>

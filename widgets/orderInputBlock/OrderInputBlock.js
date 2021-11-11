@@ -100,14 +100,15 @@ const OrderInputBlock = ({
             <div className={classes.input}>
                 <input value={orderData?.name} onChange={(e) => makeDataOrderFunc(e, 'name')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Ваше ім'я" type="text"/>
                 {errorData?.name && <div className={classes.errorTitle}>{errorData['name'][0]}</div>}
-
-                <PhoneInput 
-                    country={'ua'} 
-                    value={phone}
-                    onChange={(e)=> makeDataOrderFunc(e, 'phone')} 
-                    placeholder="Телефон"  
-                    />
-                    {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>}
+                 <div className={classes.input__phone}>
+                 <PhoneInput 
+                   country={'ua'} 
+                   value={phone}
+                   onChange={(e)=> makeDataOrderFunc(e, 'phone')} 
+                   placeholder="Телефон"  
+                   />
+                 </div>
+                {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>}
 
                 <input onChange={(e) => makeDataOrderFunc(e, 'countPeople')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Кількість персон"  type="text" />
                 {errorData?.countPeople && <div className={classes.errorTitle}>{errorData['countPeople'][0]}</div>}
