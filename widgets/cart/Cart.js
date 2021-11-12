@@ -19,6 +19,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import AddToOrder from "./components/AddToOrder";
 import OrderName from "./components/OrderName";
+import OrderItemPrice from "./components/OrderItemPrice";
 
 let settings = {
     dots: false,
@@ -59,7 +60,36 @@ const Cart = ({
     addToOrder
 }) => {
  
-    const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
+    // const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
+    let productPrice = 0
+    cart.map((el) => {
+        console.log(el)
+        if (el.activeOption === 0 || el.activeOption === null) {
+            productPrice = productPrice + el.price * el.qty
+        } else if (el.activeOption === 1) {
+            productPrice = productPrice + el.price_two * el.qty
+        } else if (el.activeOption === 2) {
+            productPrice = productPrice + el.price_three * el.qty
+        }
+    })
+    // let productPrice = ''
+    // if (cart.activeOption === 0 || cart.activeOption === null) {
+    //     productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
+    // } else if (cart.activeOption === 1) {
+    //     productPrice = cart.reduce((a, c) => a + c.price_two * c.qty, 0)
+    // } else if (cart.activeOption === 2) {
+    //     productPrice = cart.reduce((a, c) => a + c.price_three * c.qty, 0)
+    // }
+
+    // let productPrice = ''
+    // if (cart.activeOption === 0 || cart.activeOption === null) {
+    //     productPrice = cart.price * cart.qty
+    // } else if (cart.activeOption === 1) {
+    //     productPrice =  cart.price_two * cart.qty
+    // } else if (cart.activeOption === 2) {
+    //     productPrice =  cart.price_three * cart.qty
+    // }
+    
     const deliveryPrice = 40
     const totalPrice = productPrice + deliveryPrice
     
@@ -89,6 +119,7 @@ const Cart = ({
 
     const [errorData, setErrorData] = useState({})
     const [succesData, setSuccesData] = useState(false)
+
     const makeOrder = async () => {
         const res = await fetch(`${NET.APP_URL}/order`, {
             method: 'POST',
@@ -109,6 +140,9 @@ const Cart = ({
             localStorage.removeItem('cart')
         }
     } 
+    console.log(succesData)
+
+    
     return (
         <div className={showCart ? [classes.cartNone__active, classes.cartNone].join(' ') : classes.cartNone}>
             <div className={classes.cart}>
@@ -144,10 +178,10 @@ const Cart = ({
                                     </div>
                                 </div>
                                 <div className={classes.order__size1}>
-                                    {item.activeOption === 1 ? 
-                                      <div className={classes.order__price}>{+item.price_two * item.qty}</div> :
-                                      <div className={classes.order__price}>{item.price * item.qty}</div>
-                                }
+                                    <OrderItemPrice 
+                                        classes={classes}
+                                        item={item}
+                                    />
                                 </div>
                                 <div className={classes.order__size2}>
                                     <img onClick={() => delItem(item.id)} className={classes.trash} src={trashSvg} alt="" />
@@ -194,7 +228,7 @@ const Cart = ({
                                      </div>
                                      <div className={classes.items}>
                                          <div className={classes.items__title}>Сума:</div>
-                                         <div className={classes.items__count}>{productPrice.toFixed(2)} грн</div>
+                                         <div className={classes.items__count}>{productPrice} грн</div>
                                      </div>
                                      <div className={classes.items}>
                                          <div className={classes.items__title}>Доставка:</div>
@@ -207,7 +241,7 @@ const Cart = ({
                                 <div className={classes.total}>
                                      <div className={classes.total__title}>Разом:</div>
                                      {freeD === 0 ? <div className={classes.total__count}>{productPrice} грн</div> : 
-                                     <div className={classes.total__count}>{totalPrice.toFixed(2)} грн</div> }
+                                     <div className={classes.total__count}>{totalPrice} грн</div> }
                                 </div>
                             </div>
                         </div>
