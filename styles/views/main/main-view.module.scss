@@ -126,7 +126,7 @@
         }
         &__items {
             margin-right: 2%;
-            height: 40px;
+            height: 60px;
         }
         &__price {
             font-weight: 600;
@@ -144,6 +144,7 @@
             font-size: 19px;
             text-align: right;
             color: #787878;
+          
         }
     }
 }
@@ -163,7 +164,10 @@
     outline: none;
     cursor: pointer;
     color: white;
-    margin: 10px 2%;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-bottom: 10px;
+    margin-top: 5px;
     &:hover {
         box-shadow: rgba(0, 3, 5, 0.932) 0px 2px 4px 0px, rgba(0, 0, 0, 0.993) 0px 2px 16px 0px;
     }
@@ -225,7 +229,10 @@
     outline: none;
     cursor: pointer;
     color: white;
-    margin: 10px 2%;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-bottom: 10px;
+    margin-top: 5px;
     &:hover {
         box-shadow: rgba(0, 3, 5, 0.932) 0px 2px 4px 0px, rgba(0, 0, 0, 0.993) 0px 2px 16px 0px;
     }
@@ -853,9 +860,6 @@
     }
     .pizza {
         &__sizeBlock {
-            height: 20px;
-            width: 65%;
-            margin-left: 1%;
             &__active {
                 height: 20px;
                 border-radius: 4px;
@@ -943,7 +947,6 @@
 @media screen and (max-width: 768px) {
     .buyBtn {
         height: 30px;
-        margin: 10px 2%;
         &__block {
             &__inCart {
                 font-size: 12px;
@@ -1146,6 +1149,10 @@
                 justify-content: center;
                 padding-bottom: 20px;
                 margin-bottom: 20px;
+            }
+            &__items {
+                margin-right: 2%;
+                height: 75px;
             }
         }
         &__card {

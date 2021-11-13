@@ -153,6 +153,7 @@
             height: 25px;
             &__item {
                 margin-right: 30px;
+                font-size: 23px;
             }
         }
         &__logo {
@@ -179,7 +180,7 @@
         &__services {
             height: 25px;
             &__item {
-                margin-right: 40px;
+                margin-right: 35px;
             }
         }
         &__logo {
@@ -217,6 +218,7 @@
 }
 @media screen and (max-width: 1600px) {
     .navbar {
+        height: 110px;
         &__services {
             height: 25px;
             &__item {
@@ -242,6 +244,7 @@
         }
     }
     .lang {
+        margin-right: 20px;
         height: 25px;
         &__item {
             &:hover {
@@ -258,7 +261,6 @@
 }
 @media screen and (max-width: 1500px) {
     .navbar {
-        height: 100px;
         &__logo {
             margin-left: 4%;
         }
@@ -268,9 +270,75 @@
             }
         }
         &__services {
-            margin-top: 5px;
+            margin-bottom: 8px;
             &__item {
-                margin-right: 45px;
+                margin-right: 42px;
+                font-size: 22px;
+            }
+        }
+      }
+    .lang {
+        &__item {
+            font-size: 18px;
+        }
+    }
+    .cart {
+        margin-right: 2%;
+        padding: 5px 8px;
+        &__items {
+            margin-left: 5px;
+        }
+        &__title {
+            font-size: 15px;
+         }
+        &__count {
+            font-size: 13px;
+            padding-right: 5px;
+        }
+        &__total {
+            font-size: 12px;
+            padding-left: 5px;
+        }
+    }
+    .phone {
+        height: 30px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        &__number {
+            font-size: 18px;
+        }
+        &__title {
+            font-size: 12px;
+        }
+    }
+    .contacts {
+
+        margin-right: 20px;
+
+    }
+    .social {
+        &__icons {
+            margin-right: 30px;
+        }
+        &__icon {
+            font-size: 30px;
+        } 
+    } 
+}
+@media screen and (max-width: 1400px) {
+    .navbar {
+        &__logo {
+            margin-left: 4%;
+        }
+        &__items {
+            &__positions {
+                margin-left: 2%;
+            }
+        }
+        &__services {
+            margin-top: 8px;
+            &__item {
+                margin-right: 35px;
                 font-size: 20px;
             }
         }
@@ -281,7 +349,7 @@
         }
     }
     .cart {
-        margin-right: 4%;
+        margin-right: 2%;
         padding: 5px 8px;
         &__items {
             margin-left: 5px;
@@ -324,19 +392,18 @@
     } 
 }
 
-
 @media screen and (max-width: 1366px) {
     .navbar {
-        height: 110px;
         &__items {
             &__positions {
                 margin-left: 30px;
             }
         }
         &__services {
+            margin-top: 9px;
             height: 20px;
             &__item {
-                margin-right: 25px;
+                margin-right: 30px;
                 font-size: 18px;
             }
         }

@@ -62,7 +62,7 @@ const scrolUp = () => {
                       return (
                           <>{food.status === "new" ? <></> :
                           <>
-                          {food.type === "main" &&
+                         
                         <div className={ screen ? classes.pizza__card : classes.pizza__cardTwo}>
                             <div className={classes.pizza__block}>
                                 <FoodList 
@@ -77,7 +77,7 @@ const scrolUp = () => {
                                 />
                             </div>
                         </div>
-                  }</>}</>
+                  </>}</>
                     )
                 })}
                 <MenuHide 
