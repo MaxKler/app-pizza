@@ -89,6 +89,7 @@
         width: 100%;
         align-items: center;
         justify-content: space-between;
+        height: 70px;
     }
     &__name {
         font-weight: 500;
@@ -525,7 +526,7 @@
             text-align: center;
         }
         &__size1 {
-            max-width: 10%;
+            max-width: 15%;
             text-align: center;
         }
         &__size2 {

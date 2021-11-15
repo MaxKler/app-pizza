@@ -28,11 +28,13 @@ const FoodList = ({
         }, 
         {
             id: 1,
-            size: food.status_opt_medium
+            size: food.status_opt_medium,
+            price: '+50 грн'
          }, 
         {
             id: 2,
-            size: food.status_opt_end
+            size: food.status_opt_end,
+            price: '+40 грн'
         }  
     ]
    const [activeSize, setActiveSize] = useState(0)
@@ -105,30 +107,34 @@ const FoodList = ({
                 }
                 {food.title}
             </div>
-                <div className={classes.pizza__block__itemTwo}>
+            <div className={classes.pizza__block__items}>
+                <div className={classes.discount}>
+                    {food.status === 'sale' ?  
+                        <div className={classes.discount__value}>{food.price * 0.2} грн</div> 
+                        : <></>}
+                </div> 
+                <div className={classes.pizza__block__price}>{priceValue}
+                    <span className={classes.pizza__block__grn}>грн</span>
+                </div>
+                {food.weight && <div className={classes.pizza__block__weight}>{food.weight} гр</div>}
+            </div>
+            <div>
+                 <div>Додати інгрідієнти</div>
+                 <div></div>
+            </div>
+            <div className={classes.pizza__block__itemTwo}>
                     {food.status_opt_start && <div key={food.id} className={classes.pizza__sizeBlock}>
                         {typeSize.map((size, index) => {
                             return (
                                 <div key={size.size} onClick={() => onSelectSize(index)}
                                     className={activeSize === index ?
-                                    classes.pizza__sizeBlock__active 
-                                     : classes.pizza__sizeBlock__size}>{size.size} </div>
+                                    [classes.pizza__sizeBlock__size, classes.pizza__sizeBlock__active].join(' ') 
+                                     : classes.pizza__sizeBlock__size}>{size.size} <div>{size.price}
+                                         </div></div>
                                  )
                              })}
                     </div>}
-                </div> 
-                    <div className={classes.pizza__block__items}>
-                        <div className={classes.discount}>
-                            {food.status === 'sale' ?  
-                            <div className={classes.discount__value}>{food.price * 0.2} грн</div> 
-                            : <></>}
-                        </div>
-                        
-                        <div className={classes.pizza__block__price}>{priceValue}
-                            <span className={classes.pizza__block__grn}>грн</span>
-                        </div>
-                        {food.weight && <div className={classes.pizza__block__weight}>{food.weight} гр</div>}
-                    </div>
+             </div> 
                 <div >
                     <AddCart 
                         classes={classes}

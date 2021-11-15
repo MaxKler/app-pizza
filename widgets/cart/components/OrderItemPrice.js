@@ -11,7 +11,7 @@ const OrderItemPrice = ({classes, item}) => {
         itemPrice = item.price_three
     }
     return (
-        <div className={classes.order__price}>{itemPrice * item.qty}</div>
+        <div className={classes.order__price}>{itemPrice * item.qty} ₴</div>
     )
 }
 

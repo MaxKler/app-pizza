@@ -26,8 +26,8 @@ const AddCart = ({classes, qty, onAdd, onRemove, food, activeSize}) => {
                 <img className={classes.buyBtn__cart__icon} src={cartSvg} alt="cart" />
             </div>
         </div> :
-        <div className={classes.buyBtnE}>
-            <div onClick={changeBtn} className={classes.buyBtnE__addE}>Додати до кошика + 1</div>
+        <div onClick={changeBtn} className={classes.buyBtnE}>
+            <div  className={classes.buyBtnE__addE}>Додати до кошика + 1</div>
             <div className={classes.buyBtnE__cartE}>
                 <img className={classes.buyBtnE__cartE__icon} src={cartSvg} alt="cart" />
             </div>

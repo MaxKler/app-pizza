@@ -72,23 +72,7 @@ const Cart = ({
             productPrice = productPrice + el.price_three * el.qty
         }
     })
-    // let productPrice = ''
-    // if (cart.activeOption === 0 || cart.activeOption === null) {
-    //     productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
-    // } else if (cart.activeOption === 1) {
-    //     productPrice = cart.reduce((a, c) => a + c.price_two * c.qty, 0)
-    // } else if (cart.activeOption === 2) {
-    //     productPrice = cart.reduce((a, c) => a + c.price_three * c.qty, 0)
-    // }
-
-    // let productPrice = ''
-    // if (cart.activeOption === 0 || cart.activeOption === null) {
-    //     productPrice = cart.price * cart.qty
-    // } else if (cart.activeOption === 1) {
-    //     productPrice =  cart.price_two * cart.qty
-    // } else if (cart.activeOption === 2) {
-    //     productPrice =  cart.price_three * cart.qty
-    // }
+   
     
     const deliveryPrice = 40
     const totalPrice = productPrice + deliveryPrice
@@ -240,7 +224,7 @@ const Cart = ({
                                 </div>
                                 <div className={classes.total}>
                                      <div className={classes.total__title}>Разом:</div>
-                                     {freeD === 0 ? <div className={classes.total__count}>{productPrice} грн</div> : 
+                                     {freeD === 0 ? <div className={classes.total__count}>{productPrice}грн</div> : 
                                      <div className={classes.total__count}>{totalPrice} грн</div> }
                                 </div>
                             </div>

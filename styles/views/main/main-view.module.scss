@@ -46,33 +46,35 @@
         background: #E3E4EA;
         border-radius: 7px;
         height: 40px;
-        width: 95%;
-        margin-left: 2.5%;
+        width: 96%;
+        justify-content: center;
+        text-align: center;
         align-items: center;
-        color: white;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        margin-left: 2%;
         &__active {
-            font-size: 20px;
-            height: 40px;
+            font-weight: bold;
             background: #00B612;
-            border-radius: 7px;
-            width: 38%;
+            color: white !important;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
             text-align: center;
-            color: white;
+            width: 33.3%;
+            height: 40px;
         }
         &__size {
-            font-size: 20px;
-            width: 32%;
-            font-size: 12px;
+            border-radius: 7px;
+            font-size: 15px;
+            width: 33.3%;
             cursor: pointer;
-            color: #808080;
+            flex-direction: column;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            color: black;
         }
     }
     &__card {
@@ -90,7 +92,7 @@
         height: fit-content;
         &__images {
             position: relative;
-            min-height: 370px;
+            min-height: 330px;
             display: flex;
             align-items: center;
         }
@@ -105,7 +107,7 @@
         &__name {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: flex-start;
             font-weight: 600;
             font-size: 27px; 
             margin-right: 2%;
@@ -126,7 +128,7 @@
         }
         &__items {
             margin-right: 2%;
-            height: 60px;
+            height: 40px;
         }
         &__price {
             font-weight: 600;
@@ -253,7 +255,7 @@
     }
 }
 .pizzaImage {
-    width: 80%;
+    width: 90%;
     height: 100%;
 }
 .discount {
@@ -318,7 +320,7 @@
                 font-size: 17px;
             }
             &__size {
-                font-size: 17px;
+                font-size: 14px;
             }
         }
         &__card {
@@ -411,7 +413,7 @@
             height: 38px;
             &__active {
                 height: 38px;
-                font-size: 16px;
+                font-size: 13px;
                 height: 38px;
             }
             &__size {
@@ -498,7 +500,7 @@
             }
             &__size {
                 height: 36px;
-                font-size: 17px;
+                font-size: 12px;
             }
         }
         &__block {
@@ -523,10 +525,7 @@
         }
     }
    
-    .pizzaImage {
-        width: 90%;
-        height: 100%;
-    }
+   
     .popap {
         font-size: 15px;
     }
@@ -574,7 +573,7 @@
             height: 36px;
             &__active {
                 height: 36px;
-                font-size: 17px;
+                font-size: 11px;
             }
             &__size {
                 height: 36px;
@@ -603,10 +602,7 @@
         }
     }
    
-    .pizzaImage {
-        width: 90%;
-        height: 100%;
-    }
+   
     .popap {
         font-size: 13px;
     }
@@ -654,7 +650,7 @@
             height: 34px;
             &__active {
                 height: 34px;
-                font-size: 16px;
+                font-size: 10px;
             }
             &__size {
                 height: 34px;
@@ -683,10 +679,7 @@
         }
     }
    
-    .pizzaImage {
-        width: 90%;
-        height: 100%;
-    }
+  
     .popap {
         font-size: 12px;
     }
@@ -734,7 +727,7 @@
             height: 28px;
             &__active {
                 height: 28px;
-                font-size: 12px;
+                font-size: 9px;
             }
             &__size {
                 height: 28px;
@@ -820,10 +813,7 @@
             font-size: 12px;
         }
     }
-    .pizzaImage {
-        width: 80%;
-        height: 100%;
-    }
+   
     .popapBlock {
         top: 70%;  
     }
@@ -867,7 +857,7 @@
                 font-weight: 500;
             }
             &__size {
-                font-size: 8px;
+                font-size: 7px;
             }
         }
         &__card {
