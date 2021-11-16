@@ -11,6 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import AddToCartModal from "../../widgets/cart/components/AddToCartModal";
 
+import { NET } from "../../network";
+
 
 
 const MainView = ({
@@ -26,7 +28,8 @@ const MainView = ({
     showModal,
     setShowModal,
     newProducts, 
-    addToOrder
+    addToOrder,
+    slider
 }) => {
 
     let settings = {
@@ -89,16 +92,25 @@ const MainView = ({
         setCart(cart.filter((elem) => elem.id !== id))
     }
 
-  
+   console.log(slider)
     return (
         <div>
             <div className={classes.mainView__title}>У самому серці твого Маріуполя!</div>
             <Slider {...settings}>
-                <div className={classes.mainView}></div>
-                <div className={classes.mainView1}></div> 
-                <div className={classes.mainView2}></div> 
-                <div className={classes.mainView3}></div>  
+                {slider.map((elem) => {
+                    return (
+                    // <div style={{backgroundImage: `url(${NET.WEB_URL}/${elem.image})`}} className={classes.mainView}>
+                    <div >
+                        <div className={classes.mainView} style={{backgroundImage: `url(${NET.WEB_URL}/${elem.image})`}}>
+                        </div>
+                    </div>
+                    
+                    )
+                })}
+                   
             </Slider>
+            
+           
             <div className={classes.ttt}>
                 <div className={classes.pizzaType}>Хіт продажів</div>
                      <NewProducts 

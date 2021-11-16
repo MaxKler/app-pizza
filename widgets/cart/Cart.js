@@ -124,7 +124,7 @@ const Cart = ({
             localStorage.removeItem('cart')
         }
     } 
-    console.log(succesData)
+    
 
     
     return (
@@ -144,7 +144,7 @@ const Cart = ({
                 <div className={classes.cart__items}>
                     <div className={classes.order}>
                         {cart.map((item) => {
-                            console.log(item)
+                            
                             return (
                             <>
                             <div className={classes.order__block}>

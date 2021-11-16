@@ -29,12 +29,13 @@ const FoodList = ({
         {
             id: 1,
             size: food.status_opt_medium,
-            price: '+50 грн'
+            price: food.price_two - food.price
          }, 
         {
             id: 2,
             size: food.status_opt_end,
-            price: '+40 грн'
+            price: food.price_three - food.price
+            
         }  
     ]
    const [activeSize, setActiveSize] = useState(0)
@@ -129,7 +130,7 @@ const FoodList = ({
                                 <div key={size.size} onClick={() => onSelectSize(index)}
                                     className={activeSize === index ?
                                     [classes.pizza__sizeBlock__size, classes.pizza__sizeBlock__active].join(' ') 
-                                     : classes.pizza__sizeBlock__size}>{size.size} <div>{size.price}
+                                     : classes.pizza__sizeBlock__size}>{size.size}<div>{size.price}
                                          </div></div>
                                  )
                              })}

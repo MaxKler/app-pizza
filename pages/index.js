@@ -16,7 +16,9 @@ const Home = ({
   const [dataQuestions, setDataQuestions] = useState(data.questions)
   const [newProducts, setNewProducts] = useState(data.productsNew)
   const [addToOrder, setAddToOrder] = useState(data.productsAnother)
-   
+  const [slider, setSlider] = useState(data.sliders)
+
+
   useEffect(() => {
   
       const res  = localStorage.getItem('cart')
@@ -78,6 +80,7 @@ const [showModal, setShowModal] =  useState(false)
              showContent={true}
        >
            <MainView
+              slider={slider}
               mainData={mainData}
               showCart={showCart}
               setShowCart={setShowCart}
