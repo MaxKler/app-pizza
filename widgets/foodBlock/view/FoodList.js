@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import cartSvg from './../../../project/image/layouts/navbar/svg/cart.svg'
 import perchick from './../../../project/image/views/main/svg/perchick.svg'
 import brokkoli from './../../../project/image/views/main/svg/brokkoli.svg'
 import heart from './../../../project/image/views/main/svg/heart.svg'
@@ -7,6 +6,10 @@ import discount from './../../../project/image/views/main/svg/discount.svg'
 import newItem from './../../../project/image/views/main/svg/newItem.svg'
 import { NET } from "../../../network";
 import AddCart from "./components/AddCart";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -139,10 +142,14 @@ const FoodList = ({
                                  )
                              })}
                     </div>}
-             </div> 
-             <div>
-                 <div>Додати інгрідієнти</div>
-                 <div></div>
+            </div> 
+            <div className={classes.ingridients}>
+                <div className={classes.ingridients__title}>Додати інгрідієнти:</div>
+                <div className={classes.ingridients__icon}>
+                    <div className={classes.ingridients__icon__div}>
+                       <FontAwesomeIcon className={classes.ingridients__icon__icon} icon={faCheck}></FontAwesomeIcon>
+                    </div>
+                </div>
             </div>
                 <div >
                     <AddCart 

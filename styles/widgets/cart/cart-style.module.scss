@@ -96,6 +96,19 @@
         font-size: 27px;
         color: #000000;
     }
+    &__bort {
+        width: 40%;
+        display: flex;
+        margin-left: 8%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        &__name {
+            font-weight: 500;
+            font-size: 27px;
+            color: #000000;
+            margin-left: 100px;
+        }
+    }
     &__type {
         text-align: center;
         font-weight: 500;

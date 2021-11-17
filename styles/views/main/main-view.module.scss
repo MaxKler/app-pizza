@@ -94,7 +94,7 @@
         height: fit-content;
         &__images {
             position: relative;
-            min-height: 330px;
+            min-height: 370px;
             display: flex;
             align-items: center;
         }
@@ -114,8 +114,8 @@
             font-size: 27px; 
             margin-right: 2%;
             color: #404040;
-            height: 40px;
             text-align: right;
+            height: 20px;
         }
         &__item {
             display: flex;
@@ -126,11 +126,13 @@
             
         }
         &__itemTwo {
-            margin-top: 20px;
+            margin-top: 5px;
         }
         &__items {
+            margin-top: 5px;
+            margin-bottom: 5px;
             margin-right: 2%;
-            height: 40px;
+            height: 70px;
         }
         &__price {
             font-weight: 600;
@@ -148,7 +150,6 @@
             font-size: 19px;
             text-align: right;
             color: #787878;
-          
         }
     }
 }
@@ -215,7 +216,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 5px;
+        border-radius: 4px;
         border: none;
         outline: none;
         &__icon {
@@ -313,7 +314,7 @@
     position: absolute;
     top: 80%;
     &__text {
-        width: 90%;
+        width: 95%;
         padding: 5px 0;
     }
 }
@@ -322,6 +323,38 @@
     opacity: 0;
     position: absolute;
     top: 70%;  
+}
+
+.ingridients {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    cursor: pointer;
+    &__title {
+        font-style: italic;
+        font-weight: 500;
+        font-size: 22px;
+        color: #535662;
+        margin-left: 6%;
+    }
+    &__icon {
+        width: 38px;
+        height: 34px;
+        border: 2px solid #00B612;
+        border-radius: 7px;
+        margin-right: 6%;
+        &__div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+        }
+        &__icon {
+            color: green;
+            font-size: 20px;
+        }
+    }
 }
 @media screen and (max-width: 1885px) {
     .pizza {
@@ -445,6 +478,10 @@
             &__weight {
                 font-size: 14px;
             }
+            &__items {
+                
+                height: 60px;
+            }
         }
     }
    
@@ -488,6 +525,22 @@
             width: 20%;
             &__icon {
                 width: 60%;
+            }
+        }
+    }
+    .ingridients {
+        &__title {
+            font-size: 20px;
+        }
+        &__icon {
+            width: 36px;
+            height: 32px;
+            border-radius: 7px;
+            &__div {
+                margin-top: 5px;
+            }
+            &__icon {
+                font-size: 18px;
             }
         }
     }
@@ -568,6 +621,22 @@
             width: 20%;
         }
     }
+    .ingridients {
+        &__title {
+            font-size: 19px;
+        }
+        &__icon {
+            width: 35px;
+            height: 31px;
+            border-radius: 7px;
+            &__div {
+                margin-top: 5px;
+            }
+            &__icon {
+                font-size: 17px;
+            }
+        }
+    }
 }
 @media screen and (max-width: 1600px) {
     .pizza {
@@ -603,8 +672,6 @@
             }
         }
     }
-   
-   
     .popap {
         font-size: 13px;
     }
@@ -642,6 +709,22 @@
         }
         &__cartE {
             width: 20%;
+        }
+    }
+    .ingridients {
+        &__title {
+            font-size: 18px;
+        }
+        &__icon {
+            width: 34px;
+            height: 30px;
+            border-radius: 7px;
+            &__div {
+                margin-top: 5px;
+            }
+            &__icon {
+                font-size: 16px;
+            }
         }
     }
 }
@@ -720,6 +803,40 @@
             width: 20%;
         }
     }
+    .ingridients {
+        &__title {
+            font-size: 17px;
+        }
+        &__icon {
+            width: 33px;
+            height: 29px;
+            border-radius: 7px;
+            &__div {
+                margin-top: 5px;
+            }
+            &__icon {
+                font-size: 15px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1445px) {
+    .ingridients {
+        &__title {
+            font-size: 16px;
+        }
+        &__icon {
+            width: 32px;
+            height: 28px;
+            border-radius: 7px;
+            &__div {
+                margin-top: 5px;
+            }
+            &__icon {
+                font-size: 14px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1366px) {
@@ -728,11 +845,11 @@
             height: 28px;
             &__active {
                 height: 28px;
-                font-size: 9px;
+                font-size: 9.5px;
             }
             &__size {
                 height: 28px;
-                font-size: 11px;
+                font-size: 9.5px;
             }
         }
         &__block {
@@ -814,17 +931,47 @@
             font-size: 12px;
         }
     }
-   
-    .popapBlock {
-         
-    }
     .popap {
         width: 100%;
         padding: 5px 5px;
         font-size: 11px;
-        
+    }
+    .ingridients {
+        &__title {
+            font-size: 15px;
+        }
+        &__icon {
+            width: 30px;
+            height: 26px;
+            border-radius: 7px;
+            &__div {
+                margin-top: 5px;
+            }
+            &__icon {
+                font-size: 12px;
+            }
+        }
     }
 }
+@media screen and (max-width: 1280px) {
+    .ingridients {
+        &__title {
+            font-size: 14px;
+        }
+        &__icon {
+            width: 29px;
+            height: 25px;
+            border-radius: 7px;
+            &__div {
+                margin-top: 5px;
+            }
+            &__icon {
+                font-size: 11px;
+            }
+        }
+    }
+}
+
 
 @media screen and (max-width: 1024px) {
     .buyBtnE {
@@ -1157,17 +1304,18 @@
              padding: 0 5px ;
         }
         &__sizeBlock {
-            height: 35px;
+            height: 40px;
             width: 95%;
             margin-left: 2.5%;
             &__active {
-                height: 35px;
+                height: 40px;
                 width: 50%;
                 font-size: 15px;
             }
             &__size {
                 width: 50%;
                 font-size: 15px;
+                height: 40px;
             }
         }
     }   
@@ -1208,7 +1356,6 @@
     .buyBtnE {
         border: 2px solid #E45100;
         height: 48px;
-
         &__addE {
                 padding-left: 18px;
                 font-size: 18px;  
@@ -1237,5 +1384,22 @@
     }
     .popapdisable {
         top: 80%;  
+    }
+    .ingridients {
+        margin: 15px 0;
+        &__title {
+            font-size: 23px;
+        }
+        &__icon {
+            width: 34px;
+            height: 30px;
+            border-radius: 7px;
+            &__div {
+                margin-top: 5px;
+            }
+            &__icon {
+                font-size: 15px;
+            }
+        }
     }
 }

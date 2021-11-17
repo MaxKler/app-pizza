@@ -20,6 +20,7 @@ import Slider from "react-slick";
 import AddToOrder from "./components/AddToOrder";
 import OrderName from "./components/OrderName";
 import OrderItemPrice from "./components/OrderItemPrice";
+import OrderType from "./components/OrderType";
 
 let settings = {
     dots: false,
@@ -144,7 +145,6 @@ const Cart = ({
                 <div className={classes.cart__items}>
                     <div className={classes.order}>
                         {cart.map((item) => {
-                            
                             return (
                             <>
                             <div className={classes.order__block}>
@@ -171,6 +171,9 @@ const Cart = ({
                                     <img onClick={() => delItem(item.id)} className={classes.trash} src={trashSvg} alt="" />
                                 </div>
                             </div>
+                            <OrderType classes={classes}
+                                           item={item}
+                                           />
                             <hr className={classes.hrCenter}/>
                             </>
                             )
