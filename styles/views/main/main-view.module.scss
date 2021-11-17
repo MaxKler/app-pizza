@@ -63,6 +63,7 @@
             text-align: center;
             width: 33.3%;
             height: 40px;
+            padding: 5px 0;
         }
         &__size {
             border-radius: 7px;
@@ -75,6 +76,7 @@
             justify-content: center;
             text-align: center;
             color: black;
+            padding: 5px 0;
         }
     }
     &__card {
@@ -160,7 +162,7 @@
     justify-content: center;
     height: 48px;
     border: 2px solid #E45100;
-    border-radius: 8px;
+    border-radius: 7px;
     width: 96%;
     max-width: 96%;
     outline: none;
@@ -213,9 +215,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 7px;
+        border-radius: 5px;
         border: none;
         outline: none;
+        &__icon {
+            width: 60%;
+        }
     }
 }
 .buyBtnE {
@@ -223,8 +228,8 @@
     align-items: center;
     justify-content: center;
     height: 48px;
+    border: 2px solid #E45100;
     background:  #E45100;
-    border: none;
     border-radius: 7px;
     width: 96%;
     max-width: 96%;
@@ -245,19 +250,16 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 79%;
+        width: 80%;
     }
     &__cartE {
-        width: 21%;
+        width: 20%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 }
-.pizzaImage {
-    width: 90%;
-    height: 100%;
-}
+
 .discount {
     height: 10px;
     &__value {
@@ -286,19 +288,23 @@
     flex-direction: column;
     cursor: pointer;
     position: absolute;
-    top: 80%;
-    right: 0;
+    top: 85%;
+    right: 2%;
     &__point {
-            background: #006F9E;
+            background: rgba(0, 111, 158, 0.7);
             width: 5px;
             height: 5px;
             border-radius: 50%;
             margin: 2px 0;
         }
     }
-
+.pizzaImage {
+    width: 100%;
+    height: 100%;
+}
 .popap {
-    width: 80%;
+    width: 100%;
+    height: fit-content;
     padding: 5px 5px;
     background: rgba(246, 247, 249, 0.85);
     opacity: 1;
@@ -306,9 +312,13 @@
     font-size: 16px;
     position: absolute;
     top: 80%;
+    &__text {
+        width: 90%;
+        padding: 5px 0;
+    }
 }
 .popapdisable {
-    width: 90%;
+    width: 100%;
     opacity: 0;
     position: absolute;
     top: 70%;  
@@ -386,21 +396,17 @@
                 width: 24px;
             }
         }
-        &__cart {
-            &__icon {
-                width: 65%;
-            }
-        }
+        
     }
     .buyBtnE {
         height: 48px;
         &__addE {
             padding-left: 22px;
             font-size: 19px;  
-            width: 79%;
+            width: 80%;
         }
         &__cartE {
-            width: 21%;
+            width: 20%;
             &__icon {
                 width: 60%;
             }
@@ -417,7 +423,7 @@
                 height: 38px;
             }
             &__size {
-                font-size: 16px;
+                font-size: 13px;
             }
         }
         &__block {
@@ -469,21 +475,17 @@
                 width: 24px;
             }
         }
-        &__cart {
-            &__icon {
-                width: 65%;
-            }
-        }
+        
     }
     .buyBtnE {
         height: 46px;
         &__addE {
             padding-left: 22px;
             font-size: 18px;  
-            width: 79%;
+            width: 80%;
         }
         &__cartE {
-            width: 21%;
+            width: 20%;
             &__icon {
                 width: 60%;
             }
@@ -560,10 +562,10 @@
             padding-left: 20px;
             font-size: 16px;  
             
-            width: 79%;
+            width: 80%;
         }
         &__cartE {
-            width: 21%;
+            width: 20%;
         }
     }
 }
@@ -573,11 +575,11 @@
             height: 36px;
             &__active {
                 height: 36px;
-                font-size: 11px;
+                font-size: 12px;
             }
             &__size {
                 height: 36px;
-                font-size: 17px;
+                font-size: 12px;
             }
         }
         &__block {
@@ -627,7 +629,6 @@
             &__qty {
                 color: black;
                 font-size: 18px;
-              
             }
         }
     }
@@ -637,10 +638,10 @@
             padding-left: 20px;
             font-size: 15px;  
             
-            width: 79%;
+            width: 80%;
         }
         &__cartE {
-            width: 21%;
+            width: 20%;
         }
     }
 }
@@ -650,11 +651,11 @@
             height: 34px;
             &__active {
                 height: 34px;
-                font-size: 10px;
+                font-size: 11px;
             }
             &__size {
                 height: 34px;
-                font-size: 16px;
+                font-size: 11px;
             }
         }
         &__block {
@@ -713,10 +714,10 @@
             padding-left: 20px;
             font-size: 13px;  
             
-            width: 79%;
+            width: 80%;
         }
         &__cartE {
-            width: 21%;
+            width: 20%;
         }
     }
 }
@@ -802,10 +803,10 @@
         &__addE {
                 padding-left: 18px;
                 font-size: 12px;  
-                width: 79%;
+                width: 80%;
         }
         &__cartE {
-            width: 21%;
+            width: 20%;
         }
     }
     .discount {
@@ -815,13 +816,13 @@
     }
    
     .popapBlock {
-        top: 70%;  
+         
     }
     .popap {
-        width: 90%;
+        width: 100%;
         padding: 5px 5px;
         font-size: 11px;
-        top: 70%;
+        
     }
 }
 
@@ -1182,6 +1183,8 @@
             &__add {
                 color: black;
                 font-size: 20px;
+                padding-left: 10px;
+                padding-right: 5px;
             }
             &__rem {
                 color: black;
@@ -1195,6 +1198,7 @@
             }
         }
         &__cart {
+            border-radius: 5px;
             &__icon {
                 width: 63%;
             }
@@ -1202,16 +1206,18 @@
        
     }
     .buyBtnE {
+        border: 2px solid #E45100;
         height: 48px;
+
         &__addE {
                 padding-left: 18px;
                 font-size: 18px;  
-                width: 79%;
+                width: 80%;
         }
         &__cartE {
-            width: 21%;
+            width: 20%;
             &__icon {
-                width: 60%;
+                width: 63%;
             }
         }
     }
@@ -1225,6 +1231,9 @@
     }
     .popap {
         font-size: 15px;
+    }
+    .popapBlock {
+        top: 75%;
     }
     .popapdisable {
         top: 80%;  

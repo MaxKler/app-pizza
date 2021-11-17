@@ -29,12 +29,12 @@ const FoodList = ({
         {
             id: 1,
             size: food.status_opt_medium,
-            price: food.price_two - food.price
-         }, 
+            price: food.price_two - food.price 
+        }, 
         {
             id: 2,
-            size: food.status_opt_end,
-            price: food.price_three - food.price
+            size: food.status_opt_end ,
+            price: food.price_three - food.price 
             
         }  
     ]
@@ -92,7 +92,11 @@ const FoodList = ({
                : 
                <></>
                }
-                <div className={visiblePopap ? classes.popap : classes.popapdisable}>{food.text}</div>
+                <div className={visiblePopap ? classes.popap : classes.popapdisable}>
+                   <div className={classes.popap__text}>
+                   {food.text}
+                   </div>
+                </div>
                 <div className={classes.popapBlock} onMouseEnter={changeBackground} 
                     onMouseLeave={changeBackground1}> 
                     <div className={classes.popapBlock__point}></div> 
@@ -119,10 +123,6 @@ const FoodList = ({
                 </div>
                 {food.weight && <div className={classes.pizza__block__weight}>{food.weight} гр</div>}
             </div>
-            <div>
-                 <div>Додати інгрідієнти</div>
-                 <div></div>
-            </div>
             <div className={classes.pizza__block__itemTwo}>
                     {food.status_opt_start && <div key={food.id} className={classes.pizza__sizeBlock}>
                         {typeSize.map((size, index) => {
@@ -130,12 +130,20 @@ const FoodList = ({
                                 <div key={size.size} onClick={() => onSelectSize(index)}
                                     className={activeSize === index ?
                                     [classes.pizza__sizeBlock__size, classes.pizza__sizeBlock__active].join(' ') 
-                                     : classes.pizza__sizeBlock__size}>{size.size}<div>{size.price}
-                                         </div></div>
+                                     : classes.pizza__sizeBlock__size}>{size.size}
+                                    {size.price &&  <div>
+                                       + {size.price} грн
+                                    </div> } 
+                                   
+                                </div>
                                  )
                              })}
                     </div>}
              </div> 
+             <div>
+                 <div>Додати інгрідієнти</div>
+                 <div></div>
+            </div>
                 <div >
                     <AddCart 
                         classes={classes}
