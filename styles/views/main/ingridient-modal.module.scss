@@ -1,0 +1,64 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.473);
+    &__active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+    &__window {
+        width: 800px;
+        height: 500px;
+        background: white;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+    &__close {
+       display: flex;
+       justify-content: flex-end;
+       margin-right: 20px;
+       margin-top: 10px;
+       cursor: pointer;
+       color: black;
+       font-weight: bold;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__line {
+            width: 90%;
+            height: 1px;
+            background: crimson;
+            margin-top: 20px;
+        }
+    }
+    &__title {
+        display: flex;
+        justify-content: center;
+        color: black;
+        font-size: 20px;
+    }
+}
+.block {
+    width: 90%;  
+    &__names {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        // border: 1px solid transparent;
+        border: 1px solid green;
+
+        &__name {
+            width: 33.3%;
+            color: black;
+            text-align: center;
+        }
+    }
+}

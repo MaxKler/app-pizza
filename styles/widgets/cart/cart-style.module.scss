@@ -102,11 +102,16 @@
         margin-left: 8%;
         margin-top: 10px;
         margin-bottom: 10px;
+        &__size {
+            width: 55%;
+        }
+        &__size1 {
+            width: 45%;
+        }
         &__name {
             font-weight: 500;
             font-size: 27px;
             color: #000000;
-            margin-left: 100px;
         }
     }
     &__type {
@@ -283,6 +288,11 @@
         &__name {
             font-size: 24px;
         }
+        &__bort {
+            &__name {
+                font-size: 24px;
+            }
+        }
         &__type {
             font-size: 22px;
         }
@@ -355,6 +365,29 @@
         color: #000000;
         padding: 8px;
     }
+    .orderBtn {
+        &__title {
+            font-weight: 500;
+            font-size: 20px;
+        }
+        &__icon {
+            font-size: 60px;
+            padding-left: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    .orderBtn {
+        &__title {
+            font-weight: 500;
+            font-size: 18px;
+        }
+        &__icon {
+            font-size: 50px;
+            padding-left: 15px;
+        }
+    }
 }
 @media screen and (max-width: 1366px) {
     .cart {
@@ -373,6 +406,11 @@
     .order {
         &__name {
             font-size: 17px;
+        }
+        &__bort {
+            &__name {
+                font-size: 17px;
+            }
         }
         &__type {
             font-size: 16px;
@@ -553,7 +591,25 @@
         &__check {
             width: 100%;
         }
-        
+        &__bort {
+            width: 50%;
+            display: flex;
+            margin-left: 6%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            &__size {
+                width: 40%;
+            }
+            &__size1 {
+                width: 50%;
+            }
+            &__name {
+                font-weight: 500;
+                font-size: 16px;
+                color: #000000;
+                text-align: left;
+            }
+        }
     }
     .deliveryFree {
         font-size: 16px;

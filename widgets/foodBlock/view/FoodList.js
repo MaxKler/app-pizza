@@ -10,6 +10,7 @@ import AddCart from "./components/AddCart";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import IngridientModal from "./components/IngridientModal";
 
 
 
@@ -84,6 +85,13 @@ const FoodList = ({
       } else if (activeSize === 2) {
           priceValue = food?.price_three
       } 
+
+      const [ingridient, setIngridient] = useState(false)
+
+      const showIngridientModal = () => {
+          setIngridient(true)
+      }
+
     return (
         
         <div  onMouseEnter={changeBackground} 
@@ -118,7 +126,7 @@ const FoodList = ({
             <div className={classes.pizza__block__items}>
                 <div className={classes.discount}>
                     {food.status === 'sale' ?  
-                        <div className={classes.discount__value}>{food.price * 0.2} грн</div> 
+                        <div className={classes.discount__value}>{priceValue * 1.2} грн</div> 
                         : <></>}
                 </div> 
                 <div className={classes.pizza__block__price}>{priceValue}
@@ -143,7 +151,7 @@ const FoodList = ({
                              })}
                     </div>}
             </div> 
-            <div className={classes.ingridients}>
+            <div onClick={showIngridientModal} className={classes.ingridients}>
                 <div className={classes.ingridients__title}>Додати інгрідієнти:</div>
                 <div className={classes.ingridients__icon}>
                     <div className={classes.ingridients__icon__div}>
@@ -151,6 +159,11 @@ const FoodList = ({
                     </div>
                 </div>
             </div>
+            <IngridientModal 
+               ingridient={ingridient}
+               setIngridient={setIngridient}
+               food={food}
+            />
                 <div >
                     <AddCart 
                         classes={classes}
