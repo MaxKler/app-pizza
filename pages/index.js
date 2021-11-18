@@ -1,11 +1,16 @@
 import React, {useState, useEffect} from 'react'
+import classes from './../styles/views/main/main-view.module.scss'
+
 import Main from '../layouts/main/Main'
 import Footer from '../views/footer/Footer'
 import MainView from '../views/main/MainView'
 import MapView from '../views/map/MapView'
+
 import { NET } from '../network'
 import QuestionsBlock from '../widgets/questions/questionsBlock'
 import {useWindowSize} from './../mobile util/utils'
+import BlogViewMain from '../views/blog/BlogViewMain'
+import Link from 'next/link'
 
 const Home = ({
   data
@@ -17,7 +22,8 @@ const Home = ({
   const [newProducts, setNewProducts] = useState(data.productsNew)
   const [addToOrder, setAddToOrder] = useState(data.productsAnother)
   const [slider, setSlider] = useState(data.sliders)
-
+  const [blogData, setBlogData] = useState(data.news)
+  const [ingridients, setIngridients] = useState(data.ingridients)
 
   useEffect(() => {
   
@@ -94,12 +100,21 @@ const [showModal, setShowModal] =  useState(false)
               setShowModal={setShowModal}
               newProducts={newProducts}
               addToOrder={addToOrder}
-           />
-              <QuestionsBlock 
-               dataQuestions={dataQuestions}
-         />
+              ingridients={ingridients}
+            />
+            <QuestionsBlock 
+               dataQuestions={dataQuestions}   
+            />
+            <div id={`blog`} >
+              <BlogViewMain 
+                blogData={blogData} 
+                screen={screen}
+              />
+              <Link href="/blog">
+                <div className={classes.allNews}>Усі новини</div>
+              </Link>
+            </div>
         </Main>
-         
         <MapView />
         <Footer 
           mainData={mainData}

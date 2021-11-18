@@ -22,7 +22,8 @@ const FoodBlock = ({
     setShowModal,
     idx,
     onAdd,
-    onRemove
+    onRemove,
+    ingridients
 }) => {
 
 
@@ -73,6 +74,7 @@ const scrolUp = () => {
                                     index={index}
                                     onAdd={onAdd}
                                     onRemove={onRemove}
+                                    ingridients={ingridients}
                                     qty={qty.length ? qty[0].qty : 0}
                                 />
                             </div>

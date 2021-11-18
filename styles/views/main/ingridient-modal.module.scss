@@ -54,11 +54,14 @@
         margin-top: 20px;
         // border: 1px solid transparent;
         border: 1px solid green;
-
         &__name {
             width: 33.3%;
             color: black;
             text-align: center;
         }
+    }
+    &__ingr {
+        display: flex;
+        flex-direction: column;
     }
 }

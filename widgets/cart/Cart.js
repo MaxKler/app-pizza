@@ -221,7 +221,7 @@ const Cart = ({
                                          <div className={classes.items__title}>Доставка:</div>
                                          {freeD === 0 ? <div className={classes.items__count}>   Безкоштовно!</div>
                                           :
-                                          <div className={classes.items__count}>{deliveryPrice}</div>
+                                          <div className={classes.items__count}>{deliveryPrice} грн</div>
                                          }
                                      </div>
                                 </div>

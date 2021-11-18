@@ -1,5 +1,5 @@
 .mainView {
-    // background: url('./../../../project/image/layouts/content/jpg/backGround.jpg');
+    
     background-size: cover;
     background-repeat: no-repeat;
     height: 400px;
@@ -10,24 +10,7 @@
         text-align: center;
     }
 }
-.mainView1 {
-    background: url('./../../../project/image/layouts/content/jpg/bg1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 400px;
-}
-.mainView2 {
-    background: url('./../../../project/image/layouts/content/jpg/bg2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 400px;
-}
-.mainView3 {
-    background: url('./../../../project/image/layouts/content/jpg/bg3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 400px;
-}
+
 
 .pizzaType {
     font-weight: bold;
@@ -94,9 +77,15 @@
         height: fit-content;
         &__images {
             position: relative;
-            min-height: 370px;
+            min-height: 354px;
+            height: 354px;
+            max-width: 354px;
+            overflow: hidden;
             display: flex;
+            justify-content: center;
             align-items: center;
+            width: 95%;
+            margin-bottom: 16px;
         }
         &__icon {
             position: absolute;
@@ -300,7 +289,7 @@
         }
     }
 .pizzaImage {
-    width: 100%;
+    
     height: 100%;
 }
 .popap {
@@ -348,12 +337,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 5px;
         }
         &__icon {
-            color: green;
-            font-size: 20px;
+            margin-top: 5px;
         }
+    }
+}
+.allNews {
+    font-size: 35px;
+    text-align: center;
+    color: #808080;
+    cursor: pointer;
+    margin-bottom: 10px;
+    &:hover {
+        text-decoration: underline;
     }
 }
 @media screen and (max-width: 1885px) {
@@ -445,6 +442,9 @@
             }
         }
     }
+    .allNews {
+        font-size: 33px;
+    }
 }
 @media screen and (max-width: 1775px) {
     .pizza {
@@ -512,7 +512,6 @@
                 width: 24px;
             }
         }
-        
     }
     .buyBtnE {
         height: 46px;
@@ -537,12 +536,15 @@
             height: 32px;
             border-radius: 7px;
             &__div {
-                margin-top: 5px;
+                
             }
             &__icon {
-                font-size: 18px;
+                margin-top: 3px;
             }
         }
+    }
+    .allNews {
+        font-size: 31px;
     }
 }
 @media screen and (max-width: 1700px) {
@@ -579,8 +581,6 @@
             }
         }
     }
-   
-   
     .popap {
         font-size: 15px;
     }
@@ -630,12 +630,15 @@
             height: 31px;
             border-radius: 7px;
             &__div {
-                margin-top: 5px;
+                margin-top: 1px;
             }
             &__icon {
-                font-size: 17px;
+                margin-top: 3px;
             }
         }
+    }
+    .allNews {
+        font-size: 29px;
     }
 }
 @media screen and (max-width: 1600px) {
@@ -720,12 +723,15 @@
             height: 30px;
             border-radius: 7px;
             &__div {
-                margin-top: 5px;
+                margin-top: 1px;
             }
             &__icon {
-                font-size: 16px;
+                margin-top: 3px;
             }
         }
+    }
+    .allNews {
+        font-size: 27px;
     }
 }
 @media screen and (max-width: 1500px) {
@@ -812,12 +818,16 @@
             height: 29px;
             border-radius: 7px;
             &__div {
-                margin-top: 5px;
+                margin-top: 1px;
             }
             &__icon {
-                font-size: 15px;
+               margin-top: 2px;
+               width: 70%;
             }
         }
+    }
+    .allNews {
+        font-size: 25px;
     }
 }
 @media screen and (max-width: 1445px) {
@@ -830,12 +840,15 @@
             height: 28px;
             border-radius: 7px;
             &__div {
-                margin-top: 5px;
+                margin-top: 1px;
             }
             &__icon {
-                font-size: 14px;
+            
             }
         }
+    }
+    .allNews {
+        font-size: 24px;
     }
 }
 
@@ -913,7 +926,6 @@
                 
             }
         }
-       
     }
     .buyBtnE {
         height: 40px;
@@ -945,12 +957,15 @@
             height: 26px;
             border-radius: 7px;
             &__div {
-                margin-top: 5px;
+                margin-top: 1px;
             }
             &__icon {
-                font-size: 12px;
+                width: 65%;
             }
         }
+    }
+    .allNews {
+        font-size: 22px;
     }
 }
 @media screen and (max-width: 1280px) {
@@ -963,12 +978,15 @@
             height: 25px;
             border-radius: 7px;
             &__div {
-                margin-top: 5px;
+                margin-top: 1px;
             }
             &__icon {
-                font-size: 11px;
+              
             }
         }
+    }
+    .allNews {
+        font-size: 20px;
     }
 }
 
@@ -1395,10 +1413,10 @@
             height: 30px;
             border-radius: 7px;
             &__div {
-                margin-top: 5px;
+                margin-top: 2px;
             }
             &__icon {
-                font-size: 15px;
+                
             }
         }
     }

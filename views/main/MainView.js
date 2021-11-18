@@ -29,7 +29,8 @@ const MainView = ({
     setShowModal,
     newProducts, 
     addToOrder,
-    slider
+    slider,
+    ingridients
 }) => {
 
     let settings = {
@@ -92,14 +93,13 @@ const MainView = ({
         setCart(cart.filter((elem) => elem.id !== id))
     }
 
-   console.log(slider)
+   
     return (
         <div>
             <div className={classes.mainView__title}>У самому серці твого Маріуполя!</div>
             <Slider {...settings}>
                 {slider.map((elem) => {
                     return (
-                    // <div style={{backgroundImage: `url(${NET.WEB_URL}/${elem.image})`}} className={classes.mainView}>
                     <div >
                         <div className={classes.mainView} style={{backgroundImage: `url(${NET.WEB_URL}/${elem.image})`}}>
                         </div>
@@ -129,6 +129,7 @@ const MainView = ({
                      countProduct={countProduct}
                      showModal={showModal}
                      setShowModal={setShowModal}
+                     ingridients={ingridients}
                      />
             <DeliveryTerms screen={screen} />
             {mainData && mainData.length && mainData.map((foodBlock, idx) => (
@@ -149,6 +150,7 @@ const MainView = ({
                     countProduct={countProduct}
                     showModal={showModal}
                     setShowModal={setShowModal}
+                    ingridients={ingridients}
                 />
             ))}
              <AddToCartModal 

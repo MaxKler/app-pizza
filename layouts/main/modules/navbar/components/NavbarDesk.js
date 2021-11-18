@@ -33,9 +33,7 @@ const NavbarDesk = ({
         <div className={classes.navbar__services}>
             <div onClick={openMenu} className={classes.navbar__services__item}>Меню</div>
             <div onClick={() => router.push(`/#delivery`)}  className={classes.navbar__services__item}>Доставка</div>
-            <Link href="/blog">
-                <div className={classes.navbar__services__item}>Блог</div>
-            </Link>
+            <div onClick={() => router.push(`/#blog`)}  className={classes.navbar__services__item}>Блог</div>
             <div className={classes.navbar__services__item}>Контакти</div>
         </div>
         <div className={classes.lang}>

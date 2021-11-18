@@ -35,9 +35,7 @@ const MenuHide = ({ visibleMenu, setVisibleMenu, watchCart, screen, setScreen, c
                 <div className={classes.menuItems}>
                     <div  onClick={openMenu} className={classes.menuItem} >Меню</div>
                     <div  onClick={() => router.push(`/#delivery`)}  className={classes.menuItem} >Доставка</div>
-                    <Link href="/blog">
-                        <div  className={classes.menuItem} >Блог</div>
-                    </Link>
+                    <div  onClick={() => router.push(`/#blog`)}   className={classes.menuItem} >Блог</div>
                 </div>
                 <div>
                     <div className={classes.orderTitle}>Оформити доставку можна за телефоном</div>

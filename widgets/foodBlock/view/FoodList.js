@@ -7,9 +7,7 @@ import newItem from './../../../project/image/views/main/svg/newItem.svg'
 import { NET } from "../../../network";
 import AddCart from "./components/AddCart";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import checkSvg from './../../../project/image/views/main/svg/checkSvg.svg'
 import IngridientModal from "./components/IngridientModal";
 
 
@@ -22,7 +20,8 @@ const FoodList = ({
     setCart, 
     onAdd, 
     onRemove, 
-    qty
+    qty,
+    ingridients
 }) => {
 
     const typeSize = [
@@ -90,10 +89,10 @@ const FoodList = ({
 
       const showIngridientModal = () => {
           setIngridient(true)
+          console.log(activeSize)
       }
 
     return (
-        
         <div  onMouseEnter={changeBackground} 
               onMouseLeave={changeBackground1} className={classes.ttt} key={index} >
             <div className={classes.pizza__block__images}>
@@ -145,7 +144,6 @@ const FoodList = ({
                                     {size.price &&  <div>
                                        + {size.price} грн
                                     </div> } 
-                                   
                                 </div>
                                  )
                              })}
@@ -155,7 +153,7 @@ const FoodList = ({
                 <div className={classes.ingridients__title}>Додати інгрідієнти:</div>
                 <div className={classes.ingridients__icon}>
                     <div className={classes.ingridients__icon__div}>
-                       <FontAwesomeIcon className={classes.ingridients__icon__icon} icon={faCheck}></FontAwesomeIcon>
+                       <img src={checkSvg} className={classes.ingridients__icon__icon} />
                     </div>
                 </div>
             </div>
@@ -163,6 +161,9 @@ const FoodList = ({
                ingridient={ingridient}
                setIngridient={setIngridient}
                food={food}
+               activeSize={activeSize}
+               onAdd={onAdd}
+               ingridients={ingridients}
             />
                 <div >
                     <AddCart 

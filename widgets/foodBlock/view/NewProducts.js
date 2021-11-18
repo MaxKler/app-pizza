@@ -3,16 +3,12 @@ import FoodList from "./FoodList";
 
 const NewProducts = ({
     newProducts,
-   
     screen,
-    
     classes,
-   
     cart,
-   
     onAdd,
     onRemove,
-    
+    ingridients
 }) => {
     return (
         <><div className={classes.pizza}>
@@ -29,6 +25,7 @@ const NewProducts = ({
                           index={index}
                           onAdd={onAdd}
                           onRemove={onRemove}
+                          ingridients={ingridients}
                           qty={qty.length ? qty[0].qty : 0}
                       />
                   </div>
