@@ -59,6 +59,18 @@
             color: black;
             text-align: center;
         }
+        &__qty {
+            width: 33.3%;
+            color: black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &__qty {
+                width: 40px;
+                padding: 0 10px;
+            }
+        }
     }
     &__ingr {
         display: flex;

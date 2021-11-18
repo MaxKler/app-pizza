@@ -163,7 +163,9 @@ const FoodList = ({
                food={food}
                activeSize={activeSize}
                onAdd={onAdd}
+               onRemove={onRemove}
                ingridients={ingridients}
+               cart={cart}
             />
                 <div >
                     <AddCart 

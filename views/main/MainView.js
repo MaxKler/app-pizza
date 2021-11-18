@@ -53,7 +53,7 @@ const MainView = ({
         }, 2500)
     }
     
-    const onAdd = (food, activeSize) => {
+    const onAdd = (food, activeSize, ingridients) => {
 
         const typeSize = [
             {
@@ -75,7 +75,10 @@ const MainView = ({
         if(exist) {
           setCart(cart.map(x => x.id === food.id ? {...exist, qty: exist.qty +1} : x))
         } else {
-          setCart([...cart,  {...food, qty: 1, activeOption: activeSize ? activeSize : null}])
+          setCart([...cart,  {...food, qty: 1, 
+            activeOption: activeSize ? activeSize : null,
+            ingridients: ingridients ? ingridients : null
+        }])
         } 
     }
    

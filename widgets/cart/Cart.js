@@ -145,6 +145,7 @@ const Cart = ({
                 <div className={classes.cart__items}>
                     <div className={classes.order}>
                         {cart.map((item) => {
+                            console.log(item)
                             return (
                             <>
                             <div className={classes.order__block}>
@@ -170,6 +171,9 @@ const Cart = ({
                                 <div className={classes.order__size2}>
                                     <img onClick={() => delItem(item.id)} className={classes.trash} src={trashSvg} alt="" />
                                 </div>
+                            </div>
+                            <div className={classes.order__size1}>
+
                             </div>
                             <OrderType classes={classes}
                                            item={item}

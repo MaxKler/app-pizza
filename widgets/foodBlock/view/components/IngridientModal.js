@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './../../../../styles/views/main/ingridient-modal.module.scss'
+import IngrBlock from './IngrBlock'
 
 const IngridientModal = ({
     ingridient, 
@@ -7,7 +8,9 @@ const IngridientModal = ({
     food,
     activeSize,
     onAdd,
-    ingridients
+    onRemove,
+    ingridients,
+    cart
 }) => {
 
     const closeModal = () => {
@@ -23,7 +26,7 @@ const IngridientModal = ({
     }
 
     const addPizza = () => {
-        onAdd(food, activeSize)
+        onAdd(food, activeSize, ingridients)
     }
     return (
         <div className={ ingridient ? [classes.modal__active, classes.modal].join(' ') : classes.modal}>
@@ -39,24 +42,23 @@ const IngridientModal = ({
                             <div className={classes.block__names__name}>Ціна</div>
                         </div>
                         {ingridients.map((elem) => {
-                                return (
-                                    
-                                <div className={classes.block__names}>
-                            
-                                   <div className={classes.block__names__name}>{elem.title}</div>
-                                   <div className={classes.block__names__name}>Кількість</div>
-                                   <div className={classes.block__names__name}>{elem.price}</div>
-                                   </div>
+                             let qty = cart.filter(el => el.id === elem.id)
+                                return (        
+                                <IngrBlock 
+                                    classes={classes}
+                                    elem={elem}
+                                    onAdd={onAdd}
+                                    onRemove={onRemove}
+                                    qty={qty.length ? qty[0].qty : 0}
+                                />
                                 )
                             })}
-                            
-                       
                     </div>
                     <div className={classes.modal__content__line}></div>
                 </div>
                 <div>
                    <div className={classes.modal__title}>піца "{food.title}"</div>
-                   <div className={classes.modal__title}> "{foodPrice}"</div>
+                   <div className={classes.modal__title}> "{foodPrice }"</div>
                 </div>
                 <button onClick={addPizza}>Add</button>
                 <div onClick={closeModal} className={classes.modal__title}>Продовжити покупки</div>
