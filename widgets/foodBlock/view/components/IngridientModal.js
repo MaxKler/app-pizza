@@ -28,6 +28,9 @@ const IngridientModal = ({
     const addPizza = () => {
         onAdd(food, activeSize, ingridients)
     }
+   
+   
+    
     return (
         <div className={ ingridient ? [classes.modal__active, classes.modal].join(' ') : classes.modal}>
             <div className={classes.modal__window}>
@@ -36,13 +39,13 @@ const IngridientModal = ({
                 <div className={classes.modal__content}>
                     <div className={classes.modal__content__line}></div>
                     <div className={classes.block}>
-                        <div className={classes.block__names}>
+                        <div className={classes.block__cat}>
                             <div className={classes.block__names__name}>Інгрідієнт</div>
                             <div className={classes.block__names__name}>Кількість</div>
                             <div className={classes.block__names__name}>Ціна</div>
                         </div>
                         {ingridients.map((elem) => {
-                             let qty = cart.filter(el => el.id === elem.id)
+                          let qty = cart.filter(el => el.id === elem.id)
                                 return (        
                                 <IngrBlock 
                                     classes={classes}
@@ -56,12 +59,25 @@ const IngridientModal = ({
                     </div>
                     <div className={classes.modal__content__line}></div>
                 </div>
-                <div>
-                   <div className={classes.modal__title}>піца "{food.title}"</div>
-                   <div className={classes.modal__title}> "{foodPrice }"</div>
+                <div className={classes.total}>
+                    <div className={classes.total__pizza}>
+                        <div className={classes.total__title}>піца "{food.title}"</div>
+                        <div className={classes.total__price}>{foodPrice } грн</div>
+                    </div>
+                    <div className={classes.total__pizza}>
+                        <div className={classes.total__title}>Додатки:</div>
+                        <div className={classes.total__price}> грн</div>
+                    </div>
+                    <div className={classes.total__pizza1}>
+                        <div className={classes.total__title}>Усього:</div>
+                        <div className={classes.total__price}> грн</div>
+                    </div>
                 </div>
-                <button onClick={addPizza}>Add</button>
-                <div onClick={closeModal} className={classes.modal__title}>Продовжити покупки</div>
+                <div className={classes.addBtn} onClick={addPizza}>
+                    <div className={classes.addBtn__btn}>Додати піцу до кошика</div>
+                </div>
+                    
+                <div onClick={closeModal} className={classes.continue}>Продовжити покупки</div>
             </div>
         </div>
     )
