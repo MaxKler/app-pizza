@@ -11,6 +11,7 @@ import QuestionsBlock from '../widgets/questions/questionsBlock'
 import {useWindowSize} from './../mobile util/utils'
 import BlogViewMain from '../views/blog/BlogViewMain'
 import Link from 'next/link'
+import Coments from '../widgets/coments/Coments'
 
 const Home = ({
   data
@@ -114,9 +115,9 @@ const [showModal, setShowModal] =  useState(false)
                 <div className={classes.allNews}>Усі новини</div>
               </Link>
             </div>
-        </Main>
-        <MapView />
-        <Footer 
+            <Coments />
+            <MapView />
+            <Footer 
           mainData={mainData}
           watchCart={watchCart}
           totalPrice={totalPrice}
@@ -124,6 +125,9 @@ const [showModal, setShowModal] =  useState(false)
           showButtonCart={true}
           showContent={true}
         />
+        </Main>
+       
+       
        </>
   )
 }
