@@ -4,7 +4,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url('./../../../project/image/widgets/coments/inst.png');
-    height: 80vh;
+    height: 100vh;
     &__blocks {
         display: flex;
     }
@@ -34,6 +34,15 @@
         flex-direction: column;
         margin-top: 11%;
         margin-right: 10%;
-        
     }
+}
+.insta {
+    margin-top: 100px;
+    position: relative;
+}
+.phone {
+    position: absolute;
+    left: 39.4%;
+    bottom: -24%;
+  
 }
