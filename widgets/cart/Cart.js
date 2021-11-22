@@ -21,6 +21,7 @@ import AddToOrder from "./components/AddToOrder";
 import OrderName from "./components/OrderName";
 import OrderItemPrice from "./components/OrderItemPrice";
 import OrderType from "./components/OrderType";
+import Ingridients from "./components/Ingridients";
 
 let settings = {
     dots: false,
@@ -146,6 +147,7 @@ const Cart = ({
                     <div className={classes.order}>
                         {cart.map((item) => {
                             console.log(item)
+                            
                             return (
                             <>
                             <div className={classes.order__block}>
@@ -175,6 +177,12 @@ const Cart = ({
                             <div className={classes.order__size1}>
 
                             </div>
+                            <Ingridients item={item} 
+                                         classes={classes} 
+                                         onAdd={onAdd}
+                                         onRemove={onRemove}
+                                         cart={cart}
+                                        />
                             <OrderType classes={classes}
                                            item={item}
                                            />

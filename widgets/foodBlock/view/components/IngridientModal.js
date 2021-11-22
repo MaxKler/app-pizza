@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import classes from './../../../../styles/views/main/ingridient-modal.module.scss'
 import IngrBlock from './IngrBlock'
 
@@ -25,11 +25,12 @@ const IngridientModal = ({
         foodPrice = food.price_three
     }
 
+    const [ingridientData, setIngridientData] = useState([])
+
     const addPizza = () => {
-        onAdd(food, activeSize, ingridients)
-    }
-   
-   
+        console.log(ingridientData)
+        onAdd(food, activeSize, ingridientData)
+    }  
     
     return (
         <div className={ ingridient ? [classes.modal__active, classes.modal].join(' ') : classes.modal}>
@@ -53,6 +54,8 @@ const IngridientModal = ({
                                     onAdd={onAdd}
                                     onRemove={onRemove}
                                     qty={qty.length ? qty[0].qty : 0}
+                                    ingridientData={ingridientData}
+                                    setIngridientData={setIngridientData}
                                 />
                                 )
                             })}
@@ -77,7 +80,7 @@ const IngridientModal = ({
                     <div className={classes.addBtn__btn}>Додати піцу до кошика</div>
                 </div>
                     
-                <div onClick={closeModal} className={classes.continue}>Продовжити покупки</div>
+                {/* <div onClick={closeModal} className={classes.continue}>Продовжити покупки</div> */}
             </div>
         </div>
     )

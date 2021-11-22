@@ -53,22 +53,29 @@ const MainView = ({
         }, 2500)
     }
     
-    const onAdd = (food, activeSize, ingridients) => {
-
-        const typeSize = [
-            {
-               id: 0,
-               size: food.status_opt_start
-            }, 
-            {
-                id: 0,
-                size: food.status_opt_medium
-             }, 
-            {
-                id: 1,
-                size: food.status_opt_end
-            }  
-        ]
+    const onAdd = (food, activeSize, ingridientData) => {
+        // const exist = cart.find(x => x.id === food.id)
+        // if(exist) {
+        //     setCart(cart.map(x => x.id === food.id ? {...exist, qty: exist.qty +1} : x))
+        //   } else {
+        //     setCart([...cart,  {...food, qty: 1, 
+        //       activeOption: activeSize ? activeSize : null,
+        //       ingridients: ingridientData.map()
+        //   }])
+        // const typeSize = [
+        //     {
+        //        id: 0,
+        //        size: food.status_opt_start
+        //     }, 
+        //     {
+        //         id: 0,
+        //         size: food.status_opt_medium
+        //      }, 
+        //     {
+        //         id: 1,
+        //         size: food.status_opt_end
+        //     }  
+        // ]
         const exist = cart.find(x => x.id === food.id)
         setAddToCartItem(food?.title)
         clickShowAddToCartModal()
@@ -77,7 +84,7 @@ const MainView = ({
         } else {
           setCart([...cart,  {...food, qty: 1, 
             activeOption: activeSize ? activeSize : null,
-            ingridients: ingridients ? ingridients : null
+            ingridients: ingridientData ? ingridientData : null
         }])
         } 
     }

@@ -6,7 +6,8 @@ const IngrBlock = ({
     qty,
     onAdd,
     onRemove,
-    
+    ingridientData,
+    setIngridientData
 }) => {
 
     const [qtyIngr, setQtyIngr] = useState(0)
@@ -17,7 +18,38 @@ const IngrBlock = ({
         setQtyIngr(qty ? qty : 0)
     }, [qty])
 
-
+    const addIngrd = (type) => {
+        let newData = ingridientData
+        const newItem = newData.filter(el => el.id === elem.id) 
+        
+        if (newItem.length) {
+            if (type === 'remove' && !(qtyIngr - 1)) {
+                newData = newData.filter(ingr => ingr.id != elem.id)
+            } else {
+                newData = newData.map(ingr => {
+                    if (ingr.id === elem.id) {
+                        return {
+                            ...ingr,
+                            qty: type === 'add' ? qtyIngr + 1 : qtyIngr - 1
+                        }
+                    } else {
+                        return ingr
+                    }
+                })
+            }            
+            setIngridientData(newData)
+            setQtyIngr(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
+        } else {
+            if (type === 'add') {
+                newData.push({
+                    ...elem,
+                    qty: 1
+                })
+                setIngridientData(newData)
+                setQtyIngr(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
+            }
+        }
+    }
    
     return (
        <div className={qtyIngr > 0 ? classes.block__names : classes.block__namesTr}>
@@ -28,9 +60,9 @@ const IngrBlock = ({
                    </div>
                </div>
             <div className={classes.block__names__qty}>
-                   <span className={classes.block__names__qty__rem} onClick={() => setQtyIngr(qtyIngr - 1)} >-</span>
+                   <span className={classes.block__names__qty__rem} onClick={() => addIngrd('remove')} >-</span>
                    <div className={classes.block__names__qty__qty} >{qtyIngr}</div>
-                   <span className={classes.block__names__qty__add}  onClick={() => setQtyIngr(qtyIngr + 1)} >+</span>
+                   <span className={classes.block__names__qty__add}  onClick={() => addIngrd('add')} >+</span>
             </div>
             <div className={classes.block__names__price}>
                 <div className={classes.block__names__price__price}>{elem.price * qtyIngr} грн</div>
