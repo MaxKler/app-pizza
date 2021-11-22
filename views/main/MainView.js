@@ -62,20 +62,20 @@ const MainView = ({
         //       activeOption: activeSize ? activeSize : null,
         //       ingridients: ingridientData.map()
         //   }])
-        // const typeSize = [
-        //     {
-        //        id: 0,
-        //        size: food.status_opt_start
-        //     }, 
-        //     {
-        //         id: 0,
-        //         size: food.status_opt_medium
-        //      }, 
-        //     {
-        //         id: 1,
-        //         size: food.status_opt_end
-        //     }  
-        // ]
+        const typeSize = [
+            {
+               id: 0,
+               size: food.status_opt_start
+            }, 
+            {
+                id: 0,
+                size: food.status_opt_medium
+             }, 
+            {
+                id: 1,
+                size: food.status_opt_end
+            }  
+        ]
         const exist = cart.find(x => x.id === food.id)
         setAddToCartItem(food?.title)
         clickShowAddToCartModal()

@@ -251,6 +251,7 @@
     top: 5%;
     right: 3%;
     cursor: pointer;
+    z-index: 2000;
 }
 .orderData {
     margin: 5px 0;
@@ -281,6 +282,29 @@
     text-align: center;
     margin-top: 30px;
     margin-bottom: 20px;
+}
+
+.ingridients {
+    display: flex;
+    &__title {
+        color: black;
+    }
+    &__price {
+        color: black;
+    }
+    &__qty {
+        display: flex;
+        align-items: center;
+        &__minus {
+            color: black;
+        }
+        &__plus {
+            color: black;
+        }
+        &__qty {
+            color: black;
+        }
+    }
 }
 @media screen and (max-width: 1700px) {
   
@@ -558,6 +582,7 @@
        right: 0;
         &__content {
            width: 100%;
+           z-index: 1000;
         }
         &__items {
           display: flex;

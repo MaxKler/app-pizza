@@ -8,6 +8,7 @@ import closeCartSvg from './../../project/image/layouts/navbar/svg/closeMenu.svg
 import OrderInputBlock from "../orderInputBlock/OrderInputBlock";
 import {NET} from './../../network'
 import Succes from "../modal/succes/Succes";
+
 import delPng from './../../project/image/widgets/delTerms/deliv.png'
 import del1Png from './../../project/image/widgets/delTerms/deliv1.png'
 import del2Png from './../../project/image/widgets/delTerms/deliv2.png'
@@ -65,7 +66,6 @@ const Cart = ({
     // const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
     let productPrice = 0
     cart.map((el) => {
-        console.log(el)
         if (el.activeOption === 0 || el.activeOption === null) {
             productPrice = productPrice + el.price * el.qty
         } else if (el.activeOption === 1) {
@@ -146,8 +146,6 @@ const Cart = ({
                 <div className={classes.cart__items}>
                     <div className={classes.order}>
                         {cart.map((item) => {
-                            console.log(item)
-                            
                             return (
                             <>
                             <div className={classes.order__block}>
@@ -177,12 +175,18 @@ const Cart = ({
                             <div className={classes.order__size1}>
 
                             </div>
-                            <Ingridients item={item} 
-                                         classes={classes} 
-                                         onAdd={onAdd}
-                                         onRemove={onRemove}
-                                         cart={cart}
-                                        />
+                            <div className={classes.order__name}>Добавки:</div>
+                               {item.ingridients && item.ingridients.map((ad) => {
+                                   let qty = cart.filter(el => el.id === ad.id)
+                                   return (
+                                    <Ingridients ad={ad} 
+                                    classes={classes} 
+                                    onAdd={onAdd}
+                                    onRemove={onRemove}
+                                    qty={qty.length ? qty[0].qty : 0}
+                                   />
+                                 )
+                             })}
                             <OrderType classes={classes}
                                            item={item}
                                            />

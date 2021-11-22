@@ -92,6 +92,8 @@ const FoodList = ({
           console.log(activeSize)
       }
 
+    
+
     return (
         <div  onMouseEnter={changeBackground} 
               onMouseLeave={changeBackground1} className={classes.ttt} key={index} >
@@ -149,6 +151,7 @@ const FoodList = ({
                              })}
                     </div>}
             </div> 
+           {food.is_pizza === "pizza" &&
             <div onClick={showIngridientModal} className={classes.ingridients}>
                 <div className={classes.ingridients__title}>Додати інгрідієнти:</div>
                 <div className={classes.ingridients__icon}>
@@ -157,6 +160,7 @@ const FoodList = ({
                     </div>
                 </div>
             </div>
+           } 
             <IngridientModal 
                ingridient={ingridient}
                setIngridient={setIngridient}

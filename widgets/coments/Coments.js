@@ -14,13 +14,45 @@ import Slider from "react-slick";
 const Coments = () => {
 
     let settings = {
+        dots: false,
         arrows: false,
-        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 1
-    }
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            {
+                breakpoint: 1700,
+                settings: {
+                slidesToShow: 4,
+                arrows:false
+                }
+            },
+            {
+                breakpoint: 1500,
+                settings: {
+                slidesToShow: 3,
+                arrows:false
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                slidesToShow: 1,
+                arrows:false
+                }
+            },
+            {
+              breakpoint: 568,
+              settings: {
+              slidesToShow: 1,
+              arrows:false
+              }
+            },
+        ]
+      };
     return (
     <div className={classes.coments}>
         <div className={classes.coments__blocks}>
@@ -43,29 +75,29 @@ const Coments = () => {
         
         <div className={classes.insta}>
         <div className={classes.phone}>
-            <img src={phone} alt="" />
+            <img className={classes.phone__img}  src={phone} alt="" />
         </div>
         <Slider {...settings}>
         <div>
-            <img src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg} alt="" />
         </div>
         <div>
-            <img src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg} alt="" />
         </div>
         <div>
-            <img src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg} alt="" />
         </div>
         <div>
-            <img src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg} alt="" />
         </div>
         <div>
-            <img src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg} alt="" />
         </div>
         <div>
-            <img src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg} alt="" />
         </div>
         <div>
-            <img src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg} alt="" />
         </div>
          </Slider>
         </div>

@@ -1,6 +1,4 @@
 .coments {
-    
-
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url('./../../../project/image/widgets/coments/inst.png');
@@ -44,5 +42,63 @@
     position: absolute;
     left: 39.4%;
     bottom: -24%;
-  
+    z-index: 99999999;
+}
+@media screen and (max-width: 1500px) {
+    .phone {
+        position: absolute;
+        left: 32.5%;
+        bottom: -22.5%;
+        
+    }
+ }
+
+@media screen and (max-width: 576px) {  
+    .coments {
+        height: 1100px;
+        &__blocks {
+            display: flex;
+            flex-direction: column;
+        }
+         &__title {
+            margin-top: 40px;
+            font-size: 20px;
+            text-align: center;
+        }
+        &__blockEmpty {
+            width: 0;
+        }
+        &__block {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 0;
+            margin-right: 0;
+        }
+        &__text {
+            font-size: 23px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        &__pidpis {
+           text-align: center;
+        }
+    }
+.phone {
+    position: absolute;
+    left: -2.5%;
+    z-index: 99999999;
+    &__img {
+        width: 400px;
+        height: 650px;
+    }
+}
+.insta {
+    margin-top: 200px;
+    position: relative;
+    &__img {
+       width: 380px;
+       height: 400px;
+    }  
+ }
 }

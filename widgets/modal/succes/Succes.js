@@ -10,7 +10,6 @@ const Succes = ({
     succesData,
     setCart
 }) => {
-  console.log(succesData)
     const closeModal = () => {
         setShowCart(false)
         document.querySelector('html').style.overflow = 'visible'
