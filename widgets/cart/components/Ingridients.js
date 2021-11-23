@@ -6,7 +6,6 @@ const Ingridients = ({
     onAdd,
     onRemove,
     ad, 
-    qty,
     cart,
     setCart,
     item
@@ -59,18 +58,18 @@ const Ingridients = ({
              <div className={classes.ingridients__size}>
                  <div className={classes.ingridients__title}>{ad.title}</div>
             </div> 
-            <div className={classes.ingridients__size}>
+            <div className={classes.ingridients__size1}>
             <div className={classes.ingridients__qty}>
                 <span className={classes.ingridients__qty__minus} onClick={() => addIngridient('remove')} >-</span>
                 <div className={classes.ingridients__qty__qty}>{ad.qty}</div>
                 <span className={classes.ingridients__qty__plus}  onClick={() => addIngridient('add')} >+</span>
             </div>
 </div>
-<div className={classes.ingridients__size}>
-            <div className={classes.ingridients__price}>{ad.price}</div>
+<div className={classes.ingridients__size1}>
+            <div className={classes.ingridients__price}>{ad.price * ad.qty} ₴</div>
         </div>
-        <div className={classes.ingridients__size}>
-            <div onClick={() => delItem(ad.id)} className={classes.ingridients__price}>X</div>
+        <div className={classes.ingridients__size2}>
+            <div onClick={() => delItem(ad.id)} className={classes.ingridients__remove}>X</div>
         </div>
         </div>
     )

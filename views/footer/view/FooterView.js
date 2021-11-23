@@ -78,7 +78,7 @@ const FooterView = ({
                         <div className={classes.menu__items}>
                             {mainData.slice(8, 16).map((el) => {
                                 return (
-                                    <div className={classes.menu__items__item}>{el.category.title}</div>
+                                    <div onClick={() => router.push(`/#category${el.category.id}`)}  className={classes.menu__items__item}>{el.category.title}</div>
                                )
                             })}
                         </div>

@@ -151,6 +151,7 @@ const Cart = ({
                 <div className={classes.cart__items}>
                     <div className={classes.order}>
                         {cart.map((item) => {
+                            console.log(item)
                             return (
                             <>
                             <div className={classes.order__block}>
@@ -179,17 +180,14 @@ const Cart = ({
                             </div>
                             
                             <div  className={classes.ingridients}>
-                            <div className={classes.ingridients__name}>Добавки:</div>
+                            {item.ingridients &&  <div className={classes.ingridients__name}>Добавки:</div>}
                             <div className={classes.ingridients__ingr}> 
                                {item.ingridients && item.ingridients.map((ad) => {
-                                   let qty = cart.filter(el => el.id === ad.id)
                                    return (
-                                     
                                     <Ingridients ad={ad} 
                                     classes={classes} 
                                     onAdd={onAdd}
                                     onRemove={onRemove}
-                                    qty={qty.length ? qty[0].qty : 0}
                                     setCart={setCart}
                                     cart={cart}
                                     item={item}

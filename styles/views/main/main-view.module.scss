@@ -971,11 +971,11 @@
 @media screen and (max-width: 1280px) {
     .ingridients {
         &__title {
-            font-size: 14px;
+            font-size: 13px;
         }
         &__icon {
-            width: 29px;
-            height: 25px;
+            width: 27px;
+            height: 23px;
             border-radius: 7px;
             &__div {
                 margin-top: 1px;
@@ -983,6 +983,45 @@
             &__icon {
               
             }
+        }
+    }
+    .buyBtn {
+        height: 40px;
+        &__block {
+            width: 80%;
+            &__inCart {
+                color: black;
+                font-size: 13px;
+                padding-left: 8px;
+            }
+            &__add {
+                color: black;
+                font-size: 13px;
+                padding-left: 4px;
+            }
+            &__rem {
+                color: black;
+                font-size: 13px;
+                padding-right: 0;
+                padding-right: 8px;
+            }
+            &__qty {
+                color: black;
+                font-size: 13px;
+                width: 15px;
+                
+            }
+        }
+    }
+    .buyBtnE {
+        height: 40px;
+        &__addE {
+                padding-left: 4px;
+                font-size: 12px;  
+                width: 80%;
+        }
+        &__cartE {
+            width: 20%;
         }
     }
     .allNews {

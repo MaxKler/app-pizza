@@ -287,60 +287,131 @@
 .ingridients {
     display: flex;
     width: 100%;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
+    margin-top: 20px;
     &__ingr {
-        width: 70%;
+        width: 75%;
     }
     &__size {
-        width: 25%;
+        width: 34%;
+    }
+    &__size1 {
+        width: 17%;
+    }
+    &__size2 {
+        width: 10%;
     }
     &__ingridients {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-top: 10px;
     }
     &__name {
-        width: 30%;
+        width: 25%;
         font-weight: 500;
         font-size: 27px;
         color: #000000;
         padding-left: 3%;
     }
     &__title {
+        font-weight: 500;
         color: black;
-        font-size: 27px;
-        text-align: left;
+        font-size: 25px;
+        text-align: center;
     }
     &__price {
         color: black;
-        font-size: 27px;
+        font-weight: 500;
+        font-size: 25px;
         text-align: center;
+    }
+    &__remove {
+        cursor: pointer;
+        font-size: 25px;
+        color: black;
+        padding-left: 18px;
     }
     &__qty {
         display: flex;
         align-items: center;
-        font-size: 33px;
-        
         text-align: center;
         justify-content: center;
         &__minus {
             color: black;
             font-size:33px;
+            padding-right: 22px;
         }
         &__plus {
-            color: black;
+            color: #710000;
             font-size: 33px;
+            padding-left: 18px;
         }
         &__qty {
-            color: black;
-            font-size:33px;
-            padding: 0 30px;
+            width: 30px;
+            color: #710000;
+            font-size: 29px;
+        }
+    }
+}
+@media screen and (max-width: 1800px) {
+    .ingridients {
+        margin-top: 19px;
+        &__size {
+            width: 34%;
+        }
+        &__size1 {
+            width: 17%;
+        }
+        &__size2 {
+            width: 10%;
+        }
+        &__ingridients {
+            margin-top: 10px;
+        }
+        &__name {
+            width: 25%;
+            font-size: 26px;
+            padding-left: 3%;
+        }
+        &__title {
+            font-size: 24px;
+        }
+        &__price {
+            font-size: 24px;
+        }
+        &__remove {
+            font-size: 24px;
+            padding-left: 18px;
+        }
+        &__qty {
+            &__minus {
+                font-size: 32px;
+                padding-right: 22px;
+            }
+            &__plus {
+                font-size: 32px;
+                padding-left: 18px;
+            }
+            &__qty {
+                width: 30px;
+                font-size: 28px;
+            }
+        }
+    }
+    .order {
+        &__name {
+            font-size: 26px;
+        }
+        &__bort {
+            &__name {
+                font-size: 26px;
+            }
         }
     }
 }
 @media screen and (max-width: 1700px) {
-  
     .order {
         &__name {
             font-size: 24px;
@@ -363,6 +434,50 @@
         }
         &__price {
             font-size: 22px;
+        }
+    }
+    .ingridients {
+        margin-top: 18px;
+        &__size {
+            width: 34%;
+        }
+        &__size1 {
+            width: 17%;
+        }
+        &__size2 {
+            width: 10%;
+        }
+        &__ingridients {
+            margin-top: 10px;
+        }
+        &__name {
+            width: 25%;
+            font-size: 24px;
+            padding-left: 3%;
+        }
+        &__title {
+            font-size: 23px;
+        }
+        &__price {
+            font-size: 23px;
+        }
+        &__remove {
+            font-size: 23px;
+            padding-left: 14px;
+        }
+        &__qty {
+            &__minus {
+                font-size: 27px;
+                padding-right: 22px;
+            }
+            &__plus {
+                font-size: 27px;
+                padding-left: 18px;
+            }
+            &__qty {
+                width: 30px;
+                font-size: 27px;
+            }
         }
     }
     .check {
@@ -432,6 +547,50 @@
             padding-left: 20px;
         }
     }
+    .ingridients {
+        margin-top: 18px;
+        &__size {
+            width: 34%;
+        }
+        &__size1 {
+            width: 17%;
+        }
+        &__size2 {
+            width: 10%;
+        }
+        &__ingridients {
+            margin-top: 10px;
+        }
+        &__name {
+            width: 25%;
+            font-size: 22px;
+            padding-left: 3%;
+        }
+        &__title {
+            font-size: 21px;
+        }
+        &__price {
+            font-size: 21px;
+        }
+        &__remove {
+            font-size: 21px;
+            padding-left: 12px;
+        }
+        &__qty {
+            &__minus {
+                font-size: 25px;
+                padding-right: 22px;
+            }
+            &__plus {
+                font-size: 25px;
+                padding-left: 18px;
+            }
+            &__qty {
+                width: 30px;
+                font-size: 25px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1450px) {
@@ -484,6 +643,50 @@
             font-size: 16px;
         }
     }   
+    .ingridients {
+        margin-top: 18px;
+        &__size {
+            width: 34%;
+        }
+        &__size1 {
+            width: 17%;
+        }
+        &__size2 {
+            width: 10%;
+        }
+        &__ingridients {
+            margin-top: 10px;
+        }
+        &__name {
+            width: 25%;
+            font-size: 17px;
+            padding-left: 3%;
+        }
+        &__title {
+            font-size: 16px;
+        }
+        &__price {
+            font-size: 16px;
+        }
+        &__remove {
+            font-size: 16px;
+            padding-left: 12px;
+        }
+        &__qty {
+            &__minus {
+                font-size: 20px;
+                padding-right: 22px;
+            }
+            &__plus {
+                font-size: 20px;
+                padding-left: 18px;
+            }
+            &__qty {
+                width: 30px;
+                font-size: 20px;
+            }
+        }
+    }
     .check {
         &__block {
             &__title {
@@ -533,6 +736,63 @@
         font-size: 17px;
         color: #000000;
         padding: 7px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .ingridients {
+        margin-top: 18px;
+        &__size {
+            width: 34%;
+        }
+        &__size1 {
+            width: 17%;
+        }
+        &__size2 {
+            width: 10%;
+        }
+        &__ingridients {
+            margin-top: 10px;
+        }
+        &__name {
+            width: 25%;
+            font-size: 15px;
+            padding-left: 3%;
+        }
+        &__title {
+            font-size: 14px;
+        }
+        &__price {
+            font-size: 14px;
+        }
+        &__remove {
+            font-size: 14px;
+            padding-left: 12px;
+        }
+        &__qty {
+            &__minus {
+                font-size: 16px;
+                padding-right: 19px;
+            }
+            &__plus {
+                font-size: 16px;
+                padding-left: 15px;
+            }
+            &__qty {
+                width: 20px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    .orderBtn {
+        &__title {
+            font-size: 14px;
+        }
+        &__icon {
+            font-size: 40px;
+            padding-left: 12px;
+        }
     }
 }
 @media screen and (max-width: 1024px) {
@@ -682,6 +942,50 @@
             font-size: 22px;
         }
     }
+    .ingridients {
+        margin-top: 18px;
+        &__size {
+            width: 34%;
+        }
+        &__size1 {
+            width: 17%;
+        }
+        &__size2 {
+            width: 10%;
+        }
+        &__ingridients {
+            margin-top: 10px;
+        }
+        &__name {
+            width: 25%;
+            font-size: 14px;
+            padding-left: 3%;
+        }
+        &__title {
+            font-size: 12px;
+        }
+        &__price {
+            font-size: 12px;
+        }
+        &__remove {
+            font-size: 12px;
+            padding-left: 6px;
+        }
+        &__qty {
+            &__minus {
+                font-size: 18px;
+                padding-right: 14px;
+            }
+            &__plus {
+                font-size: 18px;
+                padding-left: 12px;
+            }
+            &__qty {
+                width: 30px;
+                font-size: 16px;
+            }
+        }
+    }
     .check {
         margin-top: 10px;
         &__block {
@@ -709,7 +1013,6 @@
             font-size: 21px;
         }
     }
-
     .orderData {
         &__orderBtn {
             font-size: 19px;
