@@ -44,18 +44,144 @@
     bottom: -24%;
     z-index: 99999999;
 }
+@media screen and (max-width: 1700px) {
+    .coments {
+        &__blocks {
+            display: flex;
+        }
+         &__title {
+            font-size: 43px;
+        }
+        &__text {
+            font-size: 28px;
+            margin-top: 10px;
+           
+        }
+        &__pidpis {
+            margin-top: 10px;
+           &__img {
+               width: 50%;
+           }
+        }
+       
+        &__block {
+            margin-top: 2%;
+            margin-right: 4%;
+        }
+    }
+    .insta {
+        margin-top: 50px;
+        position: relative;
+        &__img {
+            width: 340px;
+            height: 380px;
+         } 
+    }
+    .phone {
+        position: absolute;
+        left: 39.5%;
+        bottom: -20%;
+        &__img {
+            width: 350px;
+            height: 580px;
+        }
+    }
+}
 @media screen and (max-width: 1500px) {
+    .coments {
+        &__blocks {
+            display: flex;
+        }
+         &__title {
+            font-size: 41px;
+        }
+        &__text {
+            font-size: 26px;
+            margin-top: 10px;
+           
+        }
+        &__pidpis {
+            margin-top: 10px;
+           &__img {
+               width: 50%;
+           }
+        }
+       
+        &__block {
+            margin-top: 2%;
+            margin-right: 4%;
+        }
+    }
+    .insta {
+        margin-top: 50px;
+        position: relative;
+        &__img {
+            width: 400px;
+            height: 420px;
+         } 
+    }
     .phone {
         position: absolute;
         left: 32.5%;
-        bottom: -22.5%;
-        
+        bottom: -20.5%;
+        &__img {
+            width: 420px;
+            height: 640px;
+        }
     }
- }
+}
+@media screen and (max-width: 1366px) {
+    .coments {
+        &__blocks {
+            display: flex;
+            flex-direction: column;
+        }
+         &__title {
+            font-size: 32px;
+            text-align: center;
+        }
+        &__text {
+            font-size: 22px;
+            margin-top: 10px;
+            text-align: center;
+            padding: 0 40px;
+        }
+        &__pidpis {
+           &__img {
+               width: 40%;
+           }
+        }
+        &__blockEmpty {
+            width: 0;
+        }
+        &__block {
+            width: 100%;
+            margin-top: 20px;
+            margin-right: 5%;
+        }
+    }
+    .insta {
+        margin-top: 150px;
+        position: relative;
+        &__img {
+            width: 300px;
+            height: 350px;
+         } 
+    }
+    .phone {
+        position: absolute;
+        left: 32.3%;
+        bottom: -16%;
+        &__img {
+            width: 320px;
+            height: 500px;
+        }
+    }
+}
 
 @media screen and (max-width: 576px) {  
     .coments {
-        height: 1100px;
+        height: 1000px;
         &__blocks {
             display: flex;
             flex-direction: column;
@@ -86,19 +212,21 @@
     }
 .phone {
     position: absolute;
-    left: -2.5%;
+    left: 0;
+    right: 0;
+    bottom: -20%;
     z-index: 99999999;
     &__img {
-        width: 400px;
-        height: 650px;
+        width: 100%;
+        height: 550px;
     }
 }
 .insta {
     margin-top: 200px;
     position: relative;
     &__img {
-       width: 380px;
-       height: 400px;
+       width: 100%;
+       height: 360px;
     }  
  }
 }

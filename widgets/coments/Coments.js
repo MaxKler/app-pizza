@@ -26,7 +26,7 @@ const Coments = () => {
             {
                 breakpoint: 1700,
                 settings: {
-                slidesToShow: 4,
+                slidesToShow: 5,
                 arrows:false
                 }
             },
@@ -40,7 +40,14 @@ const Coments = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                slidesToShow: 1,
+                slidesToShow: 3,
+                arrows:false
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                slidesToShow: 3,
                 arrows:false
                 }
             },
@@ -68,7 +75,7 @@ const Coments = () => {
                     </span>
                 </div>
                 <div className={classes.coments__pidpis}>
-                    <img src={Frame} alt="" />
+                    <img className={classes.coments__pidpis__img} src={Frame} alt="" />
                 </div>
             </div>
         </div>

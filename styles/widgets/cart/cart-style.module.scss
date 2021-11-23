@@ -286,23 +286,56 @@
 
 .ingridients {
     display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    &__ingr {
+        width: 70%;
+    }
+    &__size {
+        width: 25%;
+    }
+    &__ingridients {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__name {
+        width: 30%;
+        font-weight: 500;
+        font-size: 27px;
+        color: #000000;
+        padding-left: 3%;
+    }
     &__title {
         color: black;
+        font-size: 27px;
+        text-align: left;
     }
     &__price {
         color: black;
+        font-size: 27px;
+        text-align: center;
     }
     &__qty {
         display: flex;
         align-items: center;
+        font-size: 33px;
+        
+        text-align: center;
+        justify-content: center;
         &__minus {
             color: black;
+            font-size:33px;
         }
         &__plus {
             color: black;
+            font-size: 33px;
         }
         &__qty {
             color: black;
+            font-size:33px;
+            padding: 0 30px;
         }
     }
 }

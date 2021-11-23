@@ -24,8 +24,10 @@
         }
         &__cardTwo {
             width: 25%;
+
         }
         &__block {
+            min-height: 230px;
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -39,6 +41,8 @@
         }
         &__img {
             margin-bottom: 10px;
+            width: 100%;
+            height: 100%;
         }
     }
 }
@@ -59,8 +63,7 @@
         }
         &__img {
             margin-bottom: 10px;
-            width: 90%;
-            height: 100%;;
+            
         }
     }
 }
@@ -82,8 +85,7 @@
             }
             &__img {
                 margin-bottom: 10px;
-                width: 90%;
-                height: 100%;
+               
             }
         }
     }
@@ -105,8 +107,7 @@
             }
             &__img {
                 margin-bottom: 10px;
-                width: 90%;
-                height: 100%;
+               
             }
         }
     }
@@ -128,8 +129,7 @@
             }
             &__img {
                 margin-bottom: 10px;
-                width: 90%;
-                height: 100%;
+               
             }
         }
     }
@@ -154,8 +154,6 @@
             }
             &__img {
                 margin-bottom: 10px;
-                width: 90%;
-                height: 100%;
             }
         }
     }
@@ -180,8 +178,7 @@
             }
             &__img {
                 margin-bottom: 10px;
-                width: 90%;
-                height: 100%;
+
             }
         }
     }
@@ -206,7 +203,6 @@
             }
             &__img {
                 margin-bottom: 10px;
-                height: 230px;
             }
         }
     }

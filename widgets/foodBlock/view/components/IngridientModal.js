@@ -28,8 +28,8 @@ const IngridientModal = ({
     const [ingridientData, setIngridientData] = useState([])
 
     const addPizza = () => {
-        console.log(ingridientData)
         onAdd(food, activeSize, ingridientData)
+        setIngridient(false)
     }  
     
     return (

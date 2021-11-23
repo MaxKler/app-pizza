@@ -73,6 +73,11 @@ const Cart = ({
         } else if (el.activeOption === 2) {
             productPrice = productPrice + el.price_three * el.qty
         }
+        if (el.ingridients) {
+            el.ingridients.map((ingr) => {
+                productPrice = productPrice + (ingr.qty * ingr.price)
+            })
+        }
     })
    
     
@@ -172,21 +177,28 @@ const Cart = ({
                                     <img onClick={() => delItem(item.id)} className={classes.trash} src={trashSvg} alt="" />
                                 </div>
                             </div>
-                            <div className={classes.order__size1}>
-
-                            </div>
-                            <div className={classes.order__name}>Добавки:</div>
+                            
+                            <div  className={classes.ingridients}>
+                            <div className={classes.ingridients__name}>Добавки:</div>
+                            <div className={classes.ingridients__ingr}> 
                                {item.ingridients && item.ingridients.map((ad) => {
                                    let qty = cart.filter(el => el.id === ad.id)
                                    return (
+                                     
                                     <Ingridients ad={ad} 
                                     classes={classes} 
                                     onAdd={onAdd}
                                     onRemove={onRemove}
                                     qty={qty.length ? qty[0].qty : 0}
+                                    setCart={setCart}
+                                    cart={cart}
+                                    item={item}
                                    />
+                                  
                                  )
-                             })}
+                             })}</div>
+                            </div>
+                           
                             <OrderType classes={classes}
                                            item={item}
                                            />
