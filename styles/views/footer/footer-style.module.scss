@@ -129,6 +129,9 @@
     &__poweredBy1 {
         display: none;
     }
+    &__poweredBy11 {
+        display: none;
+    }
 }
 .social {
     
@@ -648,6 +651,9 @@
         &__poweredBy {
             display: none;
         }
+        &__poweredBy2 {
+            display: none;
+        } 
         &__poweredBy1 {
             display: block;
             font-size: 16px;

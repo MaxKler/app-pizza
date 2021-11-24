@@ -47,8 +47,11 @@ const NavbarMobile = ({
     }
     const insta = () => {
         setVisibleMenu(false)
-        router.push(`/#inst`)
-        
+        router.push(`/#inst`)  
+    }
+    const blog = () => {
+        setVisibleMenu(false)
+        router.push(`/#blog`)  
     }
   
     return (
@@ -84,9 +87,7 @@ const NavbarMobile = ({
                     <div  onClick={HideAndShow} className={classes.menuItem} >Меню</div>
                     <div onClick={delivery} className={classes.menuItem} >Доставка</div>
                     <div onClick={insta} className={classes.menuItem} >Підписатись</div>
-                    <Link href="/blog">
-                        <div  className={classes.menuItem} >Блог</div>
-                    </Link>
+                    <div onClick={blog} className={classes.menuItem} >Блог</div>
                 </div>
                 <div>
                     <div className={classes.orderTitle}>Оформити доставку можна за телефоном</div>
