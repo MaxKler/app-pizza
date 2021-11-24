@@ -342,17 +342,21 @@
         &__minus {
             color: black;
             font-size:33px;
+            cursor: pointer;
             padding-right: 22px;
         }
         &__plus {
             color: #710000;
             font-size: 33px;
             padding-left: 18px;
+            cursor: pointer;
+          
         }
         &__qty {
             width: 30px;
             color: #710000;
             font-size: 29px;
+            
         }
     }
 }

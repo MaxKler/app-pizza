@@ -31,7 +31,14 @@ const IngridientModal = ({
         onAdd(food, activeSize, ingridientData)
         setIngridient(false)
     }  
-    
+   console.log(ingridientData)
+   const [ingQty, setIngQty] = useState()
+    let ingrPrice = 0 
+    ingridientData.map((ing) => {
+        ingrPrice = ingrPrice + ing.qty * ing.price
+        
+    })
+
     return (
         <div className={ ingridient ? [classes.modal__active, classes.modal].join(' ') : classes.modal}>
             <div className={classes.modal__window}>
@@ -46,14 +53,13 @@ const IngridientModal = ({
                             <div className={classes.block__names__name}>Ціна</div>
                         </div>
                         {ingridients.map((elem) => {
-                          let qty = cart.filter(el => el.id === elem.id)
+                      
                                 return (        
                                 <IngrBlock 
                                     classes={classes}
                                     elem={elem}
-                                    onAdd={onAdd}
-                                    onRemove={onRemove}
-                                    qty={qty.length ? qty[0].qty : 0}
+                                    setIngQty={setIngQty}
+                                
                                     ingridientData={ingridientData}
                                     setIngridientData={setIngridientData}
                                 />
@@ -69,11 +75,11 @@ const IngridientModal = ({
                     </div>
                     <div className={classes.total__pizza}>
                         <div className={classes.total__title}>Додатки:</div>
-                        <div className={classes.total__price}> грн</div>
+                        <div className={classes.total__price}> {ingrPrice}грн</div>
                     </div>
                     <div className={classes.total__pizza1}>
                         <div className={classes.total__title}>Усього:</div>
-                        <div className={classes.total__price}> грн</div>
+                        <div className={classes.total__price}>{foodPrice + ingrPrice} грн</div>
                     </div>
                 </div>
                 <div className={classes.addBtn} onClick={addPizza}>

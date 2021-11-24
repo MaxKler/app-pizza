@@ -3,21 +3,16 @@ import checkSvg from './../../../../project/image/views/main/svg/checkSvg.svg'
 const IngrBlock = ({
     classes, 
     elem,
-    qty,
-    onAdd,
-    onRemove,
     ingridientData,
-    setIngridientData
+    setIngridientData,
+    setIngQty
 }) => {
 
     const [qtyIngr, setQtyIngr] = useState(0)
-        if (qtyIngr < 0) {
-            setQtyIngr(0)
-        }
-    useEffect(() => {
-        setQtyIngr(qty ? qty : 0)
-    }, [qty])
-
+    if (qtyIngr < 0) {
+        setQtyIngr(0)
+    }
+  
     const addIngrd = (type) => {
         let newData = ingridientData
         const newItem = newData.filter(el => el.id === elem.id) 
@@ -39,6 +34,7 @@ const IngrBlock = ({
             }            
             setIngridientData(newData)
             setQtyIngr(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
+            setIngQty(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
         } else {
             if (type === 'add') {
                 newData.push({
@@ -47,10 +43,11 @@ const IngrBlock = ({
                 })
                 setIngridientData(newData)
                 setQtyIngr(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
+                setIngQty(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
             }
         }
     }
-   
+    // https://pr-pro.org/
     return (
        <div className={qtyIngr > 0 ? classes.block__names : classes.block__namesTr}>
                <div className={classes.block__names__name}>

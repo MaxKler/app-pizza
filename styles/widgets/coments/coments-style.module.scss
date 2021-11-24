@@ -184,7 +184,7 @@
         }
     }
     .insta {
-        margin-top: 150px;
+        margin-top: 20px;
         position: relative;
         &__img {
             width: 300px;
@@ -208,6 +208,7 @@
 @media screen and (max-width: 1200px) {
     .insta {
         position: relative;
+        
         &__img {
             width: 290px;
            
