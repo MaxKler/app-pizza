@@ -115,7 +115,7 @@ const [showModal, setShowModal] =  useState(false)
                 <div className={classes.allNews}>Усі новини</div>
               </Link>
             </div>
-            <Coments />
+            <Coments screen={screen} />
             <MapView />
             <Footer 
           mainData={mainData}
@@ -124,6 +124,7 @@ const [showModal, setShowModal] =  useState(false)
           countProduct={countProduct}
           showButtonCart={true}
           showContent={true}
+          screen={screen} 
         />
         </Main>
        

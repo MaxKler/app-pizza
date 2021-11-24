@@ -17,7 +17,8 @@ const FooterView = ({
     countProduct, 
     mainData,
     showButtonCart,
-    showContent
+    showContent,
+    screen
 }) => {
 
     const router = useRouter()
@@ -96,7 +97,7 @@ const FooterView = ({
                     </div>
                     {showButtonCart &&
                      <div  onClick={watchCart}  className={classes.cart}>
-                     <img src={cartSvg} alt="cart" />
+                     <img  className={classes.cart__img} src={cartSvg} alt="cart" />
                      <div className={classes.cart__items}>
                          <div className={classes.cart__title}>Ваше замовлення</div>
                          <div style={{display: 'flex'}}>

@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
 
-const Coments = () => {
+const Coments = ({screen}) => {
 
     let settings = {
         dots: false,
@@ -81,7 +81,7 @@ const Coments = () => {
         </div>
         
         <div className={classes.insta}>
-        <div className={classes.phone}>
+        <div className={screen ? classes.phone : classes.phone2}>
             <img className={classes.phone__img}  src={phone} alt="" />
         </div>
         <Slider {...settings}>

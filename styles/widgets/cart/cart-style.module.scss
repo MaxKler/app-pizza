@@ -320,6 +320,7 @@
         color: black;
         font-size: 25px;
         text-align: center;
+        padding-right: 20%;
     }
     &__price {
         color: black;
@@ -660,10 +661,11 @@
         &__name {
             width: 25%;
             font-size: 17px;
-            padding-left: 3%;
+            padding-left: 3.5%;
         }
         &__title {
             font-size: 16px;
+            padding-right: 22%;
         }
         &__price {
             font-size: 16px;
@@ -756,7 +758,7 @@
         &__name {
             width: 25%;
             font-size: 15px;
-            padding-left: 3%;
+            padding-left: 4.5%;
         }
         &__title {
             font-size: 14px;
@@ -803,6 +805,11 @@
         font-size: 14px;
         color: #000000;
         padding: 5px;
+    }
+    .ingridients {
+        &__title {
+            padding-right: 12%;
+        }
     }
 }
 @media screen and (max-width: 768px) {

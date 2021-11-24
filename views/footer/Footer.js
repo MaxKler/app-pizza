@@ -7,10 +7,12 @@ const Footer = ({
     countProduct, 
     mainData,
     showButtonCart=false,
-    showContent=false
+    showContent=false,
+    screen
 }) => {
     return (
        <FooterView 
+            screen={screen} 
             watchCart={watchCart}
             totalPrice={totalPrice}
             countProduct={countProduct}
