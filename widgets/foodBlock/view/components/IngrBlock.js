@@ -5,7 +5,6 @@ const IngrBlock = ({
     elem,
     ingridientData,
     setIngridientData,
-    setIngQty
 }) => {
 
     const [qtyIngr, setQtyIngr] = useState(0)
@@ -34,7 +33,6 @@ const IngrBlock = ({
             }            
             setIngridientData(newData)
             setQtyIngr(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
-            setIngQty(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
         } else {
             if (type === 'add') {
                 newData.push({
@@ -43,11 +41,12 @@ const IngrBlock = ({
                 })
                 setIngridientData(newData)
                 setQtyIngr(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
-                setIngQty(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
             }
         }
     }
-    // https://pr-pro.org/
+
+    
+    
     return (
        <div className={qtyIngr > 0 ? classes.block__names : classes.block__namesTr}>
                <div className={classes.block__names__name}>

@@ -11,6 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
 
+import Link from 'next/link'
+
 const Coments = ({screen}) => {
 
     let settings = {
@@ -61,7 +63,7 @@ const Coments = ({screen}) => {
         ]
       };
     return (
-    <div className={classes.coments}>
+    <div id={`inst`} className={classes.coments}>
         <div className={classes.coments__blocks}>
             <div className={classes.coments__blockEmpty}>
             </div>
@@ -74,9 +76,11 @@ const Coments = ({screen}) => {
                         <img src={cat} alt=" "/>
                     </span>
                 </div>
-                <div className={classes.coments__pidpis}>
-                    <img className={classes.coments__pidpis__img} src={Frame} alt="" />
-                </div>
+                <Link href="https://www.instagram.com/ch_mrpl/">
+                    <div className={classes.coments__pidpis}>
+                       <img className={classes.coments__pidpis__img} src={Frame} alt="" />
+                    </div>
+                </Link>
             </div>
         </div>
         

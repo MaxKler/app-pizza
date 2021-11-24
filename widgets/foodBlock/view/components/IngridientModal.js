@@ -30,15 +30,16 @@ const IngridientModal = ({
     const addPizza = () => {
         onAdd(food, activeSize, ingridientData)
         setIngridient(false)
+        
     }  
    console.log(ingridientData)
-   const [ingQty, setIngQty] = useState()
+
     let ingrPrice = 0 
     ingridientData.map((ing) => {
         ingrPrice = ingrPrice + ing.qty * ing.price
         
     })
-
+    
     return (
         <div className={ ingridient ? [classes.modal__active, classes.modal].join(' ') : classes.modal}>
             <div className={classes.modal__window}>
@@ -58,8 +59,6 @@ const IngridientModal = ({
                                 <IngrBlock 
                                     classes={classes}
                                     elem={elem}
-                                    setIngQty={setIngQty}
-                                
                                     ingridientData={ingridientData}
                                     setIngridientData={setIngridientData}
                                 />

@@ -64,7 +64,12 @@ const FooterView = ({
                             <img className={classes.pay__systems__imgI} src={googleSvg} alt="" />
                         </div>
                     </div>
-                    <div className={classes.pay__poweredBy}>Powered by: MOTICH IT PRO & PR-PRO</div>
+                    <div className={classes.pay__powered}>
+                        <div className={classes.pay__poweredBy}>Powered by: </div>
+                        <div className={classes.pay__poweredBy2}><Link href="https://t.me/joinchat/Rs1iX46Lw_euN2Ra">MOTICH IT PRO </Link></div>
+                        <div className={classes.pay__poweredBy}> & <Link href="https://pr-pro.org/"> PR-PRO</Link></div>
+                    </div>
+                   
                 </div>
                 { showContent && <div className={classes.menu}>
                     <div className={classes.menu__title}>Меню</div>
@@ -112,7 +117,11 @@ const FooterView = ({
                 </div>
                 <div className={classes.by}>  
                     <div className={classes.contacts__name1}>(c) CH Aroma Pizza Bar</div>
-                    <div className={classes.pay__poweredBy1}>Powered by: MOTICH IT PRO & PR-PRO</div>
+                    <div className={classes.by1}>  
+                        <div className={classes.pay__poweredBy1}>Powered by: </div>
+                        <div className={classes.pay__poweredBy11}><Link href="https://t.me/joinchat/Rs1iX46Lw_euN2Ra">MOTICH IT PRO </Link></div>
+                        <div className={classes.pay__poweredBy1}> & <Link href="https://pr-pro.org/">PR-PRO</Link></div>
+                    </div>
                 </div>
             </div>
         </div> 

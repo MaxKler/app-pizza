@@ -10,11 +10,7 @@ const Ingridients = ({
     setCart,
     item
 }) => {
-    // const [qtyLocal, setQtyLocal] = useState(0)
-
-    // useEffect(() => {
-    //     setQtyLocal(qty ? qty : 0)
-    // }, [qty])
+   
 
     const addIngridient = (type) => {
         const newCart = cart.map((elem) => {
@@ -49,10 +45,20 @@ const Ingridients = ({
     }
 
     const delItem = (id) => {
-        // setCart(cart.filter((elem) => elem.id !== id))
-        console.log(id)
-
+        const delCart = cart.map((elem) => {
+            if (elem.id === item.id) {
+              let delIngridients = elem.ingridients.filter(el => el.id !== id)
+              console.log(delIngridients)
+              return {
+                ...elem,
+                ingridients: delIngridients
+            }
+            }
+        })
+        setCart(delCart)
     }
+
+    
     return (
         <div className={classes.ingridients__ingridients}>
              <div className={classes.ingridients__size}>
