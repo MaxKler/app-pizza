@@ -20,9 +20,9 @@ const IngridientModal = ({
     if (activeSize === 0 || activeSize === null) { 
         foodPrice = food.price
     } else if (activeSize === 1) {
-        foodPrice = food.price_two
+        foodPrice = Number(food.price_two)
     } else if (activeSize === 2) {
-        foodPrice = food.price_three
+        foodPrice = Number(food.price_three)
     }
 
     const [ingridientData, setIngridientData] = useState([])
@@ -32,14 +32,15 @@ const IngridientModal = ({
         setIngridient(false)
         
     }  
-   console.log(ingridientData)
+
 
     let ingrPrice = 0 
     ingridientData.map((ing) => {
+        console.log(ing)
         ingrPrice = ingrPrice + ing.qty * ing.price
         
     })
-    
+    console.log(ingrPrice)
     return (
         <div className={ ingridient ? [classes.modal__active, classes.modal].join(' ') : classes.modal}>
             <div className={classes.modal__window}>

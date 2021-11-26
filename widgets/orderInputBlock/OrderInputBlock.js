@@ -139,7 +139,7 @@ const OrderInputBlock = ({
                 </div>
                 <div className={ adress ? classes.adress : classes.adress__none}>
                     <select className={classes.input__dropdown}onChange={(e) => makeDataOrderFunc(e, 'delivery_district')}>
-                    <option className={classes.input__dropdown}>Оберіть район</option>
+                    <option  className={classes.input__dropdown}>Оберіть район</option>
                        <option  value="centr">Центральний</option>
                        <option value="leviy"  >Лівобережний</option>
                        <option  value="calmius" >Кальміуський</option>

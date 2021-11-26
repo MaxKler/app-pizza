@@ -19,7 +19,7 @@ const OrderType = ({classes, item}) => {
            <div className={classes.order__name}>Борт :</div>
         </div>
         <div className={classes.order__bort__size1}>
-           <div className={classes.order__bort__name}>{pizzaType}</div>
+           <div className={classes.order__bort__type}>{pizzaType}</div>
         </div>
     </div>
         }

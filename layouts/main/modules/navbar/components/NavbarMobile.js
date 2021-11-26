@@ -86,7 +86,7 @@ const NavbarMobile = ({
                 <div className={classes.menuItems}>
                     <div  onClick={HideAndShow} className={classes.menuItem} >Меню</div>
                     <div onClick={delivery} className={classes.menuItem} >Доставка</div>
-                    <div onClick={insta} className={classes.menuItem} >Підписатись</div>
+                    <div onClick={insta} className={classes.menuItem} >Відгуки</div>
                     <div onClick={blog} className={classes.menuItem} >Блог</div>
                 </div>
                 <div>

@@ -53,6 +53,8 @@ const Ingridients = ({
                 ...elem,
                 ingridients: delIngridients
             }
+            } else {
+                return elem
             }
         })
         setCart(delCart)

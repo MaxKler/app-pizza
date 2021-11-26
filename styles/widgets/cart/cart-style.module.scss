@@ -113,7 +113,12 @@
         }
         &__name {
             font-weight: 500;
-            font-size: 27px;
+            font-size: 22px;
+            color: #000000;
+        }
+        &__type {
+            font-weight: 500;
+            font-size: 22px;
             color: #000000;
         }
     }
@@ -318,6 +323,9 @@
         color: #000000;
         padding-left: 3%;
     }
+    &__name2 {
+     display: none;
+    }
     &__title {
         font-weight: 500;
         color: black;
@@ -409,12 +417,12 @@
         }
     }
     .order {
-        &__name {
-            font-size: 26px;
-        }
         &__bort {
             &__name {
-                font-size: 26px;
+                font-size: 21px;
+            }
+            &__type {
+                font-size: 21px;
             }
         }
     }
@@ -426,7 +434,10 @@
         }
         &__bort {
             &__name {
-                font-size: 24px;
+                font-size: 20px;
+            }
+            &__type {
+                font-size: 20px;
             }
         }
         &__type {
@@ -599,6 +610,16 @@
             }
         }
     }
+    .order {
+        &__bort {
+            &__name {
+                font-size: 18px;
+            }
+            &__type {
+                font-size: 18px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1450px) {
@@ -633,7 +654,10 @@
         }
         &__bort {
             &__name {
-                font-size: 17px;
+                font-size: 16px;
+            }
+            &__type {
+                font-size: 16px;
             }
         }
         &__type {
@@ -792,6 +816,16 @@
             }
         }
     }
+    .order {
+        &__bort {
+            &__name {
+                font-size: 15px;
+            }
+            &__type {
+                font-size: 15px;
+            }
+        }
+    }
 }
 @media screen and (max-width: 1200px) {
     .orderBtn {
@@ -801,6 +835,16 @@
         &__icon {
             font-size: 40px;
             padding-left: 12px;
+        }
+    }
+    .order {
+        &__bort {
+            &__name {
+                font-size: 13px;
+            }
+            &__type {
+                font-size: 13px;
+            }
         }
     }
 }

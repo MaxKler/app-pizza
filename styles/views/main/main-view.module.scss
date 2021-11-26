@@ -28,7 +28,7 @@
         display: flex;
         background: #E3E4EA;
         border-radius: 7px;
-        height: 40px;
+        height: 48px;
         width: 96%;
         justify-content: center;
         text-align: center;
@@ -36,7 +36,6 @@
         margin-bottom: 10px;
         margin-left: 2%;
         &__active {
-            font-weight: bold;
             background: #00B612;
             color: white !important;
             display: flex;
@@ -45,8 +44,10 @@
             justify-content: center;
             text-align: center;
             width: 33.3%;
-            height: 40px;
+            height: 48px;
             padding: 5px 0;
+            font-weight: 500;
+            font-size: 16px;
         }
         &__size {
             border-radius: 7px;
@@ -60,6 +61,8 @@
             text-align: center;
             color: black;
             padding: 5px 0;
+            font-weight: 500;
+            color: #808080;
         }
     }
     &__card {
@@ -71,7 +74,7 @@
     &__block {
         background: rgba(255, 255, 255, 0.9);
         border: 1px solid #ECECEC;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         margin: 20px 10px;
         height: fit-content;
@@ -84,7 +87,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 95%;
+            width: 100%;
             margin-bottom: 16px;
         }
         &__icon {
@@ -101,9 +104,9 @@
             justify-content: flex-start;
             font-weight: 600;
             font-size: 27px; 
-            margin-right: 2%;
+            padding-left: 7px;
             color: #404040;
-            text-align: right;
+            
             height: 20px;
         }
         &__item {
@@ -143,7 +146,7 @@
     }
 }
 .ttt {
-    padding: 5px 10px;
+    padding: 5px 1px;
 }
 
 .buyBtn {
@@ -163,7 +166,7 @@
     margin-bottom: 10px;
     margin-top: 5px;
     &:hover {
-        box-shadow: rgba(0, 3, 5, 0.932) 0px 2px 4px 0px, rgba(0, 0, 0, 0.993) 0px 2px 16px 0px;
+        box-shadow: rgba(252, 0, 0, 0.2) 0px 2px 4px 0px, rgb(255, 5, 5) 0px 2px 16px 0px;
     }
     &__block {
         display: flex;
@@ -171,7 +174,7 @@
         background: white;
         justify-content: space-between;
         border-radius: 8px;
-        height: 96%;
+        height: 100%;
         width: 80%;
         &__inCart {
             color: black;
@@ -231,7 +234,7 @@
     margin-bottom: 10px;
     margin-top: 5px;
     &:hover {
-        box-shadow: rgba(0, 3, 5, 0.932) 0px 2px 4px 0px, rgba(0, 0, 0, 0.993) 0px 2px 16px 0px;
+        box-shadow: rgba(252, 0, 0, 0.2) 0px 2px 4px 0px, rgb(255, 5, 5) 0px 2px 16px 0px;
     }
     &__addE {
         padding-left: 25px;
@@ -279,7 +282,7 @@
     cursor: pointer;
     position: absolute;
     top: 85%;
-    right: 2%;
+    right: 5%;
     &__point {
             background: rgba(0, 111, 158, 0.7);
             width: 5px;
@@ -449,11 +452,10 @@
 @media screen and (max-width: 1775px) {
     .pizza {
         &__sizeBlock {
-            height: 38px;
+            height: 42px;
             &__active {
-                height: 38px;
+                height: 42px;
                 font-size: 13px;
-                height: 38px;
             }
             &__size {
                 font-size: 13px;
@@ -550,13 +552,13 @@
 @media screen and (max-width: 1700px) {
     .pizza {
         &__sizeBlock {
-            height: 36px;
+            height: 41px;
             &__active {
-                height: 36px;
+                height: 41px;
                 font-size: 17px;
             }
             &__size {
-                height: 36px;
+                height: 41px;
                 font-size: 12px;
             }
         }
@@ -567,7 +569,7 @@
                 height: 35px;
             }
             &__name {
-                font-size: 24px; 
+                font-size: 22px; 
             }
             &__price {
                 font-size: 20px;         
@@ -644,13 +646,13 @@
 @media screen and (max-width: 1600px) {
     .pizza {
         &__sizeBlock {
-            height: 36px;
+            height: 40px;
             &__active {
-                height: 36px;
+                height: 40px;
                 font-size: 12px;
             }
             &__size {
-                height: 36px;
+                height: 40px;
                 font-size: 12px;
             }
         }
@@ -661,7 +663,7 @@
                 height: 35px;
             }
             &__name {
-                font-size: 24px; 
+                font-size: 20px; 
             }
             &__price {
                 font-size: 20px;         
@@ -737,13 +739,13 @@
 @media screen and (max-width: 1500px) {
     .pizza {
         &__sizeBlock {
-            height: 34px;
+            height: 39px;
             &__active {
-                height: 34px;
+                height: 39px;
                 font-size: 11px;
             }
             &__size {
-                height: 34px;
+                height: 39px;
                 font-size: 11px;
             }
         }
@@ -754,7 +756,7 @@
                 height: 35px;
             }
             &__name {
-                font-size: 23px; 
+                font-size: 19px; 
             }
             &__price {
                 font-size: 19px;         
@@ -855,13 +857,13 @@
 @media screen and (max-width: 1366px) {
     .pizza {
         &__sizeBlock {
-            height: 28px;
+            height: 38px;
             &__active {
-                height: 28px;
+                height: 38px;
                 font-size: 9.5px;
             }
             &__size {
-                height: 28px;
+                height: 38px;
                 font-size: 9.5px;
             }
         }
@@ -885,7 +887,7 @@
                 height: 30px;
             }
             &__name {
-                font-size: 20px; 
+                font-size: 18px; 
             }
             &__price {
                 font-size: 18px;         
@@ -1029,19 +1031,19 @@
     }
     .pizza {
         &__sizeBlock {
-            height: 36px;
+            height: 37px;
             &__active {
-                height: 36px;
+                height: 37px;
                 font-size: 10px;
             }
             &__size {
-                height: 36px;
+                height: 37px;
                 font-size: 10px;
             }
         }
         &__block {
             &__name {
-                font-size: 17px;
+                font-size: 16px;
             }
         }
     }    
@@ -1077,6 +1079,13 @@
             }
             &__icon {
               
+            }
+        }
+    }
+    .pizza {
+        &__block {
+            &__name {
+                font-size: 13px;
             }
         }
     }
@@ -1135,8 +1144,7 @@
                 width: 20px;
             }
             &__name {
-                font-size: 16px; 
-                margin-right: 1%;
+                font-size: 14px; 
                 color: #404040;
                 height: 20px;
             }
@@ -1418,6 +1426,10 @@
             &__items {
                 margin-right: 2%;
                 height: 75px;
+            }
+            &__status {
+                width: 40px;
+                
             }
         }
         &__card {

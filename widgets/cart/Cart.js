@@ -178,9 +178,9 @@ const Cart = ({
                                     <img onClick={() => delItem(item.id)} className={classes.trash} src={trashSvg} alt="" />
                                 </div>
                             </div>
-                            
+                            {item.ingridients && item.ingridients.length && 
                             <div  className={classes.ingridients}>
-                            {item.ingridients &&  <div className={classes.ingridients__name}>Добавки:</div>}
+                             <div className={classes.ingridients__name}>Добавки:</div>
                             <div className={classes.ingridients__ingr}> 
                                {item.ingridients && item.ingridients.map((ad) => {
                                    return (
@@ -195,7 +195,7 @@ const Cart = ({
                                   
                                  )
                              })}</div>
-                            </div>
+                            </div>}
                            
                             <OrderType classes={classes}
                                            item={item}

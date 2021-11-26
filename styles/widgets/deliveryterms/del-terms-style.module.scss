@@ -16,9 +16,10 @@
     }
     &__groups {
         display: flex;
-        
         justify-content: space-between;
-        padding-top: 50px;
+        padding-top:  50px;
+        padding-left: 70px;
+        padding-right: 70px;
         &__card {
             width: 20%;
         }

@@ -64,11 +64,8 @@
         font-size: 22px;
         width: 230px;
         margin-bottom: 30px;
-        cursor: pointer;
         height: 28px;
-        &:hover {
-            border-bottom: 1px solid #E45100;
-        }
+        border-bottom: 1px solid #E45100;
     }
     &__uslovia {
         font-size: 16px;
@@ -134,7 +131,6 @@
     }
 }
 .social {
-    
     margin-right: 1%;
     display: flex;
     flex-direction: column;
@@ -144,13 +140,10 @@
     &__title {
         font-weight: 500;
         font-size: 22px;
-        width: 230px;
+        width: 220px;
         margin-bottom: 30px;
-        cursor: pointer;
         height: 28px;
-        &:hover {
-            border-bottom: 1px solid #E45100;
-        }
+        border-bottom: 1px solid #E45100;
     }
     &__icons {
         margin-bottom: 30px;
@@ -172,13 +165,11 @@
     &__title {
         font-weight: 500;
         font-size: 22px;
-        width: 60px;
+        width: 70px;
         margin-bottom: 25px;
         margin-top: 20px;
         height: 28px;
-        &:hover {
-            border-bottom: 1px solid #E45100;
-        }
+        border-bottom: 1px solid #E45100;
     }
     &__list {
         display: flex;
@@ -266,7 +257,7 @@
         margin-top: 25px;
         &__title {
             font-size: 18px;
-            width: 200px;
+            width: 190px;
             margin-bottom: 20px;
             height: 25px;
         }
@@ -307,7 +298,7 @@
         margin-top: 25px;
         &__title {
             font-size: 18px;
-            width: 200px;
+            width: 180px;
             height: 25px;
         }
         &__icon {
@@ -318,7 +309,7 @@
         margin-top: 5px;
         &__title {
             font-size: 18px;
-            width: 55px;
+            width: 60px;
             margin-bottom: 10px;
             height: 25px;
         }
