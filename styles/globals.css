@@ -109,12 +109,23 @@ input {
 }
 
 .slick-prev {
-  left: -35px !important;
+  left: -50px !important;
+  top: 90px !important;
+  
 }
 .slick-next {
   right: -25px;
+  top: 90px !important;
 }
-.slick-prev, .slick-next {
+.slick-arrow::before, .slick-prev::before {
+  display: none;
+ 
+}
+.slick-arrow, .slick-next {
+  display: none;
+ 
+}
+/* .slick-prev, .slick-next {
   font-size: 0;
   line-height: 0;
   position: absolute;
@@ -145,7 +156,7 @@ input {
   color: black !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 .special-label {
   display: none;
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,  Component  } from "react";
 import classes from './../../styles/widgets/cart/cart-style.module.scss'
 import trashSvg from './../../project/image/cart/trash.svg'
 import catPng from './../../project/image/cart/cat.png'
@@ -9,10 +9,8 @@ import OrderInputBlock from "../orderInputBlock/OrderInputBlock";
 import {NET} from './../../network'
 import Succes from "../modal/succes/Succes";
 
-import delPng from './../../project/image/widgets/delTerms/deliv.png'
-import del1Png from './../../project/image/widgets/delTerms/deliv1.png'
-import del2Png from './../../project/image/widgets/delTerms/deliv2.png'
-import del3Png from './../../project/image/widgets/delTerms/deliv3.png'
+import rightArrow from './../../project/image/cart/rightArrow.svg'
+import leftArrow from './../../project/image/cart/leftArrow.svg'
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -24,12 +22,33 @@ import OrderItemPrice from "./components/OrderItemPrice";
 import OrderType from "./components/OrderType";
 import Ingridients from "./components/Ingridients";
 
-let settings = {
+
+const SampleNextArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+        <div  className={className} onClick={onClick}  >
+        <img src={rightArrow} />
+      </div>
+    );
+  }
+  
+  const SamplePrevArrow = (props) => {
+    const { className, style, onClick } = props;
+    return (
+      <div  className={className} onClick={onClick}  >
+        <img src={leftArrow} />
+      </div>
+    );
+  }
+  let settings = {
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
         {
             breakpoint: 1024,
@@ -37,7 +56,7 @@ let settings = {
             slidesToShow: 1,
             arrows:false
             }
-          },
+        },
         {
           breakpoint: 568,
           settings: {
@@ -47,8 +66,7 @@ let settings = {
         },
     ]
   };
-
-
+ 
 const Cart = ({
     showCart, 
     setShowCart, 
@@ -62,7 +80,10 @@ const Cart = ({
     setShowModal,
     addToOrder
 }) => {
- 
+    
+
+
+  
     // const productPrice = cart.reduce((a, c) => a + c.price * c.qty, 0)
     let productPrice = 0
     cart.map((el) => {

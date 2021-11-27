@@ -40,6 +40,18 @@
                 border-bottom: 1px solid #F05542;
             }
         }
+        &__itemMain {
+            color: white;
+            margin-right: 40px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 22px;
+            margin-top: 5px;
+            
+            &:hover {
+                border-bottom: 1px solid #F05542;
+            }
+        }    
         &__itemBlog {
             color: white;
             margin-right: 55px;
@@ -467,6 +479,9 @@
                 font-size: 20px;
             }
         }
+        &__logoImg {
+            width: 180px;
+        }
     }
     .lang {
         height: 20px;
@@ -514,12 +529,16 @@
             margin: 0 4px;
         } 
     } 
+    .cartSvg {
+        width: 30px;
+    }
 }
 @media screen and (max-width: 1150px) {
     .navbar {
         &__logo {
             margin-left: 2%;
         }
+       
         height: 100px;
         &__items {
             &__positions {
@@ -588,7 +607,8 @@
             margin-top: 15px;
         }
         &__logoImg {
-            width: 100px;
+            width: 150px;
+            
         }
         &__items {
             &__positions {
@@ -604,6 +624,7 @@
         }
       }
     .lang {
+        margin-top: 0;
         margin-right: 10px;
         height: 18px;
         &__item {

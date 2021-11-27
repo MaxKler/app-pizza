@@ -29,13 +29,17 @@ const NavbarDesk = ({
             <img className={classes.navbar__logoImg} src={logoSvg} alt="logo" />
         </Link>
         </div>
-        { showContent && <div className={showButtonCart ?  classes.navbar__items__positions : classes.navbar__items__positionsBlog }>
-        <div className={classes.navbar__services}>
+        <div className={showButtonCart ?  classes.navbar__items__positions : classes.navbar__items__positionsBlog }>
+        { showContent && <div className={classes.navbar__services}>
             <div onClick={openMenu} className={classes.navbar__services__item}>Меню</div>
             <div onClick={() => router.push(`/#delivery`)}  className={classes.navbar__services__item}>Доставка</div>
             <div onClick={() => router.push(`/#blog`)}  className={classes.navbar__services__item}>Блог</div>
             <div className={classes.navbar__services__item}>Контакти</div>
-        </div>
+        </div>}
+        {!showContent && 
+        <Link href="/">
+            <div onClick={openMenu} className={classes.navbar__services__itemMain}>Головна</div>
+        </Link>}
         <div className={classes.lang}>
             {langvich.map((lang, idx) => {
                 return (
@@ -57,13 +61,13 @@ const NavbarDesk = ({
                <div className={classes.phone__number}>067-252-27-37</div>
             </a>
         </div>
-        </div>}
+        </div>
         {showButtonCart &&
         <div  onClick={watchCart}  className={classes.cart}>
             <img className={classes.cartSvg} src={cartSvg} alt="cart" />
             <div className={classes.cart__items}>
                 <div className={classes.cart__title}>Ваше замовлення</div>
-                <div style={{display: 'flex'}}>
+                <div style={{display: 'flex', alignItems:"center"}}>
                      <div className={classes.cart__count}>{countProduct}</div>
                      <div className={classes.cart__razdel}> || </div>
                      <div className={classes.cart__total}>{totalPrice.toFixed(2)}</div>
