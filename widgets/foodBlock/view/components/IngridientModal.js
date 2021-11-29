@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import classes from './../../../../styles/views/main/ingridient-modal.module.scss'
 import IngrBlock from './IngrBlock'
 
@@ -40,7 +40,8 @@ const IngridientModal = ({
         ingrPrice = ingrPrice + ing.qty * ing.price
         
     })
-    console.log(ingrPrice)
+
+
     return (
         <div className={ ingridient ? [classes.modal__active, classes.modal].join(' ') : classes.modal}>
             <div className={classes.modal__window}>

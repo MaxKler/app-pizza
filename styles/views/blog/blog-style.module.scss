@@ -113,16 +113,18 @@
                 padding: 10px 10px;
             }
             &__description {
-                font-size: 23px;
+                font-size: 19px;
                 color: #404040;
                 text-align: left;
                 padding: 0 10px;
+                max-height: 150px;
             }
             &__description2 {
-                font-size: 21px;
+                font-size: 19px;
                 color: #404040;
                 text-align: left;
                 padding: 0 10px;
+                max-height: 150px;
             }
             &__info {
                 display: flex;
@@ -192,14 +194,19 @@
                     font-size: 23px;
                 }
                 &__description {
-                    font-size: 22px;
+                    font-size: 18px;
+                }
+                &__description2 {
+                    font-size: 18px;
                 }
                 &__info {
                     &__desc {
-                        font-size: 16px;
+                        font-size: 15px;
+                      
                     }
                     &__date {
-                        font-size: 16px;
+                        font-size: 15px;
+                        min-width: 30%;
                     }
                 }
             }
@@ -242,10 +249,10 @@
                     font-size: 21px;
                 }
                 &__description {
-                    font-size: 16px;
+                    font-size: 15px;
                 }
                 &__description2 {
-                    font-size: 16px;
+                    font-size: 15px;
                 }
                 &__info {
                     &__desc {
@@ -300,10 +307,10 @@
                     font-size: 19px;
                 }
                 &__description {
-                    font-size: 14px;
+                    font-size: 12px;
                 }
                 &__description2 {
-                    font-size: 14px;
+                    font-size: 12px;
                 }
                 &__info {
                     &__desc {
@@ -361,10 +368,10 @@
                     font-size: 17px;
                 }
                 &__description {
-                    font-size: 12px;
+                    font-size: 11px;
                 }
                 &__description2 {
-                    font-size: 12px;
+                    font-size: 11px;
                 }
                 &__info {
                     &__desc {
