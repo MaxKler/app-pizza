@@ -297,7 +297,7 @@
 }
 .popap {
     width: 100%;
-    height: fit-content;
+    min-height: 50px;
     padding: 5px 5px;
     background: rgba(246, 247, 249, 0.85);
     opacity: 1;
