@@ -133,10 +133,10 @@ const FoodList = ({
                 <div className={classes.pizza__block__price}>{priceValue}
                     <span className={classes.pizza__block__grn}>грн</span>
                 </div>
-                {food.weight && <div className={classes.pizza__block__weight}>{food.weight} гр</div>}
+                {food.weight && food.weight !== 'null' && <div className={classes.pizza__block__weight}>{food.weight} гр</div>}
             </div>
             <div className={classes.pizza__block__itemTwo}>
-                    {food.status_opt_start && <div key={food.id} className={classes.pizza__sizeBlock}>
+                    {food.is_pizza === "pizza" && <div key={food.id} className={classes.pizza__sizeBlock}>
                         {typeSize.map((size, index) => {
                             return (
                                 <div key={size.size} onClick={() => onSelectSize(index)}

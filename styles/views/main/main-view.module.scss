@@ -80,9 +80,9 @@
         height: fit-content;
         &__images {
             position: relative;
-            min-height: 354px;
-            height: 354px;
-            max-width: 354px;
+            min-height: 325px;
+            height: 325px;
+            max-width: 325px;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -292,8 +292,8 @@
         }
     }
 .pizzaImage {
-    
-    height: 100%;
+    width: 105%;
+    // height: 100%;
 }
 .popap {
     width: 100%;

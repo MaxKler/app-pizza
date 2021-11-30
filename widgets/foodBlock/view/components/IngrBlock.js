@@ -31,7 +31,7 @@ const IngrBlock = ({
                     }
                 })
             }            
-            setIngridientData(newData)
+            setIngridientData([...newData])
             setQtyIngr(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
         } else {
             if (type === 'add') {
@@ -39,7 +39,7 @@ const IngrBlock = ({
                     ...elem,
                     qty: 1
                 })
-                setIngridientData(newData)
+                setIngridientData([...newData])
                 setQtyIngr(type === 'add' ? qtyIngr + 1 : qtyIngr - 1)
             }
         }
