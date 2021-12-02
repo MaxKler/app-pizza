@@ -232,7 +232,7 @@ const Cart = ({
                         }
                         <div className={classes.deliveryFree}>Відправляючи цю форму, Ви погоджуєтеся з політикою щодо обробки персональних даних.</div>
                         <div style={{display:'flex', justifyContent:'center'}}>
-                            <div style={{width:'90%', marginRight: '5%'}}>
+                            <div className={classes.slider}>
                                <div className={classes.addToOrder}>Рекомендуємо додати до замовлення</div>
                                <Slider {...settings}>
                                 {addToOrder.map((elem) => {

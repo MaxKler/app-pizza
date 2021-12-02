@@ -77,8 +77,9 @@ const Coments = ({screen}) => {
                     </span>
                 </div>
                 <Link href="https://www.instagram.com/ch_mrpl/">
-                    <div className={classes.coments__pidpis}>
-                       <img className={classes.coments__pidpis__img} src={Frame} alt="" />
+                    <div className={classes.pidpis}>
+                       <div className={classes.pidpis__btn}>Підписатись</div>
+                       <div className={classes.pidpis__point}></div>
                     </div>
                 </Link>
             </div>

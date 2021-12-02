@@ -371,6 +371,11 @@
         }
     }
 }
+
+.slider {
+    width: 90%;
+    margin-right: 5%;
+}
 @media screen and (max-width: 1800px) {
     .ingridients {
         margin-top: 19px;
@@ -1075,6 +1080,9 @@
         &__orderBtn {
             font-size: 19px;
         }
+    }
+    .slider {
+        margin-right: 0;
     }
 }
 
