@@ -24,7 +24,17 @@ const FoodList = ({
     ingridients
 }) => {
 
-    const typeSize = [
+    const typeSize =food.status_opt_end === null || food.status_opt_end === 'null' || food.status_opt_end === 'noopt' ? [
+        {
+           id: 0,
+           size: food.status_opt_start
+        }, 
+        {
+            id: 1,
+            size: food.status_opt_medium,
+            price: food.price_two - food.price 
+        }
+    ] : [
         {
            id: 0,
            size: food.status_opt_start
@@ -34,11 +44,11 @@ const FoodList = ({
             size: food.status_opt_medium,
             price: food.price_two - food.price 
         }, 
+
         {
             id: 2,
             size: food.status_opt_end ,
-            price: food.price_three - food.price 
-            
+            price: food.price_three - food.price  
         }  
     ]
    const [activeSize, setActiveSize] = useState(0)
@@ -140,9 +150,13 @@ const FoodList = ({
                         {typeSize.map((size, index) => {
                             return (
                                 <div key={size.size} onClick={() => onSelectSize(index)}
-                                    className={activeSize === index ?
-                                    [classes.pizza__sizeBlock__size, classes.pizza__sizeBlock__active].join(' ') 
-                                     : classes.pizza__sizeBlock__size}>{size.size}
+                                    className={typeSize.length === 2 ? activeSize === index ?
+                                    [classes.pizza__sizeBlock__size1, classes.pizza__sizeBlock__active1].join(' ') 
+                                     : classes.pizza__sizeBlock__size1 :
+                                     activeSize === index ?
+                                     [classes.pizza__sizeBlock__size, classes.pizza__sizeBlock__active].join(' ') 
+                                      : classes.pizza__sizeBlock__size
+                                    }>{size.size}
                                     {size.price &&  <div>
                                        + {size.price} грн
                                     </div> } 

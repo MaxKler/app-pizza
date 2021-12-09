@@ -49,10 +49,53 @@
             font-weight: 500;
             font-size: 16px;
         }
+        &__active1 {
+            background: #00B612;
+            color: white !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width:50%;
+            height: 48px;
+            padding: 5px 0;
+            font-weight: 500;
+            font-size: 16px;
+        }
         &__size {
             border-radius: 7px;
             font-size: 15px;
             width: 33.3%;
+            cursor: pointer;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: black;
+            padding: 5px 0;
+            font-weight: 500;
+            color: #808080;
+        }
+        &__active1 {
+            background: #00B612;
+            color: white !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width:50%;
+            height: 48px;
+            padding: 5px 0;
+            font-weight: 500;
+            font-size: 16px;
+        }
+        &__size1 {
+            border-radius: 7px;
+            font-size: 15px;
+            width: 50%;
             cursor: pointer;
             flex-direction: column;
             display: flex;
@@ -460,6 +503,12 @@
             &__size {
                 font-size: 13px;
             }
+            &__active1 {
+              
+                height: 42px;
+               
+            }
+          
         }
         &__block {
             &__status {
@@ -561,6 +610,14 @@
                 height: 41px;
                 font-size: 12px;
             }
+            &__active1 {
+                height: 41px;
+                font-size: 17px;
+            }
+            &__size1 {
+                height: 41px;
+                font-size: 12px;
+            }
         }
         &__block {
             &__status {
@@ -655,6 +712,14 @@
                 height: 40px;
                 font-size: 12px;
             }
+            &__active1 {
+                height: 40px;
+                font-size: 12px;
+            }
+            &__size1 {
+                height: 40px;
+                font-size: 12px;
+            }
         }
         &__block {
             &__status {
@@ -745,6 +810,14 @@
                 font-size: 11px;
             }
             &__size {
+                height: 39px;
+                font-size: 11px;
+            }
+            &__active1 {
+                height: 39px;
+                font-size: 11px;
+            }
+            &__size1 {
                 height: 39px;
                 font-size: 11px;
             }
@@ -863,6 +936,14 @@
                 font-size: 9.5px;
             }
             &__size {
+                height: 38px;
+                font-size: 9.5px;
+            }
+            &__active1 {
+                height: 38px;
+                font-size: 9.5px;
+            }
+            &__size1 {
                 height: 38px;
                 font-size: 9.5px;
             }
@@ -1124,6 +1205,15 @@
             &__size {
                 font-size: 7px;
             }
+            &__active1 {
+                height: 20px;
+                border-radius: 4px;
+                font-size: 8px;
+                font-weight: 500;
+            }
+            &__size1 {
+                font-size: 7px;
+            }
         }
         &__card {
             width: 25%;
@@ -1270,6 +1360,15 @@
                 font-weight: 500;
             }
             &__size {
+                font-size: 7px;
+            }
+            &__active1 {
+                height: 20px;
+                border-radius: 4px;
+                font-size: 7px;
+                font-weight: 500;
+            }
+            &__size1 {
                 font-size: 7px;
             }
         }
@@ -1452,6 +1551,16 @@
                 font-size: 15px;
             }
             &__size {
+                width: 50%;
+                font-size: 15px;
+                height: 40px;
+            }
+            &__active1 {
+                height: 40px;
+                width: 50%;
+                font-size: 15px;
+            }
+            &__size1 {
                 width: 50%;
                 font-size: 15px;
                 height: 40px;
