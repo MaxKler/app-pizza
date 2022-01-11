@@ -102,7 +102,7 @@ const NavbarMobile = ({
                         <Link href="https://www.instagram.com/ch_mrpl/">
                             <img className={classes.social__logo} src={instaMobileSvg} alt="insta" />
                         </Link>
-                        <Link href="https://www.facebook.com/charomapizzabar/">
+                        <Link href="https://www.facebook.com/aromachmrpl/">
                             <img className={classes.social__logo} src={faceMobileSvg} alt="face" />
                         </Link>    
                     </div>

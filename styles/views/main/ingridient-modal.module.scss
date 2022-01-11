@@ -13,9 +13,8 @@
         z-index: 999;
     }
     &__window {
-        width: 1000px;
-        height: 80vh;
-        overflow: auto;
+        width: 800px;
+        height: 90vh;
         background: white;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
@@ -50,6 +49,8 @@
 }
 .block {
     width: 90%;  
+    height: 50vh;
+    overflow-y: auto;
     &__cat {
         display: flex;
         justify-content: center;
@@ -59,7 +60,7 @@
     &__namesTr {
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 0px;
         border: 1px solid transparent;
         padding: 10px 0;
         align-items: center;
@@ -105,7 +106,21 @@
             color: #000000;
         }
         &__name2 {
-            width: 120px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            &__image {
+                width: 50px;
+                min-width: 50px;
+                margin-right: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                & img {
+                    width: 100%;
+                }
+            }
         }
         &__qty {
             width: 33.3%;
@@ -215,7 +230,7 @@
             margin-top: 10px;
         }
         &__namesTr {
-            margin-top: 20px;
+            margin-top: 0px;
             padding: 5px 0;
         }
         &__names {
@@ -308,7 +323,6 @@
             margin-top: 10px;
         }
         &__namesTr {
-            margin-top: 20px;
             padding: 5px 0;
         }
         &__names {
@@ -403,7 +417,6 @@
             margin-top: 10px;
         }
         &__namesTr {
-            margin-top: 20px;
             padding: 5px 0;
         }
         &__names {
@@ -493,6 +506,7 @@
     .modal {
         &__window {
             width: 98%;
+            height: 85vh;
         }
         &__content {
             &__line {
@@ -500,7 +514,7 @@
             }
         }
         &__title {
-            font-size: 23px;
+            font-size: 20px;
         }
     }
     .block {
@@ -522,8 +536,8 @@
                 font-size: 15px;
             }
             &__price {
-                width: 33.3%;
-                padding-left: 9%;
+                width: 28%;
+                padding-left: 7%;
                 &__price {
                     font-size: 16px;
                     width: 100px;
@@ -539,7 +553,7 @@
                 font-size: 18px;
             }
             &__name2 {
-                width: 100px;
+                width: 200px;
             }
             &__qty {
                 width: 33.3%;

@@ -21,11 +21,11 @@ const BlogView = ({blogData, screen}) => {
                    {blogData.slice(0, 1).map((elem) => {
                         return (
                             <Link href={`/news/${elem.id}`}>
-                            <div style={{backgroundImage: `url(${NET.WEB_URL}/${elem.image})`}} className={classes.blog__mainNew}>
+                            <div style={{backgroundImage: `linear-gradient(to top, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0) 100%), url(${NET.WEB_URL}/${elem.image})`}} className={classes.blog__mainNew}>
                                 <div className={classes.blog__mainNew__content}>
                                     <div  className={classes.blog__mainNew__content__title}>{elem.title}</div>
                                    <div className={classes.blog__mainNew__content__info}>
-                                        <div className={classes.blog__mainNew__content__info__desc}>{elem.small_description}</div>
+                                        <div dangerouslySetInnerHTML={{__html: elem.small_description}} className={classes.blog__mainNew__content__info__desc}></div>
                                         <div className={classes.blog__mainNew__content__info__date}>{elem.date}</div>
                                     </div>
                                 </div>
@@ -46,10 +46,12 @@ const BlogView = ({blogData, screen}) => {
                                     <div className={classes.blog__twoNews__content__block} >
                                         <div className={classes.blog__twoNews__content__block__block}>
                                             <div className={classes.blog__twoNews__content__title}>{news.title}</div>
-                                            <div className={ screen ? classes.blog__twoNews__content__description2 : classes.blog__twoNews__content__description}>{news.description}</div>
+                                            
                                         </div>
                                         <div className={classes.blog__twoNews__content__info}>
-                                            <div className={classes.blog__twoNews__content__info__desc}>{news.small_description}</div>
+
+                                        <div dangerouslySetInnerHTML={{__html: news.small_description}} className={ screen ? classes.blog__twoNews__content__description2 : classes.blog__twoNews__content__description}></div>
+                                            {/* <div className={classes.blog__twoNews__content__info__desc}>{news.small_description}</div> */}
                                             <div className={classes.blog__twoNews__content__info__date}>{news.date}</div>
                                         </div>
                                     </div>

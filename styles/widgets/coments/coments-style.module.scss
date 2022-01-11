@@ -1,7 +1,4 @@
 .coments {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url('./../../../project/image/widgets/coments/inst.png');
     height: 100vh;
     &__blocks {
         display: flex;
@@ -406,6 +403,7 @@
 @media screen and (max-width: 576px) {  
     .coments {
         height: 1200px;
+        margin-bottom: 16px;
         &__blocks {
             display: flex;
             flex-direction: column;

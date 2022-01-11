@@ -57,7 +57,7 @@ const IngridientModal = ({
                         </div>
                         {ingridients.map((elem) => {
                       
-                                return (        
+                            return (        
                                 <IngrBlock 
                                     classes={classes}
                                     elem={elem}

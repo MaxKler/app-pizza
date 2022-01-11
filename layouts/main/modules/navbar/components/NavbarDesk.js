@@ -48,7 +48,7 @@ const NavbarDesk = ({
             })}
         </div>  
         <div className={classes.social__icons}>
-            <Link href="https://www.facebook.com/charomapizzabar/">
+            <Link href="https://www.facebook.com/aromachmrpl/">
                 <FontAwesomeIcon className={classes.social__icon} icon={faFacebookF}></FontAwesomeIcon>
             </Link>    
             <Link href="https://www.instagram.com/ch_mrpl/">

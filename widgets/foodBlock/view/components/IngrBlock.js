@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { NET } from '../../../../network'
 import checkSvg from './../../../../project/image/views/main/svg/checkSvg.svg'
 const IngrBlock = ({
     classes, 
@@ -51,8 +52,13 @@ const IngrBlock = ({
        <div className={qtyIngr > 0 ? classes.block__names : classes.block__namesTr}>
                <div className={classes.block__names__name}>
                    <div className={classes.block__names__name2}>
-                       <div className={classes.block__names__name1}>{elem.title}</div>
-                       <div className={classes.block__names__weight}>{elem.weight} гр</div>
+                       <div className={classes.block__names__name2__image}>
+                            <img src={`${NET.WEB_URL}/${elem.image}`} />
+                       </div>
+                       <div>
+                            <div className={classes.block__names__name1}>{elem.title}</div>
+                            <div className={classes.block__names__weight}>{elem.weight} гр</div>
+                       </div>
                    </div>
                </div>
             <div className={classes.block__names__qty}>

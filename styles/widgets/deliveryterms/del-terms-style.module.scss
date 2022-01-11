@@ -4,12 +4,17 @@
         align-items: center;
         margin-top: 40px;
         margin-left: 40px;
+        text-align: center;
         &__img {
-            width: 40%;
+            width: 50%;
+            margin: 0 auto;
+            & img {
+                width: 100%;
+            }
         }
         &__text {
         
-            font-size: 34px;
+            font-size: 28px;
             color: #404040;
             padding: 0 20px;
         }
@@ -51,7 +56,7 @@
 .delivery {
     &__firstBlock {
         &__text {
-            font-size: 30px;
+            font-size: 24px;
             padding: 0 20px;
         }
     }
@@ -73,7 +78,6 @@
     .delivery {
         &__firstBlock {
             &__text {
-                font-size: 27px;
                 padding: 0 18px;
             }
         }
@@ -95,7 +99,6 @@
     .delivery {
         &__firstBlock {
             &__text {
-                font-size: 26px;
                 padding: 0 17px;
             }
         }
@@ -117,7 +120,7 @@
     .delivery {
         &__firstBlock {
             &__text {
-                font-size: 24px;
+                font-size: 20px;
                 padding: 0 16px;
             }
         }
@@ -141,7 +144,7 @@
             margin-top: 40px;
             margin-left: 33px;
             &__text {
-                font-size: 23px;
+                font-size: 20px;
                 padding: 0 15px;
             }
         }

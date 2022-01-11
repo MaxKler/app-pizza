@@ -4,7 +4,13 @@ import classes from './../../styles/widgets/coments/coments-style.module.scss'
 import cat from './../../project/image/widgets/coments/cat.png'
 import Frame from './../../project/image/widgets/coments/Frame.png'
 import phone from './../../project/image/widgets/coments/phone.png'
-import instImg from './../../project/image/widgets/coments/instImg.png'
+import instImg from './../../project/image/widgets/coments/instImg.jpg'
+import instImg2 from './../../project/image/widgets/coments/instImg2.jpg'
+import instImg3 from './../../project/image/widgets/coments/instImg3.jpg'
+import instImg4 from './../../project/image/widgets/coments/instImg4.jpg'
+import instImg5 from './../../project/image/widgets/coments/instImg5.jpg'
+import instImg6 from './../../project/image/widgets/coments/instImg6.jpg'
+import instImg7 from './../../project/image/widgets/coments/instImg7.jpg'
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -94,22 +100,22 @@ const Coments = ({screen}) => {
             <img className={classes.insta__img} src={instImg} alt="" />
         </div>
         <div>
-            <img className={classes.insta__img} src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg2} alt="" />
         </div>
         <div>
-            <img className={classes.insta__img} src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg3} alt="" />
         </div>
         <div>
-            <img className={classes.insta__img} src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg4} alt="" />
         </div>
         <div>
-            <img className={classes.insta__img} src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg5} alt="" />
         </div>
         <div>
-            <img className={classes.insta__img} src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg6} alt="" />
         </div>
         <div>
-            <img className={classes.insta__img} src={instImg} alt="" />
+            <img className={classes.insta__img} src={instImg7} alt="" />
         </div>
          </Slider>
         </div>

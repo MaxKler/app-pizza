@@ -1,6 +1,6 @@
 import React from "react";
 import classes from './../../../styles/views/footer/footer-style.module.scss'
-import logoSvg from './../../../project/image/views/footer/svg/logo.svg'
+import logoSvg from './../../../project/image/views/footer/svg/logo.png'
 import masterSvg from './../../../project/image/views/footer/svg/master.svg'
 import visaSvg from './../../../project/image/views/footer/svg/visa.svg'
 import appleSvg from './../../../project/image/views/footer/svg/apple.svg'

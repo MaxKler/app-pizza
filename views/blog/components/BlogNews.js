@@ -18,15 +18,19 @@ const BlogNew = ({newsItem, otherNews,}) => {
                     </div>
                 </Link>
                 <div className={classes.newInfo}>
-                    <div className={classes.newInfo__info}>
-                        <div className={classes.newInfo__info__desc}>{newsItem.small_description}</div>
-                        <div className={classes.newInfo__info__date}>{newsItem.date}</div>
+                    <div className={classes.newInfo__header}>
+                        <div className={classes.newInfo__img}>
+                            <img src={`${NET.WEB_URL}/${newsItem.image}`} alt=""/>
+                        </div>
+                        <div>
+                            <div className={classes.newInfo__title}>{newsItem.title}</div>
+                            <div className={classes.newInfo__info}>
+                                <div dangerouslySetInnerHTML={{__html: newsItem.small_description}} className={classes.newInfo__info__desc}></div>
+                                <div className={classes.newInfo__info__date}>{newsItem.date}</div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <img className={classes.newInfo__img} src={`${NET.WEB_URL}/${newsItem.image}`} alt=""/>
-                    </div>
-                    <div className={classes.newInfo__title}>{newsItem.title}</div>
-                    <div className={classes.newInfo__description}>{newsItem.description}</div>
+                    <div dangerouslySetInnerHTML={{__html: newsItem.description}} className={classes.newInfo__description}></div>
                 </div>
                 <div className={classes.otherNews}>
                     <div className={classes.otherNews__content}>
@@ -42,9 +46,9 @@ const BlogNew = ({newsItem, otherNews,}) => {
                                             <img className={classes.otherNews__blocks__new__img} src={`${NET.WEB_URL}/${elem.image}`} alt="" />
                                             <div className={classes.otherNews__blocks__new__block}>
                                                 <div className={classes.otherNews__blocks__new__title}>{elem.title}</div>
-                                                <div className={classes.otherNews__blocks__new__desc}>{elem.description}</div>
+                                                {/* <div className={classes.otherNews__blocks__new__desc}>{elem.description}</div> */}
                                                 <div className={classes.otherNews__blocks__new__info}>
-                                                    <div className={classes.otherNews__blocks__new__info__desc}>{elem.small_description}</div>
+                                                    <div dangerouslySetInnerHTML={{__html: elem.small_description}} className={classes.otherNews__blocks__new__info__desc}></div>
                                                     <div className={classes.otherNews__blocks__new__info__date}>{elem.date}</div>
                                                 </div>
                                             </div>
