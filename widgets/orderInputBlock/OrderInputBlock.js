@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import classes from './../../styles/widgets/inputBlock/inputBlock-style.module.scss'
+
 import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
 import ua from 'date-fns/locale/ru';
 registerLocale('ua', ua)
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import "react-datepicker/dist/react-datepicker.css";
+
 import PhoneInput from 'react-phone-input-2'
 
 const OrderInputBlock = ({
@@ -14,7 +16,7 @@ const OrderInputBlock = ({
     errorData
 }) => {
 
-    const [adress, setAdress] = useState(false)
+    const [adress, setAdress] = useState(true)
     const [time, setTime] = useState(false)
     const adressVisible = () => {
         setAdress(true)
@@ -29,8 +31,8 @@ const OrderInputBlock = ({
         setTime(false)
     }
 
-    const [state, setState] = useState(true)
-    const [state1, setState1] = useState(false)
+    const [state, setState] = useState(false)
+    const [state1, setState1] = useState(true)
 
     const selected = () => {
         setState(true)

@@ -14,13 +14,7 @@ const DeliveryTerms = ({screen}) => {
             </div>
             <div className={classes.delivery__firstBlock}>
                 
-                <div className={classes.delivery__firstBlock__text}>Ми 
-                       довіряємо своїм клієнтам, тому розрахунок відбувається
-                       при отриманні замовлення, а вже готівкою чи карткою – 
-                       обираєте ви. Просто зазначте при оформленні замовлення,
-                       що бажаєте розрахуватись з кур’єром карткою, або повідомте 
-                       про це оператора по телефону.
-                </div>
+               
             </div>
             <div className={classes.delivery__groups}>
                 <div className={screen ? classes.delivery__groups__card : classes.delivery__groups__cardTwo}>

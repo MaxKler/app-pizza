@@ -143,7 +143,7 @@ const FoodList = ({
                 <div className={classes.pizza__block__price}>{priceValue}
                     <span className={classes.pizza__block__grn}>грн</span>
                 </div>
-                {food.weight && food.weight !== 'null' && <div className={classes.pizza__block__weight}>{food.weight} гр</div>}
+                {food.weight && food.weight !== 'null' && <div className={classes.pizza__block__weight}>{food.weight}</div>}
             </div>
             <div className={classes.pizza__block__itemTwo}>
                     {food.is_pizza === "pizza" && <div key={food.id} className={classes.pizza__sizeBlock}>

@@ -153,6 +153,12 @@ const Cart = ({
         }
     } 
     
+    const clearCart = () => {
+        if (window.confirm('Ви впевнені?')) {
+            localStorage.removeItem('cart')
+            setCart([])
+        }
+    }
 
     
     return (
@@ -225,6 +231,7 @@ const Cart = ({
                             </>
                             )
                         })}
+                        <div className={classes.clearBtn} onClick={clearCart}>Очистити кошик</div>
                         {freeD === 0 ? <div className={classes.deliveryFree}>
                             Вітаємо! У вас безкоштовна доставка
                         </div>
