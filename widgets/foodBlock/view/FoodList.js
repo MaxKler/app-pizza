@@ -165,7 +165,7 @@ const FoodList = ({
                              })}
                     </div>}
             </div> 
-           {food.is_pizza === "pizza" &&
+           {food.is_ingridient === "ingr" &&
             <div onClick={showIngridientModal} className={classes.ingridients}>
                 <div className={classes.ingridients__title}>Додати інгрідієнти:</div>
                 <div className={classes.ingridients__icon}>
