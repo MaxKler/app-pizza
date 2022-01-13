@@ -100,9 +100,9 @@ const OrderInputBlock = ({
     return (
         <div>
             <div className={classes.input}>
-                <input value={orderData?.name} onChange={(e) => makeDataOrderFunc(e, 'name')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Ваше ім'я" type="text"/>
-                {errorData?.name && <div className={classes.errorTitle}>{errorData['name'][0]}</div>}
-                 <div className={classes.input__phone}>
+                <input value={orderData?.name} onChange={(e) => makeDataOrderFunc(e, 'name')} className={classes.input__pole} placeholder="Ваше ім'я" type="text"/>
+                {/* {errorData?.name && <div className={classes.errorTitle}>{errorData['name'][0]}</div>} */}
+                 <div className={ classes.input__phone}>
                  <PhoneInput 
                    country={'ua'} 
                    value={phone}
@@ -112,8 +112,8 @@ const OrderInputBlock = ({
                  </div>
                 {errorData?.phone && <div className={classes.errorTitle}>{errorData['phone'][0]}</div>}
 
-                <input onChange={(e) => makeDataOrderFunc(e, 'countPeople')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Кількість персон"  type="text" />
-                {errorData?.countPeople && <div className={classes.errorTitle}>{errorData['countPeople'][0]}</div>}
+                <input onChange={(e) => makeDataOrderFunc(e, 'countPeople')} className={classes.input__pole} placeholder="Кількість персон"  type="text" />
+                {/* {errorData?.countPeople && <div className={classes.errorTitle}>{errorData['countPeople'][0]}</div>} */}
 
                 <div className={classes.input__delivery}>
                     <div onClick={selected} className={state ? classes.input__delivery__block : [classes.input__delivery__block, classes.disabled].join(' ')}>
@@ -152,14 +152,14 @@ const OrderInputBlock = ({
                        <option  value="calmius" >Кальміуський</option>
                        <option  value="primorsk" >Приморський</option>
                     </select>
-                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_street')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Вулиця"  type="text" />
-                    {errorData?.delivery_street && <div className={classes.errorTitle}>{errorData['delivery_street'][0]}</div>}
+                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_street')} className={classes.input__pole} placeholder="Вулиця"  type="text" />
+                    {/* {errorData?.delivery_street && <div className={classes.errorTitle}>{errorData['delivery_street'][0]}</div>} */}
 
-                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_house')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole} placeholder="Номер дому, квартири" type="text"/>
-                    {errorData?.delivery_house && <div className={classes.errorTitle}>{errorData['delivery_house'][0]}</div>}
+                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_house')} className={classes.input__pole} placeholder="Номер дому, квартири" type="text"/>
+                    {/* {errorData?.delivery_house && <div className={classes.errorTitle}>{errorData['delivery_house'][0]}</div>} */}
 
-                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_pidzd')} className={errorData?.name ? [classes.input__pole, classes.input__red].join(' ') : classes.input__pole}placeholder="Номер під'їзду"  type="text" />
-                    {errorData?.delivery_pidzd && <div className={classes.errorTitle}>{errorData['delivery_pidzd'][0]}</div>}
+                    <input onChange={(e) => makeDataOrderFunc(e, 'delivery_pidzd')} className={classes.input__pole}placeholder="Номер під'їзду"  type="text" />
+                    {/* {errorData?.delivery_pidzd && <div className={classes.errorTitle}>{errorData['delivery_pidzd'][0]}</div>} */}
 
                 </div>
                 <div>
